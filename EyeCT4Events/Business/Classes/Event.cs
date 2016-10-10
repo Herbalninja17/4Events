@@ -110,7 +110,6 @@ namespace EyeCT4Events
             }
         }
 
-        //Constructor
         /// <summary>
         /// Constructor.
         /// </summary>
