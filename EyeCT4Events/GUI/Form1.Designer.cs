@@ -33,6 +33,8 @@
             this.lblLoginUsername = new System.Windows.Forms.Label();
             this.lblLoginPassword = new System.Windows.Forms.Label();
             this.btnLoginLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLoginCreatAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbLoginUsername
@@ -69,7 +71,7 @@
             // 
             // btnLoginLogin
             // 
-            this.btnLoginLogin.Location = new System.Drawing.Point(121, 155);
+            this.btnLoginLogin.Location = new System.Drawing.Point(140, 154);
             this.btnLoginLogin.Name = "btnLoginLogin";
             this.btnLoginLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLoginLogin.TabIndex = 4;
@@ -77,11 +79,32 @@
             this.btnLoginLogin.UseVisualStyleBackColor = true;
             this.btnLoginLogin.Click += new System.EventHandler(this.btnLoginLogin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Don\'t have an account?";
+            // 
+            // btnLoginCreatAccount
+            // 
+            this.btnLoginCreatAccount.Location = new System.Drawing.Point(140, 196);
+            this.btnLoginCreatAccount.Name = "btnLoginCreatAccount";
+            this.btnLoginCreatAccount.Size = new System.Drawing.Size(75, 49);
+            this.btnLoginCreatAccount.TabIndex = 6;
+            this.btnLoginCreatAccount.Text = "Create new account";
+            this.btnLoginCreatAccount.UseVisualStyleBackColor = true;
+            this.btnLoginCreatAccount.Click += new System.EventHandler(this.btnLoginCreatAccount_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 192);
+            this.ClientSize = new System.Drawing.Size(259, 252);
+            this.Controls.Add(this.btnLoginCreatAccount);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoginLogin);
             this.Controls.Add(this.lblLoginPassword);
             this.Controls.Add(this.lblLoginUsername);
@@ -101,6 +124,8 @@
         private System.Windows.Forms.Label lblLoginUsername;
         private System.Windows.Forms.Label lblLoginPassword;
         private System.Windows.Forms.Button btnLoginLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLoginCreatAccount;
     }
 }
 

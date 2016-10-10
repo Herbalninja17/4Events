@@ -46,7 +46,7 @@
             this.tbCreateParticipantZipCode = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantEmail = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantPhoneNumber = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantUsernmae = new System.Windows.Forms.TextBox();
+            this.tbCreateParticipantUsername = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantPassword = new System.Windows.Forms.TextBox();
             this.btnCreateParticipantCreateParticipant = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -205,12 +205,12 @@
             this.tbCreateParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPhoneNumber.TabIndex = 38;
             // 
-            // tbCreateParticipantUsernmae
+            // tbCreateParticipantUsername
             // 
-            this.tbCreateParticipantUsernmae.Location = new System.Drawing.Point(338, 239);
-            this.tbCreateParticipantUsernmae.Name = "tbCreateParticipantUsernmae";
-            this.tbCreateParticipantUsernmae.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantUsernmae.TabIndex = 39;
+            this.tbCreateParticipantUsername.Location = new System.Drawing.Point(338, 239);
+            this.tbCreateParticipantUsername.Name = "tbCreateParticipantUsername";
+            this.tbCreateParticipantUsername.Size = new System.Drawing.Size(200, 20);
+            this.tbCreateParticipantUsername.TabIndex = 39;
             // 
             // tbCreateParticipantPassword
             // 
@@ -236,7 +236,7 @@
             this.ClientSize = new System.Drawing.Size(661, 408);
             this.Controls.Add(this.btnCreateParticipantCreateParticipant);
             this.Controls.Add(this.tbCreateParticipantPassword);
-            this.Controls.Add(this.tbCreateParticipantUsernmae);
+            this.Controls.Add(this.tbCreateParticipantUsername);
             this.Controls.Add(this.tbCreateParticipantPhoneNumber);
             this.Controls.Add(this.tbCreateParticipantEmail);
             this.Controls.Add(this.tbCreateParticipantZipCode);
@@ -256,7 +256,7 @@
             this.Controls.Add(this.btnEditParticipant);
             this.Controls.Add(this.btnCreateParticipant);
             this.Name = "CreateParticipantForm";
-            this.Text = "Creat Participant";
+            this.Text = "Create Participant";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +282,7 @@
         private System.Windows.Forms.TextBox tbCreateParticipantZipCode;
         private System.Windows.Forms.TextBox tbCreateParticipantEmail;
         private System.Windows.Forms.TextBox tbCreateParticipantPhoneNumber;
-        private System.Windows.Forms.TextBox tbCreateParticipantUsernmae;
+        private System.Windows.Forms.TextBox tbCreateParticipantUsername;
         private System.Windows.Forms.TextBox tbCreateParticipantPassword;
         private System.Windows.Forms.Button btnCreateParticipantCreateParticipant;
     }

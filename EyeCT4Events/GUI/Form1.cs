@@ -21,5 +21,12 @@ namespace EyeCT4Events
         {
             MessageBox.Show(Data.Datacom.TestMethode(15).ToString());
         }
+
+        private void btnLoginCreatAccount_Click(object sender, EventArgs e)
+        {
+            CreateParticipantForm cpf = new CreateParticipantForm();
+            this.Hide();
+            cpf.Show();
+        }
     }
 }
