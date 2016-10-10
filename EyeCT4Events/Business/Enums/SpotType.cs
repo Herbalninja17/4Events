@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events
 {
-    enum SpotType
+    public enum SpotType
     {
         Standard,
         Plus,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events
 {
-    enum FileType
+    public enum FileType
     {
         Picture,
         Gif,
