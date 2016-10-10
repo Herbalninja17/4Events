@@ -8,5 +8,9 @@ namespace EyeCT4Events
 {
     enum MaterialType
     {
+        CampingGear,
+        Screens,
+        USB,
+        Camera
     }
 }

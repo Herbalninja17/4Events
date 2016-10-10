@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events
 {
-    class CampingSpot
+    public class CampingSpot
     {
+        public SpotType SpotType { get; set; }
+        public int SpotID { get; set; }
+        public int Capacity { get; set; }
+        public bool Reserved { get; set; }
+
+        public CampingSpot(SpotType spotType, int spotID, int capacity)
+        {
+            SpotType = spotType;
+            SpotID = spotID;
+            Capacity = capacity;
+            Reserved = false;
+        }
     }
 }

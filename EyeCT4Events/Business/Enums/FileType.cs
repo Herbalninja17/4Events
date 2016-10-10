@@ -8,5 +8,9 @@ namespace EyeCT4Events
 {
     enum FileType
     {
+        Picture,
+        Gif,
+        Video,
+        Word
     }
 }

@@ -8,5 +8,8 @@ namespace EyeCT4Events
 {
     enum SpotType
     {
+        Standard,
+        Plus,
+        VIP
     }
 }
