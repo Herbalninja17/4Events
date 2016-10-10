@@ -8,6 +8,7 @@ namespace EyeCT4Events
 {
     public class Person
     {
+        //Persoonklasse
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Address { get; set; }
