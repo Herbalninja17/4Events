@@ -24,7 +24,7 @@ namespace EyeCT4Events
         //Methods
         public void AddSpot(CampingSpot spot)
         {
-            
+             
         }
 
         public void ModifySpot(CampingSpot spot)
