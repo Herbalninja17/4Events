@@ -16,5 +16,30 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
+        private void btnReservationsLocation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReservationsReservations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReservationSearchParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReservationAddParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
