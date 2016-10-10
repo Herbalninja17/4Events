@@ -16,5 +16,15 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
+        private void btnSocialMediaNewsFeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSocialMediaUpload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

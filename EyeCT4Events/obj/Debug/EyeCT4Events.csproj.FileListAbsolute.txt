@@ -18,3 +18,6 @@ C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\Ey
 E:\00school\P2-2\PT\4events2\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
 E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.exe
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
