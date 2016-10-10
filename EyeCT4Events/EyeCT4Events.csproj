@@ -127,9 +127,6 @@
     <Compile Include="GUI\ParticipantsForm.Designer.cs">
       <DependentUpon>ParticipantsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\SocialMediaForm.cs">
@@ -183,20 +180,6 @@
     <EmbeddedResource Include="GUI\UploadForm.resx">
       <DependentUpon>UploadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.CreateEventForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.CreateParticipantForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.DeleteEventForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.EventBeheerForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.HiredMaterialForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.LeaseForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.LoginForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.MakeReservationForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.MapForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.MyReservationsForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.ParticipantsForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.SocialMediaForm.resources" />
-    <EmbeddedResource Include="obj\Debug\EyeCT4Events.UploadForm.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -206,10 +189,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache" />
-    <None Include="obj\Debug\EyeCT4Events.csprojResolveAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -223,14 +202,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="obj\Debug\EyeCT4Events.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\EyeCT4Events.exe" />
-    <Content Include="obj\Debug\EyeCT4Events.pdb" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
