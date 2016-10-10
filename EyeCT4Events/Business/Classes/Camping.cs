@@ -8,7 +8,7 @@ namespace EyeCT4Events
 {
     public class Camping
     {
-        //Jethro Test
+        //Kevin Test
 
         //Properties
         public string Name { get; set; }
@@ -26,7 +26,7 @@ namespace EyeCT4Events
         //Methods
         public void AddSpot(CampingSpot spot)
         {
-            
+             
         }
 
         public void ModifySpot(CampingSpot spot)
