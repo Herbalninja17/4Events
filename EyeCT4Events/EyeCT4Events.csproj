@@ -83,6 +83,12 @@
     <Compile Include="HiredMaterialForm.Designer.cs">
       <DependentUpon>HiredMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaseForm.Designer.cs">
+      <DependentUpon>LeaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
