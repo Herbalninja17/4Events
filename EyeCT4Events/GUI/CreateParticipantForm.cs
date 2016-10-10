@@ -12,9 +12,13 @@ namespace EyeCT4Events
 {
     public partial class CreateParticipantForm : Form
     {
+        public Person person;
+        public Maintain maintain = new Maintain();
+
         public CreateParticipantForm()
         {
             InitializeComponent();
+            
         }
 
         private void btnCreateParticipant_Click(object sender, EventArgs e)
@@ -39,7 +43,8 @@ namespace EyeCT4Events
 
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-
+            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text + " " + tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantUsername.Text, tbCreateParticipantEmail.Text);
+            maintain.AddPerson(person);
         }
     }
 }
