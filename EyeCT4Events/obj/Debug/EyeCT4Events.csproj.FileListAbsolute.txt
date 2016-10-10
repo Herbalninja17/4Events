@@ -12,3 +12,6 @@ C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.exe
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
