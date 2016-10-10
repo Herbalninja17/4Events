@@ -8,7 +8,7 @@ namespace EyeCT4Events
 {
     public class Camping
     {
-        //Tim Test.
+        //Bono Test
 
         //Properties
         public string Name { get; set; }
