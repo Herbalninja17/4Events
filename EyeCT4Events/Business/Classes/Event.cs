@@ -38,7 +38,7 @@ namespace EyeCT4Events
         public string Location
         {
             get { return location; }
-            set
+            private set
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -89,7 +89,6 @@ namespace EyeCT4Events
                 currentVisitors = value;
             }
         }
-
 
         public decimal Price
         {
