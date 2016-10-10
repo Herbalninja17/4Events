@@ -34,12 +34,14 @@ namespace EyeCT4Events
 
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-
+            ParticipantsForm participantsform = new ParticipantsForm();
+            this.Hide();
+            participantsform.Show();
         }
 
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
