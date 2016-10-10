@@ -66,7 +66,7 @@ namespace EyeCT4Events
             set
             {
                 if(value < startDate) { throw new ArgumentOutOfRangeException("startDate"); }
-                endDate = value; //May be the same as the start date but not sooner.
+                endDate = value; //May be the same as the start date but not sooner..
             }
         }
 
