@@ -13,6 +13,7 @@ namespace EyeCT4Events
         public string Address { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
+        public List<Reservation> Reservations { get; set; }
 
         public Person(string name, DateTime birthDate, string address, string username, string email)
         {
