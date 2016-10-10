@@ -16,5 +16,10 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
+        private void btnMapChooseLocation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

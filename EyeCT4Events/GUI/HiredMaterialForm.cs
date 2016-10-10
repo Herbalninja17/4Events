@@ -16,5 +16,15 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
+        private void btnHired_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLease_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
