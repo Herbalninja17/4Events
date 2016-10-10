@@ -19,8 +19,7 @@ namespace EyeCT4Events
 
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
-
-
+            MessageBox.Show(Data.Datacom.TestMethode(15).ToString());
         }
     }
 }
