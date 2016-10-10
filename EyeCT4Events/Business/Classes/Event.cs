@@ -34,6 +34,7 @@ namespace EyeCT4Events
                 name = value;
             }
         }
+
         public string Location
         {
             get { return location; }
