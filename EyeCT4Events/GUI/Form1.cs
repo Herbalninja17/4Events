@@ -12,6 +12,7 @@ namespace EyeCT4Events
 {
     public partial class LoginForm : Form
     {
+        Login login = new Login();
         public LoginForm()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace EyeCT4Events
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Data.Datacom.TestMethode(15).ToString());
+            login.LogInUser();
         }
 
         private void btnLoginCreatAccount_Click(object sender, EventArgs e)

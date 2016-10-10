@@ -14,6 +14,7 @@ namespace EyeCT4Events
     {
         public Person person;
         public Maintain maintain = new Maintain();
+        public Login login = new Login();
 
         public CreateParticipantForm()
         {
@@ -33,18 +34,20 @@ namespace EyeCT4Events
 
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-
+            ParticipantsForm participantsform = new ParticipantsForm();
+            this.Hide();
+            participantsform.Show();
         }
 
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
             person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text + " " + tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantUsername.Text, tbCreateParticipantEmail.Text);
-            maintain.AddPerson(person);
+            login.CreateUser(person);
         }
     }
 }
