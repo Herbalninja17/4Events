@@ -16,5 +16,30 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
+        private void btnCreateParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnParticipants_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
