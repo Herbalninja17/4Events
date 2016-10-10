@@ -9,3 +9,6 @@ C:\Users\Gebruiker\documents\visual studio 2015\Projects\EyeCT4Events\EyeCT4Even
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
+C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
+C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.exe
+C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
