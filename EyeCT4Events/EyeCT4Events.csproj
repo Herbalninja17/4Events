@@ -206,9 +206,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="bin\Debug\EyeCT4Events.exe.config" />
-    <None Include="bin\Debug\EyeCT4Events.vshost.exe.config" />
-    <None Include="bin\Debug\EyeCT4Events.vshost.exe.manifest" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache" />
@@ -230,9 +227,6 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\EyeCT4Events.exe" />
-    <Content Include="bin\Debug\EyeCT4Events.pdb" />
-    <Content Include="bin\Debug\EyeCT4Events.vshost.exe" />
     <Content Include="obj\Debug\EyeCT4Events.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\EyeCT4Events.exe" />
     <Content Include="obj\Debug\EyeCT4Events.pdb" />
