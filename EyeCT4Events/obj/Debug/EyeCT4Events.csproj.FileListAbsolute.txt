@@ -21,3 +21,21 @@ E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\bin\Debug\EyeCT4Events.pdb
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csprojResolveAssemblyReference.cache
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.CreateEventForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.CreateParticipantForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.DeleteEventForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EventBeheerForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.LoginForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.HiredMaterialForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.LeaseForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.MakeReservationForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.MapForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.MyReservationsForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.ParticipantsForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.SocialMediaForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.UploadForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.Properties.Resources.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache
