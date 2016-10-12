@@ -18,58 +18,181 @@ namespace EyeCT4Events
             Persons = new List<Person>();
         }
 
-        public void AddPerson(Person person)
+        public bool AddPerson(Person person)
         {
-            
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    return false;
+                }
+            }
+
+            Persons.Add(person);
+            return true;
         }
 
-        public void ModifyPerson(Person person)
+        public bool ModifyPerson(Person oldPerson, Person newPerson)
         {
-            
+            foreach (Person p in Persons)
+            {
+                if (p == oldPerson)
+                {
+                    int index = Persons.IndexOf(oldPerson);
+                    if (index != -1)
+                    {
+                        Persons[index] = newPerson;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public bool RemovePerson(Person person)
         {
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    Persons.Remove(p);
+                    return true;
+                }
+            }
             return false;
         }
 
-        public void AddReservationToPerson(Reservation reservation, Person person)
+        public bool AddReservationToPerson(Reservation reservation, Person person)
         {
-            
-        }
-
-        public void ModifyReservation(Reservation reservation)
-        {
-            
-        }
-
-        public bool DeleteReservation(Reservation reservation)
-        {
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    p.Reservations.Add(reservation);
+                    return true;
+                }
+            }
             return false;
         }
 
-        public Reservation FindReservation(Reservation reservation)
+        public bool ModifyReservation(Reservation oldReservation, Reservation newReservation, Person person)
         {
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    foreach (Reservation r in p.Reservations)
+                    {
+                        if (r == oldReservation)
+                        {
+                            int index = p.Reservations.IndexOf(oldReservation);
+                            if (index != -1)
+                            {
+                                p.Reservations[index] = newReservation;
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool DeleteReservation(Reservation reservation, Person person)
+        {
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    foreach (Reservation r in p.Reservations)
+                    {
+                        if (r == reservation)
+                        {
+                            p.Reservations.Remove(r);
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public Reservation FindReservation(Reservation reservation, Person person)
+        {
+            foreach (Person p in Persons)
+            {
+                if (p == person)
+                {
+                    foreach (Reservation r in p.Reservations)
+                    {
+                        if (r == reservation)
+                        {
+                            return r;
+                        }
+                    }
+                }
+            }
             return null;
         }
 
-        public void AddEvent(Event eEvent)
+        public bool AddEvent(Event eEvent)
         {
-            
+            foreach (Event e in Events)
+            {
+                if (e == eEvent)
+                {
+                    return false;
+                }
+            }
+
+            Events.Add(eEvent);
+            return true;
         }
 
-        public void ModifyEvent(Event eEvent)
+        public bool ModifyEvent(Event oldeEvent, Event neweEvent)
         {
-            
+            foreach (Event e in Events)
+            {
+                if (e == oldeEvent)
+                {
+                    int index = Events.IndexOf(oldeEvent);
+                    if (index != -1)
+                    {
+                        Events[index] = neweEvent;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public bool DeleteEvent(Event eEvent)
         {
+            foreach (Event e in Events)
+            {
+                if (e == eEvent)
+                {
+                    Events.Remove(e);
+                    return true;
+                }
+            }
+
             return false;
         }
 
         public Event FindEvent(Event eEvent)
         {
+            foreach (Event e in Events)
+            {
+                if (e == eEvent)
+                {
+                    return e;
+                }
+            }
             return null;
         }
     }
