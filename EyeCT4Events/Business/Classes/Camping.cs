@@ -8,10 +8,41 @@ namespace EyeCT4Events
 {
     public class Camping
     {
+        //Fields
+        private string name;
+        private int places;
+        private List<CampingSpot> campingSpots;
+
         //Properties
-        public string Name { get; set; }
-        public int Places { get; set; }
-        public List<CampingSpot> CampingSpots { get; set; }
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    if (value == null) { throw new ArgumentNullException("name"); }
+                    throw new ArgumentException("name");
+                }
+                name = value;
+            }
+        }
+
+        public int Places
+        {
+            get { return places; }
+            set
+            {
+                if (value < 0) { throw new ArgumentOutOfRangeException("places"); }
+                places = value;
+            }
+        }
+
+        public List<CampingSpot> CampingSpots
+        {
+            get { return campingSpots; }
+            set { campingSpots = value; }
+        }
 
         //Constructor
         public Camping(string name, int places)
@@ -22,23 +53,58 @@ namespace EyeCT4Events
         }
 
         //Methods
-        public void AddSpot(CampingSpot spot)
+        public bool AddSpot(CampingSpot spot)
         {
-             
+            foreach (CampingSpot sp in CampingSpots)
+            {
+                if (sp == spot)
+                {
+                    return false;
+                }
+            }
+            campingSpots.Add(spot);
+            return true;
         }
 
-        public void ModifySpot(CampingSpot spot)
+        public bool ModifySpot(CampingSpot oldSpot, CampingSpot newSpot)
         {
-            
+            foreach (CampingSpot sp in campingSpots)
+            {
+                if (sp == oldSpot)
+                {
+                    int index = campingSpots.IndexOf(sp);
+                    if (index != -1)
+                    {
+                        campingSpots[index] = newSpot;
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
-        public void RemoveSpot(CampingSpot spot)
+        public bool RemoveSpot(CampingSpot spot)
         {
-            
+            foreach (CampingSpot sp in campingSpots)
+            {
+                if (sp == spot)
+                {
+                    campingSpots.Remove(sp);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public CampingSpot FindSpot(CampingSpot spot)
         {
+            foreach (CampingSpot sp in campingSpots)
+            {
+                if (sp == spot)
+                {
+                    return sp;
+                }
+            }
             return null;
         }
     }
