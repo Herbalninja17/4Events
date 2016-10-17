@@ -16,10 +16,14 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Kies de geselecteerde locatie.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMapChooseLocation_Click(object sender, EventArgs e)
         {
-
+            //this.Close();
         }
     }
 }

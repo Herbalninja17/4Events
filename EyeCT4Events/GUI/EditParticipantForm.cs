@@ -10,45 +10,43 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events
 {
-    public partial class DeleteEventForm : Form
+    public partial class EditParticipantForm : Form
     {
-        public DeleteEventForm()
+        public EditParticipantForm()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Zoeken naar een event
+        /// Om je accountgegevens te wijzigen.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDeleteEventSearch_Click(object sender, EventArgs e)
+        private void btnEditParticipantEditParticipant_Click(object sender, EventArgs e)
         {
-            DeleteEventForm def = new DeleteEventForm();
-            this.Hide();
-            def.Show();
+
         }
 
         /// <summary>
-        /// Om naar de form te gaan om een event aan te maken.
+        /// Om naar de form te gaan om een account te maken.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCreateEvent_Click(object sender, EventArgs e)
+        private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
-            CreateEventForm cef = new CreateEventForm();
+            CreateParticipantForm cpf = new CreateParticipantForm();
             this.Hide();
-            cef.Show();
+            cpf.Show();
         }
 
         /// <summary>
-        /// Om naar de form te gaan om een event te wijzigen.
+        /// Om naar de form te gaan om je account te verwijderen.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEditEvent_Click(object sender, EventArgs e)
+        private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         /// <summary>

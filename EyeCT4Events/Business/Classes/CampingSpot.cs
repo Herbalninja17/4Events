@@ -18,11 +18,7 @@ namespace EyeCT4Events
         public SpotType SpotType
         {
             get { return spotType; }
-            set
-            {
-                if (value == null) { throw new ArgumentNullException("spotType"); }
-                spotType = value;
-            }
+            set { spotType = value; }
         }
 
         public int SpotID

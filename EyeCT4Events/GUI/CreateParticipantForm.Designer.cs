@@ -31,7 +31,6 @@
             this.btnParticipants = new System.Windows.Forms.Button();
             this.btnDeleteParticipant = new System.Windows.Forms.Button();
             this.btnEditParticipant = new System.Windows.Forms.Button();
-            this.btnCreateParticipant = new System.Windows.Forms.Button();
             this.lblCreateParticipantName = new System.Windows.Forms.Label();
             this.lblCreateParticipantCity = new System.Windows.Forms.Label();
             this.lblCreateParticipantZipCode = new System.Windows.Forms.Label();
@@ -80,16 +79,6 @@
             this.btnEditParticipant.Text = "Edit Participant";
             this.btnEditParticipant.UseVisualStyleBackColor = true;
             this.btnEditParticipant.Click += new System.EventHandler(this.btnEditParticipant_Click);
-            // 
-            // btnCreateParticipant
-            // 
-            this.btnCreateParticipant.Location = new System.Drawing.Point(12, 85);
-            this.btnCreateParticipant.Name = "btnCreateParticipant";
-            this.btnCreateParticipant.Size = new System.Drawing.Size(75, 43);
-            this.btnCreateParticipant.TabIndex = 21;
-            this.btnCreateParticipant.Text = "Create Participant";
-            this.btnCreateParticipant.UseVisualStyleBackColor = true;
-            this.btnCreateParticipant.Click += new System.EventHandler(this.btnCreateParticipant_Click);
             // 
             // lblCreateParticipantName
             // 
@@ -254,7 +243,6 @@
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.btnDeleteParticipant);
             this.Controls.Add(this.btnEditParticipant);
-            this.Controls.Add(this.btnCreateParticipant);
             this.Name = "CreateParticipantForm";
             this.Text = "Create Participant";
             this.ResumeLayout(false);
@@ -267,7 +255,6 @@
         private System.Windows.Forms.Button btnParticipants;
         private System.Windows.Forms.Button btnDeleteParticipant;
         private System.Windows.Forms.Button btnEditParticipant;
-        private System.Windows.Forms.Button btnCreateParticipant;
         private System.Windows.Forms.Label lblCreateParticipantName;
         private System.Windows.Forms.Label lblCreateParticipantCity;
         private System.Windows.Forms.Label lblCreateParticipantZipCode;

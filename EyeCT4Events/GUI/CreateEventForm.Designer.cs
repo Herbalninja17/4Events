@@ -45,7 +45,6 @@
             this.tbCreateEventProvince = new System.Windows.Forms.TextBox();
             this.tbCreateEventCapacity = new System.Windows.Forms.TextBox();
             this.btnCreateEventCreateEvent = new System.Windows.Forms.Button();
-            this.btnCreateEvent = new System.Windows.Forms.Button();
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.btnParticipants = new System.Windows.Forms.Button();
@@ -189,16 +188,6 @@
             this.btnCreateEventCreateEvent.UseVisualStyleBackColor = true;
             this.btnCreateEventCreateEvent.Click += new System.EventHandler(this.btnCreateEventCreateEvent_Click);
             // 
-            // btnCreateEvent
-            // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(12, 84);
-            this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
-            this.btnCreateEvent.TabIndex = 17;
-            this.btnCreateEvent.Text = "Create Event";
-            this.btnCreateEvent.UseVisualStyleBackColor = true;
-            this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
-            // 
             // btnEditEvent
             // 
             this.btnEditEvent.Location = new System.Drawing.Point(12, 139);
@@ -237,7 +226,6 @@
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.btnDeleteEvent);
             this.Controls.Add(this.btnEditEvent);
-            this.Controls.Add(this.btnCreateEvent);
             this.Controls.Add(this.btnCreateEventCreateEvent);
             this.Controls.Add(this.tbCreateEventCapacity);
             this.Controls.Add(this.tbCreateEventProvince);
@@ -281,7 +269,6 @@
         private System.Windows.Forms.TextBox tbCreateEventProvince;
         private System.Windows.Forms.TextBox tbCreateEventCapacity;
         private System.Windows.Forms.Button btnCreateEventCreateEvent;
-        private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.Button btnParticipants;
