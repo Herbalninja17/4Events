@@ -22,7 +22,8 @@ namespace EyeCT4Events
 
         public bool LogInUser(string username, string password)
         {
-            if (//query check of username + password overeenkomen met iemand uit de database)
+            //query check of username + password overeenkomen met iemand uit de database
+            if ()
             {
                 loggedinUser = new Person(username, password);
                 return true;

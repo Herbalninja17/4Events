@@ -21,9 +21,11 @@ namespace EyeCT4Events
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Data.Datacom.TestMethode(15).ToString());
-            if (login.LogInUser(tbLoginUsername.Text, tbLoginPassword.Text)){ }
-}
+            if (login.LogInUser(tbLoginUsername.Text, tbLoginPassword.Text))
+            {
+            }
         }
+
 
         private void btnLoginCreatAccount_Click(object sender, EventArgs e)
         {
@@ -33,3 +35,5 @@ namespace EyeCT4Events
         }
     }
 }
+
+
