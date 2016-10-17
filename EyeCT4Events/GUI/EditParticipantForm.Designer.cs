@@ -1,4 +1,4 @@
-﻿namespace EyeCT4Events.GUI
+﻿namespace EyeCT4Events
 {
     partial class EditParticipantForm
     {
@@ -52,7 +52,7 @@
             // 
             // btnEditParticipantEditParticipant
             // 
-            this.btnEditParticipantEditParticipant.Location = new System.Drawing.Point(463, 302);
+            this.btnEditParticipantEditParticipant.Location = new System.Drawing.Point(463, 305);
             this.btnEditParticipantEditParticipant.Name = "btnEditParticipantEditParticipant";
             this.btnEditParticipantEditParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnEditParticipantEditParticipant.TabIndex = 61;
@@ -62,56 +62,56 @@
             // 
             // tbCreateParticipantPassword
             // 
-            this.tbCreateParticipantPassword.Location = new System.Drawing.Point(338, 276);
+            this.tbCreateParticipantPassword.Location = new System.Drawing.Point(338, 279);
             this.tbCreateParticipantPassword.Name = "tbCreateParticipantPassword";
             this.tbCreateParticipantPassword.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPassword.TabIndex = 60;
             // 
             // tbCreateParticipantUsername
             // 
-            this.tbCreateParticipantUsername.Location = new System.Drawing.Point(338, 240);
+            this.tbCreateParticipantUsername.Location = new System.Drawing.Point(338, 243);
             this.tbCreateParticipantUsername.Name = "tbCreateParticipantUsername";
             this.tbCreateParticipantUsername.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantUsername.TabIndex = 59;
             // 
             // tbCreateParticipantPhoneNumber
             // 
-            this.tbCreateParticipantPhoneNumber.Location = new System.Drawing.Point(338, 159);
+            this.tbCreateParticipantPhoneNumber.Location = new System.Drawing.Point(338, 162);
             this.tbCreateParticipantPhoneNumber.Name = "tbCreateParticipantPhoneNumber";
             this.tbCreateParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPhoneNumber.TabIndex = 58;
             // 
             // tbCreateParticipantEmail
             // 
-            this.tbCreateParticipantEmail.Location = new System.Drawing.Point(338, 125);
+            this.tbCreateParticipantEmail.Location = new System.Drawing.Point(338, 128);
             this.tbCreateParticipantEmail.Name = "tbCreateParticipantEmail";
             this.tbCreateParticipantEmail.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantEmail.TabIndex = 57;
             // 
             // tbCreateParticipantZipCode
             // 
-            this.tbCreateParticipantZipCode.Location = new System.Drawing.Point(338, 89);
+            this.tbCreateParticipantZipCode.Location = new System.Drawing.Point(338, 92);
             this.tbCreateParticipantZipCode.Name = "tbCreateParticipantZipCode";
             this.tbCreateParticipantZipCode.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantZipCode.TabIndex = 56;
             // 
             // tbCreateParticipantCity
             // 
-            this.tbCreateParticipantCity.Location = new System.Drawing.Point(338, 49);
+            this.tbCreateParticipantCity.Location = new System.Drawing.Point(338, 52);
             this.tbCreateParticipantCity.Name = "tbCreateParticipantCity";
             this.tbCreateParticipantCity.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantCity.TabIndex = 55;
             // 
             // tbCreateParticipantName
             // 
-            this.tbCreateParticipantName.Location = new System.Drawing.Point(338, 13);
+            this.tbCreateParticipantName.Location = new System.Drawing.Point(338, 16);
             this.tbCreateParticipantName.Name = "tbCreateParticipantName";
             this.tbCreateParticipantName.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantName.TabIndex = 54;
             // 
             // dtpCreateParticipantDateOfBirth
             // 
-            this.dtpCreateParticipantDateOfBirth.Location = new System.Drawing.Point(338, 199);
+            this.dtpCreateParticipantDateOfBirth.Location = new System.Drawing.Point(338, 202);
             this.dtpCreateParticipantDateOfBirth.Name = "dtpCreateParticipantDateOfBirth";
             this.dtpCreateParticipantDateOfBirth.Size = new System.Drawing.Size(200, 20);
             this.dtpCreateParticipantDateOfBirth.TabIndex = 53;
@@ -119,7 +119,7 @@
             // lblCreateParticipantPassword
             // 
             this.lblCreateParticipantPassword.AutoSize = true;
-            this.lblCreateParticipantPassword.Location = new System.Drawing.Point(238, 279);
+            this.lblCreateParticipantPassword.Location = new System.Drawing.Point(238, 282);
             this.lblCreateParticipantPassword.Name = "lblCreateParticipantPassword";
             this.lblCreateParticipantPassword.Size = new System.Drawing.Size(56, 13);
             this.lblCreateParticipantPassword.TabIndex = 52;
@@ -128,7 +128,7 @@
             // lblCreateParticipantUsername
             // 
             this.lblCreateParticipantUsername.AutoSize = true;
-            this.lblCreateParticipantUsername.Location = new System.Drawing.Point(238, 243);
+            this.lblCreateParticipantUsername.Location = new System.Drawing.Point(238, 246);
             this.lblCreateParticipantUsername.Name = "lblCreateParticipantUsername";
             this.lblCreateParticipantUsername.Size = new System.Drawing.Size(58, 13);
             this.lblCreateParticipantUsername.TabIndex = 51;
@@ -137,7 +137,7 @@
             // lblCreateParticipantDateOfBirth
             // 
             this.lblCreateParticipantDateOfBirth.AutoSize = true;
-            this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(238, 199);
+            this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(238, 202);
             this.lblCreateParticipantDateOfBirth.Name = "lblCreateParticipantDateOfBirth";
             this.lblCreateParticipantDateOfBirth.Size = new System.Drawing.Size(69, 13);
             this.lblCreateParticipantDateOfBirth.TabIndex = 50;
@@ -146,7 +146,7 @@
             // lblCreateParticipantPhoneNumber
             // 
             this.lblCreateParticipantPhoneNumber.AutoSize = true;
-            this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(238, 162);
+            this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(238, 165);
             this.lblCreateParticipantPhoneNumber.Name = "lblCreateParticipantPhoneNumber";
             this.lblCreateParticipantPhoneNumber.Size = new System.Drawing.Size(79, 13);
             this.lblCreateParticipantPhoneNumber.TabIndex = 49;
@@ -155,7 +155,7 @@
             // lblCreateParticipantEmail
             // 
             this.lblCreateParticipantEmail.AutoSize = true;
-            this.lblCreateParticipantEmail.Location = new System.Drawing.Point(238, 128);
+            this.lblCreateParticipantEmail.Location = new System.Drawing.Point(238, 131);
             this.lblCreateParticipantEmail.Name = "lblCreateParticipantEmail";
             this.lblCreateParticipantEmail.Size = new System.Drawing.Size(70, 13);
             this.lblCreateParticipantEmail.TabIndex = 48;
@@ -164,7 +164,7 @@
             // lblCreateParticipantZipCode
             // 
             this.lblCreateParticipantZipCode.AutoSize = true;
-            this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(238, 92);
+            this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(238, 95);
             this.lblCreateParticipantZipCode.Name = "lblCreateParticipantZipCode";
             this.lblCreateParticipantZipCode.Size = new System.Drawing.Size(53, 13);
             this.lblCreateParticipantZipCode.TabIndex = 47;
@@ -173,7 +173,7 @@
             // lblCreateParticipantCity
             // 
             this.lblCreateParticipantCity.AutoSize = true;
-            this.lblCreateParticipantCity.Location = new System.Drawing.Point(240, 52);
+            this.lblCreateParticipantCity.Location = new System.Drawing.Point(240, 55);
             this.lblCreateParticipantCity.Name = "lblCreateParticipantCity";
             this.lblCreateParticipantCity.Size = new System.Drawing.Size(27, 13);
             this.lblCreateParticipantCity.TabIndex = 46;
@@ -182,7 +182,7 @@
             // lblCreateParticipantName
             // 
             this.lblCreateParticipantName.AutoSize = true;
-            this.lblCreateParticipantName.Location = new System.Drawing.Point(240, 16);
+            this.lblCreateParticipantName.Location = new System.Drawing.Point(240, 19);
             this.lblCreateParticipantName.Name = "lblCreateParticipantName";
             this.lblCreateParticipantName.Size = new System.Drawing.Size(38, 13);
             this.lblCreateParticipantName.TabIndex = 45;
@@ -190,7 +190,7 @@
             // 
             // btnParticipants
             // 
-            this.btnParticipants.Location = new System.Drawing.Point(12, 269);
+            this.btnParticipants.Location = new System.Drawing.Point(12, 272);
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 44;
@@ -200,7 +200,7 @@
             // 
             // btnDeleteParticipant
             // 
-            this.btnDeleteParticipant.Location = new System.Drawing.Point(12, 207);
+            this.btnDeleteParticipant.Location = new System.Drawing.Point(12, 210);
             this.btnDeleteParticipant.Name = "btnDeleteParticipant";
             this.btnDeleteParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnDeleteParticipant.TabIndex = 43;
@@ -210,7 +210,7 @@
             // 
             // btnCreateParticipant
             // 
-            this.btnCreateParticipant.Location = new System.Drawing.Point(12, 141);
+            this.btnCreateParticipant.Location = new System.Drawing.Point(12, 144);
             this.btnCreateParticipant.Name = "btnCreateParticipant";
             this.btnCreateParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnCreateParticipant.TabIndex = 42;
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 360);
+            this.ClientSize = new System.Drawing.Size(572, 367);
             this.Controls.Add(this.btnEditParticipantEditParticipant);
             this.Controls.Add(this.tbCreateParticipantPassword);
             this.Controls.Add(this.tbCreateParticipantUsername);

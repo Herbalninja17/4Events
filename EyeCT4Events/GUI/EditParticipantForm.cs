@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EyeCT4Events.GUI
+namespace EyeCT4Events
 {
     public partial class EditParticipantForm : Form
     {
@@ -18,7 +18,17 @@ namespace EyeCT4Events.GUI
         }
 
         /// <summary>
-        /// Om naar de form te gaan om een account aan te maken.
+        /// Om je accountgegevens te wijzigen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditParticipantEditParticipant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Om naar de form te gaan om een account te maken.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -40,7 +50,7 @@ namespace EyeCT4Events.GUI
         }
 
         /// <summary>
-        ///  Laat de algemene participants form zien.
+        /// Om naar de algemene participants form te gaan.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -49,16 +59,6 @@ namespace EyeCT4Events.GUI
             ParticipantsForm pf = new ParticipantsForm();
             this.Hide();
             pf.Show();
-        }
-
-        /// <summary>
-        /// Om je account te wijzigen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEditParticipantEditParticipant_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
