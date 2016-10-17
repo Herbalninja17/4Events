@@ -60,6 +60,12 @@
     <Compile Include="Business\Enums\FileType.cs" />
     <Compile Include="Business\Enums\MaterialType.cs" />
     <Compile Include="Business\Enums\SpotType.cs" />
+    <Compile Include="EditEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEventForm.Designer.cs">
+      <DependentUpon>EditEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EditParticipantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="GUI\UploadForm.Designer.cs">
       <DependentUpon>UploadForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditEventForm.resx">
+      <DependentUpon>EditEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateEventForm.resx">
       <DependentUpon>CreateEventForm.cs</DependentUpon>
     </EmbeddedResource>

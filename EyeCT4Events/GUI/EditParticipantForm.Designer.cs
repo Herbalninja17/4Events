@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.btnEditParticipantEditParticipant = new System.Windows.Forms.Button();
-            this.tbCreateParticipantPassword = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantUsername = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantPhoneNumber = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantEmail = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantZipCode = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantCity = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantName = new System.Windows.Forms.TextBox();
-            this.dtpCreateParticipantDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.lblCreateParticipantPassword = new System.Windows.Forms.Label();
-            this.lblCreateParticipantUsername = new System.Windows.Forms.Label();
-            this.lblCreateParticipantDateOfBirth = new System.Windows.Forms.Label();
-            this.lblCreateParticipantPhoneNumber = new System.Windows.Forms.Label();
-            this.lblCreateParticipantEmail = new System.Windows.Forms.Label();
-            this.lblCreateParticipantZipCode = new System.Windows.Forms.Label();
-            this.lblCreateParticipantCity = new System.Windows.Forms.Label();
-            this.lblCreateParticipantName = new System.Windows.Forms.Label();
+            this.tbEditParticipantPassword = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantUsername = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantPhoneNumber = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantEmail = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantZipCode = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantCity = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantName = new System.Windows.Forms.TextBox();
+            this.dtpEditParticipantDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.lblEditParticipantPassword = new System.Windows.Forms.Label();
+            this.lblEditParticipantUsername = new System.Windows.Forms.Label();
+            this.lblEditParticipantDateOfBirth = new System.Windows.Forms.Label();
+            this.lblEditParticipantPhoneNumber = new System.Windows.Forms.Label();
+            this.lblEditParticipantEmail = new System.Windows.Forms.Label();
+            this.lblEditParticipantZipCode = new System.Windows.Forms.Label();
+            this.lblEditParticipantCity = new System.Windows.Forms.Label();
+            this.lblEditParticipantName = new System.Windows.Forms.Label();
             this.btnParticipants = new System.Windows.Forms.Button();
             this.btnDeleteParticipant = new System.Windows.Forms.Button();
             this.btnCreateParticipant = new System.Windows.Forms.Button();
@@ -60,133 +60,133 @@
             this.btnEditParticipantEditParticipant.UseVisualStyleBackColor = true;
             this.btnEditParticipantEditParticipant.Click += new System.EventHandler(this.btnEditParticipantEditParticipant_Click);
             // 
-            // tbCreateParticipantPassword
+            // tbEditParticipantPassword
             // 
-            this.tbCreateParticipantPassword.Location = new System.Drawing.Point(338, 279);
-            this.tbCreateParticipantPassword.Name = "tbCreateParticipantPassword";
-            this.tbCreateParticipantPassword.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantPassword.TabIndex = 60;
+            this.tbEditParticipantPassword.Location = new System.Drawing.Point(338, 279);
+            this.tbEditParticipantPassword.Name = "tbEditParticipantPassword";
+            this.tbEditParticipantPassword.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantPassword.TabIndex = 60;
             // 
-            // tbCreateParticipantUsername
+            // tbEditParticipantUsername
             // 
-            this.tbCreateParticipantUsername.Location = new System.Drawing.Point(338, 243);
-            this.tbCreateParticipantUsername.Name = "tbCreateParticipantUsername";
-            this.tbCreateParticipantUsername.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantUsername.TabIndex = 59;
+            this.tbEditParticipantUsername.Location = new System.Drawing.Point(338, 243);
+            this.tbEditParticipantUsername.Name = "tbEditParticipantUsername";
+            this.tbEditParticipantUsername.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantUsername.TabIndex = 59;
             // 
-            // tbCreateParticipantPhoneNumber
+            // tbEditParticipantPhoneNumber
             // 
-            this.tbCreateParticipantPhoneNumber.Location = new System.Drawing.Point(338, 162);
-            this.tbCreateParticipantPhoneNumber.Name = "tbCreateParticipantPhoneNumber";
-            this.tbCreateParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantPhoneNumber.TabIndex = 58;
+            this.tbEditParticipantPhoneNumber.Location = new System.Drawing.Point(338, 162);
+            this.tbEditParticipantPhoneNumber.Name = "tbEditParticipantPhoneNumber";
+            this.tbEditParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantPhoneNumber.TabIndex = 58;
             // 
-            // tbCreateParticipantEmail
+            // tbEditParticipantEmail
             // 
-            this.tbCreateParticipantEmail.Location = new System.Drawing.Point(338, 128);
-            this.tbCreateParticipantEmail.Name = "tbCreateParticipantEmail";
-            this.tbCreateParticipantEmail.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantEmail.TabIndex = 57;
+            this.tbEditParticipantEmail.Location = new System.Drawing.Point(338, 128);
+            this.tbEditParticipantEmail.Name = "tbEditParticipantEmail";
+            this.tbEditParticipantEmail.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantEmail.TabIndex = 57;
             // 
-            // tbCreateParticipantZipCode
+            // tbEditParticipantZipCode
             // 
-            this.tbCreateParticipantZipCode.Location = new System.Drawing.Point(338, 92);
-            this.tbCreateParticipantZipCode.Name = "tbCreateParticipantZipCode";
-            this.tbCreateParticipantZipCode.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantZipCode.TabIndex = 56;
+            this.tbEditParticipantZipCode.Location = new System.Drawing.Point(338, 92);
+            this.tbEditParticipantZipCode.Name = "tbEditParticipantZipCode";
+            this.tbEditParticipantZipCode.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantZipCode.TabIndex = 56;
             // 
-            // tbCreateParticipantCity
+            // tbEditParticipantCity
             // 
-            this.tbCreateParticipantCity.Location = new System.Drawing.Point(338, 52);
-            this.tbCreateParticipantCity.Name = "tbCreateParticipantCity";
-            this.tbCreateParticipantCity.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantCity.TabIndex = 55;
+            this.tbEditParticipantCity.Location = new System.Drawing.Point(338, 52);
+            this.tbEditParticipantCity.Name = "tbEditParticipantCity";
+            this.tbEditParticipantCity.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantCity.TabIndex = 55;
             // 
-            // tbCreateParticipantName
+            // tbEditParticipantName
             // 
-            this.tbCreateParticipantName.Location = new System.Drawing.Point(338, 16);
-            this.tbCreateParticipantName.Name = "tbCreateParticipantName";
-            this.tbCreateParticipantName.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantName.TabIndex = 54;
+            this.tbEditParticipantName.Location = new System.Drawing.Point(338, 16);
+            this.tbEditParticipantName.Name = "tbEditParticipantName";
+            this.tbEditParticipantName.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantName.TabIndex = 54;
             // 
-            // dtpCreateParticipantDateOfBirth
+            // dtpEditParticipantDateOfBirth
             // 
-            this.dtpCreateParticipantDateOfBirth.Location = new System.Drawing.Point(338, 202);
-            this.dtpCreateParticipantDateOfBirth.Name = "dtpCreateParticipantDateOfBirth";
-            this.dtpCreateParticipantDateOfBirth.Size = new System.Drawing.Size(200, 20);
-            this.dtpCreateParticipantDateOfBirth.TabIndex = 53;
+            this.dtpEditParticipantDateOfBirth.Location = new System.Drawing.Point(338, 202);
+            this.dtpEditParticipantDateOfBirth.Name = "dtpEditParticipantDateOfBirth";
+            this.dtpEditParticipantDateOfBirth.Size = new System.Drawing.Size(200, 20);
+            this.dtpEditParticipantDateOfBirth.TabIndex = 53;
             // 
-            // lblCreateParticipantPassword
+            // lblEditParticipantPassword
             // 
-            this.lblCreateParticipantPassword.AutoSize = true;
-            this.lblCreateParticipantPassword.Location = new System.Drawing.Point(238, 282);
-            this.lblCreateParticipantPassword.Name = "lblCreateParticipantPassword";
-            this.lblCreateParticipantPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblCreateParticipantPassword.TabIndex = 52;
-            this.lblCreateParticipantPassword.Text = "Password:";
+            this.lblEditParticipantPassword.AutoSize = true;
+            this.lblEditParticipantPassword.Location = new System.Drawing.Point(238, 282);
+            this.lblEditParticipantPassword.Name = "lblEditParticipantPassword";
+            this.lblEditParticipantPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblEditParticipantPassword.TabIndex = 52;
+            this.lblEditParticipantPassword.Text = "Password:";
             // 
-            // lblCreateParticipantUsername
+            // lblEditParticipantUsername
             // 
-            this.lblCreateParticipantUsername.AutoSize = true;
-            this.lblCreateParticipantUsername.Location = new System.Drawing.Point(238, 246);
-            this.lblCreateParticipantUsername.Name = "lblCreateParticipantUsername";
-            this.lblCreateParticipantUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblCreateParticipantUsername.TabIndex = 51;
-            this.lblCreateParticipantUsername.Text = "Username:";
+            this.lblEditParticipantUsername.AutoSize = true;
+            this.lblEditParticipantUsername.Location = new System.Drawing.Point(238, 246);
+            this.lblEditParticipantUsername.Name = "lblEditParticipantUsername";
+            this.lblEditParticipantUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblEditParticipantUsername.TabIndex = 51;
+            this.lblEditParticipantUsername.Text = "Username:";
             // 
-            // lblCreateParticipantDateOfBirth
+            // lblEditParticipantDateOfBirth
             // 
-            this.lblCreateParticipantDateOfBirth.AutoSize = true;
-            this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(238, 202);
-            this.lblCreateParticipantDateOfBirth.Name = "lblCreateParticipantDateOfBirth";
-            this.lblCreateParticipantDateOfBirth.Size = new System.Drawing.Size(69, 13);
-            this.lblCreateParticipantDateOfBirth.TabIndex = 50;
-            this.lblCreateParticipantDateOfBirth.Text = "Date of Birth:";
+            this.lblEditParticipantDateOfBirth.AutoSize = true;
+            this.lblEditParticipantDateOfBirth.Location = new System.Drawing.Point(238, 202);
+            this.lblEditParticipantDateOfBirth.Name = "lblEditParticipantDateOfBirth";
+            this.lblEditParticipantDateOfBirth.Size = new System.Drawing.Size(69, 13);
+            this.lblEditParticipantDateOfBirth.TabIndex = 50;
+            this.lblEditParticipantDateOfBirth.Text = "Date of Birth:";
             // 
-            // lblCreateParticipantPhoneNumber
+            // lblEditParticipantPhoneNumber
             // 
-            this.lblCreateParticipantPhoneNumber.AutoSize = true;
-            this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(238, 165);
-            this.lblCreateParticipantPhoneNumber.Name = "lblCreateParticipantPhoneNumber";
-            this.lblCreateParticipantPhoneNumber.Size = new System.Drawing.Size(79, 13);
-            this.lblCreateParticipantPhoneNumber.TabIndex = 49;
-            this.lblCreateParticipantPhoneNumber.Text = "Phone number:";
+            this.lblEditParticipantPhoneNumber.AutoSize = true;
+            this.lblEditParticipantPhoneNumber.Location = new System.Drawing.Point(238, 165);
+            this.lblEditParticipantPhoneNumber.Name = "lblEditParticipantPhoneNumber";
+            this.lblEditParticipantPhoneNumber.Size = new System.Drawing.Size(79, 13);
+            this.lblEditParticipantPhoneNumber.TabIndex = 49;
+            this.lblEditParticipantPhoneNumber.Text = "Phone number:";
             // 
-            // lblCreateParticipantEmail
+            // lblEditParticipantEmail
             // 
-            this.lblCreateParticipantEmail.AutoSize = true;
-            this.lblCreateParticipantEmail.Location = new System.Drawing.Point(238, 131);
-            this.lblCreateParticipantEmail.Name = "lblCreateParticipantEmail";
-            this.lblCreateParticipantEmail.Size = new System.Drawing.Size(70, 13);
-            this.lblCreateParticipantEmail.TabIndex = 48;
-            this.lblCreateParticipantEmail.Text = "Email Adress:";
+            this.lblEditParticipantEmail.AutoSize = true;
+            this.lblEditParticipantEmail.Location = new System.Drawing.Point(238, 131);
+            this.lblEditParticipantEmail.Name = "lblEditParticipantEmail";
+            this.lblEditParticipantEmail.Size = new System.Drawing.Size(70, 13);
+            this.lblEditParticipantEmail.TabIndex = 48;
+            this.lblEditParticipantEmail.Text = "Email Adress:";
             // 
-            // lblCreateParticipantZipCode
+            // lblEditParticipantZipCode
             // 
-            this.lblCreateParticipantZipCode.AutoSize = true;
-            this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(238, 95);
-            this.lblCreateParticipantZipCode.Name = "lblCreateParticipantZipCode";
-            this.lblCreateParticipantZipCode.Size = new System.Drawing.Size(53, 13);
-            this.lblCreateParticipantZipCode.TabIndex = 47;
-            this.lblCreateParticipantZipCode.Text = "Zip Code:";
+            this.lblEditParticipantZipCode.AutoSize = true;
+            this.lblEditParticipantZipCode.Location = new System.Drawing.Point(238, 95);
+            this.lblEditParticipantZipCode.Name = "lblEditParticipantZipCode";
+            this.lblEditParticipantZipCode.Size = new System.Drawing.Size(53, 13);
+            this.lblEditParticipantZipCode.TabIndex = 47;
+            this.lblEditParticipantZipCode.Text = "Zip Code:";
             // 
-            // lblCreateParticipantCity
+            // lblEditParticipantCity
             // 
-            this.lblCreateParticipantCity.AutoSize = true;
-            this.lblCreateParticipantCity.Location = new System.Drawing.Point(240, 55);
-            this.lblCreateParticipantCity.Name = "lblCreateParticipantCity";
-            this.lblCreateParticipantCity.Size = new System.Drawing.Size(27, 13);
-            this.lblCreateParticipantCity.TabIndex = 46;
-            this.lblCreateParticipantCity.Text = "City:";
+            this.lblEditParticipantCity.AutoSize = true;
+            this.lblEditParticipantCity.Location = new System.Drawing.Point(240, 55);
+            this.lblEditParticipantCity.Name = "lblEditParticipantCity";
+            this.lblEditParticipantCity.Size = new System.Drawing.Size(27, 13);
+            this.lblEditParticipantCity.TabIndex = 46;
+            this.lblEditParticipantCity.Text = "City:";
             // 
-            // lblCreateParticipantName
+            // lblEditParticipantName
             // 
-            this.lblCreateParticipantName.AutoSize = true;
-            this.lblCreateParticipantName.Location = new System.Drawing.Point(240, 19);
-            this.lblCreateParticipantName.Name = "lblCreateParticipantName";
-            this.lblCreateParticipantName.Size = new System.Drawing.Size(38, 13);
-            this.lblCreateParticipantName.TabIndex = 45;
-            this.lblCreateParticipantName.Text = "Name:";
+            this.lblEditParticipantName.AutoSize = true;
+            this.lblEditParticipantName.Location = new System.Drawing.Point(240, 19);
+            this.lblEditParticipantName.Name = "lblEditParticipantName";
+            this.lblEditParticipantName.Size = new System.Drawing.Size(38, 13);
+            this.lblEditParticipantName.TabIndex = 45;
+            this.lblEditParticipantName.Text = "Name:";
             // 
             // btnParticipants
             // 
@@ -224,22 +224,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 367);
             this.Controls.Add(this.btnEditParticipantEditParticipant);
-            this.Controls.Add(this.tbCreateParticipantPassword);
-            this.Controls.Add(this.tbCreateParticipantUsername);
-            this.Controls.Add(this.tbCreateParticipantPhoneNumber);
-            this.Controls.Add(this.tbCreateParticipantEmail);
-            this.Controls.Add(this.tbCreateParticipantZipCode);
-            this.Controls.Add(this.tbCreateParticipantCity);
-            this.Controls.Add(this.tbCreateParticipantName);
-            this.Controls.Add(this.dtpCreateParticipantDateOfBirth);
-            this.Controls.Add(this.lblCreateParticipantPassword);
-            this.Controls.Add(this.lblCreateParticipantUsername);
-            this.Controls.Add(this.lblCreateParticipantDateOfBirth);
-            this.Controls.Add(this.lblCreateParticipantPhoneNumber);
-            this.Controls.Add(this.lblCreateParticipantEmail);
-            this.Controls.Add(this.lblCreateParticipantZipCode);
-            this.Controls.Add(this.lblCreateParticipantCity);
-            this.Controls.Add(this.lblCreateParticipantName);
+            this.Controls.Add(this.tbEditParticipantPassword);
+            this.Controls.Add(this.tbEditParticipantUsername);
+            this.Controls.Add(this.tbEditParticipantPhoneNumber);
+            this.Controls.Add(this.tbEditParticipantEmail);
+            this.Controls.Add(this.tbEditParticipantZipCode);
+            this.Controls.Add(this.tbEditParticipantCity);
+            this.Controls.Add(this.tbEditParticipantName);
+            this.Controls.Add(this.dtpEditParticipantDateOfBirth);
+            this.Controls.Add(this.lblEditParticipantPassword);
+            this.Controls.Add(this.lblEditParticipantUsername);
+            this.Controls.Add(this.lblEditParticipantDateOfBirth);
+            this.Controls.Add(this.lblEditParticipantPhoneNumber);
+            this.Controls.Add(this.lblEditParticipantEmail);
+            this.Controls.Add(this.lblEditParticipantZipCode);
+            this.Controls.Add(this.lblEditParticipantCity);
+            this.Controls.Add(this.lblEditParticipantName);
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.btnDeleteParticipant);
             this.Controls.Add(this.btnCreateParticipant);
@@ -253,22 +253,22 @@
         #endregion
 
         private System.Windows.Forms.Button btnEditParticipantEditParticipant;
-        private System.Windows.Forms.TextBox tbCreateParticipantPassword;
-        private System.Windows.Forms.TextBox tbCreateParticipantUsername;
-        private System.Windows.Forms.TextBox tbCreateParticipantPhoneNumber;
-        private System.Windows.Forms.TextBox tbCreateParticipantEmail;
-        private System.Windows.Forms.TextBox tbCreateParticipantZipCode;
-        private System.Windows.Forms.TextBox tbCreateParticipantCity;
-        private System.Windows.Forms.TextBox tbCreateParticipantName;
-        private System.Windows.Forms.DateTimePicker dtpCreateParticipantDateOfBirth;
-        private System.Windows.Forms.Label lblCreateParticipantPassword;
-        private System.Windows.Forms.Label lblCreateParticipantUsername;
-        private System.Windows.Forms.Label lblCreateParticipantDateOfBirth;
-        private System.Windows.Forms.Label lblCreateParticipantPhoneNumber;
-        private System.Windows.Forms.Label lblCreateParticipantEmail;
-        private System.Windows.Forms.Label lblCreateParticipantZipCode;
-        private System.Windows.Forms.Label lblCreateParticipantCity;
-        private System.Windows.Forms.Label lblCreateParticipantName;
+        private System.Windows.Forms.TextBox tbEditParticipantPassword;
+        private System.Windows.Forms.TextBox tbEditParticipantUsername;
+        private System.Windows.Forms.TextBox tbEditParticipantPhoneNumber;
+        private System.Windows.Forms.TextBox tbEditParticipantEmail;
+        private System.Windows.Forms.TextBox tbEditParticipantZipCode;
+        private System.Windows.Forms.TextBox tbEditParticipantCity;
+        private System.Windows.Forms.TextBox tbEditParticipantName;
+        private System.Windows.Forms.DateTimePicker dtpEditParticipantDateOfBirth;
+        private System.Windows.Forms.Label lblEditParticipantPassword;
+        private System.Windows.Forms.Label lblEditParticipantUsername;
+        private System.Windows.Forms.Label lblEditParticipantDateOfBirth;
+        private System.Windows.Forms.Label lblEditParticipantPhoneNumber;
+        private System.Windows.Forms.Label lblEditParticipantEmail;
+        private System.Windows.Forms.Label lblEditParticipantZipCode;
+        private System.Windows.Forms.Label lblEditParticipantCity;
+        private System.Windows.Forms.Label lblEditParticipantName;
         private System.Windows.Forms.Button btnParticipants;
         private System.Windows.Forms.Button btnDeleteParticipant;
         private System.Windows.Forms.Button btnCreateParticipant;
