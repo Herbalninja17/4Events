@@ -6,16 +6,16 @@ Opzet: flds, props ctor:        Bono.
 
 BUISINESS                                                             COMPLETION
 
-Camping:                        Bono.                                 40%  
-CampingSpot:                    -                                      5%
-Event:                          Timothy.                              60%
-File:                           -                                      5%
-Login:                          Jethro.                               25%
-Maintain:                       Bono.                                 60%
-Material:                       Timothy.                              60%
-Message:                        -                                      5%
-Person:                         -                                      5%
-Reservation:                    Bono.                                 50%
+Camping:                        Bono.                                 40%   
+CampingSpot:                    -                                      5%   
+Event:                          Timothy.                              60%   
+File:                           -                                      5%   
+Login:                          Jethro.                               25%   
+Maintain:                       Bono.                                 60%   
+Material:                       Timothy.                              60%   
+Message:                        -                                      5%   
+Person:                         -                                      5%   
+Reservation:                    Bono.                                 50%   
 
 ENUMS                                                                 COMPLETION
 FileType:                       Bono.                                 100%
