@@ -23,23 +23,23 @@ MaterialType:                   Bono.                                  80%
 SpotType:                       Bono.                                 100%  
 
 DATA                                                                  COMPLETION  
-Datacom:                        Rechard                               80% 
+Datacom:                        Rechard                               80%   
 
 GUI                                                                   COMPLETION  
-Opzet: visuals/ buttons etc:    Jethro.                               60% 
-CreateEventForm:                -                                      5% 
-CreateParticipantForm:          Jetrho.                               50% 
-DeleteEventForm:                -                                      5% 
-EventBeheerForm:                -                                      5% 
-Form1:                          Jethro.                               50% 
-HiredMaterialForm:              -                                      5% 
-LeaseForm:                      -                                      5% 
-MakeReservationForm:            -                                      5% 
-MapForm:                        -                                      5% 
-MyReservationsForm:             -                                      5% 
-ParticipantsForm:               -                                      5% 
-SocialMediaForm:                -                                      5% 
-UploadForm:                     -                                      5% 
+Opzet: visuals/ buttons etc:    Jethro.                               60%   
+CreateEventForm:                -                                      5%   
+CreateParticipantForm:          Jetrho.                               50%   
+DeleteEventForm:                -                                      5%   
+EventBeheerForm:                -                                      5%   
+Form1:                          Jethro.                               50%   
+HiredMaterialForm:              -                                      5%   
+LeaseForm:                      -                                      5%   
+MakeReservationForm:            -                                      5%   
+MapForm:                        -                                      5%   
+MyReservationsForm:             -                                      5%   
+ParticipantsForm:               -                                      5%   
+SocialMediaForm:                -                                      5%   
+UploadForm:                     -                                      5%   
 
 ## Test-Classes getest door
 Opzet references/using:         Timothy.  
