@@ -19,7 +19,8 @@ namespace EyeCT4Events
 
         private void btnReservationsLocation_Click(object sender, EventArgs e)
         {
-
+            MapForm mf = new MapForm();
+            mf.Show();
         }
 
         private void btnReservationsReservations_Click(object sender, EventArgs e)
@@ -40,6 +41,13 @@ namespace EyeCT4Events
         private void btnReservationAddParticipant_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnParticipants_Click(object sender, EventArgs e)
+        {
+            ParticipantsForm pf = new ParticipantsForm();
+            this.Hide();
+            pf.Show();
         }
     }
 }
