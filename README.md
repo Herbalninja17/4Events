@@ -1,7 +1,7 @@
 # 4Events
 
 
-## Classes gebouwd door
+## Classes
 Opzet: flds, props ctor:        Bono.
 
 BUISINESS                                                             COMPLETION
