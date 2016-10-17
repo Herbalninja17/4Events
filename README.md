@@ -4,7 +4,7 @@
 ## Classes
 Opzet: flds, props ctor:        Bono.
 
-#####BUISINESS                                                             COMPLETION
+BUISINESS                                                             COMPLETION
   
 Camping:                        Bono.                                 40%   
 CampingSpot:                    -                                      5%   
@@ -55,3 +55,13 @@ Material_Tests:                 -                                      5%
 Message_Tests:                  -                                      5%   
 Person_Tests:                   -                                      5%   
 Reservation_Tests:              -                                      5%   
+
+
+# 1 hash
+## 2 hash
+### 3 hash
+#### 4 hash
+##### 5 hash
+###### 6 hash
+####### 7 hash
+
