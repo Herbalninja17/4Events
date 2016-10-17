@@ -5,7 +5,9 @@
 Opzet: flds, props ctor:        Bono.
 
 BUISINESS                                                             COMPLETION
-Camping:                        Bono.                                 40%       
+
+Camping:                        Bono.                                 40%  
+
 CampingSpot:                    -                                      5%
 Event:                          Timothy.                              60%
 File:                           -                                      5%
