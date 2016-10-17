@@ -26,7 +26,7 @@ DATA                                                                  COMPLETION
 Datacom:                        Rechard                               80% 
 
 GUI                                                                   COMPLETION  
-Opzet: visuals/ buttons etc:    Jethro.                               60%                    
+Opzet: visuals/ buttons etc:    Jethro.                               60% 
 CreateEventForm:                -                                      5% 
 CreateParticipantForm:          Jetrho.                               50% 
 DeleteEventForm:                -                                      5% 
