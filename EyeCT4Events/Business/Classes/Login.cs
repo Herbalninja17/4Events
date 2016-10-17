@@ -8,6 +8,8 @@ namespace EyeCT4Events
 {
     public class Login
     {
+        public Person loggedinUser;
+
         public Login()
         {
             
@@ -18,9 +20,17 @@ namespace EyeCT4Events
             
         }
 
-        public void LogInUser(Person person)
+        public bool LogInUser(string username, string password)
         {
-            
+            if (//query check of username + password overeenkomen met iemand uit de database)
+            {
+                loggedinUser = new Person(username, password);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
