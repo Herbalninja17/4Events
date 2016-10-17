@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnLease = new System.Windows.Forms.Button();
-            this.btnHired = new System.Windows.Forms.Button();
             this.lbMaterial = new System.Windows.Forms.ListBox();
             this.lbDate = new System.Windows.Forms.ListBox();
             this.btnParticipants = new System.Windows.Forms.Button();
@@ -37,23 +36,13 @@
             // 
             // btnLease
             // 
-            this.btnLease.Location = new System.Drawing.Point(12, 130);
+            this.btnLease.Location = new System.Drawing.Point(12, 68);
             this.btnLease.Name = "btnLease";
             this.btnLease.Size = new System.Drawing.Size(75, 36);
             this.btnLease.TabIndex = 0;
             this.btnLease.Text = "Lease";
             this.btnLease.UseVisualStyleBackColor = true;
             this.btnLease.Click += new System.EventHandler(this.btnLease_Click);
-            // 
-            // btnHired
-            // 
-            this.btnHired.Location = new System.Drawing.Point(12, 70);
-            this.btnHired.Name = "btnHired";
-            this.btnHired.Size = new System.Drawing.Size(75, 36);
-            this.btnHired.TabIndex = 1;
-            this.btnHired.Text = "Hired";
-            this.btnHired.UseVisualStyleBackColor = true;
-            this.btnHired.Click += new System.EventHandler(this.btnHired_Click);
             // 
             // lbMaterial
             // 
@@ -89,7 +78,6 @@
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbMaterial);
-            this.Controls.Add(this.btnHired);
             this.Controls.Add(this.btnLease);
             this.Name = "HiredMaterialForm";
             this.Text = "Hired Material";
@@ -100,7 +88,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnLease;
-        private System.Windows.Forms.Button btnHired;
         private System.Windows.Forms.ListBox lbMaterial;
         private System.Windows.Forms.ListBox lbDate;
         private System.Windows.Forms.Button btnParticipants;

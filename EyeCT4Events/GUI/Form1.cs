@@ -18,6 +18,11 @@ namespace EyeCT4Events
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Inloggen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +38,11 @@ namespace EyeCT4Events
             }
         }
 
-
+        /// <summary>
+        /// Laat de form zien om een nieuw account aan te maken.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoginCreatAccount_Click(object sender, EventArgs e)
         {
             CreateParticipantForm cpf = new CreateParticipantForm();

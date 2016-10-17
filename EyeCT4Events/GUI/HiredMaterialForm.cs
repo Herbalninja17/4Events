@@ -17,16 +17,23 @@ namespace EyeCT4Events
             InitializeComponent();
         }
 
-        private void btnHired_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Om naar de form te gaan om een materiaal te huren.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLease_Click(object sender, EventArgs e)
         {
-
+            LeaseForm lf = new LeaseForm();
+            this.Hide();
+            lf.Show();
         }
 
+        /// <summary>
+        /// Om naar de algemene participants form te gaan.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm pf = new ParticipantsForm();

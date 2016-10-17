@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnParticipants = new System.Windows.Forms.Button();
-            this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
             this.lbDeleteEvent = new System.Windows.Forms.ListBox();
@@ -40,7 +39,7 @@
             // 
             // btnParticipants
             // 
-            this.btnParticipants.Location = new System.Drawing.Point(12, 269);
+            this.btnParticipants.Location = new System.Drawing.Point(12, 268);
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 24;
@@ -48,19 +47,9 @@
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
-            // btnDeleteEvent
-            // 
-            this.btnDeleteEvent.Location = new System.Drawing.Point(12, 207);
-            this.btnDeleteEvent.Name = "btnDeleteEvent";
-            this.btnDeleteEvent.Size = new System.Drawing.Size(75, 43);
-            this.btnDeleteEvent.TabIndex = 23;
-            this.btnDeleteEvent.Text = "Delete Event";
-            this.btnDeleteEvent.UseVisualStyleBackColor = true;
-            this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
-            // 
             // btnEditEvent
             // 
-            this.btnEditEvent.Location = new System.Drawing.Point(12, 141);
+            this.btnEditEvent.Location = new System.Drawing.Point(12, 214);
             this.btnEditEvent.Name = "btnEditEvent";
             this.btnEditEvent.Size = new System.Drawing.Size(75, 43);
             this.btnEditEvent.TabIndex = 22;
@@ -70,7 +59,7 @@
             // 
             // btnCreateEvent
             // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(12, 86);
+            this.btnCreateEvent.Location = new System.Drawing.Point(12, 159);
             this.btnCreateEvent.Name = "btnCreateEvent";
             this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
             this.btnCreateEvent.TabIndex = 21;
@@ -122,7 +111,6 @@
             this.Controls.Add(this.tbDeleteEventName);
             this.Controls.Add(this.lbDeleteEvent);
             this.Controls.Add(this.btnParticipants);
-            this.Controls.Add(this.btnDeleteEvent);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.btnCreateEvent);
             this.Name = "DeleteEventForm";
@@ -135,7 +123,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnParticipants;
-        private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.ListBox lbDeleteEvent;

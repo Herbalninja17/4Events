@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnHired = new System.Windows.Forms.Button();
-            this.btnLease = new System.Windows.Forms.Button();
             this.lbLeaseMaterial = new System.Windows.Forms.ListBox();
             this.lblLeaseSearchMaterial = new System.Windows.Forms.Label();
             this.tbLeaseSearchMaterial = new System.Windows.Forms.TextBox();
@@ -40,28 +39,19 @@
             this.lblLeaseEndDate = new System.Windows.Forms.Label();
             this.lblLeaseQuantity = new System.Windows.Forms.Label();
             this.btnLeaseSearch = new System.Windows.Forms.Button();
+            this.btnLeaseLease = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHired
             // 
-            this.btnHired.Location = new System.Drawing.Point(12, 70);
+            this.btnHired.Location = new System.Drawing.Point(12, 12);
             this.btnHired.Name = "btnHired";
             this.btnHired.Size = new System.Drawing.Size(75, 36);
             this.btnHired.TabIndex = 3;
             this.btnHired.Text = "Hired";
             this.btnHired.UseVisualStyleBackColor = true;
             this.btnHired.Click += new System.EventHandler(this.btnHired_Click);
-            // 
-            // btnLease
-            // 
-            this.btnLease.Location = new System.Drawing.Point(12, 12);
-            this.btnLease.Name = "btnLease";
-            this.btnLease.Size = new System.Drawing.Size(75, 36);
-            this.btnLease.TabIndex = 2;
-            this.btnLease.Text = "Lease";
-            this.btnLease.UseVisualStyleBackColor = true;
-            this.btnLease.Click += new System.EventHandler(this.btnLease_Click);
             // 
             // lbLeaseMaterial
             // 
@@ -145,6 +135,16 @@
             this.btnLeaseSearch.UseVisualStyleBackColor = true;
             this.btnLeaseSearch.Click += new System.EventHandler(this.btnLeaseSearch_Click);
             // 
+            // btnLeaseLease
+            // 
+            this.btnLeaseLease.Location = new System.Drawing.Point(581, 82);
+            this.btnLeaseLease.Name = "btnLeaseLease";
+            this.btnLeaseLease.Size = new System.Drawing.Size(75, 36);
+            this.btnLeaseLease.TabIndex = 2;
+            this.btnLeaseLease.Text = "Lease";
+            this.btnLeaseLease.UseVisualStyleBackColor = true;
+            this.btnLeaseLease.Click += new System.EventHandler(this.btnLeaseLease_Click);
+            // 
             // LeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +161,7 @@
             this.Controls.Add(this.lblLeaseSearchMaterial);
             this.Controls.Add(this.lbLeaseMaterial);
             this.Controls.Add(this.btnHired);
-            this.Controls.Add(this.btnLease);
+            this.Controls.Add(this.btnLeaseLease);
             this.Name = "LeaseForm";
             this.Text = "Lease";
             ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).EndInit();
@@ -173,7 +173,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnHired;
-        private System.Windows.Forms.Button btnLease;
         private System.Windows.Forms.ListBox lbLeaseMaterial;
         private System.Windows.Forms.Label lblLeaseSearchMaterial;
         private System.Windows.Forms.TextBox tbLeaseSearchMaterial;
@@ -184,5 +183,6 @@
         private System.Windows.Forms.Label lblLeaseEndDate;
         private System.Windows.Forms.Label lblLeaseQuantity;
         private System.Windows.Forms.Button btnLeaseSearch;
+        private System.Windows.Forms.Button btnLeaseLease;
     }
 }
