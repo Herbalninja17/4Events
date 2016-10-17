@@ -56,7 +56,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEvent_Click(object sender, EventArgs e)
         {
-            
+            EditEventForm eef = new EditEventForm();
+            this.Hide();
+            eef.Show();
         }
     }
 }

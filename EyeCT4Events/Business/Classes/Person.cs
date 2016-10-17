@@ -40,7 +40,7 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Voor een persoon in te loggen
+        /// Om een persoon in te loggen
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>

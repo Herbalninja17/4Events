@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events
 {
-    public partial class EventBeheerForm : Form
+    public partial class EditEventForm : Form
     {
-        public EventBeheerForm()
+        public EditEventForm()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Om het event te wijzigen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditEventEditEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Zoeken naar een event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditEventSearch_Click(object sender, EventArgs e)
+        {
+
         }
 
         /// <summary>
@@ -27,18 +47,6 @@ namespace EyeCT4Events
             CreateEventForm cef = new CreateEventForm();
             this.Hide();
             cef.Show();
-        }
-
-        /// <summary>
-        /// Om naar de form te gaan om een event te wijzigen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEditEvent_Click(object sender, EventArgs e)
-        {
-            EditEventForm eef = new EditEventForm();
-            this.Hide();
-            eef.Show();
         }
 
         /// <summary>
@@ -63,6 +71,16 @@ namespace EyeCT4Events
             ParticipantsForm pf = new ParticipantsForm();
             this.Hide();
             pf.Show();
+        }
+
+        /// <summary>
+        /// Om een opgezochte event te selecteren om te wijzigen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditEventSelectEvent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
