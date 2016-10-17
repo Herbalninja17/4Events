@@ -7,13 +7,13 @@ Opzet: flds, props ctor:        Bono.
 ####BUISINESS                                                         COMPLETION
   
 Camping:                        Bono.                                 40%   
-CampingSpot:                    -                                      5%   
+CampingSpot:                    Bono                                  60%   
 Event:                          Timothy.                              60%   
 File:                           -                                      5%   
 Login:                          Jethro.                               25%   
 Maintain:                       Bono.                                 60%   
 Material:                       Timothy.                              60%   
-Message:                        -                                      5%   
+Message:                        Timothy                               60%   
 Person:                         -                                      5%   
 Reservation:                    Bono.                                 50%   
 
@@ -47,12 +47,12 @@ Opzet references/using:         Timothy.
 ####BUISINESS_TESTS                                                   COMPLETION  
 Camping_Tests:                  -                                      5%   
 CampingSpot_Tests:              -                                      5%   
-Event_Tests:                    -                                      5%   
+Event_Tests:                    Timothy                               80%   
 File_Tests:                     -                                      5%   
 Login_Tests:                    -                                      5%   
 Maintain_Tests:                 -                                      5%   
-Material_Tests:                 -                                      5%   
-Message_Tests:                  -                                      5%   
+Material_Tests:                 Timothy                               80%   
+Message_Tests:                  Timothy                               80%   
 Person_Tests:                   -                                      5%   
 Reservation_Tests:              -                                      5%   
 
