@@ -37,7 +37,7 @@ namespace EyeCT4Events
             get { return messageID; }
             set
             {
-                if(value < 0) { throw new ArgumentOutOfRangeException("messageID"); }
+                if(value <= 0) { throw new ArgumentOutOfRangeException("messageID"); }
                 messageID = value;
             }
         }
@@ -47,6 +47,7 @@ namespace EyeCT4Events
             get { return previousMessageID; }
             set
             {
+                //Will equal 0 if there was no previous message.
                 if(value < 0) { throw new ArgumentOutOfRangeException("previousMessageID"); }
                 previousMessageID = value;
             }
@@ -84,8 +85,8 @@ namespace EyeCT4Events
         public override string ToString()
         {
             return Poster.Username
-                + " | ID: " + MessageID
-                + " | P-ID: " + previousMessageID
+                + " | " + MessageID
+                + " | " + previousMessageID
                 + " | " + MessageString
                 ;
         }

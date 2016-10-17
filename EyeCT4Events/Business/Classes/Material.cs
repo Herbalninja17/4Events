@@ -27,6 +27,7 @@ namespace EyeCT4Events
                 name = value;
             }
         }
+
         public MaterialType MaterialType { get; set; }
 
         public int Stock
