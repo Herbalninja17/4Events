@@ -28,7 +28,7 @@ Datacom:                        Rechard                               80%
 ####GUI                                                               COMPLETION  
 Opzet: visuals/ buttons etc:    Jethro.                               60%   
 CreateEventForm:                -                                      5%   
-CreateParticipantForm:          Jetrho.                               50%   
+CreateParticipantForm:          Jethro.                               50%   
 DeleteEventForm:                -                                      5%   
 EventBeheerForm:                -                                      5%   
 Form1:                          Jethro.                               50%   
