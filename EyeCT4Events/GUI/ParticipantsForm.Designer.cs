@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnParticipants = new System.Windows.Forms.Button();
+            this.btnEvents = new System.Windows.Forms.Button();
             this.btnDeleteParticipant = new System.Windows.Forms.Button();
             this.btnEditParticipant = new System.Windows.Forms.Button();
             this.btnCreateParticipant = new System.Windows.Forms.Button();
             this.lbParticipantsParticipants = new System.Windows.Forms.ListBox();
+            this.btnMaterial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnParticipants
+            // btnEvents
             // 
-            this.btnParticipants.Location = new System.Drawing.Point(12, 269);
-            this.btnParticipants.Name = "btnParticipants";
-            this.btnParticipants.Size = new System.Drawing.Size(75, 43);
-            this.btnParticipants.TabIndex = 28;
-            this.btnParticipants.Text = "Participants";
-            this.btnParticipants.UseVisualStyleBackColor = true;
-            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
+            this.btnEvents.Location = new System.Drawing.Point(12, 269);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Size = new System.Drawing.Size(75, 43);
+            this.btnEvents.TabIndex = 28;
+            this.btnEvents.Text = "Events";
+            this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
             // 
             // btnDeleteParticipant
             // 
@@ -83,13 +84,24 @@
             this.lbParticipantsParticipants.Size = new System.Drawing.Size(342, 355);
             this.lbParticipantsParticipants.TabIndex = 29;
             // 
+            // btnMaterial
+            // 
+            this.btnMaterial.Location = new System.Drawing.Point(12, 28);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Size = new System.Drawing.Size(75, 43);
+            this.btnMaterial.TabIndex = 30;
+            this.btnMaterial.Text = "Material";
+            this.btnMaterial.UseVisualStyleBackColor = true;
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            // 
             // ParticipantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 382);
+            this.Controls.Add(this.btnMaterial);
             this.Controls.Add(this.lbParticipantsParticipants);
-            this.Controls.Add(this.btnParticipants);
+            this.Controls.Add(this.btnEvents);
             this.Controls.Add(this.btnDeleteParticipant);
             this.Controls.Add(this.btnEditParticipant);
             this.Controls.Add(this.btnCreateParticipant);
@@ -101,10 +113,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnParticipants;
+        private System.Windows.Forms.Button btnEvents;
         private System.Windows.Forms.Button btnDeleteParticipant;
         private System.Windows.Forms.Button btnEditParticipant;
         private System.Windows.Forms.Button btnCreateParticipant;
         private System.Windows.Forms.ListBox lbParticipantsParticipants;
+        private System.Windows.Forms.Button btnMaterial;
     }
 }

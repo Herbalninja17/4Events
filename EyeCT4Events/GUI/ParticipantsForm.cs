@@ -19,12 +19,14 @@ namespace EyeCT4Events
 
         private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
-
+            CreateParticipantForm cpf = new CreateParticipantForm();
+            this.Hide();
+            cpf.Show();
         }
 
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
@@ -32,9 +34,18 @@ namespace EyeCT4Events
 
         }
 
-        private void btnParticipants_Click(object sender, EventArgs e)
+        private void btnEvents_Click(object sender, EventArgs e)
         {
+            MakeReservationForm mrf = new MakeReservationForm();
+            this.Hide();
+            mrf.Show();
+        }
 
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            HiredMaterialForm hmf = new HiredMaterialForm();
+            this.Hide();
+            hmf.Show();
         }
     }
 }

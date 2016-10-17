@@ -40,6 +40,7 @@
             this.dtpReservationBeginDate = new System.Windows.Forms.DateTimePicker();
             this.dtpReservationEndDate = new System.Windows.Forms.DateTimePicker();
             this.tbReservationSearchParticipant = new System.Windows.Forms.TextBox();
+            this.btnParticipants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbReservationEvents
@@ -147,11 +148,22 @@
             this.tbReservationSearchParticipant.Size = new System.Drawing.Size(174, 20);
             this.tbReservationSearchParticipant.TabIndex = 11;
             // 
+            // btnParticipants
+            // 
+            this.btnParticipants.Location = new System.Drawing.Point(619, 12);
+            this.btnParticipants.Name = "btnParticipants";
+            this.btnParticipants.Size = new System.Drawing.Size(75, 35);
+            this.btnParticipants.TabIndex = 12;
+            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.UseVisualStyleBackColor = true;
+            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
+            // 
             // MakeReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 390);
+            this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.tbReservationSearchParticipant);
             this.Controls.Add(this.dtpReservationEndDate);
             this.Controls.Add(this.dtpReservationBeginDate);
@@ -185,5 +197,6 @@
         private System.Windows.Forms.DateTimePicker dtpReservationBeginDate;
         private System.Windows.Forms.DateTimePicker dtpReservationEndDate;
         private System.Windows.Forms.TextBox tbReservationSearchParticipant;
+        private System.Windows.Forms.Button btnParticipants;
     }
 }
