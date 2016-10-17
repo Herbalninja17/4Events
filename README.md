@@ -5,7 +5,7 @@
 Opzet: flds, props ctor:        Bono.
 
 BUISINESS                                                             COMPLETION
-
+  
 Camping:                        Bono.                                 40%   
 CampingSpot:                    -                                      5%   
 Event:                          Timothy.                              60%   
@@ -16,7 +16,7 @@ Material:                       Timothy.                              60%
 Message:                        -                                      5%   
 Person:                         -                                      5%   
 Reservation:                    Bono.                                 50%   
-
+  
 ENUMS                                                                 COMPLETION  
 FileType:                       Bono.                                 100%  
 MaterialType:                   Bono.                                  80%  
@@ -24,7 +24,7 @@ SpotType:                       Bono.                                 100%
 
 DATA                                                                  COMPLETION  
 Datacom:                        Rechard                               80% 
-
+  
 GUI                                                                   COMPLETION  
 Opzet: visuals/ buttons etc:    Jethro.                               60% 
 CreateEventForm:                -                                      5% 
@@ -40,10 +40,10 @@ MyReservationsForm:             -                                      5%
 ParticipantsForm:               -                                      5% 
 SocialMediaForm:                -                                      5% 
 UploadForm:                     -                                      5% 
-
+  
 ## Test-Classes getest door
 Opzet references/using:         Timothy.  
-
+  
 BUISINESS_TESTS                                                       COMPLETION  
 Camping_Tests:                  -                                      5% 
 CampingSpot_Tests:              -                                      5% 
