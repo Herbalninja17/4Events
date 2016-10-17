@@ -46,7 +46,7 @@ namespace EyeCT4Events
 
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text + " " + tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantUsername.Text, tbCreateParticipantEmail.Text);
+            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text + " " + tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantUsername.Text, tbCreateParticipantEmail.Text,tbCreateParticipantPassword.Text);
             login.CreateUser(person);
         }
     }
