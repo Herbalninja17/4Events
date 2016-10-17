@@ -4,7 +4,7 @@
 ## Classes
 Opzet: flds, props ctor:        Bono.
 
-####BUISINESS                                                             COMPLETION
+#####BUISINESS                                                             COMPLETION
   
 Camping:                        Bono.                                 40%   
 CampingSpot:                    -                                      5%   
