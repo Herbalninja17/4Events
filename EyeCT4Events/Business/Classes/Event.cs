@@ -10,7 +10,7 @@ namespace EyeCT4Events
     public class Event
     {
         //fields (Used to check for exceptions in the propperties).
-        private string name; 
+        private string name;
         private string location;
         private DateTime startDate;
         private DateTime endDate;
