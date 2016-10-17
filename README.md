@@ -4,7 +4,7 @@
 ## Classes gebouwd door
 Opzet: flds, props ctor:        Bono.
 
-BUISINESS                                                             COMPLETION
+BUISINESS                                                             COMPLETION    
 
 Camping:                        Bono.                                 40%   
 CampingSpot:                    -                                      5%   
@@ -17,7 +17,7 @@ Message:                        -                                      5%
 Person:                         -                                      5%   
 Reservation:                    Bono.                                 50%   
 
-ENUMS                                                                 COMPLETION
+ENUMS                                                                 COMPLETION    
 FileType:                       Bono.                                 100%
 MaterialType:                   Bono.                                  80%
 SpotType:                       Bono.                                 100%
