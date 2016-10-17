@@ -69,7 +69,6 @@ namespace EyeCT4Events
         }
 
         //Methods
-
         public override string ToString()
         {
             string payedString = "";

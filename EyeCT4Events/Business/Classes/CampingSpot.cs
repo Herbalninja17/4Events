@@ -8,17 +8,61 @@ namespace EyeCT4Events
 {
     public class CampingSpot
     {
-        public SpotType SpotType { get; set; }
-        public int SpotID { get; set; }
-        public int Capacity { get; set; }
-        public bool Reserved { get; set; }
+        //Fields
+        private SpotType spotType;
+        private int spotID;
+        private int capacity;
+        private bool reserved;
 
+        //Properties
+        public SpotType SpotType
+        {
+            get { return spotType; }
+            set
+            {
+                if (value == null) { throw new ArgumentNullException("spotType"); }
+                spotType = value;
+            }
+        }
+
+        public int SpotID
+        {
+            get { return spotID; }
+            set
+            {
+                if (value < 0) { throw new ArgumentOutOfRangeException("spotID"); }
+                spotID = value;
+            }
+        }
+
+        public int Capacity
+        {
+            get { return capacity; }
+            set
+            {
+                if (value < 0) { throw new ArgumentOutOfRangeException("capacity");}
+                capacity = value;
+            }
+        }
+
+        public bool Reserved
+        {
+            get { return reserved; }
+            set { reserved = false; }
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="spotType">The type of the spot</param>
+        /// <param name="spotID">The ID of the spot</param>
+        /// <param name="capacity">The amount of people a spot can hold</param>
         public CampingSpot(SpotType spotType, int spotID, int capacity)
         {
-            SpotType = spotType;
-            SpotID = spotID;
-            Capacity = capacity;
-            Reserved = false;
+            this.spotType = spotType;
+            this.spotID = spotID;
+            this.capacity = capacity;
+            this.reserved = false;
         }
     }
 }

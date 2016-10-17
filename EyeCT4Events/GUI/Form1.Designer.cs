@@ -34,7 +34,7 @@
             this.lblLoginPassword = new System.Windows.Forms.Label();
             this.btnLoginLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLoginCreatAccount = new System.Windows.Forms.Button();
+            this.btnLoginCreateAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbLoginUsername
@@ -88,22 +88,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Don\'t have an account?";
             // 
-            // btnLoginCreatAccount
+            // btnLoginCreateAccount
             // 
-            this.btnLoginCreatAccount.Location = new System.Drawing.Point(140, 196);
-            this.btnLoginCreatAccount.Name = "btnLoginCreatAccount";
-            this.btnLoginCreatAccount.Size = new System.Drawing.Size(75, 49);
-            this.btnLoginCreatAccount.TabIndex = 6;
-            this.btnLoginCreatAccount.Text = "Create new account";
-            this.btnLoginCreatAccount.UseVisualStyleBackColor = true;
-            this.btnLoginCreatAccount.Click += new System.EventHandler(this.btnLoginCreatAccount_Click);
+            this.btnLoginCreateAccount.Location = new System.Drawing.Point(140, 196);
+            this.btnLoginCreateAccount.Name = "btnLoginCreateAccount";
+            this.btnLoginCreateAccount.Size = new System.Drawing.Size(75, 49);
+            this.btnLoginCreateAccount.TabIndex = 6;
+            this.btnLoginCreateAccount.Text = "Create new account";
+            this.btnLoginCreateAccount.UseVisualStyleBackColor = true;
+            this.btnLoginCreateAccount.Click += new System.EventHandler(this.btnLoginCreatAccount_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 252);
-            this.Controls.Add(this.btnLoginCreatAccount);
+            this.Controls.Add(this.btnLoginCreateAccount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoginLogin);
             this.Controls.Add(this.lblLoginPassword);
@@ -125,7 +125,7 @@
         private System.Windows.Forms.Label lblLoginPassword;
         private System.Windows.Forms.Button btnLoginLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLoginCreatAccount;
+        private System.Windows.Forms.Button btnLoginCreateAccount;
     }
 }
 

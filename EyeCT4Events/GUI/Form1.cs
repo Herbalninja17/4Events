@@ -20,9 +20,19 @@ namespace EyeCT4Events
 
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Data.Datacom.TestMethode(15).ToString());
-            login.LogInUser();
+
+            if (login.LogInUser(tbLoginUsername.Text, tbLoginPassword.Text) == true)
+            {
+                ParticipantsForm pf = new ParticipantsForm();
+                this.Hide();
+                pf.Show();
+            }
+            else if(login.LogInUser(tbLoginUsername.Text,tbLoginPassword.Text) == false)
+            {
+                MessageBox.Show("Username or Password incorrect.");
+            }
         }
+
 
         private void btnLoginCreatAccount_Click(object sender, EventArgs e)
         {
@@ -32,3 +42,5 @@ namespace EyeCT4Events
         }
     }
 }
+
+

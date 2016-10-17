@@ -32,11 +32,12 @@
             this.btnHired = new System.Windows.Forms.Button();
             this.lbMaterial = new System.Windows.Forms.ListBox();
             this.lbDate = new System.Windows.Forms.ListBox();
+            this.btnParticipants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLease
             // 
-            this.btnLease.Location = new System.Drawing.Point(12, 12);
+            this.btnLease.Location = new System.Drawing.Point(12, 130);
             this.btnLease.Name = "btnLease";
             this.btnLease.Size = new System.Drawing.Size(75, 36);
             this.btnLease.TabIndex = 0;
@@ -70,11 +71,22 @@
             this.lbDate.Size = new System.Drawing.Size(255, 459);
             this.lbDate.TabIndex = 3;
             // 
+            // btnParticipants
+            // 
+            this.btnParticipants.Location = new System.Drawing.Point(12, 12);
+            this.btnParticipants.Name = "btnParticipants";
+            this.btnParticipants.Size = new System.Drawing.Size(75, 36);
+            this.btnParticipants.TabIndex = 4;
+            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.UseVisualStyleBackColor = true;
+            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
+            // 
             // HiredMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 481);
+            this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbMaterial);
             this.Controls.Add(this.btnHired);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.Button btnHired;
         private System.Windows.Forms.ListBox lbMaterial;
         private System.Windows.Forms.ListBox lbDate;
+        private System.Windows.Forms.Button btnParticipants;
     }
 }
