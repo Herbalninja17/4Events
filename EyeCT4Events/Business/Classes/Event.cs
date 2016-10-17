@@ -75,7 +75,7 @@ namespace EyeCT4Events
             get { return maxVisitors; }
             set
             {
-                if (value < 0) { throw new ArgumentOutOfRangeException("maxVisitors"); }
+                if (value <= 0) { throw new ArgumentOutOfRangeException("maxVisitors"); }
                 maxVisitors = value;
             }
         }
@@ -133,7 +133,7 @@ namespace EyeCT4Events
         }
 
         //Methods
-        public string ToString()
+        public override string ToString()
         {
             return Name
                 + " | " + Location
