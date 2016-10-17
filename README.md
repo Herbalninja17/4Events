@@ -45,13 +45,13 @@ UploadForm:                     -                                      5%
 Opzet references/using:         Timothy.  
 
 BUISINESS_TESTS                                                       COMPLETION  
-Camping_Tests:                  -                                      5% 
-CampingSpot_Tests:              -                                      5% 
-Event_Tests:                    -                                      5% 
-File_Tests:                     -                                      5% 
-Login_Tests:                    -                                      5% 
-Maintain_Tests:                 -                                      5% 
-Material_Tests:                 -                                      5% 
-Message_Tests:                  -                                      5% 
-Person_Tests:                   -                                      5% 
-Reservation_Tests:              -                                      5% 
+Camping_Tests:                  -                                      5%   
+CampingSpot_Tests:              -                                      5%   
+Event_Tests:                    -                                      5%   
+File_Tests:                     -                                      5%   
+Login_Tests:                    -                                      5%   
+Maintain_Tests:                 -                                      5%   
+Material_Tests:                 -                                      5%   
+Message_Tests:                  -                                      5%   
+Person_Tests:                   -                                      5%   
+Reservation_Tests:              -                                      5%   
