@@ -9,24 +9,18 @@ namespace EyeCT4Events
     public class CampingSpot
     {
         //Fields
-        private SpotType spotType;
         private int spotID;
         private int capacity;
-        private bool reserved;
 
         //Properties
-        public SpotType SpotType
-        {
-            get { return spotType; }
-            set { spotType = value; }
-        }
+        public SpotType SpotType { get; set; }
 
         public int SpotID
         {
             get { return spotID; }
             set
             {
-                if (value < 0) { throw new ArgumentOutOfRangeException("spotID"); }
+                if (value < 1) { throw new ArgumentOutOfRangeException("spotID"); }
                 spotID = value;
             }
         }
@@ -36,16 +30,12 @@ namespace EyeCT4Events
             get { return capacity; }
             set
             {
-                if (value < 0) { throw new ArgumentOutOfRangeException("capacity");}
+                if (value < 1) { throw new ArgumentOutOfRangeException("capacity");}
                 capacity = value;
             }
         }
 
-        public bool Reserved
-        {
-            get { return reserved; }
-            set { reserved = false; }
-        }
+        public bool Reserved { get; set; }
 
         /// <summary>
         /// Constructor
@@ -55,10 +45,29 @@ namespace EyeCT4Events
         /// <param name="capacity">The amount of people a spot can hold</param>
         public CampingSpot(SpotType spotType, int spotID, int capacity)
         {
-            this.spotType = spotType;
-            this.spotID = spotID;
-            this.capacity = capacity;
-            this.reserved = false;
+            SpotType = spotType;
+            SpotID = spotID;
+            Capacity = capacity;
+            Reserved = false;
+        }
+
+        public override string ToString()
+        {
+            string reservation = "";
+            if(Reserved)
+            {
+                reservation = "reserved";
+            }
+            else
+            {
+                reservation = "free";
+            }
+
+            return SpotID
+                + " | " + SpotType
+                + " | " + Capacity
+                + " | " + reservation
+                ;
         }
     }
 }

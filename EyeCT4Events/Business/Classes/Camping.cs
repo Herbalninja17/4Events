@@ -44,7 +44,11 @@ namespace EyeCT4Events
             set { campingSpots = value; }
         }
 
-        //Constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">The name of the Camping</param>
+        /// <param name="places">How many spots the camping has</param>
         public Camping(string name, int places)
         {
             Name = name;
@@ -52,7 +56,11 @@ namespace EyeCT4Events
             CampingSpots = new List<CampingSpot>();
         }
 
-        //Methods
+        /// <summary>
+        /// Add a Camping Spot
+        /// </summary>
+        /// <param name="spot">Camping spot that has to be made</param>
+        /// <returns></returns>
         public bool AddSpot(CampingSpot spot)
         {
             foreach (CampingSpot sp in CampingSpots)
@@ -66,6 +74,12 @@ namespace EyeCT4Events
             return true;
         }
 
+        /// <summary>
+        /// Modify a Camping Spot
+        /// </summary>
+        /// <param name="oldSpot">The old spot that has to be modified</param>
+        /// <param name="newSpot">The new spot that has to replace the old spot</param>
+        /// <returns></returns>
         public bool ModifySpot(CampingSpot oldSpot, CampingSpot newSpot)
         {
             foreach (CampingSpot sp in campingSpots)
@@ -83,6 +97,11 @@ namespace EyeCT4Events
             return false;
         }
 
+        /// <summary>
+        /// Remove a Camping Spot
+        /// </summary>
+        /// <param name="spot">The Camping Spot that has to be removed</param>
+        /// <returns></returns>
         public bool RemoveSpot(CampingSpot spot)
         {
             foreach (CampingSpot sp in campingSpots)
@@ -96,6 +115,11 @@ namespace EyeCT4Events
             return false;
         }
 
+        /// <summary>
+        /// Find a Camping Spot
+        /// </summary>
+        /// <param name="spot">The Camping Spot that has to be found</param>
+        /// <returns></returns>
         public CampingSpot FindSpot(CampingSpot spot)
         {
             foreach (CampingSpot sp in campingSpots)
