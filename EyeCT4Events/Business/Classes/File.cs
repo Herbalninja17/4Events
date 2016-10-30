@@ -9,9 +9,7 @@ namespace EyeCT4Events
     public class File
     {
         private string title;
-        private FileType fileType;
         private int fileID;
-        private Person poster;
 
         public string Title
         {
@@ -27,27 +25,19 @@ namespace EyeCT4Events
             }
         }
 
-        public FileType FileType
-        {
-            get { return fileType; }
-            set { fileType = value; }
-        }
+        public FileType FileType { get; set; }
 
         public int FileID
         {
             get { return fileID; }
             set
             {
-                if (value == null) { throw new ArgumentOutOfRangeException("fileID");}
+                if (value < 1) { throw new ArgumentOutOfRangeException("fileID");}
                 fileID = value;
             }
         }
 
-        public Person Poster
-        {
-            get { return poster; }
-            set { poster = value; }
-        }
+        public Person Poster { get; set; }
 
         /// <summary>
         /// Constructor
@@ -62,6 +52,15 @@ namespace EyeCT4Events
             FileType = fileType;
             FileID = fileID;
             Poster = poster;
+        }
+
+        public override string ToString()
+        {
+            return Title
+                + " | " + FileType
+                + " | " + fileID
+                + " | " + Poster.Username
+                ;
         }
     }
 }

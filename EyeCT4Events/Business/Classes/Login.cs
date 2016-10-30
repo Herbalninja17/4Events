@@ -36,10 +36,7 @@ namespace EyeCT4Events
                 loggedinUser = new Person(username, password);
                 return true;
             }
-            else
-            {
                 return false;
-            }
         }
     }
 }

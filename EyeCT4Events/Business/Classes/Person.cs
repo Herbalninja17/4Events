@@ -39,7 +39,7 @@ namespace EyeCT4Events
             set
             {
                 DateTime today = DateTime.Today;
-                if (value <= today) { throw new ArgumentOutOfRangeException("birthDate"); }
+                if (value >= today) { throw new ArgumentOutOfRangeException("birthDate"); }
                 birthDate = value;
             }
         }
@@ -98,7 +98,14 @@ namespace EyeCT4Events
                     if (value == null) { throw new ArgumentNullException("email"); }
                     throw new ArgumentException("email");
                 }
+                if (value.IndexOf("@") == -1) { throw new ArgumentException("email"); }
+                if (value.IndexOf("@") > 1)
+                {
+                    int index = value.IndexOf("@");
+                    if (value.IndexOf(".", index) == -1) { throw new ArgumentException("email"); }
+                }
 
+                email = value;
             }
         }
 
@@ -154,6 +161,19 @@ namespace EyeCT4Events
         {
             Username = username;
             Password = password;
+        }
+
+
+        public override string ToString()
+        {
+           return Name
+                + " | " + birthDate
+                + " | " + Address
+                + " | " + Phonenumber
+                + " | " + Username
+                + " | " + Email
+                + " | " + Password
+                ;
         }
     }
 }
