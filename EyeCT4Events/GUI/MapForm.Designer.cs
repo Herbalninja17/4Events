@@ -35,31 +35,34 @@
             // 
             // btnMapChooseLocation
             // 
-            this.btnMapChooseLocation.Location = new System.Drawing.Point(736, 12);
+            this.btnMapChooseLocation.Location = new System.Drawing.Point(1472, 23);
+            this.btnMapChooseLocation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnMapChooseLocation.Name = "btnMapChooseLocation";
-            this.btnMapChooseLocation.Size = new System.Drawing.Size(118, 41);
+            this.btnMapChooseLocation.Size = new System.Drawing.Size(236, 79);
             this.btnMapChooseLocation.TabIndex = 0;
-            this.btnMapChooseLocation.Text = "Choose Location";
+            this.btnMapChooseLocation.Text = "Kies Locatie";
             this.btnMapChooseLocation.UseVisualStyleBackColor = true;
             this.btnMapChooseLocation.Click += new System.EventHandler(this.btnMapChooseLocation_Click);
             // 
             // pbMap
             // 
-            this.pbMap.Location = new System.Drawing.Point(12, 90);
+            this.pbMap.Location = new System.Drawing.Point(24, 173);
+            this.pbMap.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbMap.Name = "pbMap";
-            this.pbMap.Size = new System.Drawing.Size(842, 381);
+            this.pbMap.Size = new System.Drawing.Size(1684, 733);
             this.pbMap.TabIndex = 1;
             this.pbMap.TabStop = false;
             // 
             // MapForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 483);
+            this.ClientSize = new System.Drawing.Size(1732, 929);
             this.Controls.Add(this.pbMap);
             this.Controls.Add(this.btnMapChooseLocation);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MapForm";
-            this.Text = "Map";
+            this.Text = "Kaart";
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.ResumeLayout(false);
 
