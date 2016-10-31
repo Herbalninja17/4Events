@@ -17,12 +17,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string name = "Batman";
             DateTime birthdate = new DateTime(1984, 3, 11);
             string address = "Wayne Manor";
+            string zipcode = "1111XZ";
             string phoneNumber = "077 - 888 412 12 14 3";
-            string userName = "Not_Bruce_Wayne";
             string email = "Catwomanlover69@wayneenterprices.GC";
             string password = "I_am_Batman69";
+            string accountNumber = "RABO 0 88NL 11223344";
 
-            Person person = new Person(name, birthdate, address, phoneNumber, userName, email, password);
+            Person person = new Person(name, birthdate, address, zipcode, phoneNumber, email, password, accountNumber);
 
             return person;
         }
