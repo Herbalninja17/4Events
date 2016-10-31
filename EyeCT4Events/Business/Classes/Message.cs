@@ -23,9 +23,9 @@ namespace EyeCT4Events
             get { return messageString; }
             set
             {
-                if(String.IsNullOrWhiteSpace(value))
+                if (String.IsNullOrWhiteSpace(value))
                 {
-                    if(value == null) { throw new ArgumentNullException("messageString"); }
+                    if (value == null) { throw new ArgumentNullException("messageString"); }
                     throw new ArgumentException("messageString");
                 }
                 messageString = value;
@@ -37,7 +37,7 @@ namespace EyeCT4Events
             get { return messageID; }
             set
             {
-                if(value <= 0) { throw new ArgumentOutOfRangeException("messageID"); }
+                if (value <= 0) { throw new ArgumentOutOfRangeException("messageID"); }
                 messageID = value;
             }
         }
@@ -48,7 +48,7 @@ namespace EyeCT4Events
             set
             {
                 //Will equal 0 if there was no previous message.
-                if(value < 0) { throw new ArgumentOutOfRangeException("previousMessageID"); }
+                if (value < 0) { throw new ArgumentOutOfRangeException("previousMessageID"); }
                 previousMessageID = value;
             }
         }
@@ -61,7 +61,7 @@ namespace EyeCT4Events
             get { return poster; }
             set
             {
-                if(value == null) { throw new ArgumentNullException("poster"); }
+                if (value == null) { throw new ArgumentNullException("poster"); }
                 poster = value;
             }
         }
@@ -84,7 +84,7 @@ namespace EyeCT4Events
         //methods
         public override string ToString()
         {
-            return Poster.Username
+            return Poster.Email
                 + " | " + MessageID
                 + " | " + previousMessageID
                 + " | " + MessageString
