@@ -123,7 +123,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string testString = file.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Awesome Video Mashup | Video | 8 | Not_Bruce_Wayne");
+            Assert.IsTrue(testString == "Awesome Video Mashup | Video | 8 | Catwomanlover69@wayneenterprices.GC");
         }
     }
 }
