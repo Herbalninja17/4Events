@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
 {
     public partial class LoginForm : Form
     {
         Login login = new Login();
+        RfidForm RFID = new RfidForm();
+
         public LoginForm()
         {
-            InitializeComponent();
+            
+            InitializeComponent();            
         }
 
         /// <summary>
@@ -28,14 +32,26 @@ namespace EyeCT4Events
 
             if (login.LogInUser(tbLoginEmail.Text, tbLoginWachtwoord.Text) == true)
             {
+                //Rechard zijn super sexy werkend code!
+                //if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
+                //{
+                //    MessageBox.Show("Success Bitches, your tag is: " + RFID.tagstring.ToString());
+                //}
+                //^Rechard zijn super sexy werkend code!^
+
                 ParticipantsForm pf = new ParticipantsForm();
-                this.Hide();      
-                pf.Show(); 
+                this.Hide();
+                pf.Show();
             }
             else if(login.LogInUser(tbLoginEmail.Text,tbLoginWachtwoord.Text) == false)
             {
                 MessageBox.Show("Email or Password is incorrect.");
             }
+            
+                
+
+
+            
         }
 
         /// <summary>

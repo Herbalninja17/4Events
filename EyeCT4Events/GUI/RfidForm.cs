@@ -1,37 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Phidgets;
 using Phidgets.Events;
-using System.Windows.Forms;
 
-namespace EyeCT4Events.Business.Classes
+namespace EyeCT4Events.GUI
 {
-    class RFIDclass
+    public partial class RfidForm : Form
     {
+        public RfidForm()
+        {
+            InitializeComponent();
+        }
+
         RFID rfid;
         public bool connected = false;
-        public string tagstring;
+        public string tagstring = "NULL";
 
-        private void RFID_Load(object sender, EventArgs e)
-        {
+        private void RFIDclass_Load(object sender, EventArgs e)
+        {         
             rfid = new RFID();
             openCmdLine(rfid);
             rfid.Tag += new TagEventHandler(rfid_Tag);
             rfid.Attach += new AttachEventHandler(rfid_Attach);
             rfid.TagLost += new TagEventHandler(rfid_TagLost);
-            rfid.Detach += new DetachEventHandler(rfid_Detach);
+            rfid.Detach += new DetachEventHandler(rfid_Detach);            
         }
 
         void rfid_Tag(object sender, TagEventArgs e)
         {
+            label1.Text = e.Tag;
             tagstring = e.Tag;
             connected = true;
         }
         void rfid_TagLost(object sender, TagEventArgs e)
         {
+            label1.Text = "NULL";
             tagstring = "NULL";
             connected = false;
         }
@@ -128,6 +138,29 @@ namespace EyeCT4Events.Business.Classes
             MessageBox.Show(sb.ToString(), "Argument Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void antennaChk_CheckedChanged(object sender, EventArgs e)
+        {
+            rfid.Antenna = antennaChk.Checked;
+        }
+
+        private void ledChk_CheckedChanged(object sender, EventArgs e)
+        {
+            rfid.LED = ledChk.Checked;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (tagstring != "NULL")
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }
