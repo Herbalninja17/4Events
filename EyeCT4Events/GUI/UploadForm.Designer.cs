@@ -37,29 +37,32 @@
             // 
             // btnSocialMediaNewsFeed
             // 
-            this.btnSocialMediaNewsFeed.Location = new System.Drawing.Point(12, 12);
+            this.btnSocialMediaNewsFeed.Location = new System.Drawing.Point(24, 23);
+            this.btnSocialMediaNewsFeed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSocialMediaNewsFeed.Name = "btnSocialMediaNewsFeed";
-            this.btnSocialMediaNewsFeed.Size = new System.Drawing.Size(75, 39);
+            this.btnSocialMediaNewsFeed.Size = new System.Drawing.Size(150, 75);
             this.btnSocialMediaNewsFeed.TabIndex = 2;
-            this.btnSocialMediaNewsFeed.Text = "News Feed";
+            this.btnSocialMediaNewsFeed.Text = "Tijdlijn";
             this.btnSocialMediaNewsFeed.UseVisualStyleBackColor = true;
             this.btnSocialMediaNewsFeed.Click += new System.EventHandler(this.btnSocialMediaNewsFeed_Click);
             // 
             // btnUploadChooseFile
             // 
-            this.btnUploadChooseFile.Location = new System.Drawing.Point(303, 50);
+            this.btnUploadChooseFile.Location = new System.Drawing.Point(606, 96);
+            this.btnUploadChooseFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUploadChooseFile.Name = "btnUploadChooseFile";
-            this.btnUploadChooseFile.Size = new System.Drawing.Size(100, 38);
+            this.btnUploadChooseFile.Size = new System.Drawing.Size(200, 73);
             this.btnUploadChooseFile.TabIndex = 4;
-            this.btnUploadChooseFile.Text = "Choose File";
+            this.btnUploadChooseFile.Text = "Kies Bestand";
             this.btnUploadChooseFile.UseVisualStyleBackColor = true;
             this.btnUploadChooseFile.Click += new System.EventHandler(this.btnUploadChooseFile_Click);
             // 
             // btnUploadUpload
             // 
-            this.btnUploadUpload.Location = new System.Drawing.Point(303, 103);
+            this.btnUploadUpload.Location = new System.Drawing.Point(606, 198);
+            this.btnUploadUpload.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUploadUpload.Name = "btnUploadUpload";
-            this.btnUploadUpload.Size = new System.Drawing.Size(100, 38);
+            this.btnUploadUpload.Size = new System.Drawing.Size(200, 73);
             this.btnUploadUpload.TabIndex = 5;
             this.btnUploadUpload.Text = "Upload";
             this.btnUploadUpload.UseVisualStyleBackColor = true;
@@ -67,30 +70,33 @@
             // 
             // tbUploadCaption
             // 
-            this.tbUploadCaption.Location = new System.Drawing.Point(243, 12);
+            this.tbUploadCaption.Location = new System.Drawing.Point(486, 23);
+            this.tbUploadCaption.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbUploadCaption.Name = "tbUploadCaption";
-            this.tbUploadCaption.Size = new System.Drawing.Size(160, 20);
+            this.tbUploadCaption.Size = new System.Drawing.Size(316, 31);
             this.tbUploadCaption.TabIndex = 6;
             // 
             // lblUploadCaption
             // 
             this.lblUploadCaption.AutoSize = true;
-            this.lblUploadCaption.Location = new System.Drawing.Point(174, 15);
+            this.lblUploadCaption.Location = new System.Drawing.Point(339, 26);
+            this.lblUploadCaption.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUploadCaption.Name = "lblUploadCaption";
-            this.lblUploadCaption.Size = new System.Drawing.Size(46, 13);
+            this.lblUploadCaption.Size = new System.Drawing.Size(135, 25);
             this.lblUploadCaption.TabIndex = 7;
-            this.lblUploadCaption.Text = "Caption:";
+            this.lblUploadCaption.Text = "Beschrijving:";
             // 
             // UploadForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 164);
+            this.ClientSize = new System.Drawing.Size(960, 315);
             this.Controls.Add(this.lblUploadCaption);
             this.Controls.Add(this.tbUploadCaption);
             this.Controls.Add(this.btnUploadUpload);
             this.Controls.Add(this.btnUploadChooseFile);
             this.Controls.Add(this.btnSocialMediaNewsFeed);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UploadForm";
             this.Text = "Upload";
             this.ResumeLayout(false);

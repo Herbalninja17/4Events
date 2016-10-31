@@ -35,7 +35,7 @@ namespace EyeCT4Events
         private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
             CreateParticipantForm cpf = new CreateParticipantForm();
-            this.Hide();
+            this.Close();
             cpf.Show();
         }
 
@@ -57,7 +57,7 @@ namespace EyeCT4Events
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm pf = new ParticipantsForm();
-            this.Hide();
+            this.Close();
             pf.Show();
         }
     }

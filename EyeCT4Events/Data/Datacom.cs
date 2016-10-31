@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace EyeCT4Events.Data
 {
-    static class Datacom
+    public static class Datacom
     {
         public static SqlConnection connect { get; set; }
 

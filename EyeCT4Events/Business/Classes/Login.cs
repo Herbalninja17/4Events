@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EyeCT4Events.Data;
+using System.Data.SqlClient;
 
 
 namespace EyeCT4Events
@@ -10,6 +12,8 @@ namespace EyeCT4Events
     public class Login
     {
         public Person loggedinUser;
+        private string email;
+        private string password;
 
         public Login()
         {
@@ -24,19 +28,43 @@ namespace EyeCT4Events
             
         }
         /// <summary>
-        /// Log een account in.
+        /// Check of de ingevulde gegevens overeenkomen met een account.
+        /// Log dat account in.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool LogInUser(string username, string password)
+        public bool LogInUser(string email, string password)
         {
             //query check of username + password overeenkomen met iemand uit de database
-            if ("" == "")
+            //Datacom.OpenConnection();
+            ////Haal email op.
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.CommandText = "SELECT email FROM account WHERE email like '" + email +"';";
+            //SqlDataReader reader = cmd.ExecuteReader();
+            //while(reader.Read())
+            //{
+            //    this.email = Convert.ToString(reader["username"]);
+            //}
+            ////Haal wachtwoord op.
+            //SqlCommand cmd2 = new SqlCommand();
+            //cmd.CommandText = "SELECT wachtwoord FROM account WHERE wachtwoord like '" + password + "';";
+            //SqlDataReader reader2 = cmd.ExecuteReader();
+            //while (reader2.Read())
+            //{
+            //    this.password = Convert.ToString(reader["wachtwoord"]);
+            //}
+
+            if("" == "")
             {
-                loggedinUser = new Person(username, password);
                 return true;
             }
+
+            //if (email == this.email && password == this.password)
+            //{
+            //    loggedinUser = new Person(this.email, this.password);
+            //    return true;
+            //}
                 return false;
         }        
     }
