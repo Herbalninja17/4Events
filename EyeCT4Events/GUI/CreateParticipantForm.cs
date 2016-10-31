@@ -30,7 +30,7 @@ namespace EyeCT4Events
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
             EditParticipantForm epf = new EditParticipantForm();
-            this.Hide();
+            this.Close();
             epf.Show();
         }
 
@@ -52,7 +52,7 @@ namespace EyeCT4Events
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm participantsform = new ParticipantsForm();
-            this.Hide();
+            this.Close();
             participantsform.Show();
         }
 

@@ -25,7 +25,7 @@ namespace EyeCT4Events
         private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
             CreateParticipantForm cpf = new CreateParticipantForm();
-            this.Hide();
+            this.Close();
             cpf.Show();
         }
 
@@ -57,7 +57,7 @@ namespace EyeCT4Events
         private void btnEvents_Click(object sender, EventArgs e)
         {
             MakeReservationForm mrf = new MakeReservationForm();
-            this.Hide();
+            this.Close();
             mrf.Show();
         }
 
@@ -69,7 +69,7 @@ namespace EyeCT4Events
         private void btnMaterial_Click(object sender, EventArgs e)
         {
             HiredMaterialForm hmf = new HiredMaterialForm();
-            this.Hide();
+            this.Close();
             hmf.Show();
         }
     }

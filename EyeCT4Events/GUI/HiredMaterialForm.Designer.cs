@@ -40,7 +40,7 @@
             this.btnLease.Name = "btnLease";
             this.btnLease.Size = new System.Drawing.Size(75, 36);
             this.btnLease.TabIndex = 0;
-            this.btnLease.Text = "Lease";
+            this.btnLease.Text = "Verhuur";
             this.btnLease.UseVisualStyleBackColor = true;
             this.btnLease.Click += new System.EventHandler(this.btnLease_Click);
             // 
@@ -66,7 +66,7 @@
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 36);
             this.btnParticipants.TabIndex = 4;
-            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.Text = "Deelnemers";
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 

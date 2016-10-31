@@ -35,7 +35,7 @@ namespace EyeCT4Events
         private void btnHired_Click(object sender, EventArgs e)
         {
             HiredMaterialForm hmf = new HiredMaterialForm();
-            this.Hide();
+            this.Close();
             hmf.Show();
         }
         /// <summary>
