@@ -17,11 +17,11 @@ namespace EyeCT4Events
             InitializeComponent();
         }
 
-        private void btnSocialMediaNewsFeed_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Om naar de form te gaan om media te uploaden.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSocialMediaUpload_Click(object sender, EventArgs e)
         {
 

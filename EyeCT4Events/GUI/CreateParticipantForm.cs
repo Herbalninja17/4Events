@@ -22,21 +22,33 @@ namespace EyeCT4Events
             
         }
 
-        private void btnCreateParticipant_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Om naar de form te gaan om je account te wijzigen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
-
+            EditParticipantForm epf = new EditParticipantForm();
+            this.Hide();
+            epf.Show();
         }
 
+        /// <summary>
+        /// Om naar de form te gaan om je account te verwijderen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
             
         }
 
+        /// <summary>
+        /// Laat de algemene participants form zien.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm participantsform = new ParticipantsForm();
@@ -44,6 +56,11 @@ namespace EyeCT4Events
             participantsform.Show();
         }
 
+        /// <summary>
+        /// Maak een nieuw account aan.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
             person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text + " " + tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantUsername.Text, tbCreateParticipantEmail.Text,tbCreateParticipantPassword.Text);

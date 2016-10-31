@@ -28,23 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSocialMediaUpload = new System.Windows.Forms.Button();
             this.btnSocialMediaNewsFeed = new System.Windows.Forms.Button();
             this.btnUploadChooseFile = new System.Windows.Forms.Button();
             this.btnUploadUpload = new System.Windows.Forms.Button();
             this.tbUploadCaption = new System.Windows.Forms.TextBox();
             this.lblUploadCaption = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnSocialMediaUpload
-            // 
-            this.btnSocialMediaUpload.Location = new System.Drawing.Point(12, 71);
-            this.btnSocialMediaUpload.Name = "btnSocialMediaUpload";
-            this.btnSocialMediaUpload.Size = new System.Drawing.Size(75, 39);
-            this.btnSocialMediaUpload.TabIndex = 3;
-            this.btnSocialMediaUpload.Text = "Upload";
-            this.btnSocialMediaUpload.UseVisualStyleBackColor = true;
-            this.btnSocialMediaUpload.Click += new System.EventHandler(this.btnSocialMediaUpload_Click);
             // 
             // btnSocialMediaNewsFeed
             // 
@@ -101,7 +90,6 @@
             this.Controls.Add(this.tbUploadCaption);
             this.Controls.Add(this.btnUploadUpload);
             this.Controls.Add(this.btnUploadChooseFile);
-            this.Controls.Add(this.btnSocialMediaUpload);
             this.Controls.Add(this.btnSocialMediaNewsFeed);
             this.Name = "UploadForm";
             this.Text = "Upload";
@@ -111,8 +99,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSocialMediaUpload;
         private System.Windows.Forms.Button btnSocialMediaNewsFeed;
         private System.Windows.Forms.Button btnUploadChooseFile;
         private System.Windows.Forms.Button btnUploadUpload;
