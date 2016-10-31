@@ -32,7 +32,7 @@ namespace EyeCT4Events
             get { return fileID; }
             set
             {
-                if (value < 1) { throw new ArgumentOutOfRangeException("fileID");}
+                if (value < 1) { throw new ArgumentOutOfRangeException("fileID"); }
                 fileID = value;
             }
         }
