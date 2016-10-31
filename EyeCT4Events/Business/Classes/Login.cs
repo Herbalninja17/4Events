@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EyeCT4Events
 {
     public class Login
@@ -37,6 +38,6 @@ namespace EyeCT4Events
                 return true;
             }
                 return false;
-        }
+        }        
     }
 }
