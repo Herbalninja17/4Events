@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EyeCT4Events;
 
@@ -100,6 +102,8 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         public void Material_ToString()
         {
             //Arrange
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("nl-NL"); //In sommige systemen komt de prijs met een punt i.p.v een komma
+                                                                            //Dit zorgt er voor dat deze altijd met een komma komt.
             string name = "Micro-USB";
             MaterialType materialType = MaterialType.USB;
             int stock = 10;
@@ -112,7 +116,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string materialTypeString = materialType.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Micro-USB | " + materialTypeString + " | 10 | 2.75 | Is betaald.");
+            Assert.IsTrue(testString == "Micro-USB | " + materialTypeString + " | 10 | 2,75 | Is betaald.");
         }
     }
 }

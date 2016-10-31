@@ -12,10 +12,11 @@ namespace EyeCT4Events
         private string name;
         private DateTime birthDate;
         private string address;
+        private string zipcode;
         private string phonenumber;
-        private string username;
         private string email;
         private string password;
+        private string accountnumber;
         private List<Reservation> reservations;
 
         //Persoonklasse
@@ -57,6 +58,19 @@ namespace EyeCT4Events
                 address = value;
             }
         }
+        public string ZipCode
+        {
+            get { return zipcode; }
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    if (value == null) { throw new ArgumentNullException("zipcode"); }
+                    throw new ArgumentException("zipcode");
+                }
+                zipcode = value;
+            }
+        }
 
         public string Phonenumber
         {
@@ -71,20 +85,6 @@ namespace EyeCT4Events
 
                 if (!value.StartsWith("0")) { throw new ArgumentException("phonenumber"); }
                 phonenumber = value;
-            }
-        }
-
-        public string Username
-        {
-            get { return username; }
-            set
-            {
-                if (String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == null) { throw new ArgumentNullException("username"); }
-                    throw new ArgumentException("username");
-                }
-                username = value;
             }
         }
 
@@ -123,6 +123,20 @@ namespace EyeCT4Events
                 password = value;
             }
         }
+        public string AccountNumber
+        {
+            get { return accountnumber; }
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    if (value == null) { throw new ArgumentNullException("accountnumber"); }
+                    throw new ArgumentException("accountnumber");
+                }
+
+                accountnumber = value;
+            }
+        }
 
         public List<Reservation> Reservations
         {
@@ -137,29 +151,30 @@ namespace EyeCT4Events
         /// <param name="birthDate">The Date of Birth of the person</param>
         /// <param name="address">The address of the person</param>
         /// <param name="phonenumber">The Phonenumber of the person</param>
-        /// <param name="username">The Username of the person</param>
         /// <param name="email">The Email of the person</param>
         /// <param name="password">The Password of the person</param>
-        public Person(string name, DateTime birthDate, string address, string phonenumber, string username, string email,string password)
+        /// <param name="accountnumber">The Accountnumber of the person</param>
+        public Person(string name, DateTime birthDate, string address,string zipcode, string phonenumber, string email,string password,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
             Address = address;
+            ZipCode = zipcode;
             Phonenumber = phonenumber;
-            Username = username;
             Email = email;
             Password = password;
+            AccountNumber = accountnumber;
             Reservations = new List<Reservation>();
         }
 
         /// <summary>
         /// Om een persoon in te loggen
         /// </summary>
-        /// <param name="username">Username of the person</param>
+        /// <param name="email">Username of the person</param>
         /// <param name="password">Password of the person</param>
-        public Person(string username,string password)
+        public Person(string email,string password)
         {
-            Username = username;
+            Email = email;
             Password = password;
         }
 
@@ -169,8 +184,8 @@ namespace EyeCT4Events
            return Name
                 + " | " + birthDate
                 + " | " + Address
+                + " | " + ZipCode
                 + " | " + Phonenumber
-                + " | " + Username
                 + " | " + Email
                 + " | " + Password
                 ;

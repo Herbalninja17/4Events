@@ -99,7 +99,5 @@ C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\Ey
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EditParticipantForm.resources
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EditEventForm.resources
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EditParticipantForm.resources
-C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\bin\Debug\Phidget21.NET.dll
-C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.EditEventForm.resources
-C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.EditParticipantForm.resources
-C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.HomeForm.resources
+C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.HomeForm.resources

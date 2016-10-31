@@ -16,12 +16,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -35,12 +36,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -54,12 +56,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = DateTime.Now.AddDays(1);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -73,12 +76,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = DateTime.Now;
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -92,12 +96,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = null;
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -111,12 +116,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -130,12 +136,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = null;
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -149,50 +156,93 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "                ";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Person_UsernameMayNotBeNull()
+        public void Person_ZipCodeMayNotBeNull()
         {
             //Arrange
             string name = "Erik Molls";
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = null;
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = null;
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void Person_UsernameMayNotBeSpaces()
+        public void Person_ZipCodeMayNotBeSpaces()
         {
             //Arrange
             string name = "Erik Molls";
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
+
+            //Assert is handled by the ExpectedException
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Person_accountNumbereMayNotBeNull()
+        {
+            //Arrange
+            string name = "Erik Molls";
+            DateTime date = new DateTime(1956, 12, 5);
+            string address = "Jongstraat 12";
+            string phone = "0644543312";
+            string email = "banana@applepen.nl";
+            string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = null;
+
+            //Act
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
+
+            //Assert is handled by the ExpectedException
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Person_AccountNumberMayNotBeSpaces()
+        {
+            //Arrange
+            string name = "Erik Molls";
+            DateTime date = new DateTime(1956, 12, 5);
+            string address = "Jongstraat 12";
+            string phone = "0644543312";
+            string email = "banana@applepen.nl";
+            string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "  ";
+
+            //Act
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -206,12 +256,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = null;
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -225,12 +276,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "       ";
             string pasw = "Koekiemonster1";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -244,12 +296,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "bananaapplepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -263,12 +316,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepennl";
             string pasw = "Koekiemonster1";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -282,12 +336,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "ban.ana@applepennl";
             string pasw = "Koekiemonster1";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -301,12 +356,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = null;
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -320,12 +376,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "    ";
+            string zipcode = "";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
         }
@@ -338,20 +395,22 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
             Assert.IsTrue(p1.Name == "Erik Molls");
             Assert.IsTrue(p1.BirthDate == new DateTime(1956, 12, 5));
             Assert.IsTrue(p1.Address == "Jongstraat 12");
             Assert.IsTrue(p1.Phonenumber == "0644543312");
-            Assert.IsTrue(p1.Username == "Molsie12");
+            Assert.IsTrue(p1.ZipCode == "1111ZX");
             Assert.IsTrue(p1.Email == "banana@applepen.nl");
+            Assert.IsTrue(p1.AccountNumber == "RABO 0 NL88 11223344");
             Assert.IsTrue(p1.Password == "Koekiemonster1");
         }
 
@@ -363,17 +422,18 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Act
-            Person p2 = new Person(p1.Username, p1.Password);
+            Person p2 = new Person(p1.Email, p1.Password);
 
             //Assert is handled by the ExpectedException
-            Assert.IsTrue(p2.Username == "Molsie12");
+            Assert.IsTrue(p2.Email == "banana@applepen.nl");
             Assert.IsTrue(p2.Password == "Koekiemonster1");
         }
 
@@ -385,15 +445,16 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime date = new DateTime(1956, 12, 5);
             string address = "Jongstraat 12";
             string phone = "0644543312";
-            string usename = "Molsie12";
             string email = "banana@applepen.nl";
             string pasw = "Koekiemonster1";
+            string zipcode = "1111ZX";
+            string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
-            Person p1 = new Person(name, date, address, phone, usename, email, pasw);
+            Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
-            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date + " | Jongstraat 12 | 0644543312 | Molsie12 | banana@applepen.nl | Koekiemonster1");
+            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date + " | Jongstraat 12 | 1111ZX | 0644543312 | banana@applepen.nl | Koekiemonster1");
         }
     }
 }
