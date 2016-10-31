@@ -258,7 +258,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string phone = "0644543312";
             string email = null;
             string pasw = "Koekiemonster1";
-            string zipcode = "";
+            string zipcode = "1111ZX";
             string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
@@ -358,7 +358,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string phone = "0644543312";
             string email = "banana@applepen.nl";
             string pasw = null;
-            string zipcode = "";
+            string zipcode = "1111ZX";
             string accountNumber = "RABO 0 NL88 11223344";
 
             //Act
@@ -433,7 +433,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             Person p2 = new Person(p1.Email, p1.Password);
 
             //Assert is handled by the ExpectedException
-            Assert.IsTrue(p2.ZipCode == "1111ZX");
+            Assert.IsTrue(p2.Email == "banana@applepen.nl");
             Assert.IsTrue(p2.Password == "Koekiemonster1");
         }
 
@@ -454,7 +454,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             Person p1 = new Person(name, date, address, zipcode, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
-            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date + " | Jongstraat 12 | 1111ZX | 0644543312 | Molsie12 | banana@applepen.nl | Koekiemonster1 | RABO 0 NL88 11223344");
+            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date + " | Jongstraat 12 | 1111ZX | 0644543312 | banana@applepen.nl | Koekiemonster1");
         }
     }
 }
