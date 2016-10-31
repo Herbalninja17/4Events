@@ -104,7 +104,7 @@ namespace EyeCT4Events
             {
                 if (p == person)
                 {
-                    persons.Remove(p);
+                    Persons.Remove(p);
                     return true;
                 }
             }
