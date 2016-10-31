@@ -24,7 +24,12 @@ namespace EyeCT4Events
         /// <param name="person"></param>
         public void CreateUser(Person person)
         {
-            
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoonnummer,adres,rekeningnummer,geboortedatum,beheerder) VALUES (" + person.Email +", "+ person.Password + ", " + person.Name + ", " + person.Phonenumber + ", " + person.Address + ", " + person.BirthDate +");";
+
+            cmd.ExecuteNonQuery();
+            Datacom.CloseConnection();
         }
         /// <summary>
         /// Check of de ingevulde gegevens overeenkomen met een account.
@@ -40,6 +45,7 @@ namespace EyeCT4Events
             ////Haal email op.
             //SqlCommand cmd = new SqlCommand();
             //cmd.CommandText = "SELECT email FROM account WHERE email like '" + email +"';";
+            //cmd.ExecuteNonQuery;
             //SqlDataReader reader = cmd.ExecuteReader();
             //while(reader.Read())
             //{
@@ -48,12 +54,13 @@ namespace EyeCT4Events
             ////Haal wachtwoord op.
             //SqlCommand cmd2 = new SqlCommand();
             //cmd.CommandText = "SELECT wachtwoord FROM account WHERE wachtwoord like '" + password + "';";
+            //xmd.ExecuteNonQuery();
             //SqlDataReader reader2 = cmd.ExecuteReader();
             //while (reader2.Read())
             //{
             //    this.password = Convert.ToString(reader["wachtwoord"]);
             //}
-
+            //Datacom.CloseConnection();
             if("" == "")
             {
                 return true;

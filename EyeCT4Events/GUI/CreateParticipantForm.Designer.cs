@@ -37,7 +37,7 @@
             this.lblCreateParticipantEmail = new System.Windows.Forms.Label();
             this.lblCreateParticipantPhoneNumber = new System.Windows.Forms.Label();
             this.lblCreateParticipantDateOfBirth = new System.Windows.Forms.Label();
-            this.lblCreateParticipantUsername = new System.Windows.Forms.Label();
+            this.lblCreateParticipantRekeningnummer = new System.Windows.Forms.Label();
             this.lblCreateParticipantPassword = new System.Windows.Forms.Label();
             this.dtpCreateParticipantDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.tbCreateParticipantName = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.tbCreateParticipantZipCode = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantEmail = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantPhoneNumber = new System.Windows.Forms.TextBox();
-            this.tbCreateParticipantUsername = new System.Windows.Forms.TextBox();
+            this.tbCreateParticipantRekeningnummer = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantPassword = new System.Windows.Forms.TextBox();
             this.btnCreateParticipantCreateParticipant = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -134,14 +134,14 @@
             this.lblCreateParticipantDateOfBirth.TabIndex = 30;
             this.lblCreateParticipantDateOfBirth.Text = "Geboorte Datum:";
             // 
-            // lblCreateParticipantUsername
+            // lblCreateParticipantRekeningnummer
             // 
-            this.lblCreateParticipantUsername.AutoSize = true;
-            this.lblCreateParticipantUsername.Location = new System.Drawing.Point(238, 242);
-            this.lblCreateParticipantUsername.Name = "lblCreateParticipantUsername";
-            this.lblCreateParticipantUsername.Size = new System.Drawing.Size(87, 13);
-            this.lblCreateParticipantUsername.TabIndex = 31;
-            this.lblCreateParticipantUsername.Text = "Gebruikersnaam:";
+            this.lblCreateParticipantRekeningnummer.AutoSize = true;
+            this.lblCreateParticipantRekeningnummer.Location = new System.Drawing.Point(238, 242);
+            this.lblCreateParticipantRekeningnummer.Name = "lblCreateParticipantRekeningnummer";
+            this.lblCreateParticipantRekeningnummer.Size = new System.Drawing.Size(93, 13);
+            this.lblCreateParticipantRekeningnummer.TabIndex = 31;
+            this.lblCreateParticipantRekeningnummer.Text = "Rekeningnummer:";
             // 
             // lblCreateParticipantPassword
             // 
@@ -194,12 +194,12 @@
             this.tbCreateParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPhoneNumber.TabIndex = 38;
             // 
-            // tbCreateParticipantUsername
+            // tbCreateParticipantRekeningnummer
             // 
-            this.tbCreateParticipantUsername.Location = new System.Drawing.Point(338, 239);
-            this.tbCreateParticipantUsername.Name = "tbCreateParticipantUsername";
-            this.tbCreateParticipantUsername.Size = new System.Drawing.Size(200, 20);
-            this.tbCreateParticipantUsername.TabIndex = 39;
+            this.tbCreateParticipantRekeningnummer.Location = new System.Drawing.Point(338, 239);
+            this.tbCreateParticipantRekeningnummer.Name = "tbCreateParticipantRekeningnummer";
+            this.tbCreateParticipantRekeningnummer.Size = new System.Drawing.Size(200, 20);
+            this.tbCreateParticipantRekeningnummer.TabIndex = 39;
             // 
             // tbCreateParticipantPassword
             // 
@@ -225,7 +225,7 @@
             this.ClientSize = new System.Drawing.Size(661, 408);
             this.Controls.Add(this.btnCreateParticipantCreateParticipant);
             this.Controls.Add(this.tbCreateParticipantPassword);
-            this.Controls.Add(this.tbCreateParticipantUsername);
+            this.Controls.Add(this.tbCreateParticipantRekeningnummer);
             this.Controls.Add(this.tbCreateParticipantPhoneNumber);
             this.Controls.Add(this.tbCreateParticipantEmail);
             this.Controls.Add(this.tbCreateParticipantZipCode);
@@ -233,7 +233,7 @@
             this.Controls.Add(this.tbCreateParticipantName);
             this.Controls.Add(this.dtpCreateParticipantDateOfBirth);
             this.Controls.Add(this.lblCreateParticipantPassword);
-            this.Controls.Add(this.lblCreateParticipantUsername);
+            this.Controls.Add(this.lblCreateParticipantRekeningnummer);
             this.Controls.Add(this.lblCreateParticipantDateOfBirth);
             this.Controls.Add(this.lblCreateParticipantPhoneNumber);
             this.Controls.Add(this.lblCreateParticipantEmail);
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Label lblCreateParticipantEmail;
         private System.Windows.Forms.Label lblCreateParticipantPhoneNumber;
         private System.Windows.Forms.Label lblCreateParticipantDateOfBirth;
-        private System.Windows.Forms.Label lblCreateParticipantUsername;
+        private System.Windows.Forms.Label lblCreateParticipantRekeningnummer;
         private System.Windows.Forms.Label lblCreateParticipantPassword;
         private System.Windows.Forms.DateTimePicker dtpCreateParticipantDateOfBirth;
         private System.Windows.Forms.TextBox tbCreateParticipantName;
@@ -269,7 +269,7 @@
         private System.Windows.Forms.TextBox tbCreateParticipantZipCode;
         private System.Windows.Forms.TextBox tbCreateParticipantEmail;
         private System.Windows.Forms.TextBox tbCreateParticipantPhoneNumber;
-        private System.Windows.Forms.TextBox tbCreateParticipantUsername;
+        private System.Windows.Forms.TextBox tbCreateParticipantRekeningnummer;
         private System.Windows.Forms.TextBox tbCreateParticipantPassword;
         private System.Windows.Forms.Button btnCreateParticipantCreateParticipant;
     }
