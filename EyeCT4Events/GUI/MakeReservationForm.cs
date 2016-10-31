@@ -77,7 +77,7 @@ namespace EyeCT4Events
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm pf = new ParticipantsForm();
-            this.Hide();
+            this.Close();
             pf.Show();
         }
     }

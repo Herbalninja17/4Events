@@ -43,7 +43,7 @@
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 24;
-            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.Text = "Deelnemers";
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
@@ -53,7 +53,7 @@
             this.btnEditEvent.Name = "btnEditEvent";
             this.btnEditEvent.Size = new System.Drawing.Size(75, 43);
             this.btnEditEvent.TabIndex = 22;
-            this.btnEditEvent.Text = "Edit Event";
+            this.btnEditEvent.Text = "Evenement Aanpassen";
             this.btnEditEvent.UseVisualStyleBackColor = true;
             this.btnEditEvent.Click += new System.EventHandler(this.btnEditEvent_Click);
             // 
@@ -63,16 +63,16 @@
             this.btnCreateEvent.Name = "btnCreateEvent";
             this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
             this.btnCreateEvent.TabIndex = 21;
-            this.btnCreateEvent.Text = "Create Event";
+            this.btnCreateEvent.Text = "Evenement Aanmaken";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
             this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
             // 
             // lbDeleteEvent
             // 
             this.lbDeleteEvent.FormattingEnabled = true;
-            this.lbDeleteEvent.Location = new System.Drawing.Point(196, 86);
+            this.lbDeleteEvent.Location = new System.Drawing.Point(170, 86);
             this.lbDeleteEvent.Name = "lbDeleteEvent";
-            this.lbDeleteEvent.Size = new System.Drawing.Size(297, 225);
+            this.lbDeleteEvent.Size = new System.Drawing.Size(323, 225);
             this.lbDeleteEvent.TabIndex = 25;
             // 
             // tbDeleteEventName
@@ -85,11 +85,11 @@
             // lblDeleteEventName
             // 
             this.lblDeleteEventName.AutoSize = true;
-            this.lblDeleteEventName.Location = new System.Drawing.Point(193, 15);
+            this.lblDeleteEventName.Location = new System.Drawing.Point(167, 15);
             this.lblDeleteEventName.Name = "lblDeleteEventName";
-            this.lblDeleteEventName.Size = new System.Drawing.Size(69, 13);
+            this.lblDeleteEventName.Size = new System.Drawing.Size(95, 13);
             this.lblDeleteEventName.TabIndex = 27;
-            this.lblDeleteEventName.Text = "Event Name:";
+            this.lblDeleteEventName.Text = "Evenement Naam:";
             // 
             // btnDeleteEventSearch
             // 
@@ -97,7 +97,7 @@
             this.btnDeleteEventSearch.Name = "btnDeleteEventSearch";
             this.btnDeleteEventSearch.Size = new System.Drawing.Size(75, 42);
             this.btnDeleteEventSearch.TabIndex = 28;
-            this.btnDeleteEventSearch.Text = "Search";
+            this.btnDeleteEventSearch.Text = "Zoeken";
             this.btnDeleteEventSearch.UseVisualStyleBackColor = true;
             this.btnDeleteEventSearch.Click += new System.EventHandler(this.btnDeleteEventSearch_Click);
             // 
