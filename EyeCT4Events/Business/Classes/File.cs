@@ -59,7 +59,7 @@ namespace EyeCT4Events
             return Title
                 + " | " + FileType
                 + " | " + fileID
-                + " | " + Poster.Username
+                + " | " + Poster.Email
                 ;
         }
     }

@@ -84,7 +84,7 @@ namespace EyeCT4Events
         //methods
         public override string ToString()
         {
-            return Poster.Username
+            return Poster.Email
                 + " | " + MessageID
                 + " | " + previousMessageID
                 + " | " + MessageString
