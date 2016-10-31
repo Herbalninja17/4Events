@@ -24,22 +24,33 @@ namespace EyeCT4Events
         /// <param name="person"></param>
         public void CreateUser(Person person)
         {
-            try
+            //DateTime date = new DateTime(person.BirthDate.Year, person.BirthDate.Month, person.BirthDate.Day);
+            //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
+            string datetime = person.BirthDate.ToShortDateString();
+            int latestid = Datacom.GetLatestID("account") + 1;
+            if (latestid == 0)
             {
-                Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Datacom.connect;
-                cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoonnummer,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + person.Email + ", " + person.Password + ", " + person.Name + ", " + person.Phonenumber + ", " + person.Address + ", " + person.ZipCode + ", " + person.AccountNumber + ", " + person.BirthDate + ");";
+                Console.WriteLine("Iets is fout met ophalen van ID.");
+            }
+            else
+            {
+                try
+                {
+                    Datacom.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = Datacom.connect;
+                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', " + datetime + ");";
 
-                cmd.ExecuteNonQuery();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            finally
-            {
-                Datacom.CloseConnection();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                finally
+                {
+                    Datacom.CloseConnection();
+                }
             }
         }
         /// <summary>
