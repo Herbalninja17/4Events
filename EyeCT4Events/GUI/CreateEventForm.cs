@@ -45,7 +45,7 @@ namespace EyeCT4Events
         private void btnDeleteEvent_Click(object sender, EventArgs e)
         {
             DeleteEventForm def = new DeleteEventForm();
-            this.Hide();
+            this.Close();
             def.Show();
         }
 
@@ -57,7 +57,7 @@ namespace EyeCT4Events
         private void btnEditEvent_Click(object sender, EventArgs e)
         {
             EditEventForm eef = new EditEventForm();
-            this.Hide();
+            this.Close();
             eef.Show();
         }
     }

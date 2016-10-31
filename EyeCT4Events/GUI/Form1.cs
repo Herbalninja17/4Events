@@ -26,15 +26,15 @@ namespace EyeCT4Events
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
 
-            if (login.LogInUser(tbLoginUsername.Text, tbLoginPassword.Text) == true)
+            if (login.LogInUser(tbLoginEmail.Text, tbLoginWachtwoord.Text) == true)
             {
                 ParticipantsForm pf = new ParticipantsForm();
-                this.Hide();
-                pf.Show();
+                this.Hide();      
+                pf.Show(); 
             }
-            else if(login.LogInUser(tbLoginUsername.Text,tbLoginPassword.Text) == false)
+            else if(login.LogInUser(tbLoginEmail.Text,tbLoginWachtwoord.Text) == false)
             {
-                MessageBox.Show("Username or Password incorrect.");
+                MessageBox.Show("Email or Password is incorrect.");
             }
         }
 

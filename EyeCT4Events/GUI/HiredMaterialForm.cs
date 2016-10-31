@@ -25,7 +25,7 @@ namespace EyeCT4Events
         private void btnLease_Click(object sender, EventArgs e)
         {
             LeaseForm lf = new LeaseForm();
-            this.Hide();
+            this.Close();
             lf.Show();
         }
 
@@ -37,7 +37,7 @@ namespace EyeCT4Events
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             ParticipantsForm pf = new ParticipantsForm();
-            this.Hide();
+            this.Close();
             pf.Show();
         }
     }

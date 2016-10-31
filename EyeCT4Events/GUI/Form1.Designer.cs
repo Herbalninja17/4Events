@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbLoginUsername = new System.Windows.Forms.TextBox();
-            this.tbLoginPassword = new System.Windows.Forms.TextBox();
-            this.lblLoginUsername = new System.Windows.Forms.Label();
-            this.lblLoginPassword = new System.Windows.Forms.Label();
+            this.tbLoginEmail = new System.Windows.Forms.TextBox();
+            this.tbLoginWachtwoord = new System.Windows.Forms.TextBox();
+            this.lblLoginEmail = new System.Windows.Forms.Label();
+            this.lblLoginWachtwoord = new System.Windows.Forms.Label();
             this.btnLoginLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoginCreateAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tbLoginUsername
+            // tbLoginEmail
             // 
-            this.tbLoginUsername.Location = new System.Drawing.Point(82, 68);
-            this.tbLoginUsername.Name = "tbLoginUsername";
-            this.tbLoginUsername.Size = new System.Drawing.Size(146, 20);
-            this.tbLoginUsername.TabIndex = 0;
+            this.tbLoginEmail.Location = new System.Drawing.Point(101, 12);
+            this.tbLoginEmail.Name = "tbLoginEmail";
+            this.tbLoginEmail.Size = new System.Drawing.Size(146, 20);
+            this.tbLoginEmail.TabIndex = 0;
             // 
-            // tbLoginPassword
+            // tbLoginWachtwoord
             // 
-            this.tbLoginPassword.Location = new System.Drawing.Point(82, 114);
-            this.tbLoginPassword.Name = "tbLoginPassword";
-            this.tbLoginPassword.Size = new System.Drawing.Size(145, 20);
-            this.tbLoginPassword.TabIndex = 1;
+            this.tbLoginWachtwoord.Location = new System.Drawing.Point(101, 58);
+            this.tbLoginWachtwoord.Name = "tbLoginWachtwoord";
+            this.tbLoginWachtwoord.Size = new System.Drawing.Size(145, 20);
+            this.tbLoginWachtwoord.TabIndex = 1;
             // 
-            // lblLoginUsername
+            // lblLoginEmail
             // 
-            this.lblLoginUsername.AutoSize = true;
-            this.lblLoginUsername.Location = new System.Drawing.Point(12, 71);
-            this.lblLoginUsername.Name = "lblLoginUsername";
-            this.lblLoginUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblLoginUsername.TabIndex = 2;
-            this.lblLoginUsername.Text = "Username:";
+            this.lblLoginEmail.AutoSize = true;
+            this.lblLoginEmail.Location = new System.Drawing.Point(12, 15);
+            this.lblLoginEmail.Name = "lblLoginEmail";
+            this.lblLoginEmail.Size = new System.Drawing.Size(69, 13);
+            this.lblLoginEmail.TabIndex = 2;
+            this.lblLoginEmail.Text = "Email adress:";
             // 
-            // lblLoginPassword
+            // lblLoginWachtwoord
             // 
-            this.lblLoginPassword.AutoSize = true;
-            this.lblLoginPassword.Location = new System.Drawing.Point(12, 117);
-            this.lblLoginPassword.Name = "lblLoginPassword";
-            this.lblLoginPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblLoginPassword.TabIndex = 3;
-            this.lblLoginPassword.Text = "Password:";
+            this.lblLoginWachtwoord.AutoSize = true;
+            this.lblLoginWachtwoord.Location = new System.Drawing.Point(12, 61);
+            this.lblLoginWachtwoord.Name = "lblLoginWachtwoord";
+            this.lblLoginWachtwoord.Size = new System.Drawing.Size(71, 13);
+            this.lblLoginWachtwoord.TabIndex = 3;
+            this.lblLoginWachtwoord.Text = "Wachtwoord:";
             // 
             // btnLoginLogin
             // 
-            this.btnLoginLogin.Location = new System.Drawing.Point(140, 154);
+            this.btnLoginLogin.Location = new System.Drawing.Point(140, 98);
             this.btnLoginLogin.Name = "btnLoginLogin";
             this.btnLoginLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLoginLogin.TabIndex = 4;
@@ -82,19 +82,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 214);
+            this.label1.Location = new System.Drawing.Point(12, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Don\'t have an account?";
+            this.label1.Text = "Nog geen account?";
             // 
             // btnLoginCreateAccount
             // 
-            this.btnLoginCreateAccount.Location = new System.Drawing.Point(140, 196);
+            this.btnLoginCreateAccount.Location = new System.Drawing.Point(140, 140);
             this.btnLoginCreateAccount.Name = "btnLoginCreateAccount";
             this.btnLoginCreateAccount.Size = new System.Drawing.Size(75, 49);
             this.btnLoginCreateAccount.TabIndex = 6;
-            this.btnLoginCreateAccount.Text = "Create new account";
+            this.btnLoginCreateAccount.Text = "Maak nieuw account aan";
             this.btnLoginCreateAccount.UseVisualStyleBackColor = true;
             this.btnLoginCreateAccount.Click += new System.EventHandler(this.btnLoginCreatAccount_Click);
             // 
@@ -102,14 +102,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 252);
+            this.ClientSize = new System.Drawing.Size(259, 204);
             this.Controls.Add(this.btnLoginCreateAccount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoginLogin);
-            this.Controls.Add(this.lblLoginPassword);
-            this.Controls.Add(this.lblLoginUsername);
-            this.Controls.Add(this.tbLoginPassword);
-            this.Controls.Add(this.tbLoginUsername);
+            this.Controls.Add(this.lblLoginWachtwoord);
+            this.Controls.Add(this.lblLoginEmail);
+            this.Controls.Add(this.tbLoginWachtwoord);
+            this.Controls.Add(this.tbLoginEmail);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -119,10 +119,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbLoginUsername;
-        private System.Windows.Forms.TextBox tbLoginPassword;
-        private System.Windows.Forms.Label lblLoginUsername;
-        private System.Windows.Forms.Label lblLoginPassword;
+        private System.Windows.Forms.TextBox tbLoginEmail;
+        private System.Windows.Forms.TextBox tbLoginWachtwoord;
+        private System.Windows.Forms.Label lblLoginEmail;
+        private System.Windows.Forms.Label lblLoginWachtwoord;
         private System.Windows.Forms.Button btnLoginLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoginCreateAccount;
