@@ -32,7 +32,7 @@ namespace EyeCT4Events
             get { return places; }
             set
             {
-                if (value < 1) { throw new ArgumentOutOfRangeException("places"); }
+                if (value <= 0) { throw new ArgumentOutOfRangeException("places"); }
                 places = value;
             }
         }
