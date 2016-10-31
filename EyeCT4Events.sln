@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeCT4Events", "EyeCT4Events\EyeCT4Events.csproj", "{ED8B7CC3-0ED4-4677-AC8F-B8FEC3AA7CC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeCT4Events_Testprojects", "EyeCT4Events_Testprojects\EyeCT4Events_Testprojects.csproj", "{88651D8F-7F9F-4FF8-BB2C-2928C8C81587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomSql", "RandomSql\RandomSql.csproj", "{C210C283-7357-4B26-94D1-977E73AE4865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{88651D8F-7F9F-4FF8-BB2C-2928C8C81587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88651D8F-7F9F-4FF8-BB2C-2928C8C81587}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88651D8F-7F9F-4FF8-BB2C-2928C8C81587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C210C283-7357-4B26-94D1-977E73AE4865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C210C283-7357-4B26-94D1-977E73AE4865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C210C283-7357-4B26-94D1-977E73AE4865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C210C283-7357-4B26-94D1-977E73AE4865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
