@@ -10,8 +10,6 @@ namespace EyeCT4Events
     {
         private int reservationID;
         private bool eventIsPlayed;
-        private List<Person> persons;
-        private List<Material> materials;
 
         public int ReservationID
         {
@@ -38,17 +36,15 @@ namespace EyeCT4Events
         {
             ReservationID = reservationID;
             EventIsPlayed = eventIsPlayed;
-            Persons = new List<Person>();
-            Materials = new List<Material>();
         }
 
         public decimal CalculatePrice()
         {
-            if (materials != null)
+            if (Materials != null)
             {
                 decimal price = 0;
 
-                foreach (Material m in materials)
+                foreach (Material m in Materials)
                 {
                     if (!m.IsPayed)
                     {
@@ -70,11 +66,11 @@ namespace EyeCT4Events
 
         public decimal CalculateMaterialPayment()
         {
-            if (materials != null)
+            if (Materials != null)
             {
                 decimal price = 0;
 
-                foreach (Material m in materials)
+                foreach (Material m in Materials)
                 {
                     if (!m.IsPayed)
                     {
@@ -90,7 +86,7 @@ namespace EyeCT4Events
 
         public bool AddPerson(Person person)
         {
-            foreach (Person p in persons)
+            foreach (Person p in Persons)
             {
                 if (p == person)
                 {
@@ -104,7 +100,7 @@ namespace EyeCT4Events
 
         public bool RemovePerson(Person person)
         {
-            foreach (Person p in persons)
+            foreach (Person p in Persons)
             {
                 if (p == person)
                 {
@@ -113,6 +109,14 @@ namespace EyeCT4Events
                 }
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            return ReservationID
+                   + " | " + EventIsPlayed
+                   + " | " + Persons.Count
+                   + " | " + Materials;
         }
     }
 }
