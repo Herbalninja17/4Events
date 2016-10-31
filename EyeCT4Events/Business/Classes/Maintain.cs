@@ -22,7 +22,7 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     return false;
                 }
