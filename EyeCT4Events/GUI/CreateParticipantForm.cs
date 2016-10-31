@@ -19,7 +19,7 @@ namespace EyeCT4Events
         public CreateParticipantForm()
         {
             InitializeComponent();
-
+            
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text, tbCreateParticipantZipCode.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, tbCreateParticipantRekeningnummer.Text);
+            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text , tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text,tbCreateParticipantRekeningnummer.Text);
             login.CreateUser(person);
         }
     }

@@ -16,7 +16,7 @@ namespace EyeCT4Events
 
         public Login()
         {
-
+            
         }
         /// <summary>
         /// Maak een nieuw account aan.
@@ -33,7 +33,7 @@ namespace EyeCT4Events
 
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Console.WriteLine(e);
             }

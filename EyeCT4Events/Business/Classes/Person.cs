@@ -27,7 +27,7 @@ namespace EyeCT4Events
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    if (value == null) { throw new ArgumentNullException("name"); }
+                    if (value == null) { throw new ArgumentNullException("name");}
                     throw new ArgumentException("name");
                 }
                 name = value;
@@ -47,7 +47,7 @@ namespace EyeCT4Events
 
         public string Address
         {
-            get { return address; }
+            get { return address;}
             set
             {
                 if (String.IsNullOrWhiteSpace(value))
@@ -154,7 +154,7 @@ namespace EyeCT4Events
         /// <param name="email">The Email of the person</param>
         /// <param name="password">The Password of the person</param>
         /// <param name="accountnumber">The Accountnumber of the person</param>
-        public Person(string name, DateTime birthDate, string address, string zipcode, string phonenumber, string email, string password, string accountnumber)
+        public Person(string name, DateTime birthDate, string address,string zipcode, string phonenumber, string email,string password,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
@@ -172,7 +172,7 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="email">Username of the person</param>
         /// <param name="password">Password of the person</param>
-        public Person(string email, string password)
+        public Person(string email,string password)
         {
             Email = email;
             Password = password;
@@ -181,14 +181,14 @@ namespace EyeCT4Events
 
         public override string ToString()
         {
-            return Name
-                 + " | " + birthDate
-                 + " | " + Address
-                 + " | " + ZipCode
-                 + " | " + Phonenumber
-                 + " | " + Email
-                 + " | " + Password
-                 ;
+           return Name
+                + " | " + birthDate
+                + " | " + Address
+                + " | " + ZipCode
+                + " | " + Phonenumber
+                + " | " + Email
+                + " | " + Password
+                ;
         }
     }
 }
