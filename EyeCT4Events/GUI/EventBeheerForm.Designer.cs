@@ -41,7 +41,7 @@
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 24;
-            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.Text = "Deelnemers";
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
@@ -51,7 +51,7 @@
             this.btnDeleteEvent.Name = "btnDeleteEvent";
             this.btnDeleteEvent.Size = new System.Drawing.Size(75, 43);
             this.btnDeleteEvent.TabIndex = 23;
-            this.btnDeleteEvent.Text = "Delete Event";
+            this.btnDeleteEvent.Text = "Evenement Verwijderen";
             this.btnDeleteEvent.UseVisualStyleBackColor = true;
             this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
             // 
@@ -61,7 +61,7 @@
             this.btnEditEvent.Name = "btnEditEvent";
             this.btnEditEvent.Size = new System.Drawing.Size(75, 43);
             this.btnEditEvent.TabIndex = 22;
-            this.btnEditEvent.Text = "Edit Event";
+            this.btnEditEvent.Text = "Evenement Aanpassen";
             this.btnEditEvent.UseVisualStyleBackColor = true;
             this.btnEditEvent.Click += new System.EventHandler(this.btnEditEvent_Click);
             // 
@@ -71,7 +71,7 @@
             this.btnCreateEvent.Name = "btnCreateEvent";
             this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
             this.btnCreateEvent.TabIndex = 21;
-            this.btnCreateEvent.Text = "Create Event";
+            this.btnCreateEvent.Text = "Evenement Aanmaken";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
             this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
             // 

@@ -11,7 +11,6 @@ namespace EyeCT4Events
         //Fields
         private string name;
         private int places;
-        private List<CampingSpot> campingSpots;
 
         //Properties
         public string Name
@@ -33,16 +32,12 @@ namespace EyeCT4Events
             get { return places; }
             set
             {
-                if (value < 0) { throw new ArgumentOutOfRangeException("places"); }
+                if (value <= 0) { throw new ArgumentOutOfRangeException("places"); }
                 places = value;
             }
         }
 
-        public List<CampingSpot> CampingSpots
-        {
-            get { return campingSpots; }
-            set { campingSpots = value; }
-        }
+        public List<CampingSpot> CampingSpots { get; set;}
 
         /// <summary>
         /// Constructor
@@ -65,12 +60,12 @@ namespace EyeCT4Events
         {
             foreach (CampingSpot sp in CampingSpots)
             {
-                if (sp == spot)
+                if (sp.SpotID == spot.SpotID)
                 {
                     return false;
                 }
             }
-            campingSpots.Add(spot);
+            CampingSpots.Add(spot);
             return true;
         }
 
@@ -82,16 +77,15 @@ namespace EyeCT4Events
         /// <returns></returns>
         public bool ModifySpot(CampingSpot oldSpot, CampingSpot newSpot)
         {
-            foreach (CampingSpot sp in campingSpots)
+            foreach (CampingSpot sp in CampingSpots)
             {
-                if (sp == oldSpot)
+                if (sp.SpotID == oldSpot.SpotID)
                 {
-                    int index = campingSpots.IndexOf(sp);
-                    if (index != -1)
-                    {
-                        campingSpots[index] = newSpot;
-                        return true;
-                    }
+                    sp.Capacity = newSpot.Capacity;
+                    sp.Reserved = newSpot.Reserved;
+                    sp.SpotID = newSpot.SpotID;
+                    sp.SpotType = newSpot.SpotType;
+                    return true;
                 }
             }
             return false;
@@ -104,11 +98,11 @@ namespace EyeCT4Events
         /// <returns></returns>
         public bool RemoveSpot(CampingSpot spot)
         {
-            foreach (CampingSpot sp in campingSpots)
+            foreach (CampingSpot sp in CampingSpots)
             {
-                if (sp == spot)
+                if (sp.SpotID == spot.SpotID)
                 {
-                    campingSpots.Remove(sp);
+                    CampingSpots.Remove(sp);
                     return true;
                 }
             }
@@ -122,9 +116,9 @@ namespace EyeCT4Events
         /// <returns></returns>
         public CampingSpot FindSpot(CampingSpot spot)
         {
-            foreach (CampingSpot sp in campingSpots)
+            foreach (CampingSpot sp in CampingSpots)
             {
-                if (sp == spot)
+                if (sp.SpotID == spot.SpotID)
                 {
                     return sp;
                 }
