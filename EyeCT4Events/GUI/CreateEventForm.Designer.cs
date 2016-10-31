@@ -55,9 +55,9 @@
             this.lblCreateEventName.AutoSize = true;
             this.lblCreateEventName.Location = new System.Drawing.Point(226, 15);
             this.lblCreateEventName.Name = "lblCreateEventName";
-            this.lblCreateEventName.Size = new System.Drawing.Size(69, 13);
+            this.lblCreateEventName.Size = new System.Drawing.Size(95, 13);
             this.lblCreateEventName.TabIndex = 0;
-            this.lblCreateEventName.Text = "Event Name:";
+            this.lblCreateEventName.Text = "Evenement Naam:";
             // 
             // lblCreateEventStreet
             // 
@@ -66,61 +66,61 @@
             this.lblCreateEventStreet.Name = "lblCreateEventStreet";
             this.lblCreateEventStreet.Size = new System.Drawing.Size(38, 13);
             this.lblCreateEventStreet.TabIndex = 1;
-            this.lblCreateEventStreet.Text = "Street:";
+            this.lblCreateEventStreet.Text = "Straat:";
             // 
             // lblCreateEventCity
             // 
             this.lblCreateEventCity.AutoSize = true;
             this.lblCreateEventCity.Location = new System.Drawing.Point(226, 99);
             this.lblCreateEventCity.Name = "lblCreateEventCity";
-            this.lblCreateEventCity.Size = new System.Drawing.Size(27, 13);
+            this.lblCreateEventCity.Size = new System.Drawing.Size(32, 13);
             this.lblCreateEventCity.TabIndex = 2;
-            this.lblCreateEventCity.Text = "City:";
+            this.lblCreateEventCity.Text = "Stad:";
             // 
             // lblCreateEventZipcode
             // 
             this.lblCreateEventZipcode.AutoSize = true;
             this.lblCreateEventZipcode.Location = new System.Drawing.Point(226, 139);
             this.lblCreateEventZipcode.Name = "lblCreateEventZipcode";
-            this.lblCreateEventZipcode.Size = new System.Drawing.Size(53, 13);
+            this.lblCreateEventZipcode.Size = new System.Drawing.Size(55, 13);
             this.lblCreateEventZipcode.TabIndex = 3;
-            this.lblCreateEventZipcode.Text = "Zip Code:";
+            this.lblCreateEventZipcode.Text = "Postcode:";
             // 
             // lblCreateEventProvince
             // 
             this.lblCreateEventProvince.AutoSize = true;
             this.lblCreateEventProvince.Location = new System.Drawing.Point(226, 182);
             this.lblCreateEventProvince.Name = "lblCreateEventProvince";
-            this.lblCreateEventProvince.Size = new System.Drawing.Size(52, 13);
+            this.lblCreateEventProvince.Size = new System.Drawing.Size(54, 13);
             this.lblCreateEventProvince.TabIndex = 4;
-            this.lblCreateEventProvince.Text = "Province:";
+            this.lblCreateEventProvince.Text = "Provincie:";
             // 
             // lblCreateEventBeginDate
             // 
             this.lblCreateEventBeginDate.AutoSize = true;
             this.lblCreateEventBeginDate.Location = new System.Drawing.Point(226, 220);
             this.lblCreateEventBeginDate.Name = "lblCreateEventBeginDate";
-            this.lblCreateEventBeginDate.Size = new System.Drawing.Size(63, 13);
+            this.lblCreateEventBeginDate.Size = new System.Drawing.Size(71, 13);
             this.lblCreateEventBeginDate.TabIndex = 5;
-            this.lblCreateEventBeginDate.Text = "Begin Date:";
+            this.lblCreateEventBeginDate.Text = "Begin Datum:";
             // 
             // lblCreateEventEndDate
             // 
             this.lblCreateEventEndDate.AutoSize = true;
             this.lblCreateEventEndDate.Location = new System.Drawing.Point(226, 260);
             this.lblCreateEventEndDate.Name = "lblCreateEventEndDate";
-            this.lblCreateEventEndDate.Size = new System.Drawing.Size(55, 13);
+            this.lblCreateEventEndDate.Size = new System.Drawing.Size(65, 13);
             this.lblCreateEventEndDate.TabIndex = 6;
-            this.lblCreateEventEndDate.Text = "End Date:";
+            this.lblCreateEventEndDate.Text = "Eind Datum:";
             // 
             // lblCreateEventCapacity
             // 
             this.lblCreateEventCapacity.AutoSize = true;
             this.lblCreateEventCapacity.Location = new System.Drawing.Point(226, 293);
             this.lblCreateEventCapacity.Name = "lblCreateEventCapacity";
-            this.lblCreateEventCapacity.Size = new System.Drawing.Size(51, 13);
+            this.lblCreateEventCapacity.Size = new System.Drawing.Size(92, 13);
             this.lblCreateEventCapacity.TabIndex = 7;
-            this.lblCreateEventCapacity.Text = "Capacity:";
+            this.lblCreateEventCapacity.Text = "Max. Deelnemers:";
             // 
             // dtpBeginDate
             // 
@@ -184,7 +184,7 @@
             this.btnCreateEventCreateEvent.Name = "btnCreateEventCreateEvent";
             this.btnCreateEventCreateEvent.Size = new System.Drawing.Size(75, 40);
             this.btnCreateEventCreateEvent.TabIndex = 16;
-            this.btnCreateEventCreateEvent.Text = "Create Event";
+            this.btnCreateEventCreateEvent.Text = "Evenement Aanmaken";
             this.btnCreateEventCreateEvent.UseVisualStyleBackColor = true;
             this.btnCreateEventCreateEvent.Click += new System.EventHandler(this.btnCreateEventCreateEvent_Click);
             // 
@@ -194,7 +194,7 @@
             this.btnEditEvent.Name = "btnEditEvent";
             this.btnEditEvent.Size = new System.Drawing.Size(75, 43);
             this.btnEditEvent.TabIndex = 18;
-            this.btnEditEvent.Text = "Edit Event";
+            this.btnEditEvent.Text = "Evenement Aanpassen";
             this.btnEditEvent.UseVisualStyleBackColor = true;
             this.btnEditEvent.Click += new System.EventHandler(this.btnEditEvent_Click);
             // 
@@ -204,7 +204,7 @@
             this.btnDeleteEvent.Name = "btnDeleteEvent";
             this.btnDeleteEvent.Size = new System.Drawing.Size(75, 43);
             this.btnDeleteEvent.TabIndex = 19;
-            this.btnDeleteEvent.Text = "Delete Event";
+            this.btnDeleteEvent.Text = "Evenement Verwijderen";
             this.btnDeleteEvent.UseVisualStyleBackColor = true;
             this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
             // 
@@ -214,7 +214,7 @@
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 20;
-            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.Text = "Deelnemers";
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 

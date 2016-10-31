@@ -56,7 +56,7 @@
             this.btnParticipants.Name = "btnParticipants";
             this.btnParticipants.Size = new System.Drawing.Size(75, 43);
             this.btnParticipants.TabIndex = 24;
-            this.btnParticipants.Text = "Participants";
+            this.btnParticipants.Text = "Deelnemers";
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
@@ -66,7 +66,7 @@
             this.btnDeleteParticipant.Name = "btnDeleteParticipant";
             this.btnDeleteParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnDeleteParticipant.TabIndex = 23;
-            this.btnDeleteParticipant.Text = "Delete Participant";
+            this.btnDeleteParticipant.Text = "Deelnemer Verwijderen";
             this.btnDeleteParticipant.UseVisualStyleBackColor = true;
             this.btnDeleteParticipant.Click += new System.EventHandler(this.btnDeleteParticipant_Click);
             // 
@@ -76,7 +76,7 @@
             this.btnEditParticipant.Name = "btnEditParticipant";
             this.btnEditParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnEditParticipant.TabIndex = 22;
-            this.btnEditParticipant.Text = "Edit Participant";
+            this.btnEditParticipant.Text = "Deelnemer Aanpassen";
             this.btnEditParticipant.UseVisualStyleBackColor = true;
             this.btnEditParticipant.Click += new System.EventHandler(this.btnEditParticipant_Click);
             // 
@@ -87,70 +87,70 @@
             this.lblCreateParticipantName.Name = "lblCreateParticipantName";
             this.lblCreateParticipantName.Size = new System.Drawing.Size(38, 13);
             this.lblCreateParticipantName.TabIndex = 25;
-            this.lblCreateParticipantName.Text = "Name:";
+            this.lblCreateParticipantName.Text = "Naam:";
             // 
             // lblCreateParticipantCity
             // 
             this.lblCreateParticipantCity.AutoSize = true;
             this.lblCreateParticipantCity.Location = new System.Drawing.Point(240, 51);
             this.lblCreateParticipantCity.Name = "lblCreateParticipantCity";
-            this.lblCreateParticipantCity.Size = new System.Drawing.Size(27, 13);
+            this.lblCreateParticipantCity.Size = new System.Drawing.Size(32, 13);
             this.lblCreateParticipantCity.TabIndex = 26;
-            this.lblCreateParticipantCity.Text = "City:";
+            this.lblCreateParticipantCity.Text = "Stad:";
             // 
             // lblCreateParticipantZipCode
             // 
             this.lblCreateParticipantZipCode.AutoSize = true;
             this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(238, 91);
             this.lblCreateParticipantZipCode.Name = "lblCreateParticipantZipCode";
-            this.lblCreateParticipantZipCode.Size = new System.Drawing.Size(53, 13);
+            this.lblCreateParticipantZipCode.Size = new System.Drawing.Size(55, 13);
             this.lblCreateParticipantZipCode.TabIndex = 27;
-            this.lblCreateParticipantZipCode.Text = "Zip Code:";
+            this.lblCreateParticipantZipCode.Text = "Postcode:";
             // 
             // lblCreateParticipantEmail
             // 
             this.lblCreateParticipantEmail.AutoSize = true;
             this.lblCreateParticipantEmail.Location = new System.Drawing.Point(238, 127);
             this.lblCreateParticipantEmail.Name = "lblCreateParticipantEmail";
-            this.lblCreateParticipantEmail.Size = new System.Drawing.Size(70, 13);
+            this.lblCreateParticipantEmail.Size = new System.Drawing.Size(65, 13);
             this.lblCreateParticipantEmail.TabIndex = 28;
-            this.lblCreateParticipantEmail.Text = "Email Adress:";
+            this.lblCreateParticipantEmail.Text = "Email Adres:";
             // 
             // lblCreateParticipantPhoneNumber
             // 
             this.lblCreateParticipantPhoneNumber.AutoSize = true;
             this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(238, 161);
             this.lblCreateParticipantPhoneNumber.Name = "lblCreateParticipantPhoneNumber";
-            this.lblCreateParticipantPhoneNumber.Size = new System.Drawing.Size(79, 13);
+            this.lblCreateParticipantPhoneNumber.Size = new System.Drawing.Size(94, 13);
             this.lblCreateParticipantPhoneNumber.TabIndex = 29;
-            this.lblCreateParticipantPhoneNumber.Text = "Phone number:";
+            this.lblCreateParticipantPhoneNumber.Text = "Telefoon Nummer:";
             // 
             // lblCreateParticipantDateOfBirth
             // 
             this.lblCreateParticipantDateOfBirth.AutoSize = true;
             this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(238, 198);
             this.lblCreateParticipantDateOfBirth.Name = "lblCreateParticipantDateOfBirth";
-            this.lblCreateParticipantDateOfBirth.Size = new System.Drawing.Size(69, 13);
+            this.lblCreateParticipantDateOfBirth.Size = new System.Drawing.Size(88, 13);
             this.lblCreateParticipantDateOfBirth.TabIndex = 30;
-            this.lblCreateParticipantDateOfBirth.Text = "Date of Birth:";
+            this.lblCreateParticipantDateOfBirth.Text = "Geboorte Datum:";
             // 
             // lblCreateParticipantUsername
             // 
             this.lblCreateParticipantUsername.AutoSize = true;
             this.lblCreateParticipantUsername.Location = new System.Drawing.Point(238, 242);
             this.lblCreateParticipantUsername.Name = "lblCreateParticipantUsername";
-            this.lblCreateParticipantUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblCreateParticipantUsername.Size = new System.Drawing.Size(87, 13);
             this.lblCreateParticipantUsername.TabIndex = 31;
-            this.lblCreateParticipantUsername.Text = "Username:";
+            this.lblCreateParticipantUsername.Text = "Gebruikersnaam:";
             // 
             // lblCreateParticipantPassword
             // 
             this.lblCreateParticipantPassword.AutoSize = true;
             this.lblCreateParticipantPassword.Location = new System.Drawing.Point(238, 278);
             this.lblCreateParticipantPassword.Name = "lblCreateParticipantPassword";
-            this.lblCreateParticipantPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblCreateParticipantPassword.Size = new System.Drawing.Size(71, 13);
             this.lblCreateParticipantPassword.TabIndex = 32;
-            this.lblCreateParticipantPassword.Text = "Password:";
+            this.lblCreateParticipantPassword.Text = "Wachtwoord:";
             // 
             // dtpCreateParticipantDateOfBirth
             // 

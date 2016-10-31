@@ -60,10 +60,10 @@
     <Compile Include="Business\Enums\FileType.cs" />
     <Compile Include="Business\Enums\MaterialType.cs" />
     <Compile Include="Business\Enums\SpotType.cs" />
-    <Compile Include="EditEventForm.cs">
+    <Compile Include="GUI\EditEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditEventForm.Designer.cs">
+    <Compile Include="GUI\EditEventForm.Designer.cs">
       <DependentUpon>EditEventForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\EditParticipantForm.cs">
@@ -109,6 +109,12 @@
     <Compile Include="GUI\HiredMaterialForm.Designer.cs">
       <DependentUpon>HiredMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\LeaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,7 +159,7 @@
     <Compile Include="GUI\UploadForm.Designer.cs">
       <DependentUpon>UploadForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditEventForm.resx">
+    <EmbeddedResource Include="GUI\EditEventForm.resx">
       <DependentUpon>EditEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateEventForm.resx">
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HiredMaterialForm.resx">
       <DependentUpon>HiredMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LeaseForm.resx">
       <DependentUpon>LeaseForm.cs</DependentUpon>
