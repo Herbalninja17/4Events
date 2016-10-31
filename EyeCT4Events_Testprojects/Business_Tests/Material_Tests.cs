@@ -112,7 +112,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string materialTypeString = materialType.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Micro-USB | " + materialTypeString + " | 10 | 2.75 | Is betaald.");
+            Assert.IsTrue(testString == "Micro-USB | " + materialTypeString + " | 10 | 2,75 | Is betaald.");
         }
     }
 }
