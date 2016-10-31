@@ -28,7 +28,6 @@ namespace RandomSql
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            
             try
             {
                 conn.Open();
