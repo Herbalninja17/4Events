@@ -18,28 +18,16 @@ namespace EyeCT4Events
             get { return reservationID; }
             set
             {
-                if (value == null) { throw new ArgumentOutOfRangeException("reservationID");}
+                if (value <= 0) { throw new ArgumentOutOfRangeException("reservationID");}
                 reservationID = value;
             }
         }
 
-        public bool EventIsPlayed
-        {
-            get { return eventIsPlayed; }
-            set { eventIsPlayed = value; }
-        }
+        public bool EventIsPlayed { get; set; }
 
-        public List<Person> Persons
-        {
-            get { return persons; }
-            set { persons = value; }
-        }
+        public List<Person> Persons { get; set; }
 
-        public List<Material> Materials
-        {
-            get { return materials; }
-            set { materials = value; }
-        }
+        public List<Material> Materials { get; set; }
 
         /// <summary>
         /// Constructor
