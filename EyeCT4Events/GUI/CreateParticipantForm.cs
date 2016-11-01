@@ -19,7 +19,9 @@ namespace EyeCT4Events
         public CreateParticipantForm()
         {
             InitializeComponent();
-            
+            btnParticipants.Enabled = false;
+            btnEditParticipant.Enabled = false;
+            btnDeleteParticipant.Enabled = false;
         }
 
         /// <summary>
@@ -64,7 +66,18 @@ namespace EyeCT4Events
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
             person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text , tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text,tbCreateParticipantRekeningnummer.Text);
-            login.CreateUser(person);
+            if (login.CreateUser(person))
+            {
+                btnDeleteParticipant.Enabled = true;
+                btnEditParticipant.Enabled = true;
+                btnParticipants.Enabled = true;
+
+                login.LogInUser(person.Email, person.Password);
+            }
+            else
+            {
+                MessageBox.Show("Er is wat fout gegaan met uw account aanmaken.");
+            }
         }
     }
 }
