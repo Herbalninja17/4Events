@@ -66,7 +66,7 @@ namespace EyeCT4Events
         /// <returns></returns>
         public bool LogInUser(string email, string password)
         {
-            //query check of username + password overeenkomen met iemand uit de database
+            //Query check of username + password overeenkomen met iemand uit de database
             Datacom.OpenConnection();
             //Haal email en wachtwoord op.
             SqlCommand cmd = new SqlCommand();
@@ -100,6 +100,18 @@ namespace EyeCT4Events
 
             return false;
         }
+        /// <summary>
+        /// Methode om gebruiker te wijzigen.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="accountnumber"></param>
+        /// <param name="adress"></param>
+        /// <param name="zipcode"></param>
+        /// <param name="phonenumber"></param>
+        /// <param name="birthdate"></param>
+        /// <returns></returns>
         public static bool EditUser(string name,string email,string password,string accountnumber,string adress,string zipcode, string phonenumber,string birthdate)
         {
             try
