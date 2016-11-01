@@ -86,9 +86,26 @@ namespace RandomSql
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DateTime today = new DateTime(2012,3,4);
-            string s = today.ToShortDateString();
-            listBox1.Items.Add(s);
+            try
+            {
+                string name = "j";
+                string email = "j@j.j";
+                string password = "j";
+                string accountnumber = "0000000";
+                string phonenumber = "011111111";
+                string zipcode = "3333jj";
+                string adress = "j";
+                string birthdate = "1-2-2016";
+                string email2 = "henk@henk.henk";
+                string password2 = "henk";
+                conn.Open();
+                command = new SqlCommand("UPDATE account SET naam = '" + name + "', email = '" + email + "', wachtwoord = '" + password + "',rekeningnummer = '" + accountnumber + "', telefoon = '" + phonenumber + "', postcode = '" + zipcode + "', adres = '" + adress + "', geboortedatum = '" + birthdate + "' WHERE email = '" + email2 + "' AND wachtwoord = '" + password2 + "';", conn);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.btnEditParticipantEditParticipant = new System.Windows.Forms.Button();
             this.tbEditParticipantPassword = new System.Windows.Forms.TextBox();
-            this.tbEditParticipantUsername = new System.Windows.Forms.TextBox();
+            this.tbEditParticipantAccountNumber = new System.Windows.Forms.TextBox();
             this.tbEditParticipantPhoneNumber = new System.Windows.Forms.TextBox();
             this.tbEditParticipantEmail = new System.Windows.Forms.TextBox();
             this.tbEditParticipantZipCode = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.tbEditParticipantName = new System.Windows.Forms.TextBox();
             this.dtpEditParticipantDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.lblEditParticipantPassword = new System.Windows.Forms.Label();
-            this.lblEditParticipantUsername = new System.Windows.Forms.Label();
+            this.lblEditParticipantAccountNumber = new System.Windows.Forms.Label();
             this.lblEditParticipantDateOfBirth = new System.Windows.Forms.Label();
             this.lblEditParticipantPhoneNumber = new System.Windows.Forms.Label();
             this.lblEditParticipantEmail = new System.Windows.Forms.Label();
@@ -67,12 +67,12 @@
             this.tbEditParticipantPassword.Size = new System.Drawing.Size(200, 20);
             this.tbEditParticipantPassword.TabIndex = 60;
             // 
-            // tbEditParticipantUsername
+            // tbEditParticipantAccountNumber
             // 
-            this.tbEditParticipantUsername.Location = new System.Drawing.Point(338, 243);
-            this.tbEditParticipantUsername.Name = "tbEditParticipantUsername";
-            this.tbEditParticipantUsername.Size = new System.Drawing.Size(200, 20);
-            this.tbEditParticipantUsername.TabIndex = 59;
+            this.tbEditParticipantAccountNumber.Location = new System.Drawing.Point(338, 243);
+            this.tbEditParticipantAccountNumber.Name = "tbEditParticipantAccountNumber";
+            this.tbEditParticipantAccountNumber.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantAccountNumber.TabIndex = 59;
             // 
             // tbEditParticipantPhoneNumber
             // 
@@ -125,14 +125,14 @@
             this.lblEditParticipantPassword.TabIndex = 52;
             this.lblEditParticipantPassword.Text = "Wachtwoord:";
             // 
-            // lblEditParticipantUsername
+            // lblEditParticipantAccountNumber
             // 
-            this.lblEditParticipantUsername.AutoSize = true;
-            this.lblEditParticipantUsername.Location = new System.Drawing.Point(238, 246);
-            this.lblEditParticipantUsername.Name = "lblEditParticipantUsername";
-            this.lblEditParticipantUsername.Size = new System.Drawing.Size(87, 13);
-            this.lblEditParticipantUsername.TabIndex = 51;
-            this.lblEditParticipantUsername.Text = "Gebruikersnaam:";
+            this.lblEditParticipantAccountNumber.AutoSize = true;
+            this.lblEditParticipantAccountNumber.Location = new System.Drawing.Point(238, 246);
+            this.lblEditParticipantAccountNumber.Name = "lblEditParticipantAccountNumber";
+            this.lblEditParticipantAccountNumber.Size = new System.Drawing.Size(93, 13);
+            this.lblEditParticipantAccountNumber.TabIndex = 51;
+            this.lblEditParticipantAccountNumber.Text = "Rekeningnummer:";
             // 
             // lblEditParticipantDateOfBirth
             // 
@@ -225,7 +225,7 @@
             this.ClientSize = new System.Drawing.Size(572, 367);
             this.Controls.Add(this.btnEditParticipantEditParticipant);
             this.Controls.Add(this.tbEditParticipantPassword);
-            this.Controls.Add(this.tbEditParticipantUsername);
+            this.Controls.Add(this.tbEditParticipantAccountNumber);
             this.Controls.Add(this.tbEditParticipantPhoneNumber);
             this.Controls.Add(this.tbEditParticipantEmail);
             this.Controls.Add(this.tbEditParticipantZipCode);
@@ -233,7 +233,7 @@
             this.Controls.Add(this.tbEditParticipantName);
             this.Controls.Add(this.dtpEditParticipantDateOfBirth);
             this.Controls.Add(this.lblEditParticipantPassword);
-            this.Controls.Add(this.lblEditParticipantUsername);
+            this.Controls.Add(this.lblEditParticipantAccountNumber);
             this.Controls.Add(this.lblEditParticipantDateOfBirth);
             this.Controls.Add(this.lblEditParticipantPhoneNumber);
             this.Controls.Add(this.lblEditParticipantEmail);
@@ -254,7 +254,7 @@
 
         private System.Windows.Forms.Button btnEditParticipantEditParticipant;
         private System.Windows.Forms.TextBox tbEditParticipantPassword;
-        private System.Windows.Forms.TextBox tbEditParticipantUsername;
+        private System.Windows.Forms.TextBox tbEditParticipantAccountNumber;
         private System.Windows.Forms.TextBox tbEditParticipantPhoneNumber;
         private System.Windows.Forms.TextBox tbEditParticipantEmail;
         private System.Windows.Forms.TextBox tbEditParticipantZipCode;
@@ -262,7 +262,7 @@
         private System.Windows.Forms.TextBox tbEditParticipantName;
         private System.Windows.Forms.DateTimePicker dtpEditParticipantDateOfBirth;
         private System.Windows.Forms.Label lblEditParticipantPassword;
-        private System.Windows.Forms.Label lblEditParticipantUsername;
+        private System.Windows.Forms.Label lblEditParticipantAccountNumber;
         private System.Windows.Forms.Label lblEditParticipantDateOfBirth;
         private System.Windows.Forms.Label lblEditParticipantPhoneNumber;
         private System.Windows.Forms.Label lblEditParticipantEmail;

@@ -10,7 +10,7 @@ namespace EyeCT4Events
 {
     public class Login
     {
-        public Person loggedinUser;
+        public static Person loggedinUser;
         private string email;
         private string password;
 
@@ -99,6 +99,37 @@ namespace EyeCT4Events
 
 
             return false;
+        }
+        public static bool EditUser(string name,string email,string password,string accountnumber,string adress,string zipcode, string phonenumber,string birthdate)
+        {
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "UPDATE account SET naam = '" + name + "', email = '" + email + "', wachtwoord = '" + password + "',rekeningnummer = '" + accountnumber + "', telefoon = '" + phonenumber + "', postcode = '" + zipcode + "', adres = '" + adress + "', geboortedatum = '" + birthdate + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+                DateTime dt = DateTime.Parse(birthdate);
+
+                loggedinUser.Name = name;
+                loggedinUser.Email = email;
+                loggedinUser.Password = password;
+                loggedinUser.AccountNumber = accountnumber;
+                loggedinUser.Address = adress;
+                loggedinUser.ZipCode = zipcode;
+                loggedinUser.Phonenumber = phonenumber;
+                loggedinUser.BirthDate = dt;
+            }
         }
     }
 }
