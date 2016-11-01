@@ -15,6 +15,7 @@ namespace EyeCT4Events
         public EditParticipantForm()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>

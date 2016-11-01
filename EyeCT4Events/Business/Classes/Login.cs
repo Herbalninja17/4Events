@@ -41,7 +41,7 @@ namespace EyeCT4Events
                     Datacom.OpenConnection();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = Datacom.connect;
-                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', " + datetime + ");";
+                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "');";
 
                     cmd.ExecuteNonQuery();
                     return true;
@@ -70,26 +70,34 @@ namespace EyeCT4Events
             Datacom.OpenConnection();
             //Haal email en wachtwoord op.
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT email,wachtwoord FROM account WHERE email like '" + email + "'AND wachtwoord like '" + password + "';";
+            cmd.CommandText = "SELECT * FROM account WHERE email like '" + email + "'AND wachtwoord like '" + password + "';";
             cmd.Connection = Datacom.connect;
             cmd.ExecuteScalar();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                
                 this.email = Convert.ToString(reader["email"]);
                 this.password = Convert.ToString(reader["wachtwoord"]);
+                if (email == this.email && password == this.password)
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime d;
+                    d = DateTime.Parse(date);
+                    loggedinUser = new Person(this.email, this.password);
+                    loggedinUser.Name = Convert.ToString(reader["naam"]);
+                    loggedinUser.AccountNumber = Convert.ToString(reader["rekeningnummer"]);
+                    loggedinUser.Address = Convert.ToString(reader["adres"]);
+                    loggedinUser.BirthDate = d;
+                    loggedinUser.Phonenumber = Convert.ToString(reader["telefoon"]);
+                    loggedinUser.ZipCode = Convert.ToString(reader["postcode"]);
+                    return true;
+                }
+               
             }
             Datacom.CloseConnection();
-            //if ("" == "")
-            //{
-            //    return true;
-            //}
 
-            if (email == this.email && password == this.password)
-            {
-                loggedinUser = new Person(this.email, this.password);
-                return true;
-            }
+
             return false;
         }
     }
