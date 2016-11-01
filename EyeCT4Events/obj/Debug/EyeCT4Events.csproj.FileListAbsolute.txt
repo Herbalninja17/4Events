@@ -122,5 +122,6 @@ E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.SocialMediaForm
 E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.UploadForm.resources
 E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.Properties.Resources.resources
 E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache
-C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
-C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\bin\Debug\Phidget21.NET.dll
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.HomeForm.resources
+C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources

@@ -22,15 +22,17 @@ namespace EyeCT4Events
         /// Maak een nieuw account aan.
         /// </summary>
         /// <param name="person"></param>
-        public void CreateUser(Person person)
+        public bool CreateUser(Person person)
         {
-            //DateTime date = new DateTime(person.BirthDate.Year, person.BirthDate.Month, person.BirthDate.Day);
             //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
             string datetime = person.BirthDate.ToShortDateString();
+
             int latestid = Datacom.GetLatestID("account") + 1;
+
             if (latestid == 0)
             {
                 Console.WriteLine("Iets is fout met ophalen van ID.");
+                return false;
             }
             else
             {
@@ -42,10 +44,12 @@ namespace EyeCT4Events
                     cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', " + datetime + ");";
 
                     cmd.ExecuteNonQuery();
+                    return true;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    return false;
                 }
                 finally
                 {
@@ -64,24 +68,15 @@ namespace EyeCT4Events
         {
             //query check of username + password overeenkomen met iemand uit de database
             Datacom.OpenConnection();
-            //Haal email op.
+            //Haal email en wachtwoord op.
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT email FROM account WHERE email like '" + email + "';";
+            cmd.CommandText = "SELECT email,wachtwoord FROM account WHERE email like '" + email + "'AND wachtwoord like '" + password + "';";
             cmd.Connection = Datacom.connect;
             cmd.ExecuteScalar();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                this.email = Convert.ToString(reader["username"]);
-            }
-            //Haal wachtwoord op.
-            SqlCommand cmd2 = new SqlCommand();
-            cmd2.CommandText = "SELECT wachtwoord FROM account WHERE wachtwoord like '" + password + "';";
-            cmd2.Connection = Datacom.connect;
-            cmd2.ExecuteNonQuery();
-            SqlDataReader reader2 = cmd.ExecuteReader();
-            while (reader2.Read())
-            {
+                this.email = Convert.ToString(reader["email"]);
                 this.password = Convert.ToString(reader["wachtwoord"]);
             }
             Datacom.CloseConnection();
