@@ -39,11 +39,8 @@ namespace EyeCT4Events
                 if (p.Email == oldPerson.Email)
                 {
                     int index = Persons.IndexOf(oldPerson);
-                    if (index != -1)
-                    {
-                        Persons[index] = newPerson;
-                        return true;
-                    }
+                    Persons[index] = newPerson;
+                    return true;
                 }
             }
 
