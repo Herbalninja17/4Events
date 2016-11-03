@@ -18,12 +18,12 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-        public static void SetCamping()
+        public static void SetCamping(Camping camping)
         {
             
         }
 
-        public static void UpdateCamping()
+        public static void UpdateCamping(Camping camping)
         {
             
         }
