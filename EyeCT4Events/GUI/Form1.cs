@@ -48,10 +48,6 @@ namespace EyeCT4Events
                 MessageBox.Show("Email or Password is incorrect.");
             }
             
-                
-
-
-            
         }
 
         /// <summary>
