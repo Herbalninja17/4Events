@@ -26,7 +26,9 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToEvent_Click(object sender, EventArgs e)
         {
-
+            MakeReservationForm makeReservation = new MakeReservationForm();
+            makeReservation.Show();
+            this.Close();
         }
 
         private void btnGoToSocialMedia_Click(object sender, EventArgs e)
