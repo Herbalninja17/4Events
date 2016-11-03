@@ -14,7 +14,6 @@ namespace EyeCT4Events
         private string name;
         private DateTime startDate;
         private DateTime endDate;
-        private int currentVisitors;
         private Camping camping;
 
         //Properties
