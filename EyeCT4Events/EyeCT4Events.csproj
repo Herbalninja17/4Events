@@ -64,6 +64,14 @@
     <Compile Include="Business\Enums\FileType.cs" />
     <Compile Include="Business\Enums\MaterialType.cs" />
     <Compile Include="Business\Enums\SpotType.cs" />
+    <Compile Include="Data\DataClasses\DataCamping.cs" />
+    <Compile Include="Data\DataClasses\DataCampingSpot.cs" />
+    <Compile Include="Data\DataClasses\DataEvent.cs" />
+    <Compile Include="Data\DataClasses\DataFile.cs" />
+    <Compile Include="Data\DataClasses\DataMaterial.cs" />
+    <Compile Include="Data\DataClasses\DataMessage.cs" />
+    <Compile Include="Data\DataClasses\DataPerson.cs" />
+    <Compile Include="Data\DataClasses\DataReservation.cs" />
     <Compile Include="GUI\EditEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +96,7 @@
     <Compile Include="GUI\CreateParticipantForm.Designer.cs">
       <DependentUpon>CreateParticipantForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\Datacom.cs" />
+    <Compile Include="Data\DataGeneral\Datacom.cs" />
     <Compile Include="GUI\DeleteEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
