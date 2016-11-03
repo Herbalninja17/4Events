@@ -19,11 +19,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -40,11 +39,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -61,11 +59,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -82,11 +79,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -103,11 +99,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(-1); //Yeserday
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -124,11 +119,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today;
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -145,11 +139,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Yeserday
             DateTime end = DateTime.Today; //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -166,11 +159,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Yeserday
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 0;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -187,11 +179,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Yeserday
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = -1;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -208,10 +199,9 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Yeserday
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Act
             evenement.CurrentVisitors = -1;
@@ -231,38 +221,16 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Yeserday
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = new Camping("Intentsions", 500);
 
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Act
             evenement.CurrentVisitors = 101;
 
             //Assert is handled by the ExpectedException.
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Event_Exceptions_PriceMayNotBeLessThan0()
-        {
-            //Arrange
-            Event evenement;
-
-            string name = "Landora";
-            string location = "Awesomeville";
-            DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
-            DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
-            int maximumVisitors = 100;
-            decimal price = -1;
-            Camping camping = new Camping("Intentsions", 500);
-
-            //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
-
-            //Assert is handled by the ExpectedException.
-        }
-
+        
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Event_Exceptions_CampingMayNotBeNull()
@@ -275,11 +243,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(2); //Day after tomorrow.
             int maximumVisitors = 100;
-            decimal price = 27.95m;
             Camping camping = null;
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert is handled by the ExpectedException.
         }
@@ -295,15 +262,13 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(1); //Day after tomorrow.
             int maximumVisitors = 1;
-            decimal price = 0;
             Camping camping = new Camping("Intentsions", 500);
 
             //Act
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             //Assert
             Assert.IsTrue(evenement.MaxVisitors == 1);
-            Assert.IsTrue(evenement.Price == 0);
             Assert.IsTrue(evenement.Name == "Landora");
             Assert.IsTrue(evenement.Location == "Awesomeville");
         }
@@ -319,10 +284,9 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             DateTime start = DateTime.Today.AddDays(1); //Tomorrow.
             DateTime end = DateTime.Today.AddDays(1); //Day after tomorrow.
             int maximumVisitors = 1;
-            decimal price = 0;
             Camping camping = new Camping("Intentsions", 500);
 
-            evenement = new Event(name, location, start, end, maximumVisitors, price, camping);
+            evenement = new Event(name, location, start, end, maximumVisitors, camping);
 
             string date1 = start.ToString();
             string date2 = end.ToString();
@@ -331,7 +295,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string testString = evenement.ToString();
             
             //Assert
-            Assert.IsTrue(testString == "Landora | Awesomeville | " + date1 + " | " + date2 + " | 1 | 0 | 0 | Intentsions");
+            Assert.IsTrue(testString == "Landora | Awesomeville | " + date1 + " | " + date2 + " | 1 | 0 | Intentsions");
         }
     }
 }
