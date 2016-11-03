@@ -27,18 +27,24 @@ namespace EyeCT4Events
         public bool Reserved { get; set; }
 
         /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public decimal Price { get; private set; }
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="spotType">The type of the spot</param>
         /// <param name="spotID">The ID of the spot</param>
         /// <param name="capacity">The amount of people a spot can hold</param>
         /// <param name="reserved">Reservation status of the spot</param>
-        public CampingSpot(SpotType spotType, int spotID, int capacity, bool reserved)
+        public CampingSpot(SpotType spotType, int spotID, int capacity, bool reserved, decimal price)
         {
             SpotType = spotType;
             SpotID = spotID;
             Capacity = capacity;
             Reserved = reserved;
+            Price = price;
         }
 
         public override string ToString()
