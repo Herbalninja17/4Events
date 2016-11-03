@@ -16,5 +16,38 @@ namespace EyeCT4Events.GUI
         {
             InitializeComponent();
         }
+
+        private void btnGoToReservation_Click(object sender, EventArgs e)
+        {
+            MyReservationsForm reservations = new MyReservationsForm();
+            reservations.Show();
+            this.Close();
+        }
+
+        private void btnGoToEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGoToSocialMedia_Click(object sender, EventArgs e)
+        {
+            SocialMediaForm socialMedia = new SocialMediaForm();
+            socialMedia.Show();
+            this.Close();
+        }
+
+        private void btnGoToLease_Click(object sender, EventArgs e)
+        {
+            LeaseForm lease = new LeaseForm();
+            lease.Show();
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
     }
 }
