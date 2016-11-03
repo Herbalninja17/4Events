@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,17 +25,14 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateEventCreateEvent_Click(object sender, EventArgs e)
         {
-            int maxVisitors = 0;
+            Camping camping = null;
 
-            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || String.IsNullOrWhiteSpace(tbCreateEventStreet.Text) || 
-                String.IsNullOrWhiteSpace(tbCreateEventCity.Text) || String.IsNullOrWhiteSpace(tbCreateEventZipCode.Text) || 
-                String.IsNullOrWhiteSpace(tbCreateEventProvince.Text) || dtpBeginDate.Value <= DateTime.Now || 
-                dtpEndDate.Value < dtpBeginDate.Value || String.IsNullOrWhiteSpace(tbCreateEventCapacity.Text) ||
-                !(Int32.TryParse(tbCreateEventCapacity.Text, out maxVisitors)) || cbCreateEventCamping.SelectedIndex == -1)
+            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Now || 
+                dtpEndDate.Value < dtpBeginDate.Value || cbCreateEventCamping.SelectedIndex == -1)
             { MessageBox.Show("Vul alle velden correct in."); return; }
 
-            string address = tbCreateEventStreet.Text + " " + tbCreateEventCity.Text + " " + tbCreateEventZipCode.Text
-                + " " + tbCreateEventProvince.Text;
+            //MOETEN EERST CAMPINGS KUNNEN WORDEN BINNEN GEHAALD UIT DE DATABASE IN IN DE COMBOBOX WORDEN GEPLAATS OM DEZE
+            //METHODE AF TE MAKEN!!!!
 
             //Event newEvent = new Event(tbCreateEventName.Text, address, dtpBeginDate.Value, dtpEndDate.Value, maxVisitors,)
 
@@ -47,7 +45,10 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-
+            //DeleteEventForm def = new DeleteEventForm();
+            HomeForm home = new HomeForm();
+            this.Close();
+            home.Show();
         }
 
         /// <summary>

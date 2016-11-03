@@ -11,12 +11,10 @@ namespace EyeCT4Events
     {
         //fields (Used to check for exceptions in the propperties).
         private string name;
-        private string location;
         private DateTime startDate;
         private DateTime endDate;
         private int maxVisitors;
         private int currentVisitors;
-        private decimal price;
         private Camping camping;
 
         //Properties
@@ -32,20 +30,6 @@ namespace EyeCT4Events
                     throw new ArgumentException("name");
                 }
                 name = value;
-            }
-        }
-
-        public string Location
-        {
-            get { return location; }
-            private set
-            {
-                if (String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == null) { throw new ArgumentNullException("location"); }
-                    throw new ArgumentException("location");
-                }
-                location = value;
             }
         }
 
@@ -113,7 +97,6 @@ namespace EyeCT4Events
         public Event(string name, string location, DateTime startDate, DateTime endDate, int maxVisitors, Camping camping)
         {
             Name = name;
-            Location = location;
             StartDate = startDate;
             EndDate = endDate;
             MaxVisitors = maxVisitors;
@@ -125,7 +108,6 @@ namespace EyeCT4Events
         public override string ToString()
         {
             return Name
-                + " | " + Location
                 + " | " + StartDate
                 + " | " + EndDate
                 + " | " + MaxVisitors
