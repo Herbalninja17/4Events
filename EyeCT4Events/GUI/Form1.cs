@@ -39,9 +39,9 @@ namespace EyeCT4Events
                 //}
                 //^Rechard zijn super sexy werkend code!^
 
-                ParticipantsForm pf = new ParticipantsForm();
+                HomeForm home = new HomeForm();
                 this.Hide();
-                pf.Show();
+                home.Show();
             }
             else if(login.LogInUser(tbLoginEmail.Text,tbLoginWachtwoord.Text) == false)
             {
