@@ -8,18 +8,12 @@ namespace EyeCT4Events
 {
     public class Reservation
     {
-        private int reservationID;
         private bool eventIsPlayed;
 
-        public int ReservationID
-        {
-            get { return reservationID; }
-            set
-            {
-                if (value <= 0) { throw new ArgumentOutOfRangeException("reservationID");}
-                reservationID = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database (Auto increment).
+        /// </summary>
+        public int ReservationID { get; private set; }
 
         public bool EventIsPlayed { get; set; }
 
@@ -27,36 +21,42 @@ namespace EyeCT4Events
 
         public List<Material> Materials { get; set; }
 
+        public CampingSpot CampingSpot { get; set; }
+
+        public decimal Price { get { return CalculateTotalPrice(); } }
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="reservationID">The ID of the reservation</param>
         /// <param name="eventIsPlayed">If the event is playing or not</param>
-        public Reservation(int reservationID, bool eventIsPlayed)
+        public Reservation(int reservationID, bool eventIsPlayed, CampingSpot campingSpot)
         {
             ReservationID = reservationID;
             EventIsPlayed = eventIsPlayed;
+            CampingSpot = campingSpot;
         }
 
-        public decimal CalculatePrice()
+        /// <summary>
+        /// Price for the reservation.
+        /// </summary>
+        /// <returns></returns>
+        private decimal CalculateTotalPrice()
         {
-            if (Materials != null)
+            decimal price = 0;
+            if(CampingSpot != null)
             {
-                decimal price = 0;
-
-                foreach (Material m in Materials)
-                {
-                    if (!m.IsPayed)
-                    {
-                        price += m.Price;
-                    }
-                }
-
-                return price;
+                price += CampingSpot.Price;
             }
 
-            return 0;
-
+            if (Materials != null)
+            {
+                foreach (Material m in Materials)
+                {
+                    price += m.Price;
+                }
+            }
+            return price;
         }
 
         public List<Material> OpenMaterialPayment()
@@ -72,14 +72,12 @@ namespace EyeCT4Events
                         mat.Add(m);
                     }
                 }
-
                 return mat;
             }
-
             return null;
         }
 
-        public decimal CalculateMaterialPayment()
+        public decimal CalculateOpenMaterialPayment()
         {
             if (Materials != null)
             {
