@@ -127,5 +127,4 @@ C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
-E:\00school\P2-2\PT\4events2\EyeCT4Events\bin\Debug\Phidget21.NET.dll
-E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources

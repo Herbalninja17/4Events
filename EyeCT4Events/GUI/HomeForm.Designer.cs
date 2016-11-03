@@ -41,9 +41,10 @@
             // 
             // btnGoToReservation
             // 
-            this.btnGoToReservation.Location = new System.Drawing.Point(13, 13);
+            this.btnGoToReservation.Location = new System.Drawing.Point(26, 25);
+            this.btnGoToReservation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGoToReservation.Name = "btnGoToReservation";
-            this.btnGoToReservation.Size = new System.Drawing.Size(109, 51);
+            this.btnGoToReservation.Size = new System.Drawing.Size(218, 98);
             this.btnGoToReservation.TabIndex = 0;
             this.btnGoToReservation.Text = "Reserveringen";
             this.btnGoToReservation.UseVisualStyleBackColor = true;
@@ -51,45 +52,54 @@
             // 
             // btnGoToEvent
             // 
-            this.btnGoToEvent.Location = new System.Drawing.Point(13, 70);
+            this.btnGoToEvent.Location = new System.Drawing.Point(26, 135);
+            this.btnGoToEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGoToEvent.Name = "btnGoToEvent";
-            this.btnGoToEvent.Size = new System.Drawing.Size(109, 51);
+            this.btnGoToEvent.Size = new System.Drawing.Size(218, 98);
             this.btnGoToEvent.TabIndex = 1;
             this.btnGoToEvent.Text = "Evenement";
             this.btnGoToEvent.UseVisualStyleBackColor = true;
+            this.btnGoToEvent.Click += new System.EventHandler(this.btnGoToEvent_Click);
             // 
             // btnGoToSocialMedia
             // 
-            this.btnGoToSocialMedia.Location = new System.Drawing.Point(13, 127);
+            this.btnGoToSocialMedia.Location = new System.Drawing.Point(26, 244);
+            this.btnGoToSocialMedia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGoToSocialMedia.Name = "btnGoToSocialMedia";
-            this.btnGoToSocialMedia.Size = new System.Drawing.Size(109, 51);
+            this.btnGoToSocialMedia.Size = new System.Drawing.Size(218, 98);
             this.btnGoToSocialMedia.TabIndex = 2;
             this.btnGoToSocialMedia.Text = "Sorcial Media";
             this.btnGoToSocialMedia.UseVisualStyleBackColor = true;
+            this.btnGoToSocialMedia.Click += new System.EventHandler(this.btnGoToSocialMedia_Click);
             // 
             // btnGoToLease
             // 
-            this.btnGoToLease.Location = new System.Drawing.Point(13, 184);
+            this.btnGoToLease.Location = new System.Drawing.Point(26, 354);
+            this.btnGoToLease.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGoToLease.Name = "btnGoToLease";
-            this.btnGoToLease.Size = new System.Drawing.Size(109, 51);
+            this.btnGoToLease.Size = new System.Drawing.Size(218, 98);
             this.btnGoToLease.TabIndex = 3;
             this.btnGoToLease.Text = "Verhuur";
             this.btnGoToLease.UseVisualStyleBackColor = true;
+            this.btnGoToLease.Click += new System.EventHandler(this.btnGoToLease_Click);
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(13, 241);
+            this.btnLogOut.Location = new System.Drawing.Point(26, 463);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(109, 51);
+            this.btnLogOut.Size = new System.Drawing.Size(218, 98);
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "Uitloggen";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(128, 70);
+            this.pbLogo.Location = new System.Drawing.Point(256, 135);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(461, 222);
+            this.pbLogo.Size = new System.Drawing.Size(922, 427);
             this.pbLogo.TabIndex = 5;
             this.pbLogo.TabStop = false;
             // 
@@ -97,9 +107,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(128, 27);
+            this.label1.Location = new System.Drawing.Point(256, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(142, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "Welkom:";
             // 
@@ -107,17 +118,18 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(204, 27);
+            this.lblUserName.Location = new System.Drawing.Point(408, 52);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(94, 20);
+            this.lblUserName.Size = new System.Drawing.Size(189, 37);
             this.lblUserName.TabIndex = 7;
             this.lblUserName.Text = "(Inlognaam)";
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 303);
+            this.ClientSize = new System.Drawing.Size(1202, 583);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbLogo);
@@ -126,6 +138,7 @@
             this.Controls.Add(this.btnGoToSocialMedia);
             this.Controls.Add(this.btnGoToEvent);
             this.Controls.Add(this.btnGoToReservation);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
