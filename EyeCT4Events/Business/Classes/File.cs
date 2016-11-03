@@ -27,20 +27,16 @@ namespace EyeCT4Events
 
         public FileType FileType { get; set; }
 
-        public int FileID
-        {
-            get { return fileID; }
-            set
-            {
-                if (value < 1) { throw new ArgumentOutOfRangeException("fileID"); }
-                fileID = value;
-            }
-        }
+        /// <summary>
+        /// Created in the database.
+        /// </summary>
+        public int FileID { get { return fileID; } private set { } }
 
         public Person Poster { get; set; }
 
         /// <summary>
         /// Constructor
+        /// When getting a file from the database.
         /// </summary>
         /// <param name="title">Title of the file</param>
         /// <param name="fileType">The document type of the file</param>
@@ -50,7 +46,7 @@ namespace EyeCT4Events
         {
             Title = title;
             FileType = fileType;
-            FileID = fileID;
+            FileID = fileID; //LAATSTE OPHALEN UIT DATABASE?
             Poster = poster;
         }
 

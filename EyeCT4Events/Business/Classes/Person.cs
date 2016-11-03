@@ -12,12 +12,11 @@ namespace EyeCT4Events
         private string name;
         private DateTime birthDate;
         private string address;
-        private string zipcode;
         private string phonenumber;
         private string email;
         private string password;
         private string accountnumber;
-        private List<Reservation> reservations;
+        private int admin;
 
         //Persoonklasse
         public string Name
@@ -56,19 +55,6 @@ namespace EyeCT4Events
                     throw new ArgumentException("address");
                 }
                 address = value;
-            }
-        }
-        public string ZipCode
-        {
-            get { return zipcode; }
-            set
-            {
-                if (String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == null) { throw new ArgumentNullException("zipcode"); }
-                    throw new ArgumentException("zipcode");
-                }
-                zipcode = value;
             }
         }
 
@@ -119,10 +105,10 @@ namespace EyeCT4Events
                     if (value == null) { throw new ArgumentNullException("password"); }
                     throw new ArgumentException("password");
                 }
-
                 password = value;
             }
         }
+
         public string AccountNumber
         {
             get { return accountnumber; }
@@ -138,40 +124,66 @@ namespace EyeCT4Events
             }
         }
 
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int Admin { get { return admin; } private set { } }
+
         public List<Reservation> Reservations { get; set; }
 
         /// <summary>
         /// Constructor
+        /// To create (or Edit) a person.
         /// </summary>
         /// <param name="name">Name of the person</param>
-        /// <param name="birthDate">The Date of Birth of the person</param>
+        /// <param name="birthDate">The date of birth of the person</param>
         /// <param name="address">The address of the person</param>
         /// <param name="phonenumber">The Phonenumber of the person</param>
         /// <param name="email">The Email of the person</param>
         /// <param name="password">The Password of the person</param>
         /// <param name="accountnumber">The Accountnumber of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode, string phonenumber, string email,string password,string accountnumber)
+        public Person(string name, DateTime birthDate, string address, string phonenumber, string email, string password,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
             Address = address;
-            ZipCode = zipcode;
             Phonenumber = phonenumber;
             Email = email;
             Password = password;
             AccountNumber = accountnumber;
-            Reservations = new List<Reservation>();
+            Reservations = new List<Reservation>();            
+
+            admin = 0; //Only the database owner may make someone an admin.
         }
 
         /// <summary>
-        /// Om een persoon in te loggen
+        /// Constructor
+        /// To log-in a person.
         /// </summary>
         /// <param name="email">Username of the person</param>
         /// <param name="password">Password of the person</param>
-        public Person(string email,string password)
+        public Person(string email, string password)
         {
             Email = email;
             Password = password;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// For active lists used in this program. Loaded from database.
+        /// </summary>
+        /// <param name="name">Name of the person</param>
+        /// <param name="birthDate">The date of birth of the person</param>
+        /// <param name="address">The address of the person</param>
+        /// <param name="phonenumber">The phonenumber of the person</param>
+        /// <param name="email">The username of the person</param>
+        public Person(string name, DateTime birthDate, string address, string phonenumber, string email)
+        {
+            Name = name;
+            BirthDate = BirthDate;
+            Address = address;
+            Phonenumber = phonenumber;
+            Email = email;
         }
 
         public override string ToString()
@@ -179,10 +191,8 @@ namespace EyeCT4Events
            return Name
                 + " | " + birthDate
                 + " | " + Address
-                + " | " + ZipCode
                 + " | " + Phonenumber
                 + " | " + Email
-                + " | " + Password
                 ;
         }
     }
