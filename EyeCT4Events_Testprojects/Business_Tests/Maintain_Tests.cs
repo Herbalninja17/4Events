@@ -241,7 +241,6 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             Assert.IsTrue(checkPerson.Reservations.Count == 3);
         }
 
-        //ER WORD NIET GECONTROLLEERD OP RESERVATION ID - MOET AANGEPAST WORDEN. ALLE RESERVATIONS UNIEK? RESERVATIONS BIJ PERSOON UNIEK?
-                                                                                        //EN HOE WORD DE TELLING DAN GEREGELD.
+        //LAATSTE 6 METHODEN MOETEN NOG GETEST WORDEN!
     }
 }
