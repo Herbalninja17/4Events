@@ -47,5 +47,64 @@ namespace RandomSql
                 conn.Close();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            try
+            {
+                
+                conn.Open();
+                command = new SqlCommand("select * from account where wachtwoord = 'datumtest' AND email = 'datum@test.nl'", conn);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime d;
+                    d = DateTime.Parse(date);
+                    listBox1.Items.Add(reader["email"]);
+                    listBox1.Items.Add(reader["wachtwoord"]);
+                    listBox1.Items.Add(reader["naam"]);
+                    listBox1.Items.Add(reader["rekeningnummer"]);    
+                    listBox1.Items.Add(reader["adres"]);
+                    listBox1.Items.Add(reader["telefoon"]);
+                    listBox1.Items.Add(reader["postcode"]);
+                    listBox1.Items.Add(d);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = "j";
+                string email = "j@j.j";
+                string password = "j";
+                string accountnumber = "0000000";
+                string phonenumber = "011111111";
+                string zipcode = "3333jj";
+                string adress = "j";
+                string birthdate = "1-2-2016";
+                string email2 = "henk@henk.henk";
+                string password2 = "henk";
+                conn.Open();
+                command = new SqlCommand("UPDATE account SET naam = '" + name + "', email = '" + email + "', wachtwoord = '" + password + "',rekeningnummer = '" + accountnumber + "', telefoon = '" + phonenumber + "', postcode = '" + zipcode + "', adres = '" + adress + "', geboortedatum = '" + birthdate + "' WHERE email = '" + email2 + "' AND wachtwoord = '" + password2 + "';", conn);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
