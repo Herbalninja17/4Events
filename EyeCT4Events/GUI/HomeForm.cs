@@ -15,6 +15,7 @@ namespace EyeCT4Events.GUI
         public HomeForm()
         {
             InitializeComponent();
+            lblUserName.Text = Login.loggedinUser.Name;
         }
 
         private void btnGoToReservation_Click(object sender, EventArgs e)
