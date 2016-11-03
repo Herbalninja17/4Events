@@ -48,6 +48,8 @@
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.btnParticipants = new System.Windows.Forms.Button();
+            this.cbCreateEventCamping = new System.Windows.Forms.ComboBox();
+            this.lblCreateEventCamping = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCreateEventName
@@ -180,7 +182,7 @@
             // 
             // btnCreateEventCreateEvent
             // 
-            this.btnCreateEventCreateEvent.Location = new System.Drawing.Point(468, 316);
+            this.btnCreateEventCreateEvent.Location = new System.Drawing.Point(468, 356);
             this.btnCreateEventCreateEvent.Name = "btnCreateEventCreateEvent";
             this.btnCreateEventCreateEvent.Size = new System.Drawing.Size(75, 40);
             this.btnCreateEventCreateEvent.TabIndex = 16;
@@ -218,11 +220,31 @@
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
+            // cbCreateEventCamping
+            // 
+            this.cbCreateEventCamping.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCreateEventCamping.FormattingEnabled = true;
+            this.cbCreateEventCamping.Location = new System.Drawing.Point(343, 327);
+            this.cbCreateEventCamping.Name = "cbCreateEventCamping";
+            this.cbCreateEventCamping.Size = new System.Drawing.Size(200, 21);
+            this.cbCreateEventCamping.TabIndex = 21;
+            // 
+            // lblCreateEventCamping
+            // 
+            this.lblCreateEventCamping.AutoSize = true;
+            this.lblCreateEventCamping.Location = new System.Drawing.Point(226, 330);
+            this.lblCreateEventCamping.Name = "lblCreateEventCamping";
+            this.lblCreateEventCamping.Size = new System.Drawing.Size(51, 13);
+            this.lblCreateEventCamping.TabIndex = 22;
+            this.lblCreateEventCamping.Text = "Camping:";
+            // 
             // CreateEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 386);
+            this.ClientSize = new System.Drawing.Size(681, 421);
+            this.Controls.Add(this.lblCreateEventCamping);
+            this.Controls.Add(this.cbCreateEventCamping);
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.btnDeleteEvent);
             this.Controls.Add(this.btnEditEvent);
@@ -272,5 +294,7 @@
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.Button btnParticipants;
+        private System.Windows.Forms.ComboBox cbCreateEventCamping;
+        private System.Windows.Forms.Label lblCreateEventCamping;
     }
 }

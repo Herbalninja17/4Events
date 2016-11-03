@@ -90,16 +90,6 @@ namespace EyeCT4Events
             }
         }
 
-        public decimal Price
-        {
-            get { return price; }
-            set
-            {
-                if (value < 0) { throw new ArgumentOutOfRangeException("price"); }
-                price = value;
-            }
-        }
-
         public Camping Camping
         {
             get { return camping; }
@@ -120,7 +110,7 @@ namespace EyeCT4Events
         /// <param name="maxVisitors">Maximum number of people that may come to the event.</param>
         /// <param name="price">Price for the event.</param>
         /// <param name="camping">Camping object for the event.</param>
-        public Event(string name, string location, DateTime startDate, DateTime endDate, int maxVisitors, decimal price, Camping camping)
+        public Event(string name, string location, DateTime startDate, DateTime endDate, int maxVisitors, Camping camping)
         {
             Name = name;
             Location = location;
@@ -128,7 +118,6 @@ namespace EyeCT4Events
             EndDate = endDate;
             MaxVisitors = maxVisitors;
             CurrentVisitors = 0;
-            Price = price;
             Camping = camping;
         }
 
@@ -141,7 +130,6 @@ namespace EyeCT4Events
                 + " | " + EndDate
                 + " | " + MaxVisitors
                 + " | " + CurrentVisitors
-                + " | " + Price
                 + " | " + Camping.Name
                 ;
         }
