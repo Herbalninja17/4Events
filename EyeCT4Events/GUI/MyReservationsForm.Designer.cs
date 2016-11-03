@@ -38,64 +38,56 @@
             // lbMyReservationsEvents
             // 
             this.lbMyReservationsEvents.FormattingEnabled = true;
-            this.lbMyReservationsEvents.ItemHeight = 25;
-            this.lbMyReservationsEvents.Location = new System.Drawing.Point(24, 165);
-            this.lbMyReservationsEvents.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbMyReservationsEvents.Location = new System.Drawing.Point(12, 86);
             this.lbMyReservationsEvents.Name = "lbMyReservationsEvents";
-            this.lbMyReservationsEvents.Size = new System.Drawing.Size(340, 604);
+            this.lbMyReservationsEvents.Size = new System.Drawing.Size(172, 316);
             this.lbMyReservationsEvents.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(994, 42);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(497, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(396, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // lbMyReservationsReservations
             // 
             this.lbMyReservationsReservations.FormattingEnabled = true;
-            this.lbMyReservationsReservations.ItemHeight = 25;
-            this.lbMyReservationsReservations.Location = new System.Drawing.Point(510, 165);
-            this.lbMyReservationsReservations.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbMyReservationsReservations.Location = new System.Drawing.Point(255, 86);
             this.lbMyReservationsReservations.Name = "lbMyReservationsReservations";
-            this.lbMyReservationsReservations.Size = new System.Drawing.Size(380, 604);
+            this.lbMyReservationsReservations.Size = new System.Drawing.Size(192, 316);
             this.lbMyReservationsReservations.TabIndex = 2;
             // 
             // lbMyReservationsParticipants
             // 
             this.lbMyReservationsParticipants.FormattingEnabled = true;
-            this.lbMyReservationsParticipants.ItemHeight = 25;
-            this.lbMyReservationsParticipants.Location = new System.Drawing.Point(994, 165);
-            this.lbMyReservationsParticipants.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbMyReservationsParticipants.Location = new System.Drawing.Point(497, 86);
             this.lbMyReservationsParticipants.Name = "lbMyReservationsParticipants";
-            this.lbMyReservationsParticipants.Size = new System.Drawing.Size(362, 604);
+            this.lbMyReservationsParticipants.Size = new System.Drawing.Size(183, 316);
             this.lbMyReservationsParticipants.TabIndex = 3;
             // 
             // lblMyReservationsDate
             // 
             this.lblMyReservationsDate.AutoSize = true;
-            this.lblMyReservationsDate.Location = new System.Drawing.Point(863, 47);
-            this.lblMyReservationsDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblMyReservationsDate.Location = new System.Drawing.Point(432, 24);
             this.lblMyReservationsDate.Name = "lblMyReservationsDate";
-            this.lblMyReservationsDate.Size = new System.Drawing.Size(80, 25);
+            this.lblMyReservationsDate.Size = new System.Drawing.Size(41, 13);
             this.lblMyReservationsDate.TabIndex = 4;
             this.lblMyReservationsDate.Text = "Datum:";
             // 
             // MyReservationsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1418, 788);
+            this.ClientSize = new System.Drawing.Size(709, 410);
             this.Controls.Add(this.lblMyReservationsDate);
             this.Controls.Add(this.lbMyReservationsParticipants);
             this.Controls.Add(this.lbMyReservationsReservations);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbMyReservationsEvents);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MyReservationsForm";
             this.Text = "Mijn Reserveringen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MyReservationsForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

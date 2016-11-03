@@ -12,9 +12,20 @@ namespace EyeCT4Events
 {
     public partial class ParticipantsForm : Form
     {
+        private ParticipantsForm participantsForm;
+        private MakeReservationForm reservationForm;
+
         public ParticipantsForm()
         {
             InitializeComponent();
+            participantsForm = this;
+        }
+
+        public ParticipantsForm(MakeReservationForm reservationForm)
+        {
+            InitializeComponent();
+            participantsForm = this;
+            this.reservationForm = reservationForm;
         }
 
         /// <summary>
@@ -24,9 +35,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
-            CreateParticipantForm cpf = new CreateParticipantForm();
-            this.Close();
-            cpf.Show();
+            CreateParticipantForm createForm = new CreateParticipantForm(participantsForm);
+            createForm.Show();
+            this.Hide();
         }
 
         /// <summary>
@@ -36,9 +47,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
-            EditParticipantForm epf = new EditParticipantForm();
+            EditParticipantForm editForm = new EditParticipantForm();
+            editForm.Show();
             this.Close();
-            epf.Show();
         }
 
         /// <summary>
@@ -48,7 +59,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-
+            //Zoekscherm aanmaken met delete en annuleer knop.
         }
 
         /// <summary>
@@ -58,9 +69,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEvents_Click(object sender, EventArgs e)
         {
-            MakeReservationForm mrf = new MakeReservationForm();
+            MakeReservationForm reservationForm = new MakeReservationForm();
+            reservationForm.Show();
             this.Close();
-            mrf.Show();
         }
 
         /// <summary>
@@ -70,9 +81,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnMaterial_Click(object sender, EventArgs e)
         {
-            HiredMaterialForm hmf = new HiredMaterialForm();
+            HiredMaterialForm hiredMaterialForm = new HiredMaterialForm();
+            hiredMaterialForm.Show();
             this.Close();
-            hmf.Show();
         }
     }
 }
