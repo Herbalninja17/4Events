@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.Data.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,27 +36,71 @@ namespace EyeCT4Events
         {
             Name = name;
             Address = address;
-            CampingSpots = new List<CampingSpot>();
+            CampingSpots = DataCampingSpot.GetCampingSpotList();
         }
 
         /// <summary>
-        /// Find a Camping Spot
+        /// Find all free camping spots of a certain type.
         /// </summary>
-        /// <param name="spot">The Camping Spot that has to be found</param>
+        /// <param name="type">Filtertype for the campingspot.</param>
         /// <returns></returns>
-        public CampingSpot FindSpot(int spotID)
+        public List<CampingSpot> FreeCampingSpots(SpotType type)
         {
+            List<CampingSpot> campingSpots = null;
+
             foreach (CampingSpot found in CampingSpots)
             {
-                if (found.SpotID == spotID)
+                if (!found.Reserved && found.SpotType == type)
                 {
-                    return found;
+                    campingSpots.Add(found);
                 }
             }
-            return null;
+            return campingSpots;
         }
 
+        /// <summary>
+        /// Gives all free camping spots.
+        /// </summary>
+        /// <returns>List of free camping spots.</returns>
+        public List<CampingSpot> FreeCampingSpots()
+        {
+            List<CampingSpot> campingSpots = null;
 
+            foreach(CampingSpot found in CampingSpots)
+            {
+                if(!found.Reserved)
+                {
+                    campingSpots.Add(found);
+                }
+            }
+            return campingSpots;
+        }
 
+        /// <summary>
+        /// Gives all reserved camping spots.
+        /// </summary>
+        /// <returns>list of reserved camping spots.</returns>
+        public List<CampingSpot> ReservedCampingSpots()
+        {
+            List<CampingSpot> campingSpots = null;
+
+            foreach (CampingSpot found in CampingSpots)
+            {
+                if (found.Reserved)
+                {
+                    campingSpots.Add(found);
+                }
+            }
+            return campingSpots;
+        }
+
+        /// <summary>
+        /// Calls the Data layer method to reserve a specific camping spot.
+        /// </summary>
+        /// <param name="spotID"></param>
+        public void CampingSpotReservation(int spotID)
+        {
+            DataCampingSpot.ReserveCampingSpot(spotID);     
+        }
     }
 }

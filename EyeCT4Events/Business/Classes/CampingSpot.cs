@@ -24,7 +24,6 @@ namespace EyeCT4Events
         /// </summary>
         public int Capacity { get; private set; }
 
-
         public bool Reserved { get; set; }
 
         /// <summary>
