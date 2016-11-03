@@ -13,13 +13,14 @@ namespace EyeCT4Events
 {
     public partial class LoginForm : Form
     {
+        private LoginForm loginForm;
         Login login = new Login();
         RfidForm RFID = new RfidForm();
 
         public LoginForm()
         {
-            
-            InitializeComponent();            
+            InitializeComponent();
+            loginForm = this;
         }
         
         /// <summary>
@@ -39,7 +40,7 @@ namespace EyeCT4Events
                 //}
                 //^Rechard zijn super sexy werkend code!^
 
-                HomeForm home = new HomeForm();
+                HomeForm home = new HomeForm(loginForm);
                 this.Hide();
                 home.Show();
             }
