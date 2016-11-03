@@ -61,6 +61,21 @@ namespace EyeCT4Events
 
         public List<Material> OpenMaterialPayment()
         {
+            List<Material> mat = new List<Material>();
+
+            if (Materials != null)
+            {
+                foreach (Material m in Materials)
+                {
+                    if (!m.IsPayed)
+                    {
+                        mat.Add(m);
+                    }
+                }
+
+                return mat;
+            }
+
             return null;
         }
 

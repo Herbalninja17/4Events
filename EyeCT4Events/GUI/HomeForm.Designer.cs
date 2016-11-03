@@ -47,6 +47,7 @@
             this.btnGoToReservation.TabIndex = 0;
             this.btnGoToReservation.Text = "Reserveringen";
             this.btnGoToReservation.UseVisualStyleBackColor = true;
+            this.btnGoToReservation.Click += new System.EventHandler(this.btnGoToReservation_Click);
             // 
             // btnGoToEvent
             // 

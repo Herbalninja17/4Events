@@ -12,9 +12,18 @@ namespace EyeCT4Events
 {
     public partial class EditParticipantForm : Form
     {
+        
         public EditParticipantForm()
         {
             InitializeComponent();
+            //Laat de gegevens zien van de ingelogde gebruiker.
+            tbEditParticipantName.Text = Login.loggedinUser.Name;
+            tbEditParticipantEmail.Text = Login.loggedinUser.Email;
+            tbEditParticipantCity.Text = Login.loggedinUser.Address;
+            tbEditParticipantPassword.Text = Login.loggedinUser.Password;
+            tbEditParticipantPhoneNumber.Text = Login.loggedinUser.Phonenumber;
+            tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
+            tbEditParticipantAccountNumber.Text = Login.loggedinUser.AccountNumber;
         }
 
         /// <summary>
@@ -24,7 +33,16 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditParticipantEditParticipant_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialog = MessageBox.Show("Weet u zeker dat u deze wijzigingen wilt doorvoeren?", "Wijziging", MessageBoxButtons.YesNo);
+            if(dialog == DialogResult.Yes)
+            {
+                DateTime dt = dtpEditParticipantDateOfBirth.Value;
+                string date = dt.ToShortDateString();
+                if(Login.EditUser(tbEditParticipantName.Text, tbEditParticipantEmail.Text, tbEditParticipantPassword.Text, tbEditParticipantAccountNumber.Text, tbEditParticipantCity.Text, tbEditParticipantZipCode.Text, tbEditParticipantPhoneNumber.Text, date))
+                {
+                    MessageBox.Show("Uw gegevens zijn succesvol gewijzigd");
+                }
+            }
         }
 
         /// <summary>

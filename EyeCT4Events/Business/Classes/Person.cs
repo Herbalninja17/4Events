@@ -138,11 +138,7 @@ namespace EyeCT4Events
             }
         }
 
-        public List<Reservation> Reservations
-        {
-            get { return reservations; }
-            set { reservations = value; }
-        }
+        public List<Reservation> Reservations { get; set; }
 
         /// <summary>
         /// Constructor
@@ -177,7 +173,6 @@ namespace EyeCT4Events
             Email = email;
             Password = password;
         }
-
 
         public override string ToString()
         {

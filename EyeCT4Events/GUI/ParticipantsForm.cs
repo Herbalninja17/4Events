@@ -36,7 +36,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
-            
+            EditParticipantForm epf = new EditParticipantForm();
+            this.Close();
+            epf.Show();
         }
 
         /// <summary>
