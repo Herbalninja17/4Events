@@ -23,6 +23,8 @@ namespace EyeCT4Events
 
         public CampingSpot CampingSpot { get; set; }
 
+        public decimal Price { get { return CalculateTotalPrice(); } }
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -39,7 +41,7 @@ namespace EyeCT4Events
         /// Price for the reservation.
         /// </summary>
         /// <returns></returns>
-        public decimal CalculateTotalPrice()
+        private decimal CalculateTotalPrice()
         {
             decimal price = 0;
             if(CampingSpot != null)
