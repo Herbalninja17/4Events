@@ -62,6 +62,7 @@
     <Compile Include="Business_Tests\Message_Tests.cs" />
     <Compile Include="Business_Tests\Person_Tests.cs" />
     <Compile Include="Business_Tests\Reservation_Tests.cs" />
+    <Compile Include="Data_Tests\Data_Material_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
