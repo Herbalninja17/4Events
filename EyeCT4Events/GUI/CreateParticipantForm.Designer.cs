@@ -158,6 +158,7 @@
             this.dtpCreateParticipantDateOfBirth.Name = "dtpCreateParticipantDateOfBirth";
             this.dtpCreateParticipantDateOfBirth.Size = new System.Drawing.Size(200, 20);
             this.dtpCreateParticipantDateOfBirth.TabIndex = 33;
+            this.dtpCreateParticipantDateOfBirth.Value = new System.DateTime(2016, 10, 31, 12, 29, 25, 0);
             // 
             // tbCreateParticipantName
             // 

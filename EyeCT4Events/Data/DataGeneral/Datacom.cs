@@ -69,6 +69,34 @@ namespace EyeCT4Events.Data
             }
             return xxx;
         } //goodluck! </Rechard>  
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+        public static int GetLatestID(string tablename)
+        {
+            int id = -1;
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(" + tablename + "id) as " + tablename + "id FROM " + tablename + ";", connect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        id = Convert.ToInt32(reader[tablename +"id"]);
+                    }
+                }
+                return id;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return id;
+            }
+            finally
+            {
+                
+                CloseConnection();
+            }
+        }   
     }
 }

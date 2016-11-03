@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.Data.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,122 +9,98 @@ namespace EyeCT4Events
 {
     public class Camping
     {
-        //Fields
-        private string name;
-        private int places;
-
         //Properties
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                if (String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == null) { throw new ArgumentNullException("name"); }
-                    throw new ArgumentException("name");
-                }
-                name = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public string Name { get; private set; }
 
-        public int Places
-        {
-            get { return places; }
-            set
-            {
-                if (value <= 0) { throw new ArgumentOutOfRangeException("places"); }
-                places = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public string Address { get; private set; }
 
-        public List<CampingSpot> CampingSpots { get; set;}
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public List<CampingSpot> CampingSpots { get; private set;}
+
+        public int Places { get { return CampingSpots.Count; } }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name">The name of the Camping</param>
         /// <param name="places">How many spots the camping has</param>
-        public Camping(string name, int places)
+        public Camping(string name, string address)
         {
             Name = name;
-            Places = places;
-            CampingSpots = new List<CampingSpot>();
+            Address = address;
+            CampingSpots = DataCampingSpot.GetCampingSpotList();
         }
 
         /// <summary>
-        /// Add a Camping Spot
+        /// Find all free camping spots of a certain type.
         /// </summary>
-        /// <param name="spot">Camping spot that has to be made</param>
+        /// <param name="type">Filtertype for the campingspot.</param>
         /// <returns></returns>
-        public bool AddSpot(CampingSpot spot)
+        public List<CampingSpot> FreeCampingSpots(SpotType type)
         {
-            foreach (CampingSpot sp in CampingSpots)
+            List<CampingSpot> campingSpots = null;
+
+            foreach (CampingSpot found in CampingSpots)
             {
-                if (sp.SpotID == spot.SpotID)
+                if (!found.Reserved && found.SpotType == type)
                 {
-                    return false;
+                    campingSpots.Add(found);
                 }
             }
-            CampingSpots.Add(spot);
-            return true;
+            return campingSpots;
         }
 
         /// <summary>
-        /// Modify a Camping Spot
+        /// Gives all free camping spots.
         /// </summary>
-        /// <param name="oldSpot">The old spot that has to be modified</param>
-        /// <param name="newSpot">The new spot that has to replace the old spot</param>
-        /// <returns></returns>
-        public bool ModifySpot(CampingSpot oldSpot, CampingSpot newSpot)
+        /// <returns>List of free camping spots.</returns>
+        public List<CampingSpot> FreeCampingSpots()
         {
-            foreach (CampingSpot sp in CampingSpots)
+            List<CampingSpot> campingSpots = null;
+
+            foreach(CampingSpot found in CampingSpots)
             {
-                if (sp.SpotID == oldSpot.SpotID)
+                if(!found.Reserved)
                 {
-                    sp.Capacity = newSpot.Capacity;
-                    sp.Reserved = newSpot.Reserved;
-                    sp.SpotID = newSpot.SpotID;
-                    sp.SpotType = newSpot.SpotType;
-                    return true;
+                    campingSpots.Add(found);
                 }
             }
-            return false;
+            return campingSpots;
         }
 
         /// <summary>
-        /// Remove a Camping Spot
+        /// Gives all reserved camping spots.
         /// </summary>
-        /// <param name="spot">The Camping Spot that has to be removed</param>
-        /// <returns></returns>
-        public bool RemoveSpot(CampingSpot spot)
+        /// <returns>list of reserved camping spots.</returns>
+        public List<CampingSpot> ReservedCampingSpots()
         {
-            foreach (CampingSpot sp in CampingSpots)
+            List<CampingSpot> campingSpots = null;
+
+            foreach (CampingSpot found in CampingSpots)
             {
-                if (sp.SpotID == spot.SpotID)
+                if (found.Reserved)
                 {
-                    CampingSpots.Remove(sp);
-                    return true;
+                    campingSpots.Add(found);
                 }
             }
-            return false;
+            return campingSpots;
         }
 
         /// <summary>
-        /// Find a Camping Spot
+        /// Calls the Data layer method to reserve a specific camping spot.
         /// </summary>
-        /// <param name="spot">The Camping Spot that has to be found</param>
-        /// <returns></returns>
-        public CampingSpot FindSpot(CampingSpot spot)
+        /// <param name="spotID"></param>
+        public void CampingSpotReservation(int spotID)
         {
-            foreach (CampingSpot sp in CampingSpots)
-            {
-                if (sp.SpotID == spot.SpotID)
-                {
-                    return sp;
-                }
-            }
-            return null;
+            DataCampingSpot.ReserveCampingSpot(spotID);     
         }
     }
 }

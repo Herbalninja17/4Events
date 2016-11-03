@@ -36,14 +36,11 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == oldPerson)
+                if (p.Email == oldPerson.Email)
                 {
                     int index = Persons.IndexOf(oldPerson);
-                    if (index != -1)
-                    {
-                        Persons[index] = newPerson;
-                        return true;
-                    }
+                    Persons[index] = newPerson;
+                    return true;
                 }
             }
 
@@ -54,7 +51,7 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     Persons.Remove(p);
                     return true;
@@ -63,11 +60,24 @@ namespace EyeCT4Events
             return false;
         }
 
+
+        public Person FindPerson(Person person)
+        {
+            foreach (Person p in Persons)
+            {
+                if (p.Email == person.Email)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
+
         public bool AddReservationToPerson(Reservation reservation, Person person)
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     p.Reservations.Add(reservation);
                     return true;
@@ -80,7 +90,7 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     foreach (Reservation r in p.Reservations)
                     {
@@ -104,7 +114,7 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     foreach (Reservation r in p.Reservations)
                     {
@@ -124,7 +134,7 @@ namespace EyeCT4Events
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     foreach (Reservation r in p.Reservations)
                     {

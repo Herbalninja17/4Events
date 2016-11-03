@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="Phidget21.NET, Version=2.1.8.222, Culture=neutral, PublicKeyToken=c2b1f2a3594bce52, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Service References\Phidget21.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Dropbox\ForEvents\Phidget21.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,6 +64,14 @@
     <Compile Include="Business\Enums\FileType.cs" />
     <Compile Include="Business\Enums\MaterialType.cs" />
     <Compile Include="Business\Enums\SpotType.cs" />
+    <Compile Include="Data\DataClasses\DataCamping.cs" />
+    <Compile Include="Data\DataClasses\DataCampingSpot.cs" />
+    <Compile Include="Data\DataClasses\DataEvent.cs" />
+    <Compile Include="Data\DataClasses\DataFile.cs" />
+    <Compile Include="Data\DataClasses\DataMaterial.cs" />
+    <Compile Include="Data\DataClasses\DataMessage.cs" />
+    <Compile Include="Data\DataClasses\DataPerson.cs" />
+    <Compile Include="Data\DataClasses\DataReservation.cs" />
     <Compile Include="GUI\EditEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +96,7 @@
     <Compile Include="GUI\CreateParticipantForm.Designer.cs">
       <DependentUpon>CreateParticipantForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\Datacom.cs" />
+    <Compile Include="Data\DataGeneral\Datacom.cs" />
     <Compile Include="GUI\DeleteEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +109,11 @@
     <Compile Include="GUI\EventBeheerForm.Designer.cs">
       <DependentUpon>EventBeheerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form1.cs">
+    <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\HiredMaterialForm.cs">
       <SubType>Form</SubType>
@@ -187,8 +195,8 @@
     <EmbeddedResource Include="GUI\EventBeheerForm.resx">
       <DependentUpon>EventBeheerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HiredMaterialForm.resx">
       <DependentUpon>HiredMaterialForm.cs</DependentUpon>
@@ -228,6 +236,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,6 +253,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Phidget21.NET.dll" />
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

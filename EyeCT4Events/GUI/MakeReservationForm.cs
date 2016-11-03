@@ -40,7 +40,7 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Maakt een nieuwe reservatie aan.
+        /// Maakt een nieuwe reservering aan.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

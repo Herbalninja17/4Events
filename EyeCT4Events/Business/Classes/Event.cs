@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.Data.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,12 +12,9 @@ namespace EyeCT4Events
     {
         //fields (Used to check for exceptions in the propperties).
         private string name;
-        private string location;
         private DateTime startDate;
         private DateTime endDate;
-        private int maxVisitors;
         private int currentVisitors;
-        private decimal price;
         private Camping camping;
 
         //Properties
@@ -32,20 +30,6 @@ namespace EyeCT4Events
                     throw new ArgumentException("name");
                 }
                 name = value;
-            }
-        }
-
-        public string Location
-        {
-            get { return location; }
-            private set
-            {
-                if (String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == null) { throw new ArgumentNullException("location"); }
-                    throw new ArgumentException("location");
-                }
-                location = value;
             }
         }
 
@@ -70,36 +54,16 @@ namespace EyeCT4Events
             }
         }
 
-        public int MaxVisitors
-        {
-            get { return maxVisitors; }
-            set
-            {
-                if (value <= 0) { throw new ArgumentOutOfRangeException("maxVisitors"); }
-                maxVisitors = value;
-            }
-        }
+        public int MaxVisitors { get { return camping.Places; } }
 
-        public int CurrentVisitors
-        {
-            get { return currentVisitors; }
-            set
-            {
-                if (value < 0 || value > MaxVisitors) { throw new ArgumentOutOfRangeException("currentVisitors"); }
-                currentVisitors = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int CurrentVisitors { get { return DataEvent.GetCurrentVisitors(); } }
 
-        public decimal Price
-        {
-            get { return price; }
-            set
-            {
-                if (value < 0) { throw new ArgumentOutOfRangeException("price"); }
-                price = value;
-            }
-        }
-
+        /// <summary>
+        /// Take from dropdownbox
+        /// </summary>
         public Camping Camping
         {
             get { return camping; }
@@ -117,31 +81,23 @@ namespace EyeCT4Events
         /// <param name="location">Location of the event.</param>
         /// <param name="startDate">Start date for the event.</param>
         /// <param name="endDate">End date of the event.</param>
-        /// <param name="maxVisitors">Maximum number of people that may come to the event.</param>
-        /// <param name="price">Price for the event.</param>
         /// <param name="camping">Camping object for the event.</param>
-        public Event(string name, string location, DateTime startDate, DateTime endDate, int maxVisitors, decimal price, Camping camping)
+        public Event(string name, string location, DateTime startDate, DateTime endDate, Camping camping)
         {
             Name = name;
-            Location = location;
             StartDate = startDate;
             EndDate = endDate;
-            MaxVisitors = maxVisitors;
-            CurrentVisitors = 0;
-            Price = price;
-            Camping = camping;
+            Camping = camping; //Take from dropdownbox.
         }
 
         //Methods
         public override string ToString()
         {
             return Name
-                + " | " + Location
                 + " | " + StartDate
                 + " | " + EndDate
                 + " | " + MaxVisitors
                 + " | " + CurrentVisitors
-                + " | " + Price
                 + " | " + Camping.Name
                 ;
         }

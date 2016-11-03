@@ -8,34 +8,28 @@ namespace EyeCT4Events
 {
     public class CampingSpot
     {
-        //Fields
-        private int spotID;
-        private int capacity;
-
         //Properties
-        public SpotType SpotType { get; set; }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public SpotType SpotType { get; private set; }
 
-        public int SpotID
-        {
-            get { return spotID; }
-            set
-            {
-                if (value < 1) { throw new ArgumentOutOfRangeException("spotID"); }
-                spotID = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int SpotID { get; private set; }
 
-        public int Capacity
-        {
-            get { return capacity; }
-            set
-            {
-                if (value < 1) { throw new ArgumentOutOfRangeException("capacity");}
-                capacity = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int Capacity { get; private set; }
 
         public bool Reserved { get; set; }
+
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public decimal Price { get; private set; }
 
         /// <summary>
         /// Constructor
@@ -43,12 +37,14 @@ namespace EyeCT4Events
         /// <param name="spotType">The type of the spot</param>
         /// <param name="spotID">The ID of the spot</param>
         /// <param name="capacity">The amount of people a spot can hold</param>
-        public CampingSpot(SpotType spotType, int spotID, int capacity)
+        /// <param name="reserved">Reservation status of the spot</param>
+        public CampingSpot(SpotType spotType, int spotID, int capacity, bool reserved, decimal price)
         {
             SpotType = spotType;
             SpotID = spotID;
             Capacity = capacity;
-            Reserved = false;
+            Reserved = reserved;
+            Price = price;
         }
 
         public override string ToString()
@@ -60,7 +56,7 @@ namespace EyeCT4Events
             }
             else
             {
-                reservation = "free";
+                reservation = "open";
             }
 
             return SpotID

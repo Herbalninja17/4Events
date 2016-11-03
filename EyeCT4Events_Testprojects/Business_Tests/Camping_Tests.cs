@@ -1,232 +1,233 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EyeCT4Events;
+﻿//using System;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using EyeCT4Events;
 
-namespace EyeCT4Events_Testprojects
-{
-    [TestClass]
-    public class Camping_Tests
-    {
-        public void CampingSetUp(Camping Camping)
-        {
-            Camping.AddSpot(new CampingSpot(SpotType.Standard, 1, 2));
-            Camping.AddSpot(new CampingSpot(SpotType.Plus, 2, 4));
-            Camping.AddSpot(new CampingSpot(SpotType.Standard, 3, 2));
-            Camping.AddSpot(new CampingSpot(SpotType.VIP, 4, 2));
-            Camping.AddSpot(new CampingSpot(SpotType.VIP, 5, 3));
-            Camping.AddSpot(new CampingSpot(SpotType.Plus, 6, 6));
-        }
+//namespace EyeCT4Events_Testprojects
+//{
+//    [TestClass]
+//    public class Camping_Tests
+//    {
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Camping_Exceptions_NameCannotBeNull()
-        {
-            //Arrange
-            string name = null;
-            int places = 289;
+//        public void CampingSetUp(Camping Camping)
+//        {
+//            Camping.AddSpot(new CampingSpot(SpotType.Standard, 1, 2));
+//            Camping.AddSpot(new CampingSpot(SpotType.Plus, 2, 4));
+//            Camping.AddSpot(new CampingSpot(SpotType.Standard, 3, 2));
+//            Camping.AddSpot(new CampingSpot(SpotType.VIP, 4, 2));
+//            Camping.AddSpot(new CampingSpot(SpotType.VIP, 5, 3));
+//            Camping.AddSpot(new CampingSpot(SpotType.Plus, 6, 6));
+//        }
 
-            //Act
-            Camping camping = new Camping(name, places);
+//        [TestMethod]
+//        [ExpectedException(typeof(ArgumentNullException))]
+//        public void Camping_Exceptions_NameCannotBeNull()
+//        {
+//            //Arrange
+//            string name = null;
+//            int places = 289;
 
-            //Assert is handled by the ExpectedException.
-        }
+//            //Act
+//            Camping camping = new Camping(name, places);
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void Camping_Exceptions_NameCannotBeSpaces()
-        {
-            //Arrange
-            string name = "        ";
-            int places = 289;
+//            //Assert is handled by the ExpectedException.
+//        }
 
-            //Act
-            Camping camping = new Camping(name, places);
+//        [TestMethod]
+//        [ExpectedException(typeof(ArgumentException))]
+//        public void Camping_Exceptions_NameCannotBeSpaces()
+//        {
+//            //Arrange
+//            string name = "        ";
+//            int places = 289;
 
-            //Assert is handled by the ExpectedException.
-        }
+//            //Act
+//            Camping camping = new Camping(name, places);
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Camping_Exceptions_PlacesMayNotBe_0_OrLess()
-        {
-            //Arrange
-            string name = "Awesome ville";
-            int places = 0;
+//            //Assert is handled by the ExpectedException.
+//        }
 
-            //Act
-            Camping camping = new Camping(name, places);
+//        [TestMethod]
+//        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+//        public void Camping_Exceptions_PlacesMayNotBe_0_OrLess()
+//        {
+//            //Arrange
+//            string name = "Awesome ville";
+//            int places = 0;
 
-            //Assert is handled by the ExpectedException.
-        }
+//            //Act
+//            Camping camping = new Camping(name, places);
 
-        [TestMethod]
-        public void Camping_AddSpot_SpotsCanBeAdded()
-        {
-            //Arrange
-            string name = "Awesome ville";
-            int places = 3;
+//            //Assert is handled by the ExpectedException.
+//        }
 
-            Camping camping = new Camping(name, places);
+//        [TestMethod]
+//        public void Camping_AddSpot_SpotsCanBeAdded()
+//        {
+//            //Arrange
+//            string name = "Awesome ville";
+//            int places = 3;
 
-            CampingSpot spot1 = new CampingSpot(SpotType.Standard, 1, 2);
-            CampingSpot spot2 = new CampingSpot(SpotType.Plus, 2, 4);
-            CampingSpot spot3 = new CampingSpot(SpotType.Standard, 3, 2);
+//            Camping camping = new Camping(name, places);
 
-            //Act
-            bool test1 = camping.AddSpot(spot1);
-            bool test2 = camping.AddSpot(spot2);
-            bool test3 = camping.AddSpot(spot3);
+//            CampingSpot spot1 = new CampingSpot(SpotType.Standard, 1, 2);
+//            CampingSpot spot2 = new CampingSpot(SpotType.Plus, 2, 4);
+//            CampingSpot spot3 = new CampingSpot(SpotType.Standard, 3, 2);
 
-            CampingSpot testSpot = camping.FindSpot(spot2);
+//            //Act
+//            bool test1 = camping.AddSpot(spot1);
+//            bool test2 = camping.AddSpot(spot2);
+//            bool test3 = camping.AddSpot(spot3);
 
-            //Assert
-            Assert.IsTrue(test1);
-            Assert.IsTrue(test2);
-            Assert.IsTrue(test3);
-            Assert.IsTrue(testSpot.SpotID == 2);
-        }
+//            CampingSpot testSpot = camping.FindSpot(spot2);
 
-        [TestMethod]
-        public void Camping_AddSpot_ExistingSpotsAreNotAdded()
-        {
-            //Arrange
-            string name = "Awesome ville";
-            int places = 3;
+//            //Assert
+//            Assert.IsTrue(test1);
+//            Assert.IsTrue(test2);
+//            Assert.IsTrue(test3);
+//            Assert.IsTrue(testSpot.SpotID == 2);
+//        }
 
-            Camping camping = new Camping(name, places);
+//        [TestMethod]
+//        public void Camping_AddSpot_ExistingSpotsAreNotAdded()
+//        {
+//            //Arrange
+//            string name = "Awesome ville";
+//            int places = 3;
 
-            CampingSpot spot1 = new CampingSpot(SpotType.Standard, 1, 2);
-            CampingSpot spot2 = new CampingSpot(SpotType.Plus, 2, 4);
-            CampingSpot spot3 = new CampingSpot(SpotType.Standard, 1, 8);
-            CampingSpot spot4 = new CampingSpot(SpotType.Standard, 3, 2);
+//            Camping camping = new Camping(name, places);
 
-            //Act
-            bool test1 = camping.AddSpot(spot1);
-            bool test2 = camping.AddSpot(spot2);
-            bool test3 = camping.AddSpot(spot3);
-            bool test4 = camping.AddSpot(spot4);
+//            CampingSpot spot1 = new CampingSpot(SpotType.Standard, 1, 2);
+//            CampingSpot spot2 = new CampingSpot(SpotType.Plus, 2, 4);
+//            CampingSpot spot3 = new CampingSpot(SpotType.Standard, 1, 8);
+//            CampingSpot spot4 = new CampingSpot(SpotType.Standard, 3, 2);
 
-            //Assert
-            Assert.IsTrue(camping.CampingSpots.Count == 3);
-            Assert.IsFalse(test3);
-        }
+//            //Act
+//            bool test1 = camping.AddSpot(spot1);
+//            bool test2 = camping.AddSpot(spot2);
+//            bool test3 = camping.AddSpot(spot3);
+//            bool test4 = camping.AddSpot(spot4);
 
-        [TestMethod]
-        public void Camping_ModifySpot_ExistingSpotIsModified()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert
+//            Assert.IsTrue(camping.CampingSpots.Count == 3);
+//            Assert.IsFalse(test3);
+//        }
 
-            CampingSpot modSpot = new CampingSpot(SpotType.VIP, 4, 3);
-            modSpot.Reserved = true;
+//        [TestMethod]
+//        public void Camping_ModifySpot_ExistingSpotIsModified()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Act 1
-            CampingSpot testSpot = Camping.FindSpot(modSpot); //Searches by ID so it keeps the old values and not the modSpot values.
+//            CampingSpot modSpot = new CampingSpot(SpotType.VIP, 4, 3);
+//            modSpot.Reserved = true;
 
-            //Assert 1
-            Assert.IsTrue(testSpot.Capacity == 2);
-            Assert.IsFalse(testSpot.Reserved);
+//            //Act 1
+//            CampingSpot testSpot = Camping.FindSpot(modSpot); //Searches by ID so it keeps the old values and not the modSpot values.
 
-            //Act 2
-            bool ModifyTest = Camping.ModifySpot(modSpot, modSpot);
+//            //Assert 1
+//            Assert.IsTrue(testSpot.Capacity == 2);
+//            Assert.IsFalse(testSpot.Reserved);
 
-            //Assert 2
-            Assert.IsTrue(testSpot.Capacity == 3);
-            Assert.IsTrue(testSpot.Reserved);
-            Assert.IsTrue(ModifyTest);
-        }
+//            //Act 2
+//            bool ModifyTest = Camping.ModifySpot(modSpot, modSpot);
 
-        [TestMethod]
-        public void Camping_ModifySpot_NoneExistingSpotIsNotModified()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert 2
+//            Assert.IsTrue(testSpot.Capacity == 3);
+//            Assert.IsTrue(testSpot.Reserved);
+//            Assert.IsTrue(ModifyTest);
+//        }
 
-            CampingSpot modSpot = new CampingSpot(SpotType.VIP, 36, 3);
-            modSpot.Reserved = true;
+//        [TestMethod]
+//        public void Camping_ModifySpot_NoneExistingSpotIsNotModified()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Act
-            bool ModifyTest = Camping.ModifySpot(modSpot, modSpot);
+//            CampingSpot modSpot = new CampingSpot(SpotType.VIP, 36, 3);
+//            modSpot.Reserved = true;
 
-            //Assert
-            Assert.IsFalse(ModifyTest);
-        }
+//            //Act
+//            bool ModifyTest = Camping.ModifySpot(modSpot, modSpot);
 
-        [TestMethod]
-        public void Camping_RemoveSpot_SpotIsRemoved()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert
+//            Assert.IsFalse(ModifyTest);
+//        }
 
-            CampingSpot removeSpot = new CampingSpot(SpotType.Plus, 2, 4);
+//        [TestMethod]
+//        public void Camping_RemoveSpot_SpotIsRemoved()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Assert 1
-            Assert.IsTrue(Camping.CampingSpots.Count == 6);
+//            CampingSpot removeSpot = new CampingSpot(SpotType.Plus, 2, 4);
 
-            //Act
-            bool ModifyTest = Camping.RemoveSpot(removeSpot);
+//            //Assert 1
+//            Assert.IsTrue(Camping.CampingSpots.Count == 6);
 
-            //Assert 2
-            Assert.IsTrue(ModifyTest);
-            Assert.IsTrue(Camping.CampingSpots.Count == 5);
-            Assert.IsNull(Camping.FindSpot(removeSpot));
-        }
+//            //Act
+//            bool ModifyTest = Camping.RemoveSpot(removeSpot);
 
-        [TestMethod]
-        public void Camping_RemoveSpot_NotExistingSpotIsNotRemoved()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert 2
+//            Assert.IsTrue(ModifyTest);
+//            Assert.IsTrue(Camping.CampingSpots.Count == 5);
+//            Assert.IsNull(Camping.FindSpot(removeSpot));
+//        }
 
-            CampingSpot removeSpot = new CampingSpot(SpotType.Plus, 41, 3);
+//        [TestMethod]
+//        public void Camping_RemoveSpot_NotExistingSpotIsNotRemoved()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Assert 1
-            Assert.IsTrue(Camping.CampingSpots.Count == 6);
+//            CampingSpot removeSpot = new CampingSpot(SpotType.Plus, 41, 3);
 
-            //Act
-            bool ModifyTest = Camping.RemoveSpot(removeSpot);
+//            //Assert 1
+//            Assert.IsTrue(Camping.CampingSpots.Count == 6);
 
-            //Assert 2
-            Assert.IsFalse(ModifyTest);
-            Assert.IsTrue(Camping.CampingSpots.Count == 6);
-        }
+//            //Act
+//            bool ModifyTest = Camping.RemoveSpot(removeSpot);
 
-        [TestMethod]
-        public void Camping_FindSpot_SpotIsFound()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert 2
+//            Assert.IsFalse(ModifyTest);
+//            Assert.IsTrue(Camping.CampingSpots.Count == 6);
+//        }
 
-            CampingSpot testSpot = new CampingSpot(SpotType.Plus, 2, 4);
+//        [TestMethod]
+//        public void Camping_FindSpot_SpotIsFound()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Act
-            CampingSpot findTest = Camping.FindSpot(testSpot);
+//            CampingSpot testSpot = new CampingSpot(SpotType.Plus, 2, 4);
 
-            //Assert 2
-            Assert.IsTrue(findTest.SpotType == SpotType.Plus);
-            Assert.IsTrue(findTest.SpotID == 2);
-            Assert.IsTrue(findTest.Capacity == 4);
-        }
+//            //Act
+//            CampingSpot findTest = Camping.FindSpot(testSpot);
 
-        [TestMethod]
-        public void Camping_FindSpot_NotExistingSpotIsNull()
-        {
-            //Arrange
-            Camping Camping = new Camping("Awesome Ville", 6);
-            CampingSetUp(Camping);
+//            //Assert 2
+//            Assert.IsTrue(findTest.SpotType == SpotType.Plus);
+//            Assert.IsTrue(findTest.SpotID == 2);
+//            Assert.IsTrue(findTest.Capacity == 4);
+//        }
 
-            CampingSpot testSpot = new CampingSpot(SpotType.Plus, 89, 4);
+//        [TestMethod]
+//        public void Camping_FindSpot_NotExistingSpotIsNull()
+//        {
+//            //Arrange
+//            Camping Camping = new Camping("Awesome Ville", 6);
+//            CampingSetUp(Camping);
 
-            //Act
-            CampingSpot findTest = Camping.FindSpot(testSpot);
+//            CampingSpot testSpot = new CampingSpot(SpotType.Plus, 89, 4);
 
-            //Assert 2
-            Assert.IsNull(findTest);
-        }
-    }
-}
+//            //Act
+//            CampingSpot findTest = Camping.FindSpot(testSpot);
+
+//            //Assert 2
+//            Assert.IsNull(findTest);
+//        }
+//    }
+//}
