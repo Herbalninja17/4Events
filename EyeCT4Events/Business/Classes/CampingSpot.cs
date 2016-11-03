@@ -41,8 +41,6 @@ namespace EyeCT4Events
             Reserved = reserved;
         }
 
-
-
         public override string ToString()
         {
             string reservation = "";
