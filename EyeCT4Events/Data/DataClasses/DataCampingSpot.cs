@@ -18,6 +18,11 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
+        public static void ReserveCampingSpot(int spotID)
+        {
+            
+        }
+
         public static List<CampingSpot> GetCampingSpotList()
         {
             return null;
