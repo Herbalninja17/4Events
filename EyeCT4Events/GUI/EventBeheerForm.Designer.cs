@@ -78,7 +78,7 @@
             // lbEventBeheer
             // 
             this.lbEventBeheer.FormattingEnabled = true;
-            this.lbEventBeheer.Location = new System.Drawing.Point(149, 17);
+            this.lbEventBeheer.Location = new System.Drawing.Point(149, 12);
             this.lbEventBeheer.Name = "lbEventBeheer";
             this.lbEventBeheer.Size = new System.Drawing.Size(314, 342);
             this.lbEventBeheer.TabIndex = 25;
