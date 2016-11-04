@@ -46,7 +46,12 @@ namespace EyeCT4Events
 
         private void MyReservationsForm_Load(object sender, EventArgs e)
         {
-
+            EyeCT4Events.Data.DataClasses.DataReservation.GetReservation();
+            foreach (string i in EyeCT4Events.Data.DataClasses.DataReservation.rlist)
+            {
+                lbMyReservationsEvents.Items.Add(i);
+            }
+            
         }
     }
 }

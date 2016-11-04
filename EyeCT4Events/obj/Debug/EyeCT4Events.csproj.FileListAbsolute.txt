@@ -43,7 +43,6 @@ C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\bin\Debug\EyeCT4Events.pdb
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.csprojResolveAssemblyReference.cache
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.CreateEventForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.CreateParticipantForm.resources
-C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.DeleteEventForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.EventBeheerForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.LoginForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.HiredMaterialForm.resources
@@ -164,3 +163,4 @@ C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.Che
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.CheckIn.resources
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
