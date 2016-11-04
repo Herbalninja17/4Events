@@ -14,8 +14,32 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
 
+        static List<string> events = new List<string>();
+
         public static Event GetEvent()
         {
+            
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "Select Naam, StartDatum, EindDatum From ForEvent";
+                cmd.ExecuteNonQuery();                  //execute het query
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    events.Add("Naam" + "StartDatum" + "EindDatum");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
             return null;
         }
 

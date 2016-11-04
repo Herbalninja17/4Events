@@ -178,6 +178,7 @@
             this.Controls.Add(this.lbReservationEvents);
             this.Name = "MakeReservationForm";
             this.Text = "Reservering";
+            this.Load += new System.EventHandler(this.MakeReservationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

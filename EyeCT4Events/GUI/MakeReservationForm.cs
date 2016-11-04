@@ -94,6 +94,9 @@ namespace EyeCT4Events
             participantsForm.Show();
         }
 
-        
+        private void MakeReservationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
