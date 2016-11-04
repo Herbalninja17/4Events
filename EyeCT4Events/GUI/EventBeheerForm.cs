@@ -12,6 +12,9 @@ namespace EyeCT4Events
 {
     public partial class EventBeheerForm : Form
     {
+        EventBeheerForm eventForm;
+        
+
         public EventBeheerForm()
         {
             InitializeComponent();

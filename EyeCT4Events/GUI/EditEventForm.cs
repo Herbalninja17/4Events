@@ -12,6 +12,8 @@ namespace EyeCT4Events
 {
     public partial class EditEventForm : Form
     {
+        private EditEventForm editEvent;
+        private EventBeheerForm eventForm;
         private List<Event> Events;
 
         public EditEventForm()
@@ -19,17 +21,11 @@ namespace EyeCT4Events
             InitializeComponent();
         }
 
-        public EditEventForm(HomeForm homeForm)
+        public EditEventForm(EventBeheerForm eventForm)
         {
             InitializeComponent();
-            createEvent = this;
-            this.homeForm = homeForm;
-            Campings = DataCamping.GetCampingList();
-
-            foreach (Camping found in Campings)
-            {
-                cbCreateEventCamping.Items.Add(found.Name);
-            }
+            editEvent = this;
+            this.eventForm = eventForm;
         }
 
         /// <summary>
@@ -96,6 +92,11 @@ namespace EyeCT4Events
         private void btnEditEventSelectEvent_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditEventForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            eventForm.Show();
         }
     }
 }
