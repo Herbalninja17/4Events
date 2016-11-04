@@ -81,7 +81,7 @@ namespace EyeCT4Events
 
             foreach (Event found in Events)
             {
-                lbEditEvent.Items.Add(found);
+                lbEditEvent.Items.Add(found.ToString());
             }
         }
 
@@ -127,7 +127,6 @@ namespace EyeCT4Events
                 dtpEditEndDate.Value = selectedEvent.EndDate;
                 tbEditEventCapacity.Text = selectedEvent.Camping.Places.ToString();
             }
-
         }
 
         private void EditEventForm_FormClosing(object sender, FormClosingEventArgs e)
