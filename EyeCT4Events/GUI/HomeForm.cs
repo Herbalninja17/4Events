@@ -62,5 +62,10 @@ namespace EyeCT4Events.GUI
             _loginForm.Show();
             this.Close();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

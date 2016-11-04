@@ -30,6 +30,7 @@
         {
             this.btnSocialMediaUpload = new System.Windows.Forms.Button();
             this.lbSocialMedia = new System.Windows.Forms.ListBox();
+            this.btnMessage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSocialMediaUpload
@@ -50,11 +51,22 @@
             this.lbSocialMedia.Size = new System.Drawing.Size(481, 394);
             this.lbSocialMedia.TabIndex = 2;
             // 
+            // btnMessage
+            // 
+            this.btnMessage.Location = new System.Drawing.Point(12, 57);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(75, 39);
+            this.btnMessage.TabIndex = 3;
+            this.btnMessage.Text = "Send Message";
+            this.btnMessage.UseVisualStyleBackColor = true;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+            // 
             // SocialMediaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 420);
+            this.Controls.Add(this.btnMessage);
             this.Controls.Add(this.lbSocialMedia);
             this.Controls.Add(this.btnSocialMediaUpload);
             this.Name = "SocialMediaForm";
@@ -66,5 +78,6 @@
         #endregion
         private System.Windows.Forms.Button btnSocialMediaUpload;
         private System.Windows.Forms.ListBox lbSocialMedia;
+        private System.Windows.Forms.Button btnMessage;
     }
 }
