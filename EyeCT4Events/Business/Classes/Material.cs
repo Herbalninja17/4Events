@@ -51,9 +51,9 @@ namespace EyeCT4Events
         //Methods
         public void StartHuur(DateTime eindDatum) 
         {
-            if(eindDatum < DateTime.Now) { throw new ArgumentOutOfRangeException("eindDatum"); }
+            if(eindDatum < DateTime.Today) { throw new ArgumentOutOfRangeException("eindDatum"); }
 
-            HuurdatumStart = DateTime.Now;
+            HuurdatumStart = DateTime.Today;
             HuurdatumEind = eindDatum;
         }
 
