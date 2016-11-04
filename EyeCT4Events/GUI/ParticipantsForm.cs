@@ -53,16 +53,6 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Om naar de form te gaan om je account te verwijderen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteParticipant_Click(object sender, EventArgs e)
-        {
-            //Zoekscherm aanmaken met delete en annuleer knop.
-        }
-
-        /// <summary>
         /// Om naar de form te gaan om een reservering te plaatsen.
         /// </summary>
         /// <param name="sender"></param>
