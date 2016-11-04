@@ -50,6 +50,8 @@
             this.btnCreateParticipant = new System.Windows.Forms.Button();
             this.lblEditParticipantAdress = new System.Windows.Forms.Label();
             this.tbEditParticipantAdress = new System.Windows.Forms.TextBox();
+            this.lbEditParticipantAdminScreen = new System.Windows.Forms.ListBox();
+            this.btnLoadParticipant = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditParticipantEditParticipant
@@ -236,11 +238,31 @@
             this.tbEditParticipantAdress.Size = new System.Drawing.Size(200, 20);
             this.tbEditParticipantAdress.TabIndex = 63;
             // 
+            // lbEditParticipantAdminScreen
+            // 
+            this.lbEditParticipantAdminScreen.FormattingEnabled = true;
+            this.lbEditParticipantAdminScreen.Location = new System.Drawing.Point(612, 19);
+            this.lbEditParticipantAdminScreen.Name = "lbEditParticipantAdminScreen";
+            this.lbEditParticipantAdminScreen.Size = new System.Drawing.Size(373, 290);
+            this.lbEditParticipantAdminScreen.TabIndex = 64;
+            // 
+            // btnLoadParticipant
+            // 
+            this.btnLoadParticipant.Location = new System.Drawing.Point(893, 318);
+            this.btnLoadParticipant.Name = "btnLoadParticipant";
+            this.btnLoadParticipant.Size = new System.Drawing.Size(92, 23);
+            this.btnLoadParticipant.TabIndex = 65;
+            this.btnLoadParticipant.Text = "Laad account";
+            this.btnLoadParticipant.UseVisualStyleBackColor = true;
+            this.btnLoadParticipant.Click += new System.EventHandler(this.btnLoadParticipant_Click);
+            // 
             // EditParticipantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 367);
+            this.ClientSize = new System.Drawing.Size(997, 367);
+            this.Controls.Add(this.btnLoadParticipant);
+            this.Controls.Add(this.lbEditParticipantAdminScreen);
             this.Controls.Add(this.tbEditParticipantAdress);
             this.Controls.Add(this.lblEditParticipantAdress);
             this.Controls.Add(this.btnEditParticipantEditParticipant);
@@ -294,5 +316,7 @@
         private System.Windows.Forms.Button btnCreateParticipant;
         private System.Windows.Forms.Label lblEditParticipantAdress;
         private System.Windows.Forms.TextBox tbEditParticipantAdress;
+        private System.Windows.Forms.ListBox lbEditParticipantAdminScreen;
+        private System.Windows.Forms.Button btnLoadParticipant;
     }
 }
