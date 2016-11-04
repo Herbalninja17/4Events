@@ -13,7 +13,7 @@ namespace EyeCT4Events
 {
     public partial class SocialMediaForm : Form
     {
-        private SocialMediaFrom mediaForm;
+        private SocialMediaForm mediaForm;
         private HomeForm homeForm;
 
         public SocialMediaForm()
