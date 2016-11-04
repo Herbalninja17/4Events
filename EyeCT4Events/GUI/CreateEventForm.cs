@@ -63,6 +63,7 @@ namespace EyeCT4Events
             Event Event = new Event(tbCreateEventName.Text, dtpBeginDate.Value, dtpEndDate.Value, camping);
 
             DataEvent.SetEvent(Event);
+            MessageBox.Show("Event was created.");
         }
 
         /// <summary>
