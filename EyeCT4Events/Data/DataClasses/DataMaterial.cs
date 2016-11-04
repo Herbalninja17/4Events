@@ -64,9 +64,22 @@ namespace EyeCT4Events.Data.DataClasses
         public static void SetMaterialHired(int materialID) 
         {
             Datacom.OpenConnection();
-            new SqlCommand("ALTER TABLE Product " +
+            SqlCommand cmd = new SqlCommand("UPDATE Product " +
                            "SET PStatus = 'Verhuurd' " +
-                           $"WHERE ProductID = {materialID}");
+                           $"WHERE ProductID = {materialID};",
+                           Datacom.connect);
+            cmd.ExecuteNonQuery();
+            Datacom.CloseConnection();
+        }
+
+        public static void SetMaterialAvailable(int materialID)
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("UPDATE Product " +
+                           "SET PStatus = 'Beschikbaar' " +
+                           $"WHERE ProductID = {materialID};",
+                           Datacom.connect);
+            cmd.ExecuteNonQuery();
             Datacom.CloseConnection();
         }
 
@@ -75,7 +88,7 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT ProductID " +
                            "FROM Product " +
-                           $"WHERE Naam LIKE '%{name}%'",
+                           $"WHERE Naam LIKE '%{name}%';",
                            Datacom.connect);
 
             List<int> products = new List<int>();
