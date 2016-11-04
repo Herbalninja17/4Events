@@ -44,6 +44,11 @@ namespace EyeCT4Events
 
         }
 
+        private void SocialMediaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
