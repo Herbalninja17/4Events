@@ -60,6 +60,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
         {
+            Data.DataClasses.DataReservation.SetReservation(3, 1, dtpReservationBeginDate.Text, dtpReservationEndDate.Text);
             //Alle info inladen en opsturen naar de Data klasse, hierin verwerken tot een format dat in de database past.
         }
 
