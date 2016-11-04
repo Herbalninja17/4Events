@@ -13,6 +13,8 @@ namespace EyeCT4Events
         private string fileName;
         private string fileType;
 
+        private static string[] acceptedExtensions = {"jpg", "jpeg", "png", "gif"};
+
         public string Title
         {
             get { return title; }
@@ -41,18 +43,7 @@ namespace EyeCT4Events
             }
         }
 
-        public string FileType
-        {
-            get { return fileType; }
-            set
-            {
-                if(!CheckFileType(FileName))
-                {
-                    throw new ArgumentException("fileType");
-                }
-                fileType = value;
-            }
-        }
+        public string FileType { get; private set; }
 
         /// <summary>
         /// Created in the database.
@@ -64,31 +55,57 @@ namespace EyeCT4Events
         /// <summary>
         /// Constructor
         /// When getting a file from the database.
+        /// Transmitting of the actual file happens on the FORM and DAL
         /// </summary>
         /// <param name="title">Title of the file</param>
+        /// <param name="title">Full path of the file</param>
         /// <param name="fileType">The document type of the file</param>
         /// <param name="fileID">The ID of the file</param>
         /// <param name="poster">The person who posted the file</param>
-        public File(string title, string fileName, int fileID, Person poster)
+        public File(string title, string fileName, string fileType, int fileID, Person poster)
         {
             Title = title;
             FileName = fileName;
             FileID = fileID; //LAATSTE OPHALEN UIT DATABASE?
             Poster = poster;
+            FileType = fileType;
         }
 
-        private bool CheckFileType(string fileName)
+        /// <summary>
+        /// Constructor
+        /// When giving a file to the database.
+        /// Transmitting of the actual file happens on the FORM and DAL
+        /// </summary>
+        /// <param name="title">Title of the file</param>
+        /// <param name="fileName">Full path of the file</param>
+        /// <param name="poster">The person posting the file</param>
+        public File(string title, string fileName, Person poster)
         {
-            string checkFile = FileName;
-            int checkType = checkFile.LastIndexOf(".");
-            string extension = checkFile.Substring(checkType);
+            Title = title;
+            FileName = fileName;
+            Poster = poster;
+            FileType = CheckFileType(fileName);
+        }
 
-            if (extension != ".jpg" || extension != ".jpeg" || extension != ".gif" || extension != ".jpg")
+        /// <summary>
+        /// checks for acceptable filetypes
+        /// </summary>
+        /// <param name="fileName">full filename</param>
+        /// <returns>Extension if accepted, Empty string if not.</returns>
+        public string CheckFileType(string fileName)
+        {
+            string extension = FileName.ToLower();
+            int checkType = extension.LastIndexOf("." + 1);
+            extension = extension.Substring(checkType);
+
+            foreach(string found in acceptedExtensions)
             {
-                return false;
+                if(found == extension)
+                {
+                    return found;
+                }
             }
-
-            return true;
+            return "";
         }
 
         public override string ToString()
