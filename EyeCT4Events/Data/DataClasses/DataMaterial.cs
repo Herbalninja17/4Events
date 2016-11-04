@@ -4,64 +4,93 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EyeCT4Events.Data.DataClasses
 {
     public class DataMaterial
     {
-        public DataMaterial()
+        public DataMaterial() 
         {
             
         }
 
-        public static Material GetMaterial(int materialID)
+        public static Material GetMaterial(int materialID) 
         {
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT Naam, PrijsPerDag " +
+            SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag " +
                                             $"FROM Product " +
                                             $"WHERE ProductID = {materialID}",
                                             Datacom.connect);
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            string name = reader.GetString(0);
-            decimal price = reader.GetDecimal(1);
+            int id = reader.GetInt32(0);
+            string name = reader.GetString(1);
+            decimal price = reader.GetDecimal(2);
             reader.Close();
             Datacom.CloseConnection();
 
-            Material m = new Material(name, price, false);
+            Material m = new Material(id, name, "Test", price, false);
             return m;
         }
 
-        public static List<String> AvailableMaterialList()
+        public static List<Material> AvailableMaterialList() 
         {
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand("SELECT DISTINCT Omschrijving, Naam, PrijsPerDag" +
-                                            "FROM Product" +
-                                            "WHERE PStatus = Beschikbaar");
+            SqlCommand cmd = new SqlCommand("SELECT Omschrijving, ProductID, Naam, PrijsPerDag " +
+                                            "FROM Product " +
+                                            "WHERE PStatus = 'Beschikbaar' " +
+                                            "ORDER BY Naam, Omschrijving;",
+                                            Datacom.connect);
             SqlDataReader reader = cmd.ExecuteReader();
-            List<string> producten = new List<string>();
+            List<Material> products = new List<Material>();
             while (reader.Read())
             {
-                string omschrijving = reader.GetString(0);
-                string naam = reader.GetString(1);
-                decimal prijs = reader.GetDecimal(2);
+                int id = reader.GetInt32(1);
+                string description = reader.GetString(0);
+                string name = reader.GetString(2);
+                decimal price = reader.GetDecimal(3);
 
-                string product = $"{naam} - {omschrijving} - {prijs}";
+                Material product = new Material(id, name, description, price, false);
 
-                producten.Add(product);
+                products.Add(product);
             }
             reader.Close();
             Datacom.CloseConnection();
 
-            return producten;
+            return products;
         }
 
-        public static Material SetMaterialHired()
+        public static void SetMaterialHired(int materialID) 
         {
-            return null;
+            Datacom.OpenConnection();
+            new SqlCommand("ALTER TABLE Product " +
+                           "SET PStatus = 'Verhuurd' " +
+                           $"WHERE ProductID = {materialID}");
+            Datacom.CloseConnection();
         }
 
-        public static void UpdateMaterial()
+        public static List<int> SearchMaterials(string name) 
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT ProductID " +
+                           "FROM Product " +
+                           $"WHERE Naam LIKE '%{name}%'",
+                           Datacom.connect);
+
+            List<int> products = new List<int>();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                products.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return products;
+        }
+
+        public static void UpdateMaterial() 
         {
             
         }

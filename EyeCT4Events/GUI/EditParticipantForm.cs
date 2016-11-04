@@ -37,10 +37,10 @@ namespace EyeCT4Events
             {
                 DateTime dt = dtpEditParticipantDateOfBirth.Value;
                 string date = dt.ToShortDateString();
-                if(Login.EditUser(tbEditParticipantName.Text, tbEditParticipantEmail.Text, tbEditParticipantPassword.Text, tbEditParticipantAccountNumber.Text, tbEditParticipantCity.Text, tbEditParticipantZipCode.Text, tbEditParticipantPhoneNumber.Text, date))
-                {
-                    MessageBox.Show("Uw gegevens zijn succesvol gewijzigd");
-                }
+                //if(Login.EditUser(tbEditParticipantName.Text, tbEditParticipantEmail.Text, tbEditParticipantPassword.Text, tbEditParticipantAccountNumber.Text, tbEditParticipantCity.Text, tbEditParticipantZipCode.Text, tbEditParticipantPhoneNumber.Text, date))
+                //{
+                //    MessageBox.Show("Uw gegevens zijn succesvol gewijzigd");
+                //}
             }
         }
 

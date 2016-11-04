@@ -35,7 +35,7 @@ namespace EyeCT4Events
             //METHODE AF TE MAKEN!!!!
 
             //Event newEvent = new Event(tbCreateEventName.Text, address, dtpBeginDate.Value, dtpEndDate.Value, maxVisitors,)
-
+            //Data.DataClasses.DataEvent.SetEvent(newEvent);
         }
 
         /// <summary>

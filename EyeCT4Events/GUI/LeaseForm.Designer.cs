@@ -45,9 +45,10 @@
             // 
             // btnHired
             // 
-            this.btnHired.Location = new System.Drawing.Point(12, 12);
+            this.btnHired.Location = new System.Drawing.Point(24, 23);
+            this.btnHired.Margin = new System.Windows.Forms.Padding(6);
             this.btnHired.Name = "btnHired";
-            this.btnHired.Size = new System.Drawing.Size(75, 36);
+            this.btnHired.Size = new System.Drawing.Size(150, 69);
             this.btnHired.TabIndex = 3;
             this.btnHired.Text = "Gehuurd";
             this.btnHired.UseVisualStyleBackColor = true;
@@ -56,80 +57,91 @@
             // lbLeaseMaterial
             // 
             this.lbLeaseMaterial.FormattingEnabled = true;
-            this.lbLeaseMaterial.Location = new System.Drawing.Point(12, 124);
+            this.lbLeaseMaterial.ItemHeight = 25;
+            this.lbLeaseMaterial.Location = new System.Drawing.Point(24, 238);
+            this.lbLeaseMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.lbLeaseMaterial.Name = "lbLeaseMaterial";
-            this.lbLeaseMaterial.Size = new System.Drawing.Size(748, 212);
+            this.lbLeaseMaterial.Size = new System.Drawing.Size(1492, 404);
             this.lbLeaseMaterial.TabIndex = 4;
             // 
             // lblLeaseSearchMaterial
             // 
             this.lblLeaseSearchMaterial.AutoSize = true;
-            this.lblLeaseSearchMaterial.Location = new System.Drawing.Point(491, 56);
+            this.lblLeaseSearchMaterial.Location = new System.Drawing.Point(982, 108);
+            this.lblLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLeaseSearchMaterial.Name = "lblLeaseSearchMaterial";
-            this.lblLeaseSearchMaterial.Size = new System.Drawing.Size(81, 13);
+            this.lblLeaseSearchMaterial.Size = new System.Drawing.Size(161, 25);
             this.lblLeaseSearchMaterial.TabIndex = 5;
             this.lblLeaseSearchMaterial.Text = "Zoek Materiaal:";
             // 
             // tbLeaseSearchMaterial
             // 
-            this.tbLeaseSearchMaterial.Location = new System.Drawing.Point(581, 53);
+            this.tbLeaseSearchMaterial.Location = new System.Drawing.Point(1162, 102);
+            this.tbLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.tbLeaseSearchMaterial.Name = "tbLeaseSearchMaterial";
-            this.tbLeaseSearchMaterial.Size = new System.Drawing.Size(179, 20);
+            this.tbLeaseSearchMaterial.Size = new System.Drawing.Size(354, 31);
             this.tbLeaseSearchMaterial.TabIndex = 6;
             // 
             // nudLeaseQuantity
             // 
-            this.nudLeaseQuantity.Location = new System.Drawing.Point(281, 80);
+            this.nudLeaseQuantity.Location = new System.Drawing.Point(562, 154);
+            this.nudLeaseQuantity.Margin = new System.Windows.Forms.Padding(6);
             this.nudLeaseQuantity.Name = "nudLeaseQuantity";
-            this.nudLeaseQuantity.Size = new System.Drawing.Size(120, 20);
+            this.nudLeaseQuantity.Size = new System.Drawing.Size(240, 31);
             this.nudLeaseQuantity.TabIndex = 7;
             // 
             // dtpLeaseEndDate
             // 
-            this.dtpLeaseEndDate.Location = new System.Drawing.Point(281, 47);
+            this.dtpLeaseEndDate.Location = new System.Drawing.Point(562, 90);
+            this.dtpLeaseEndDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpLeaseEndDate.Name = "dtpLeaseEndDate";
-            this.dtpLeaseEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpLeaseEndDate.Size = new System.Drawing.Size(396, 31);
             this.dtpLeaseEndDate.TabIndex = 8;
             // 
             // dtpLeaseStartDate
             // 
-            this.dtpLeaseStartDate.Location = new System.Drawing.Point(281, 12);
+            this.dtpLeaseStartDate.Location = new System.Drawing.Point(562, 23);
+            this.dtpLeaseStartDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpLeaseStartDate.Name = "dtpLeaseStartDate";
-            this.dtpLeaseStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpLeaseStartDate.Size = new System.Drawing.Size(396, 31);
             this.dtpLeaseStartDate.TabIndex = 9;
             // 
             // lblLeaseStartDate
             // 
             this.lblLeaseStartDate.AutoSize = true;
-            this.lblLeaseStartDate.Location = new System.Drawing.Point(184, 18);
+            this.lblLeaseStartDate.Location = new System.Drawing.Point(368, 35);
+            this.lblLeaseStartDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLeaseStartDate.Name = "lblLeaseStartDate";
-            this.lblLeaseStartDate.Size = new System.Drawing.Size(66, 13);
+            this.lblLeaseStartDate.Size = new System.Drawing.Size(131, 25);
             this.lblLeaseStartDate.TabIndex = 10;
             this.lblLeaseStartDate.Text = "Start Datum:";
             // 
             // lblLeaseEndDate
             // 
             this.lblLeaseEndDate.AutoSize = true;
-            this.lblLeaseEndDate.Location = new System.Drawing.Point(184, 53);
+            this.lblLeaseEndDate.Location = new System.Drawing.Point(368, 102);
+            this.lblLeaseEndDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLeaseEndDate.Name = "lblLeaseEndDate";
-            this.lblLeaseEndDate.Size = new System.Drawing.Size(65, 13);
+            this.lblLeaseEndDate.Size = new System.Drawing.Size(129, 25);
             this.lblLeaseEndDate.TabIndex = 11;
             this.lblLeaseEndDate.Text = "Eind Datum:";
             // 
             // lblLeaseQuantity
             // 
             this.lblLeaseQuantity.AutoSize = true;
-            this.lblLeaseQuantity.Location = new System.Drawing.Point(184, 82);
+            this.lblLeaseQuantity.Location = new System.Drawing.Point(368, 158);
+            this.lblLeaseQuantity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLeaseQuantity.Name = "lblLeaseQuantity";
-            this.lblLeaseQuantity.Size = new System.Drawing.Size(40, 13);
+            this.lblLeaseQuantity.Size = new System.Drawing.Size(79, 25);
             this.lblLeaseQuantity.TabIndex = 12;
             this.lblLeaseQuantity.Text = "Aantal:";
             // 
             // btnLeaseSearch
             // 
-            this.btnLeaseSearch.Location = new System.Drawing.Point(685, 82);
+            this.btnLeaseSearch.Location = new System.Drawing.Point(1370, 158);
+            this.btnLeaseSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseSearch.Name = "btnLeaseSearch";
-            this.btnLeaseSearch.Size = new System.Drawing.Size(75, 36);
+            this.btnLeaseSearch.Size = new System.Drawing.Size(150, 69);
             this.btnLeaseSearch.TabIndex = 13;
             this.btnLeaseSearch.Text = "Zoek";
             this.btnLeaseSearch.UseVisualStyleBackColor = true;
@@ -137,9 +149,10 @@
             // 
             // btnLeaseLease
             // 
-            this.btnLeaseLease.Location = new System.Drawing.Point(581, 82);
+            this.btnLeaseLease.Location = new System.Drawing.Point(1162, 158);
+            this.btnLeaseLease.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseLease.Name = "btnLeaseLease";
-            this.btnLeaseLease.Size = new System.Drawing.Size(75, 36);
+            this.btnLeaseLease.Size = new System.Drawing.Size(150, 69);
             this.btnLeaseLease.TabIndex = 2;
             this.btnLeaseLease.Text = "Lease";
             this.btnLeaseLease.UseVisualStyleBackColor = true;
@@ -147,9 +160,9 @@
             // 
             // LeaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 351);
+            this.ClientSize = new System.Drawing.Size(1544, 675);
             this.Controls.Add(this.btnLeaseSearch);
             this.Controls.Add(this.lblLeaseQuantity);
             this.Controls.Add(this.lblLeaseEndDate);
@@ -162,8 +175,10 @@
             this.Controls.Add(this.lbLeaseMaterial);
             this.Controls.Add(this.btnHired);
             this.Controls.Add(this.btnLeaseLease);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LeaseForm";
             this.Text = "Lease";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LeaseForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

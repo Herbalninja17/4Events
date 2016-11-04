@@ -27,21 +27,12 @@ namespace EyeCT4Events
             //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
             string datetime = person.BirthDate.ToShortDateString();
 
-            int latestid = Datacom.GetLatestID("account") + 1;
-
-            if (latestid == 0)
-            {
-                Console.WriteLine("Iets is fout met ophalen van ID.");
-                return false;
-            }
-            else
-            {
                 try
                 {
                     Datacom.OpenConnection();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = Datacom.connect;
-                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.AccountNumber + "', '" + datetime + "');";
+                    cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "');";
 
                     cmd.ExecuteNonQuery();
                     return true;
@@ -55,7 +46,7 @@ namespace EyeCT4Events
                 {
                     Datacom.CloseConnection();
                 }
-            }
+            
         }
         /// <summary>
         /// Check of de ingevulde gegevens overeenkomen met een account.
@@ -88,8 +79,10 @@ namespace EyeCT4Events
                     loggedinUser.Name = Convert.ToString(reader["naam"]);
                     loggedinUser.AccountNumber = Convert.ToString(reader["rekeningnummer"]);
                     loggedinUser.Address = Convert.ToString(reader["adres"]);
+                    loggedinUser.City = Convert.ToString(reader["woonplaats"]);
                     loggedinUser.BirthDate = d;
                     loggedinUser.Phonenumber = Convert.ToString(reader["telefoon"]);
+                    loggedinUser.ZipCode = Convert.ToString(reader["postcode"]);
                     return true;
                 }
                
@@ -111,14 +104,14 @@ namespace EyeCT4Events
         /// <param name="phonenumber"></param>
         /// <param name="birthdate"></param>
         /// <returns></returns>
-        public static bool EditUser(string name,string email,string password,string accountnumber,string adress,string zipcode, string phonenumber,string birthdate)
+        public static bool EditUser(string name,string email,string password,string accountnumber,string adress,string zipcode,string city, string phonenumber,string birthdate)
         {
             try
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE account SET naam = '" + name + "', email = '" + email + "', wachtwoord = '" + password + "',rekeningnummer = '" + accountnumber + "', telefoon = '" + phonenumber + "', postcode = '" + zipcode + "', adres = '" + adress + "', geboortedatum = '" + birthdate + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
+                cmd.CommandText = "UPDATE account SET naam = '" + name + "', email = '" + email + "', wachtwoord = '" + password + "',rekeningnummer = '" + accountnumber + "', telefoon = '" + phonenumber + "', postcode = '" + zipcode + "', city = '" + city + "', adres = '" + adress + "', geboortedatum = '" + birthdate + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -137,6 +130,8 @@ namespace EyeCT4Events
                 loggedinUser.Password = password;
                 loggedinUser.AccountNumber = accountnumber;
                 loggedinUser.Address = adress;
+                loggedinUser.City = city;
+                loggedinUser.ZipCode = zipcode;
                 loggedinUser.Phonenumber = phonenumber;
                 loggedinUser.BirthDate = dt;
             }

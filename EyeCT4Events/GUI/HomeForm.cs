@@ -19,12 +19,14 @@ namespace EyeCT4Events.GUI
         {
             InitializeComponent();
             lblUserName.Text = Login.loggedinUser.Name;
+            homeForm = this;
         }
         public HomeForm(LoginForm loginForm)
         {
             InitializeComponent();
             lblUserName.Text = Login.loggedinUser.Name;
             this._loginForm = loginForm;
+            homeForm = this;
         }
 
         private void btnGoToReservation_Click(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToLease_Click(object sender, EventArgs e)
         {
-            LeaseForm lease = new LeaseForm();
+            LeaseForm lease = new LeaseForm(homeForm);
             lease.Show();
             this.Hide();
         }
