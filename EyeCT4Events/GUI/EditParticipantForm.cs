@@ -16,16 +16,26 @@ namespace EyeCT4Events
         public EditParticipantForm()
         {
             InitializeComponent();
-            //Laat de gegevens zien van de ingelogde gebruiker.
-            tbEditParticipantName.Text = Login.loggedinUser.Name;
-            tbEditParticipantEmail.Text = Login.loggedinUser.Email;
-            tbEditParticipantCity.Text = Login.loggedinUser.City;
-            tbEditParticipantPassword.Text = Login.loggedinUser.Password;
-            tbEditParticipantPhoneNumber.Text = Login.loggedinUser.Phonenumber;
-            tbEditParticipantAccountNumber.Text = Login.loggedinUser.AccountNumber;
-            tbEditParticipantAdress.Text = Login.loggedinUser.Address;
-            tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
-            dtpEditParticipantDateOfBirth.Value = Login.loggedinUser.BirthDate;
+            if (Login.loggedinUser.Admin == 0)
+            {
+                //Laat de gegevens zien van de ingelogde gebruiker.
+                tbEditParticipantName.Text = Login.loggedinUser.Name;
+                tbEditParticipantEmail.Text = Login.loggedinUser.Email;
+                tbEditParticipantCity.Text = Login.loggedinUser.City;
+                tbEditParticipantPassword.Text = Login.loggedinUser.Password;
+                tbEditParticipantPhoneNumber.Text = Login.loggedinUser.Phonenumber;
+                tbEditParticipantAccountNumber.Text = Login.loggedinUser.AccountNumber;
+                tbEditParticipantAdress.Text = Login.loggedinUser.Address;
+                tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
+                dtpEditParticipantDateOfBirth.Value = Login.loggedinUser.BirthDate;
+                btnCreateParticipant.Enabled = false;
+                btnCreateParticipant.Visible = false;
+            }
+            else
+            {
+                btnCreateParticipant.Enabled = true;
+                btnCreateParticipant.Visible = true;
+            }
         }
 
         /// <summary>

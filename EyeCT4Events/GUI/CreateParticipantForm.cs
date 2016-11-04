@@ -24,6 +24,7 @@ namespace EyeCT4Events
         public CreateParticipantForm()
         {
             InitializeComponent();
+
             SetTextboxes();
             createForm = this;
         }
@@ -57,12 +58,21 @@ namespace EyeCT4Events
                     //btnDeleteParticipant.Enabled = true;
                     //btnEditParticipant.Enabled = true;
                     //btnParticipants.Enabled = true;
-
-                    if (login.LogInUser(person.Email, person.Password))
+                    if (Login.loggedinUser != null && Login.loggedinUser.Admin == 1)
                     {
-                        homeform = new HomeForm();
+                        MessageBox.Show("Account succesvol aangemaakt.");
+                        EditParticipantForm epf = new EditParticipantForm();
                         this.Close();
-                        homeform.Show();
+                        epf.Show();
+                    }
+                    else
+                    {
+                        if (login.LogInUser(person.Email, person.Password))
+                        {
+                            homeform = new HomeForm();
+                            this.Close();
+                            homeform.Show();
+                        }
                     }
                 }
                 else
