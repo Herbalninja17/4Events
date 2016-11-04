@@ -23,17 +23,14 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             leaseForm = this;
+            RefreshMaterialList();
         }
         public LeaseForm(HomeForm homeForm)
         {
             InitializeComponent();
             leaseForm = this;
             this.homeForm = homeForm;
-            products = DataMaterial.AvailableMaterialList();
-            foreach (Material product in products)
-            {
-                lbLeaseMaterial.Items.Add(product.ToString());
-            }
+            RefreshMaterialList();
         }
 
         /// <summary>
@@ -44,7 +41,8 @@ namespace EyeCT4Events
         private void btnLeaseSearch_Click(object sender, EventArgs e)
         {
             lbLeaseMaterial.Items.Clear();
-            List<int> IDs = new List<int>();
+            products.Clear();
+            List<int> IDs = DataMaterial.SearchMaterials(tbLeaseSearchMaterial.Text);
 
             foreach (Material mat in products)
             {
@@ -52,6 +50,7 @@ namespace EyeCT4Events
                 {
                     if (mat.ID == id)
                     {
+                        products.Add(mat);
                         lbLeaseMaterial.Items.Add(mat.ToString());
                     }
                 }
@@ -76,12 +75,25 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnLeaseLease_Click(object sender, EventArgs e)
         {
-
+            int i = lbLeaseMaterial.SelectedIndex;
+            int matID = products[i].ID;
+            DataMaterial.SetMaterialHired(matID);
+            RefreshMaterialList();
         }
 
         private void LeaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             homeForm.Show();
+        }
+
+        private void RefreshMaterialList()
+        {
+            lbLeaseMaterial.Items.Clear();
+            products = DataMaterial.AvailableMaterialList();
+            foreach (Material product in products)
+            {
+                lbLeaseMaterial.Items.Add(product.ToString());
+            }
         }
     }
 }
