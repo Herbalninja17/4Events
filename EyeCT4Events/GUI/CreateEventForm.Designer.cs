@@ -36,7 +36,6 @@
             this.tbCreateEventName = new System.Windows.Forms.TextBox();
             this.btnCreateEventCreateEvent = new System.Windows.Forms.Button();
             this.btnEditEvent = new System.Windows.Forms.Button();
-            this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.cbCreateEventCamping = new System.Windows.Forms.ComboBox();
             this.lblCreateEventCamping = new System.Windows.Forms.Label();
@@ -110,16 +109,6 @@
             this.btnEditEvent.UseVisualStyleBackColor = true;
             this.btnEditEvent.Click += new System.EventHandler(this.btnEditEvent_Click);
             // 
-            // btnDeleteEvent
-            // 
-            this.btnDeleteEvent.Location = new System.Drawing.Point(12, 64);
-            this.btnDeleteEvent.Name = "btnDeleteEvent";
-            this.btnDeleteEvent.Size = new System.Drawing.Size(75, 43);
-            this.btnDeleteEvent.TabIndex = 19;
-            this.btnDeleteEvent.Text = "Evenement Verwijderen";
-            this.btnDeleteEvent.UseVisualStyleBackColor = true;
-            this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
-            // 
             // btnHome
             // 
             this.btnHome.Location = new System.Drawing.Point(12, 113);
@@ -156,7 +145,6 @@
             this.Controls.Add(this.lblCreateEventCamping);
             this.Controls.Add(this.cbCreateEventCamping);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnDeleteEvent);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.btnCreateEventCreateEvent);
             this.Controls.Add(this.tbCreateEventName);
@@ -182,7 +170,6 @@
         private System.Windows.Forms.TextBox tbCreateEventName;
         private System.Windows.Forms.Button btnCreateEventCreateEvent;
         private System.Windows.Forms.Button btnEditEvent;
-        private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.ComboBox cbCreateEventCamping;
         private System.Windows.Forms.Label lblCreateEventCamping;

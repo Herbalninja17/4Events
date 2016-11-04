@@ -102,12 +102,6 @@
       <DependentUpon>CreateParticipantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DataGeneral\Datacom.cs" />
-    <Compile Include="GUI\DeleteEventForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DeleteEventForm.Designer.cs">
-      <DependentUpon>DeleteEventForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\EventBeheerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,9 +187,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateParticipantForm.resx">
       <DependentUpon>CreateParticipantForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DeleteEventForm.resx">
-      <DependentUpon>DeleteEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditParticipantForm.resx">
       <DependentUpon>EditParticipantForm.cs</DependentUpon>
