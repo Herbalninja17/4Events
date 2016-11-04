@@ -144,6 +144,12 @@
     <Compile Include="GUI\MapForm.Designer.cs">
       <DependentUpon>MapForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MyReservationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MapForm.resx">
       <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MyReservationsForm.resx">
       <DependentUpon>MyReservationsForm.cs</DependentUpon>
