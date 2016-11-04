@@ -85,6 +85,20 @@ namespace EyeCT4Events
             Poster = poster;
         }
 
+        /// <summary>
+        /// Constructor
+        /// For creating reactions to messages.
+        /// </summary>
+        /// <param name="messageString">The actual message.</param>
+        /// <param name="messageString">MessageID of the message that is reacted to.</param>
+        /// <param name="poster">Person who posted the message.</param>
+        public Message(string messageString, int previousMessageID, Person poster)
+        {
+            MessageString = messageString;
+            PreviousMessageID = previousMessageID;
+            Poster = poster;
+        }
+
         //methods
         public override string ToString()
         {
