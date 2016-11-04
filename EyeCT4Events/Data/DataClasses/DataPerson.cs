@@ -157,9 +157,9 @@ namespace EyeCT4Events.Data.DataClasses
                 Person p;
                 while (reader.Read())
                 {
-                    string date = Convert.ToString(reader["a.geboortedatum"]);
+                    string date = Convert.ToString(reader["geboortedatum"]);
                     DateTime dt = DateTime.Parse(date);
-                    p = new Person(Convert.ToString(reader["a.naam"]), dt, Convert.ToString(reader["a.adres"]), Convert.ToString(reader["a.postcode"]), Convert.ToString(reader["a.stad"]), Convert.ToString(reader["a.telefoon"]), Convert.ToString(reader["a.email"]), Convert.ToString(reader["a.wachtwoord"]), Convert.ToString(reader["a.rekeningnummer"]));
+                    p = new Person(Convert.ToString(reader["naam"]), dt, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
                     personlist.Add(p);
                 }
                 return personlist;

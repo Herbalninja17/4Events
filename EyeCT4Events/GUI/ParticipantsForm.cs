@@ -28,6 +28,10 @@ namespace EyeCT4Events
                     lbParticipantsParticipants.Items.Add(p.Email);
                 }
             }
+            else
+            {
+                MessageBox.Show("iets mis gegaan met persoon ophalen.");
+            }
         }
 
         public ParticipantsForm(MakeReservationForm reservationForm)
