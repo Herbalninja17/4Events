@@ -161,7 +161,7 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
-        /// To create (or Edit) a person.
+        /// To create a person.
         /// </summary>
         /// <param name="name">Name of the person</param>
         /// <param name="birthDate">The date of birth of the person</param>
