@@ -67,10 +67,14 @@ namespace EyeCT4Events
                         homeform.Show();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Uw ingevulde email adres is al in gebruik");
+                }
             }
             catch
             {
-                MessageBox.Show("Een van de velden is niet ingevuld");
+                MessageBox.Show("U bent een van de velden vergeten in te vullen.");
             }
         }
     }
