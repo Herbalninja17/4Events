@@ -23,7 +23,8 @@ namespace EyeCT4Events.Data.DataClasses
         {
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT CampingID, Naam, Adres, Stad, PostCode " +
-                                            "FROM Camping");
+                                            "FROM Camping" +
+                                            "ORDER BY Naam;");
             SqlDataReader reader = cmd.ExecuteReader();
 
             List<Camping> campings = new List<Camping>();
