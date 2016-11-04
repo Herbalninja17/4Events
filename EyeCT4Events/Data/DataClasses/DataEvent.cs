@@ -111,12 +111,6 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-
-        public static List<Event> GetEventList(string eventsLike)
-        {
-            return null;
-        }
-
         public static int GetCurrentVisitors()
         {
             return 0;
