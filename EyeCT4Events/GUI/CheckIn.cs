@@ -31,7 +31,10 @@ namespace EyeCT4Events.GUI
                 if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
                 {
                     InUit.CheckIn(RFID.tagstring, 4);
-                    MessageBox.Show("Welcome: " + RFID.tagstring.ToString());                    
+                    MessageBox.Show("Welcome: " + RFID.tagstring.ToString());
+                    LoginForm login = new LoginForm();
+                    this.Hide();
+                    login.Show();
                 }
             }
         }
@@ -69,9 +72,12 @@ namespace EyeCT4Events.GUI
                 {
                     InUit.CheckInFisrtTime(RFID.tagstring, textBox1.Text);
                     MessageBox.Show("Seccessfully Checked In ");
-                }
-                
+                }                
                 groupBox2.Visible = false;
+
+                LoginForm login = new LoginForm();
+                this.Hide();
+                login.Show();
             }
             else if (login.LogInUser(textBox1.Text, textBox2.Text) == false)
             {
