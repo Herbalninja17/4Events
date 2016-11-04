@@ -61,7 +61,6 @@
     <Compile Include="Business\Classes\Message.cs" />
     <Compile Include="Business\Classes\Person.cs" />
     <Compile Include="Business\Classes\Reservation.cs" />
-    <Compile Include="Business\Enums\FileType.cs" />
     <Compile Include="Business\Enums\SpotType.cs" />
     <Compile Include="Data\DataClasses\DataCamping.cs" />
     <Compile Include="Data\DataClasses\DataCampingSpot.cs" />
