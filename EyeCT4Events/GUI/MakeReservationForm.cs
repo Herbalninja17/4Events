@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EyeCT4Events.GUI;
+using EyeCT4Events.Data.DataClasses;
 
 namespace EyeCT4Events
 {
@@ -96,7 +97,11 @@ namespace EyeCT4Events
 
         private void MakeReservationForm_Load(object sender, EventArgs e)
         {
-
+            DataEvent.GetEvent();
+            foreach (string i in DataEvent.events)
+            {
+                lbReservationEvents.Items.Add(i);
+            }
         }
     }
 }

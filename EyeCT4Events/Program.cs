@@ -17,7 +17,7 @@ namespace EyeCT4Events
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CheckIn());
+            Application.Run(new MakeReservationForm());
         }
     }
 }

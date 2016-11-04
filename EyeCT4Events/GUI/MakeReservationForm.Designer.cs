@@ -13,6 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -48,7 +49,7 @@
             this.lbReservationEvents.FormattingEnabled = true;
             this.lbReservationEvents.Location = new System.Drawing.Point(12, 7);
             this.lbReservationEvents.Name = "lbReservationEvents";
-            this.lbReservationEvents.Size = new System.Drawing.Size(182, 368);
+            this.lbReservationEvents.Size = new System.Drawing.Size(214, 368);
             this.lbReservationEvents.TabIndex = 0;
             // 
             // btnReservationsLocation

@@ -14,7 +14,7 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
 
-        static List<string> events = new List<string>();
+        static public List<string> events = new List<string>();
 
         public static Event GetEvent()
         {
@@ -29,7 +29,7 @@ namespace EyeCT4Events.Data.DataClasses
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    events.Add("Naam" + "StartDatum" + "EindDatum");
+                    events.Add(Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
                 }
             }
             catch (Exception e)
