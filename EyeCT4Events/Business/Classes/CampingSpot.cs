@@ -22,6 +22,11 @@ namespace EyeCT4Events
         /// <summary>
         /// Taken from the database.
         /// </summary>
+        public int PlaatsNr { get; private set; }
+
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
         public int Capacity { get; private set; }
 
         public bool Reserved { get; set; }
@@ -38,10 +43,11 @@ namespace EyeCT4Events
         /// <param name="spotID">The ID of the spot</param>
         /// <param name="capacity">The amount of people a spot can hold</param>
         /// <param name="reserved">Reservation status of the spot</param>
-        public CampingSpot(SpotType spotType, int spotID, int capacity, bool reserved, decimal price)
+        public CampingSpot(SpotType spotType, int spotID, int plaatsNr, int capacity, bool reserved, decimal price)
         {
             SpotType = spotType;
             SpotID = spotID;
+            PlaatsNr = plaatsNr;
             Capacity = capacity;
             Reserved = reserved;
             Price = price;

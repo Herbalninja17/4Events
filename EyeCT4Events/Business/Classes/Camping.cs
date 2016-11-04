@@ -47,7 +47,7 @@ namespace EyeCT4Events
             Name = name;
             Address = address;
             City = city;
-
+            Zipcode = zipcode;
             CampingSpots = DataCampingSpot.GetCampingSpotList();
         }
 
