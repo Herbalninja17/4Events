@@ -89,5 +89,13 @@ namespace EyeCT4Events
                 MessageBox.Show("Wijziging is gelukt.");
             }
         }
+        public static bool DeleteUser(Person p)
+        {
+            if (Data.DataClasses.DataPerson.DeletePerson(p))
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 }

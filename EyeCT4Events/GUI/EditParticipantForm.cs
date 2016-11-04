@@ -63,7 +63,21 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
-            
+            DialogResult dialog = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen? U kunt dit niet meer ongedaan maken.", "Account verwijderen", MessageBoxButtons.YesNo);
+            if(dialog == DialogResult.Yes)
+            {
+                if (Login.DeleteUser(Login.loggedinUser))
+                {
+                    MessageBox.Show("Account verwijderen is gelukt!");
+                    LoginForm lf = new LoginForm();
+                    this.Close();
+                    lf.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Account verwijderen is mislukt!");
+                }
+            }
         }
 
         /// <summary>

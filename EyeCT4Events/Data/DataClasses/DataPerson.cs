@@ -105,7 +105,25 @@ namespace EyeCT4Events.Data.DataClasses
                 Login.loggedinUser.BirthDate = person.BirthDate;
             }
         }
-
+        public static bool DeletePerson(Person p)
+        {
+            try
+            {
+                Datacom.OpenConnection();
+                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "'", Datacom.connect);
+                Datacom.command.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
         public static List<Person> GetPersonList()
         {
             return null;
