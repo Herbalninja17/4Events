@@ -43,7 +43,19 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnLeaseSearch_Click(object sender, EventArgs e)
         {
+            lbLeaseMaterial.Items.Clear();
+            List<int> IDs = new List<int>();
 
+            foreach (Material mat in products)
+            {
+                foreach (int id in IDs)
+                {
+                    if (mat.ID == id)
+                    {
+                        lbLeaseMaterial.Items.Add(mat.ToString());
+                    }
+                }
+            }
         }
 
         /// <summary>

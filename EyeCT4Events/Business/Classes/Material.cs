@@ -10,13 +10,13 @@ namespace EyeCT4Events
     {
 
         //Properties
-        public int ID { get; private set; }
+        public int ID { get; private set; } 
         /// <summary>
         /// Taken from the database.
         /// </summary>
         public string Name { get; private set; }
 
-        public string Description { get; set; }
+        public string Description { get; set; } 
 
         public DateTime HuurdatumStart  { get; private set; }
 

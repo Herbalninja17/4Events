@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EyeCT4Events.Data.DataClasses
 {
@@ -66,6 +67,27 @@ namespace EyeCT4Events.Data.DataClasses
             new SqlCommand("ALTER TABLE Product " +
                            "SET PStatus = 'Verhuurd' " +
                            $"WHERE ProductID = {materialID}");
+            Datacom.CloseConnection();
+        }
+
+        public static List<int> SearchMaterials(string name)
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT ProductID " +
+                           "FROM Product " +
+                           $"WHERE Naam LIKE '%{name}%'",
+                           Datacom.connect);
+
+            List<int> products = new List<int>();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                products.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return products;
         }
 
         public static void UpdateMaterial()
