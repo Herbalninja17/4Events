@@ -26,6 +26,8 @@ namespace EyeCT4Events
             InitializeComponent();
             editEvent = this;
             this.eventForm = eventForm;
+
+
         }
 
         /// <summary>
