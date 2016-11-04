@@ -27,21 +27,12 @@ namespace EyeCT4Events
             //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
             string datetime = person.BirthDate.ToShortDateString();
 
-            int latestid = Datacom.GetLatestID("account") + 1;
-
-            if (latestid == 0)
-            {
-                Console.WriteLine("Iets is fout met ophalen van ID.");
-                return false;
-            }
-            else
-            {
                 try
                 {
                     Datacom.OpenConnection();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = Datacom.connect;
-                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "');";
+                    cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "');";
 
                     cmd.ExecuteNonQuery();
                     return true;
@@ -55,7 +46,7 @@ namespace EyeCT4Events
                 {
                     Datacom.CloseConnection();
                 }
-            }
+            
         }
         /// <summary>
         /// Check of de ingevulde gegevens overeenkomen met een account.
