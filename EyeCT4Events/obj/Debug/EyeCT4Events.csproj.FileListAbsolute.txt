@@ -21,3 +21,6 @@ E:\00school\P2-2\PT\4events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.exe
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
