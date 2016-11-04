@@ -42,18 +42,6 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Om naar de form te gaan om een event te verwijderen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteEvent_Click(object sender, EventArgs e)
-        {
-            DeleteEventForm def = new DeleteEventForm();
-            this.Close();
-            def.Show();
-        }
-
-        /// <summary>
         /// Om naar de algemene participants form te gaan.
         /// </summary>
         /// <param name="sender"></param>
