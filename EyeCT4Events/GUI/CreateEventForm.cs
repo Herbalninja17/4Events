@@ -1,4 +1,5 @@
-﻿using EyeCT4Events.GUI;
+﻿using EyeCT4Events.Data.DataClasses;
+using EyeCT4Events.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,12 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             createEvent = this;
+            List<Camping> Campings = DataCamping.GetCampingList();
+
+            foreach (Camping found in Campings)
+            {
+                cbCreateEventCamping.Items.Add(found);
+            }
         }
 
         public CreateEventForm(HomeForm homeForm)
