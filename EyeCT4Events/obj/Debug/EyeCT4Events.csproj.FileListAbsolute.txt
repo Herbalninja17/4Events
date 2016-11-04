@@ -152,3 +152,6 @@ C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.SocialM
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.UploadForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.Properties.Resources.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.pdb
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
