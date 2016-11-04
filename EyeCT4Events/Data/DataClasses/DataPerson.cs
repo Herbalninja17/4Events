@@ -67,9 +67,30 @@ namespace EyeCT4Events.Data.DataClasses
             return Login.loggedinUser;
         }
 
-        public static void SetPerson(Person person)
+        public static bool SetPerson(Person person)
         {
-            
+            //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
+            string datetime = person.BirthDate.ToShortDateString();
+
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum,beheerder) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "', " + person.Admin + ");";
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
         }
 
         public static bool UpdatePerson(Person person)
