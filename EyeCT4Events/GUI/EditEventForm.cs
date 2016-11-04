@@ -17,6 +17,8 @@ namespace EyeCT4Events
         private EventBeheerForm eventForm;
         private List<Event> Events;
 
+        private static Event selectedEvent;
+
         public EditEventForm()
         {
             InitializeComponent();
@@ -42,10 +44,18 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEventEditEvent_Click(object sender, EventArgs e)
         {
-            Event eEvent = lbEditEvent.SelectedItem as Event;
+            if(selectedEvent != null)
+            {
+                if(String.IsNullOrWhiteSpace(tbEditEventName.Text) || dtpEditBeginDate.Value < DateTime.Today || dtpEditBeginDate.Value < dtpEditBeginDate.Value)
+                { MessageBox.Show("Vul geldige waarden in voor de naam en data. (start datum mag niet eerder dan vandaag zijn)."); return; }
 
+                selectedEvent.Name = tbEditEventName.Text;
+                selectedEvent.StartDate = dtpEditBeginDate.Value;
+                selectedEvent.EndDate = dtpEditEndDate.Value;
 
-
+                DataEvent.UpdateEvent(selectedEvent);
+                MessageBox.Show("Updated Event.");
+            }
         }
 
         /// <summary>
@@ -88,18 +98,6 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Om naar de form te gaan om een event te verwijderen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteEvent_Click(object sender, EventArgs e)
-        {
-            //DeleteEventForm def = new DeleteEventForm();
-            //this.Hide();
-            //def.Show();
-        }
-
-        /// <summary>
         /// Om naar de algemene participants form te gaan.
         /// </summary>
         /// <param name="sender"></param>
@@ -118,6 +116,17 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEventSelectEvent_Click(object sender, EventArgs e)
         {
+            selectedEvent = lbEditEvent.SelectedItem as Event;
+            if (selectedEvent != null)
+            {
+                tbEditEventName.Text = selectedEvent.Name;
+                tbEditEventStreet.Text = selectedEvent.Camping.Address;
+                tbEditEventCity.Text = selectedEvent.Camping.City;
+                tbEditEventZipCode.Text = selectedEvent.Camping.Zipcode;
+                dtpEditBeginDate.Value = selectedEvent.StartDate;
+                dtpEditEndDate.Value = selectedEvent.EndDate;
+                tbEditEventCapacity.Text = selectedEvent.Camping.Places.ToString();
+            }
 
         }
 

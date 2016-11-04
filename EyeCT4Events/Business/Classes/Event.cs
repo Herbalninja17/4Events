@@ -35,7 +35,7 @@ namespace EyeCT4Events
         public DateTime StartDate
         {
             get { return startDate; }
-            private set
+            set
             {
                 DateTime today = DateTime.Today;
                 if(value <= today) { throw new ArgumentOutOfRangeException("startDate"); }
