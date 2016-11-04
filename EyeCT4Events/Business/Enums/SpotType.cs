@@ -8,7 +8,7 @@ namespace EyeCT4Events
 {
     public enum SpotType
     {
-        Eigen_Tent,
+        Eigen_tent,
         Huurtent,
         Comfort,
         Stacaravan,

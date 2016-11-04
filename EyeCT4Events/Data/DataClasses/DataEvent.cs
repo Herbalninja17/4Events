@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace EyeCT4Events.Data.DataClasses
 {
@@ -71,25 +72,51 @@ namespace EyeCT4Events.Data.DataClasses
 
         public static List<Event> SearchEvents(string name)
         {
-            //Datacom.OpenConnection();
-            //SqlCommand cmd = new SqlCommand("SELECT " +
-            //               "FROM ForEvent " +
-            //               $"WHERE Naam LIKE '%{name}%';",
-            //               Datacom.connect);
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT e.Naam, e.StartDatum, e.EindDatum, e.CampingID, c.Naam, c.Adres, c.Stad, c.PostCode " +
+                                            "FROM ForEvent e, Camping c " +
+                                            "WHERE e.CampingID = c.CampingID " +
+                                            $"AND e.Naam LIKE '%{name}%';",
+                                            Datacom.connect);
 
-            //List<int> products = new List<int>();
-            //SqlDataReader reader = cmd.ExecuteReader();
-            //while (reader.Read())
-            //{
-            //    products.Add(reader.GetInt32(0));
-            //}
-            //reader.Close();
-            //Datacom.CloseConnection();
+            List<Event> events = new List<Event>();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                //Get Values Event
+                string eventName = reader.GetString(0);
+                string startDate = reader.GetString(1);
+                string endDate = reader.GetString(2);
 
-            return null;
+                //Get Values Camping
+                int campingID = reader.GetInt32(3);
+                string campingName = reader.GetString(4);
+                string address = reader.GetString(5);
+                string city = reader.GetString(6);
+                string zipCode = reader.GetString(7);
+
+                //Create Camping
+                Camping camping = new Camping(campingID, campingName, address, city, zipCode);
+
+                //Format the date
+                string format = "d-M-yyyy";
+                DateTime sd = DateTime.ParseExact(startDate, format, CultureInfo.InvariantCulture);
+                DateTime ed = DateTime.ParseExact(endDate, format, CultureInfo.InvariantCulture);
+
+                //Create the Event
+                Event eEvent = new Event(eventName, sd, ed, camping);
+
+                //Add Event to list
+                events.Add(eEvent);
+
+            }
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return events;
         }
 
-        public static void UpdateEvent(Event eEvent)
+        public static void UpdateEvent(int EventID)
         {
             try
             {
