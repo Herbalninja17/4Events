@@ -77,11 +77,10 @@ namespace EyeCT4Events
         /// Constructor.
         /// </summary>
         /// <param name="name">Name of the event.</param>
-        /// <param name="location">Location of the event.</param>
         /// <param name="startDate">Start date for the event.</param>
         /// <param name="endDate">End date of the event.</param>
         /// <param name="camping">Camping object for the event.</param>
-        public Event(string name, string location, DateTime startDate, DateTime endDate, Camping camping)
+        public Event(string name, DateTime startDate, DateTime endDate, Camping camping)
         {
             Name = name;
             StartDate = startDate;

@@ -18,16 +18,16 @@ namespace EyeCT4Events
 
         public string Description { get; set; }  
 
-        public DateTime HuurdatumStart  { get; private set; } 
+        public DateTime LeaseDateStart  { get; private set; } 
 
-        public DateTime HuurdatumEind { get; set; } 
+        public DateTime LeaseDateEnd { get; set; } 
 
         /// <summary>
         /// Taken from the database.
         /// </summary>
         public decimal Price { get; private set; } 
 
-        public bool Rented { get; set; } 
+        public bool Leased { get; set; } 
 
         public bool IsPayed { get; set; } 
 
@@ -49,12 +49,18 @@ namespace EyeCT4Events
         }
 
         //Methods
-        public void StartHuur(DateTime eindDatum) 
+        public void StartLease(DateTime endDate) 
         {
-            if(eindDatum < DateTime.Now) { throw new ArgumentOutOfRangeException("eindDatum"); }
+            if(endDate < DateTime.Today) { throw new ArgumentOutOfRangeException("endDate"); }
 
-            HuurdatumStart = DateTime.Now;
-            HuurdatumEind = eindDatum;
+            LeaseDateStart = DateTime.Today;
+            LeaseDateEnd = endDate;
+            Leased = true;
+        }
+
+        public void StopLease()
+        {
+            Leased = false;
         }
 
         public override string ToString() 
