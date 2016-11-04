@@ -51,8 +51,6 @@ namespace EyeCT4Events
         {
             try
             {
-
-
                 person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantStreet.Text, tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, tbCreateParticipantRekeningnummer.Text);
                 if (login.CreateUser(person))
                 {
