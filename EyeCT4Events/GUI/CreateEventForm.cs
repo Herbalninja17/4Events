@@ -25,7 +25,8 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateEventCreateEvent_Click(object sender, EventArgs e)
         {
-            Camping camping = null;
+            Camping camping = cbCreateEventCamping.SelectedItem as Camping;
+            if (camping == null) { MessageBox.Show("Geen geldige camping gesellecteerd."); return; }
 
             if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Now || 
                 dtpEndDate.Value < dtpBeginDate.Value || cbCreateEventCamping.SelectedIndex == -1)

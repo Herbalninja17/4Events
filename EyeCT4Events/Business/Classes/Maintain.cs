@@ -11,6 +11,7 @@ namespace EyeCT4Events
     {
         public List<Event> Events { get; set; }
         public List<Person> Persons { get; set; }
+        public List<Camping> Campings { get; set; }
 
         public Maintain()
         {
@@ -204,6 +205,19 @@ namespace EyeCT4Events
                 }
             }
             return null;
+        }
+
+        public bool AddCamping(Camping camping)
+        {
+            foreach (Camping found in Campings)
+            {
+                if (found.Name == camping.Name && found.Address == camping.Address)
+                {
+                    return false;
+                }
+            }
+            Campings.Add(camping);
+            return true;
         }
     }
 }
