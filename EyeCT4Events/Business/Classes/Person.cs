@@ -12,6 +12,7 @@ namespace EyeCT4Events
         private string name;
         private DateTime birthDate;
         private string address;
+        private string zipcode;
         private string phonenumber;
         private string email;
         private string password;
@@ -142,11 +143,12 @@ namespace EyeCT4Events
         /// <param name="email">The Email of the person</param>
         /// <param name="password">The Password of the person</param>
         /// <param name="accountnumber">The Accountnumber of the person</param>
-        public Person(string name, DateTime birthDate, string address, string phonenumber, string email, string password,string accountnumber)
+        public Person(string name, DateTime birthDate, string address, string zipcode, string phonenumber, string email, string password,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
             Address = address;
+            this.zipcode = zipcode;
             Phonenumber = phonenumber;
             Email = email;
             Password = password;

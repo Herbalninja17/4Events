@@ -70,6 +70,7 @@
     <Compile Include="Data\DataClasses\DataMessage.cs" />
     <Compile Include="Data\DataClasses\DataPerson.cs" />
     <Compile Include="Data\DataClasses\DataReservation.cs" />
+    <Compile Include="Data\DataClasses\RfidCheck.cs" />
     <Compile Include="GUI\CheckIn.cs">
       <SubType>Form</SubType>
     </Compile>
