@@ -16,7 +16,7 @@ namespace EyeCT4Events
     {
         private CreateEventForm createEvent;
         private HomeForm homeForm;
-        List<Camping> Campings;
+        private List<Camping> Campings;
 
         public CreateEventForm()
         {
@@ -44,18 +44,25 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateEventCreateEvent_Click(object sender, EventArgs e)
         {
-            Camping camping = cbCreateEventCamping.SelectedItem as Camping;
+            Camping camping = null;
+            if(cbCreateEventCamping.SelectedIndex != -1)
+            {
+                foreach(Camping found in Campings)
+                {
+                    if(found.Name == cbCreateEventCamping.SelectedItem.ToString())
+                    {
+                        camping = found;
+                    }
+                }
+            }
             if (camping == null) { MessageBox.Show("Geen geldige camping gesellecteerd."); return; }
 
-            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Now || 
-                dtpEndDate.Value < dtpBeginDate.Value || cbCreateEventCamping.SelectedIndex == -1)
-            { MessageBox.Show("Vul alle velden correct in."); return; }
+            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Today || 
+                dtpEndDate.Value < dtpBeginDate.Value) { MessageBox.Show("Vul alle velden correct in."); return; }
 
-            //MOETEN EERST CAMPINGS KUNNEN WORDEN BINNEN GEHAALD UIT DE DATABASE IN IN DE COMBOBOX WORDEN GEPLAATS OM DEZE
-            //METHODE AF TE MAKEN!!!!
+            Event Event = new Event(tbCreateEventName.Text, dtpBeginDate.Value, dtpEndDate.Value, camping);
 
-            //Event newEvent = new Event(tbCreateEventName.Text, address, dtpBeginDate.Value, dtpEndDate.Value, maxVisitors,)
-            //Data.DataClasses.DataEvent.SetEvent(newEvent);
+            DataEvent.SetEvent(Event);
         }
 
         /// <summary>
