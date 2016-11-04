@@ -39,13 +39,14 @@ namespace EyeCT4Events
         /// <param name="stock">Amount in stock</param>
         /// <param name="price">price per item.</param>
         /// <param name="isPayed">True: Item is payed for, False: Item is not payed for.</param>
-        public Material(int id, string name, string description, decimal price, bool isPayed) 
+        public Material(int id, string name, string description, decimal price, bool isPayed, bool leased) 
         {
             ID = id;
             Name = name;
             Description = description;
             Price = price;
             IsPayed = isPayed;
+            Leased = leased;
         }
 
         //Methods
