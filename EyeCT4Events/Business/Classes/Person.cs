@@ -207,7 +207,7 @@ namespace EyeCT4Events
         /// <param name="address">The address of the person</param>
         /// <param name="phonenumber">The phonenumber of the person</param>
         /// <param name="email">The username of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email)
+        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email, int admin)
         {
             Name = name;
             BirthDate = BirthDate;
@@ -216,6 +216,7 @@ namespace EyeCT4Events
             City = city;
             Phonenumber = phonenumber;
             Email = email;
+            Admin = admin;
         }
 
         public override string ToString()

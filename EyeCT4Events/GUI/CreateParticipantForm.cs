@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace EyeCT4Events
 
         private CreateParticipantForm createForm;
         private ParticipantsForm participantsForm;
+        private HomeForm homeform;
 
         public CreateParticipantForm()
         {
@@ -88,7 +90,12 @@ namespace EyeCT4Events
                 //btnEditParticipant.Enabled = true;
                 //btnParticipants.Enabled = true;
 
-                login.LogInUser(person.Email, person.Password);
+                if(login.LogInUser(person.Email, person.Password))
+                {
+                    homeform = new HomeForm();
+                    this.Close();
+                    homeform.Show();
+                }
             }
             else
             {
