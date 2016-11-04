@@ -68,29 +68,70 @@ namespace EyeCT4Events.Data.DataClasses
             return Login.loggedinUser;
         }
 
-        public static bool SetPerson(Person person)
+        //check of email al in de database voor komt, moet niet true zijn
+        public static bool CheckPerson(Person person)
         {
-            //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
-            string datetime = person.BirthDate.ToShortDateString();
-
+            string email = "";
             try
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum,beheerder) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "', " + person.Admin + ");";
-
-                cmd.ExecuteNonQuery();
-                return true;
+                cmd.CommandText = "SELECT email FROM account WHERE email = '" + person.Email + "';";
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    email = Convert.ToString(reader["email"]);
+                }
+                if(email == "")
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine(e);
-                return false;
+                Console.WriteLine(exc.ToString());
+                return true;
             }
             finally
             {
                 Datacom.CloseConnection();
+            }
+        }
+        public static bool SetPerson(Person person)
+        {
+            //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
+            string datetime = person.BirthDate.ToShortDateString();
+
+            if (CheckPerson(person) == false)
+                {
+                    try
+                    {
+                        Datacom.OpenConnection();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = Datacom.connect;
+                        cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum,beheerder) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "', " + person.Admin + ");";
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        return false;
+                    }
+                    finally
+                    {
+                        Datacom.CloseConnection();
+                    }
+                }
+            else
+            {
+                return false;
             }
         }
 
