@@ -66,7 +66,7 @@ namespace EyeCT4Events
             else
             {
                 //Lists with events containing the search term or part of it.
-                Events = DataEvent.GetEventList(tbSearchEditEventName.Text);
+                Events = DataEvent.SearchEvents(tbSearchEditEventName.Text);
             }
 
             foreach (Event found in Events)
