@@ -116,12 +116,18 @@ namespace EyeCT4Events.Data.DataClasses
             return events;
         }
 
-        public static void UpdateEvent(int EventID)
+        public static void UpdateEvent(Event eEvent)
         {
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("");
+                SqlCommand cmd = new SqlCommand("UPDATE ForEvent " +
+                                               $"SET Naam = {eEvent.Name} " +
+                                               $"SET StartDatum = {eEvent.StartDate.ToString("d-M-yyyy")} " +
+                                               $"SET EindDatum = {eEvent.EndDate.ToString("d-M-yyyy")} " +
+                                               $"WHERE CampingID = {eEvent.Camping}");
+
+                cmd.ExecuteNonQuery();
             }
             catch(Exception ex)
             {
@@ -135,7 +141,46 @@ namespace EyeCT4Events.Data.DataClasses
 
         public static List<Event> GetEventList()
         {
-            return null;
+            Datacom.OpenConnection();
+            SqlCommand cmd =
+                new SqlCommand(
+                    "SELECT e.Naam, e.StartDatum, e.EindDatum, e.CampingID, c.Naam, c.Adres, c.Stad, c.PostCode " +
+                    "FROM ForEvent e, Camping c " +
+                    "WHERE e.CampingID = c.CampingID;",
+                    Datacom.connect);
+
+            List<Event> events = new List<Event>();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                //Get Values Event
+                string eventName = reader.GetString(0);
+                string startDate = reader.GetString(1);
+                string endDate = reader.GetString(2);
+
+                //Get Values Camping
+                int campingID = reader.GetInt32(3);
+                string campingName = reader.GetString(4);
+                string address = reader.GetString(5);
+                string city = reader.GetString(6);
+                string zipCode = reader.GetString(7);
+
+                //Create Camping
+                Camping camping = new Camping(campingID, campingName, address, city, zipCode);
+
+                //Format the date
+                string format = "d-M-yyyy";
+                DateTime sd = DateTime.ParseExact(startDate, format, CultureInfo.InvariantCulture);
+                DateTime ed = DateTime.ParseExact(endDate, format, CultureInfo.InvariantCulture);
+
+                //Create the Event
+                Event eEvent = new Event(eventName, sd, ed, camping);
+
+                //Add Event to list
+                events.Add(eEvent);
+            }
+
+            return events;
         }
 
         public static int GetCurrentVisitors()

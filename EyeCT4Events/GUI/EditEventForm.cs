@@ -30,11 +30,11 @@ namespace EyeCT4Events
             editEvent = this;
             this.eventForm = eventForm;
 
-            //Events = DataEvent.GetEventList();
-            //foreach(Event found in Events)
-            //{
-            //    lbEditEvent.Items.Add(found);
-            //}
+            Events = DataEvent.GetEventList();
+            foreach (Event found in Events)
+            {
+                lbEditEvent.Items.Add(found);
+            }
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace EyeCT4Events
                 selectedEvent.StartDate = dtpEditBeginDate.Value;
                 selectedEvent.EndDate = dtpEditEndDate.Value;
 
-                //DataEvent.UpdateEvent(selectedEvent);
+                DataEvent.UpdateEvent(selectedEvent);
                 MessageBox.Show("Updated Event.");
             }
         }
@@ -66,7 +66,8 @@ namespace EyeCT4Events
         private void btnEditEventSearch_Click(object sender, EventArgs e)
         {
             lbEditEvent.Items.Clear();
-            //Events.Clear();
+            Events.Clear();
+            
 
             if(String.IsNullOrWhiteSpace(tbSearchEditEventName.Text))
             {
