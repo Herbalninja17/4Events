@@ -10,6 +10,7 @@ namespace EyeCT4Events
     public class Camping
     {
         //Properties
+        public int ID { get; private set; }
         /// <summary>
         /// Taken from the database.
         /// </summary>
@@ -42,8 +43,9 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="name">The name of the Camping</param>
         /// <param name="places">How many spots the camping has</param>
-        public Camping(string name, string address, string city, string zipcode)
+        public Camping(int id, string name, string address, string city, string zipcode)
         {
+            ID = id;
             Name = name;
             Address = address;
             City = city;
