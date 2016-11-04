@@ -83,7 +83,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value,tbCreateParticipantStreet.Text,  tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text,tbCreateParticipantRekeningnummer.Text);
+            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value,tbCreateParticipantStreet.Text,  tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, Convert.ToInt32(tbCreateParticipantRekeningnummer.Text));
             if (login.CreateUser(person))
             {
                 //btnDeleteParticipant.Enabled = true;

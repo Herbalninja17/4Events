@@ -152,6 +152,9 @@ C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.SocialM
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.UploadForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.Properties.Resources.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache
-C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe
-C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.pdb
-C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.CheckIn.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.EditEventForm.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.EditParticipantForm.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.HomeForm.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
+C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\bin\Debug\Phidget21.NET.dll

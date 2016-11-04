@@ -18,7 +18,7 @@ namespace EyeCT4Events.Data.DataClasses
         public static Material GetMaterial(int materialID) 
         {
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag " +
+            SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag, Omschrijving, PStatus " +
                                             $"FROM Product " +
                                             $"WHERE ProductID = {materialID}",
                                             Datacom.connect);
@@ -27,10 +27,21 @@ namespace EyeCT4Events.Data.DataClasses
             int id = reader.GetInt32(0);
             string name = reader.GetString(1);
             decimal price = reader.GetDecimal(2);
+            string description = reader.GetString(3);
+            string PStatus = reader.GetString(4);
+            bool status;
+            if (PStatus == "Beschikbaar")
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
             reader.Close();
             Datacom.CloseConnection();
 
-            Material m = new Material(id, name, "Test", price, false);
+            Material m = new Material(id, name, description, price, false, status);
             return m;
         }
 
@@ -51,7 +62,7 @@ namespace EyeCT4Events.Data.DataClasses
                 string name = reader.GetString(2);
                 decimal price = reader.GetDecimal(3);
 
-                Material product = new Material(id, name, description, price, false);
+                Material product = new Material(id, name, description, price, false, false);
 
                 products.Add(product);
             }
@@ -64,9 +75,22 @@ namespace EyeCT4Events.Data.DataClasses
         public static void SetMaterialHired(int materialID) 
         {
             Datacom.OpenConnection();
-            new SqlCommand("ALTER TABLE Product " +
+            SqlCommand cmd = new SqlCommand("UPDATE Product " +
                            "SET PStatus = 'Verhuurd' " +
-                           $"WHERE ProductID = {materialID}");
+                           $"WHERE ProductID = {materialID};",
+                           Datacom.connect);
+            cmd.ExecuteNonQuery();
+            Datacom.CloseConnection();
+        }
+
+        public static void SetMaterialAvailable(int materialID)
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("UPDATE Product " +
+                                            "SET PStatus = 'Beschikbaar' " +
+                                            $"WHERE ProductID = {materialID};",
+                           Datacom.connect);
+            cmd.ExecuteNonQuery();
             Datacom.CloseConnection();
         }
 
@@ -75,7 +99,7 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT ProductID " +
                            "FROM Product " +
-                           $"WHERE Naam LIKE '%{name}%'",
+                           $"WHERE Naam LIKE '%{name}%';",
                            Datacom.connect);
 
             List<int> products = new List<int>();
