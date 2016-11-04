@@ -129,3 +129,6 @@ C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dl
 C:\Users\jethro\Documents\GitHub\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.RfidForm.resources
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.exe
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
