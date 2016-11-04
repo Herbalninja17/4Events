@@ -7,14 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.Data.DataClasses;
+using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
 {
     public partial class LeaseForm : Form
     {
+        private LeaseForm leaseForm;
+        private HomeForm homeForm;
+
+        private List<Material> products;
+
         public LeaseForm()
         {
             InitializeComponent();
+            leaseForm = this;
+        }
+        public LeaseForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            leaseForm = this;
+            this.homeForm = homeForm;
+            products = DataMaterial.AvailableMaterialList();
+            foreach (Material product in products)
+            {
+                lbLeaseMaterial.Items.Add(product.ToString());
+            }
         }
 
         /// <summary>
@@ -46,6 +65,11 @@ namespace EyeCT4Events
         private void btnLeaseLease_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LeaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
         }
     }
 }

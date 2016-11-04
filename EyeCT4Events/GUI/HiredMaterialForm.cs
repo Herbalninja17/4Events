@@ -24,9 +24,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnLease_Click(object sender, EventArgs e)
         {
-            LeaseForm lf = new LeaseForm();
-            this.Close();
-            lf.Show();
+
         }
 
         /// <summary>

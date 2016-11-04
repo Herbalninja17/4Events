@@ -10,12 +10,13 @@ namespace EyeCT4Events
     {
 
         //Properties
+        public int ID { get; private set; }
         /// <summary>
         /// Taken from the database.
         /// </summary>
         public string Name { get; private set; }
 
-        public MaterialType MaterialType { get; set; }
+        public string Description { get; set; }
 
         public DateTime HuurdatumStart  { get; private set; }
 
@@ -38,10 +39,11 @@ namespace EyeCT4Events
         /// <param name="stock">Amount in stock</param>
         /// <param name="price">price per item.</param>
         /// <param name="isPayed">True: Item is payed for, False: Item is not payed for.</param>
-        public Material(string name, MaterialType materialType, decimal price, bool isPayed)
+        public Material(int id, string name, string description, decimal price, bool isPayed)
         {
+            ID = id;
             Name = name;
-            MaterialType = materialType;
+            Description = description;
             Price = price;
             IsPayed = isPayed;
         }
@@ -57,21 +59,7 @@ namespace EyeCT4Events
 
         public override string ToString()
         {
-            string payedString = "";
-            if(IsPayed)
-            {
-                payedString = "Is betaald.";
-            }
-            else
-            {
-                payedString = "Niet betaald.";
-            }
-
-            return Name
-                + " | " + MaterialType
-                + " | " + Price
-                + " | " + payedString
-                ;
+            return $"{Name} - {Description} - {Price}";
         }
     }
 }

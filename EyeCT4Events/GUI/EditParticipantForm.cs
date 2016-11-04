@@ -22,7 +22,7 @@ namespace EyeCT4Events
             tbEditParticipantCity.Text = Login.loggedinUser.Address;
             tbEditParticipantPassword.Text = Login.loggedinUser.Password;
             tbEditParticipantPhoneNumber.Text = Login.loggedinUser.Phonenumber;
-            tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
+            //tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
             tbEditParticipantAccountNumber.Text = Login.loggedinUser.AccountNumber;
         }
 
