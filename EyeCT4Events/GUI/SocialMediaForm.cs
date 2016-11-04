@@ -26,5 +26,10 @@ namespace EyeCT4Events
         {
 
         }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
