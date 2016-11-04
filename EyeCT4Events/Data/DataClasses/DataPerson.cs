@@ -16,7 +16,36 @@ namespace EyeCT4Events.Data.DataClasses
         {
             
         }
-
+        public static Person AdminGetPerson(string email)
+        {
+            Person p = null ;
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "'";
+                cmd.Connection = Datacom.connect;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime d;
+                    d = DateTime.Parse(date);
+                    p = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]),Convert.ToString(reader["email"]),Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    
+                }
+                return p;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
         public static Person GetPerson(string email, string password)
         {
             try
@@ -134,7 +163,30 @@ namespace EyeCT4Events.Data.DataClasses
                 return false;
             }
         }
+        public static bool AdminUpdatePerson(Person person)
+        {
+            try
+            {
+                string geboortedatum = person.BirthDate.ToShortDateString();
 
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" + EditParticipantForm.adminPerson.Email + "' AND wachtwoord = '" + EditParticipantForm.adminPerson.Password + "';";
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+
+        }
         public static bool UpdatePerson(Person person)
         {
             try
@@ -215,6 +267,36 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
             
+        }
+        public static List<Person> GetAllPerson()
+        {
+            List<Person> personlist = new List<Person>();
+            try
+            {
+                Person p;
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0";
+                SqlDataReader reader =  cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime dt = DateTime.Parse(date);
+                    p = new Person(Convert.ToString(reader["naam"]), dt, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    personlist.Add(p);
+                }
+                return personlist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
         }
     }
 }

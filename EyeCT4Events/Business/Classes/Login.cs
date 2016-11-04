@@ -69,9 +69,19 @@ namespace EyeCT4Events
         {
             DateTime dt = DateTime.Parse(birthdate);
             Person editperson = new Person(name, dt, adress, zipcode, city, phonenumber, email, password, accountnumber);
-            if (Data.DataClasses.DataPerson.UpdatePerson(editperson))
+            if (Login.loggedinUser.Admin == 0)
             {
-                MessageBox.Show("Wijziging is gelukt.");
+                if (Data.DataClasses.DataPerson.UpdatePerson(editperson))
+                {
+                    MessageBox.Show("Wijziging is gelukt.");
+                }
+            }
+            else if(loggedinUser.Admin == 1)
+            {
+                if (Data.DataClasses.DataPerson.AdminUpdatePerson(editperson))
+                {
+                    MessageBox.Show("Wijziging is gelukt.");
+                }
             }
         }
         public static bool DeleteUser(Person p)
