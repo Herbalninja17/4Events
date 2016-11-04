@@ -66,18 +66,6 @@ namespace EyeCT4Events
             MessageBox.Show("Event was created.");
         }
 
-        /// <summary>
-        /// Om naar de form te gaan om een event te wijzigen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEditEvent_Click(object sender, EventArgs e)
-        {
-            EditEventForm eef = new EditEventForm();
-            this.Close();
-            eef.Show();
-        }
-
         private void CreateEventForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             eventForm.Show();

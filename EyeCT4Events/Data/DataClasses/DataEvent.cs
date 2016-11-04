@@ -69,6 +69,26 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        public static List<Event> SearchEvents(string name)
+        {
+            //Datacom.OpenConnection();
+            //SqlCommand cmd = new SqlCommand("SELECT " +
+            //               "FROM ForEvent " +
+            //               $"WHERE Naam LIKE '%{name}%';",
+            //               Datacom.connect);
+
+            //List<int> products = new List<int>();
+            //SqlDataReader reader = cmd.ExecuteReader();
+            //while (reader.Read())
+            //{
+            //    products.Add(reader.GetInt32(0));
+            //}
+            //reader.Close();
+            //Datacom.CloseConnection();
+
+            return null;
+        }
+
         public static void UpdateEvent(Event eEvent)
         {
             try

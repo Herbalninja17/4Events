@@ -40,8 +40,8 @@ namespace EyeCT4Events.GUI
         {
             if (Login.loggedinUser.Admin == 1)
             {
-                CreateEventForm createEvent = new CreateEventForm();
-                createEvent.Show();
+                EventBeheerForm eventForm = new EventBeheerForm(homeForm);
+                eventForm.Show();
                 this.Hide();
             }
             else
@@ -74,9 +74,7 @@ namespace EyeCT4Events.GUI
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            EditParticipantForm epf = new EditParticipantForm();
-            epf.Show();
-            this.Close();
+
         }
     }
 }

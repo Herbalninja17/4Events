@@ -36,9 +36,10 @@
             // 
             // btnEditEvent
             // 
-            this.btnEditEvent.Location = new System.Drawing.Point(12, 211);
+            this.btnEditEvent.Location = new System.Drawing.Point(24, 406);
+            this.btnEditEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEditEvent.Name = "btnEditEvent";
-            this.btnEditEvent.Size = new System.Drawing.Size(75, 43);
+            this.btnEditEvent.Size = new System.Drawing.Size(150, 83);
             this.btnEditEvent.TabIndex = 22;
             this.btnEditEvent.Text = "Evenement Aanpassen";
             this.btnEditEvent.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // btnCreateEvent
             // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(12, 156);
+            this.btnCreateEvent.Location = new System.Drawing.Point(24, 300);
+            this.btnCreateEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
+            this.btnCreateEvent.Size = new System.Drawing.Size(150, 83);
             this.btnCreateEvent.TabIndex = 21;
             this.btnCreateEvent.Text = "Evenement Aanmaken";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
@@ -57,32 +59,36 @@
             // lbEventBeheer
             // 
             this.lbEventBeheer.FormattingEnabled = true;
-            this.lbEventBeheer.Location = new System.Drawing.Point(149, 12);
+            this.lbEventBeheer.ItemHeight = 25;
+            this.lbEventBeheer.Location = new System.Drawing.Point(298, 23);
+            this.lbEventBeheer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lbEventBeheer.Name = "lbEventBeheer";
-            this.lbEventBeheer.Size = new System.Drawing.Size(314, 342);
+            this.lbEventBeheer.Size = new System.Drawing.Size(624, 654);
             this.lbEventBeheer.TabIndex = 25;
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(12, 268);
+            this.btnHome.Location = new System.Drawing.Point(24, 515);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 43);
+            this.btnHome.Size = new System.Drawing.Size(150, 83);
             this.btnHome.TabIndex = 24;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
             // EventBeheerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 366);
+            this.ClientSize = new System.Drawing.Size(950, 704);
             this.Controls.Add(this.lbEventBeheer);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.btnCreateEvent);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "EventBeheerForm";
             this.Text = "Event Beheer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EventBeheerForm_FormClosing);
             this.ResumeLayout(false);
 
         }
