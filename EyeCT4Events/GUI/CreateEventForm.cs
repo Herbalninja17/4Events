@@ -21,12 +21,7 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             createEvent = this;
-            List<Camping> Campings = DataCamping.GetCampingList();
-
-            foreach (Camping found in Campings)
-            {
-                cbCreateEventCamping.Items.Add(found);
-            }
+            
         }
 
         public CreateEventForm(HomeForm homeForm)
@@ -34,6 +29,12 @@ namespace EyeCT4Events
             InitializeComponent();
             createEvent = this;
             this.homeForm = homeForm;
+            List<Camping> Campings = DataCamping.GetCampingList();
+
+            foreach (Camping found in Campings)
+            {
+                cbCreateEventCamping.Items.Add(found);
+            }
         }
 
         /// <summary>
