@@ -12,10 +12,12 @@ namespace EyeCT4Events
 {
     public partial class EditParticipantForm : Form
     {
+        public static Person adminPerson { get; private set; }
         
         public EditParticipantForm()
         {
             InitializeComponent();
+            
             if (Login.loggedinUser.Admin == 0)
             {
                 //Laat de gegevens zien van de ingelogde gebruiker.
@@ -30,11 +32,20 @@ namespace EyeCT4Events
                 dtpEditParticipantDateOfBirth.Value = Login.loggedinUser.BirthDate;
                 btnCreateParticipant.Enabled = false;
                 btnCreateParticipant.Visible = false;
+                lbEditParticipantAdminScreen.Enabled = false;
+                lbEditParticipantAdminScreen.Visible = false;
             }
             else
             {
+                lbEditParticipantAdminScreen.Enabled = true;
+                lbEditParticipantAdminScreen.Visible = true;
                 btnCreateParticipant.Enabled = true;
                 btnCreateParticipant.Visible = true;
+                List<Person> personlist = Data.DataClasses.DataPerson.GetAllPerson();
+                foreach(Person p in personlist)
+                {
+                    lbEditParticipantAdminScreen.Items.Add(p.Email);
+                }
             }
         }
 
@@ -74,7 +85,7 @@ namespace EyeCT4Events
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen? U kunt dit niet meer ongedaan maken.", "Account verwijderen", MessageBoxButtons.YesNo);
-            if(dialog == DialogResult.Yes)
+            if(dialog == DialogResult.Yes && Login.loggedinUser.Admin == 0)
             {
                 if (Login.DeleteUser(Login.loggedinUser))
                 {
@@ -86,6 +97,16 @@ namespace EyeCT4Events
                 else
                 {
                     MessageBox.Show("Account verwijderen is mislukt!");
+                }
+            }
+            else if(dialog == DialogResult.Yes && Login.loggedinUser.Admin == 1)
+            {
+                string email = Convert.ToString(lbEditParticipantAdminScreen.SelectedItem);
+
+                if (Data.DataClasses.DataPerson.AdminGetPerson(email) != null)
+                {
+                    adminPerson = Data.DataClasses.DataPerson.AdminGetPerson(email);
+                    Login.DeleteUser(adminPerson);
                 }
             }
         }
@@ -100,6 +121,25 @@ namespace EyeCT4Events
             ParticipantsForm pf = new ParticipantsForm();
             this.Close();
             pf.Show();
+        }
+
+        private void btnLoadParticipant_Click(object sender, EventArgs e)
+        {
+            string email = Convert.ToString(lbEditParticipantAdminScreen.SelectedItem);
+
+            if (Data.DataClasses.DataPerson.AdminGetPerson(email) != null)
+            {
+                adminPerson = Data.DataClasses.DataPerson.AdminGetPerson(email);
+                tbEditParticipantName.Text = adminPerson.Name;
+                tbEditParticipantEmail.Text = adminPerson.Email;
+                tbEditParticipantCity.Text = adminPerson.City;
+                tbEditParticipantPassword.Text = adminPerson.Password;
+                tbEditParticipantPhoneNumber.Text = adminPerson.Phonenumber;
+                tbEditParticipantAccountNumber.Text = adminPerson.AccountNumber;
+                tbEditParticipantAdress.Text = adminPerson.Address;
+                tbEditParticipantZipCode.Text = adminPerson.ZipCode;
+                dtpEditParticipantDateOfBirth.Value = adminPerson.BirthDate;
+            }
         }
     }
 }

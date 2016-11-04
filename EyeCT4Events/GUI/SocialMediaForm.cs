@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace EyeCT4Events
 {
     public partial class SocialMediaForm : Form
     {
+        private SocialMediaFrom mediaForm;
+        private HomeForm homeForm;
+
         public SocialMediaForm()
         {
             InitializeComponent();
+            mediaForm = this;
+        }
+
+        public SocialMediaForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            mediaForm = this;
+            this.homeForm = homeForm;
         }
 
         /// <summary>
@@ -30,6 +42,17 @@ namespace EyeCT4Events
         private void btnMessage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SocialMediaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            homeForm.Show();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace EyeCT4Events
 {
     public partial class CreateEventForm : Form
     {
+        private HomeForm homeForm;
         private CreateEventForm createEvent;
         private EventBeheerForm eventForm;
         private List<Camping> Campings;
