@@ -8,6 +8,8 @@ namespace EyeCT4Events
 {
     public class CampingSpot
     {
+        
+
         //Properties
         /// <summary>
         /// Taken from the database.
