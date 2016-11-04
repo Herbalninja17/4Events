@@ -45,6 +45,8 @@
             this.tbCreateParticipantRekeningnummer = new System.Windows.Forms.TextBox();
             this.tbCreateParticipantPassword = new System.Windows.Forms.TextBox();
             this.btnCreateParticipantCreateParticipant = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbCreateParticipantStreet = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCreateParticipantName
@@ -68,7 +70,7 @@
             // lblCreateParticipantZipCode
             // 
             this.lblCreateParticipantZipCode.AutoSize = true;
-            this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(10, 85);
+            this.lblCreateParticipantZipCode.Location = new System.Drawing.Point(10, 123);
             this.lblCreateParticipantZipCode.Name = "lblCreateParticipantZipCode";
             this.lblCreateParticipantZipCode.Size = new System.Drawing.Size(55, 13);
             this.lblCreateParticipantZipCode.TabIndex = 27;
@@ -77,7 +79,7 @@
             // lblCreateParticipantEmail
             // 
             this.lblCreateParticipantEmail.AutoSize = true;
-            this.lblCreateParticipantEmail.Location = new System.Drawing.Point(10, 121);
+            this.lblCreateParticipantEmail.Location = new System.Drawing.Point(10, 159);
             this.lblCreateParticipantEmail.Name = "lblCreateParticipantEmail";
             this.lblCreateParticipantEmail.Size = new System.Drawing.Size(65, 13);
             this.lblCreateParticipantEmail.TabIndex = 28;
@@ -86,7 +88,7 @@
             // lblCreateParticipantPhoneNumber
             // 
             this.lblCreateParticipantPhoneNumber.AutoSize = true;
-            this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(10, 155);
+            this.lblCreateParticipantPhoneNumber.Location = new System.Drawing.Point(10, 193);
             this.lblCreateParticipantPhoneNumber.Name = "lblCreateParticipantPhoneNumber";
             this.lblCreateParticipantPhoneNumber.Size = new System.Drawing.Size(94, 13);
             this.lblCreateParticipantPhoneNumber.TabIndex = 29;
@@ -95,7 +97,7 @@
             // lblCreateParticipantDateOfBirth
             // 
             this.lblCreateParticipantDateOfBirth.AutoSize = true;
-            this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(10, 192);
+            this.lblCreateParticipantDateOfBirth.Location = new System.Drawing.Point(10, 230);
             this.lblCreateParticipantDateOfBirth.Name = "lblCreateParticipantDateOfBirth";
             this.lblCreateParticipantDateOfBirth.Size = new System.Drawing.Size(88, 13);
             this.lblCreateParticipantDateOfBirth.TabIndex = 30;
@@ -104,7 +106,7 @@
             // lblCreateParticipantRekeningnummer
             // 
             this.lblCreateParticipantRekeningnummer.AutoSize = true;
-            this.lblCreateParticipantRekeningnummer.Location = new System.Drawing.Point(10, 236);
+            this.lblCreateParticipantRekeningnummer.Location = new System.Drawing.Point(10, 267);
             this.lblCreateParticipantRekeningnummer.Name = "lblCreateParticipantRekeningnummer";
             this.lblCreateParticipantRekeningnummer.Size = new System.Drawing.Size(93, 13);
             this.lblCreateParticipantRekeningnummer.TabIndex = 31;
@@ -113,7 +115,7 @@
             // lblCreateParticipantPassword
             // 
             this.lblCreateParticipantPassword.AutoSize = true;
-            this.lblCreateParticipantPassword.Location = new System.Drawing.Point(10, 272);
+            this.lblCreateParticipantPassword.Location = new System.Drawing.Point(10, 303);
             this.lblCreateParticipantPassword.Name = "lblCreateParticipantPassword";
             this.lblCreateParticipantPassword.Size = new System.Drawing.Size(71, 13);
             this.lblCreateParticipantPassword.TabIndex = 32;
@@ -121,7 +123,7 @@
             // 
             // dtpCreateParticipantDateOfBirth
             // 
-            this.dtpCreateParticipantDateOfBirth.Location = new System.Drawing.Point(110, 192);
+            this.dtpCreateParticipantDateOfBirth.Location = new System.Drawing.Point(110, 230);
             this.dtpCreateParticipantDateOfBirth.Name = "dtpCreateParticipantDateOfBirth";
             this.dtpCreateParticipantDateOfBirth.Size = new System.Drawing.Size(200, 20);
             this.dtpCreateParticipantDateOfBirth.TabIndex = 33;
@@ -143,42 +145,42 @@
             // 
             // tbCreateParticipantZipCode
             // 
-            this.tbCreateParticipantZipCode.Location = new System.Drawing.Point(110, 82);
+            this.tbCreateParticipantZipCode.Location = new System.Drawing.Point(110, 120);
             this.tbCreateParticipantZipCode.Name = "tbCreateParticipantZipCode";
             this.tbCreateParticipantZipCode.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantZipCode.TabIndex = 36;
             // 
             // tbCreateParticipantEmail
             // 
-            this.tbCreateParticipantEmail.Location = new System.Drawing.Point(110, 118);
+            this.tbCreateParticipantEmail.Location = new System.Drawing.Point(110, 156);
             this.tbCreateParticipantEmail.Name = "tbCreateParticipantEmail";
             this.tbCreateParticipantEmail.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantEmail.TabIndex = 37;
             // 
             // tbCreateParticipantPhoneNumber
             // 
-            this.tbCreateParticipantPhoneNumber.Location = new System.Drawing.Point(110, 152);
+            this.tbCreateParticipantPhoneNumber.Location = new System.Drawing.Point(110, 190);
             this.tbCreateParticipantPhoneNumber.Name = "tbCreateParticipantPhoneNumber";
             this.tbCreateParticipantPhoneNumber.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPhoneNumber.TabIndex = 38;
             // 
             // tbCreateParticipantRekeningnummer
             // 
-            this.tbCreateParticipantRekeningnummer.Location = new System.Drawing.Point(110, 233);
+            this.tbCreateParticipantRekeningnummer.Location = new System.Drawing.Point(110, 264);
             this.tbCreateParticipantRekeningnummer.Name = "tbCreateParticipantRekeningnummer";
             this.tbCreateParticipantRekeningnummer.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantRekeningnummer.TabIndex = 39;
             // 
             // tbCreateParticipantPassword
             // 
-            this.tbCreateParticipantPassword.Location = new System.Drawing.Point(110, 269);
+            this.tbCreateParticipantPassword.Location = new System.Drawing.Point(110, 300);
             this.tbCreateParticipantPassword.Name = "tbCreateParticipantPassword";
             this.tbCreateParticipantPassword.Size = new System.Drawing.Size(200, 20);
             this.tbCreateParticipantPassword.TabIndex = 40;
             // 
             // btnCreateParticipantCreateParticipant
             // 
-            this.btnCreateParticipantCreateParticipant.Location = new System.Drawing.Point(235, 295);
+            this.btnCreateParticipantCreateParticipant.Location = new System.Drawing.Point(235, 326);
             this.btnCreateParticipantCreateParticipant.Name = "btnCreateParticipantCreateParticipant";
             this.btnCreateParticipantCreateParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnCreateParticipantCreateParticipant.TabIndex = 41;
@@ -186,11 +188,29 @@
             this.btnCreateParticipantCreateParticipant.UseVisualStyleBackColor = true;
             this.btnCreateParticipantCreateParticipant.Click += new System.EventHandler(this.btnCreateParticipantCreateParticipant_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Straatnaam:";
+            // 
+            // tbCreateParticipantStreet
+            // 
+            this.tbCreateParticipantStreet.Location = new System.Drawing.Point(110, 84);
+            this.tbCreateParticipantStreet.Name = "tbCreateParticipantStreet";
+            this.tbCreateParticipantStreet.Size = new System.Drawing.Size(200, 20);
+            this.tbCreateParticipantStreet.TabIndex = 43;
+            // 
             // CreateParticipantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 353);
+            this.ClientSize = new System.Drawing.Size(327, 381);
+            this.Controls.Add(this.tbCreateParticipantStreet);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreateParticipantCreateParticipant);
             this.Controls.Add(this.tbCreateParticipantPassword);
             this.Controls.Add(this.tbCreateParticipantRekeningnummer);
@@ -233,5 +253,7 @@
         private System.Windows.Forms.TextBox tbCreateParticipantRekeningnummer;
         private System.Windows.Forms.TextBox tbCreateParticipantPassword;
         private System.Windows.Forms.Button btnCreateParticipantCreateParticipant;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbCreateParticipantStreet;
     }
 }
