@@ -73,14 +73,14 @@ namespace EyeCT4Events
                 if (email == this.email && password == this.password)
                 {
                     string date = Convert.ToString(reader["geboortedatum"]);
-                    DateTime d;
-                    d = DateTime.Parse(date);
+                    //DateTime d;
+                    //d = DateTime.Parse(date);
                     loggedinUser = new Person(this.email, this.password);
                     loggedinUser.Name = Convert.ToString(reader["naam"]);
                     loggedinUser.AccountNumber = Convert.ToString(reader["rekeningnummer"]);
                     loggedinUser.Address = Convert.ToString(reader["adres"]);
                     loggedinUser.City = Convert.ToString(reader["woonplaats"]);
-                    loggedinUser.BirthDate = d;
+                    //loggedinUser.BirthDate = d;
                     loggedinUser.Phonenumber = Convert.ToString(reader["telefoon"]);
                     loggedinUser.ZipCode = Convert.ToString(reader["postcode"]);
                     return true;
