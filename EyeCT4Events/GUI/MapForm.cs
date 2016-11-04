@@ -23,6 +23,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnMapChooseLocation_Click(object sender, EventArgs e)
         {
+            Reservation.Map = Convert.ToInt32(comboBox2.Text);
             this.Close();
         }
     }

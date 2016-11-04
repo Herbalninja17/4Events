@@ -24,12 +24,12 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "Select Naam, StartDatum, EindDatum From ForEvent";
+                cmd.CommandText = "Select EventID, Naam, StartDatum, EindDatum From ForEvent";
                 cmd.ExecuteNonQuery();                  //execute het query
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    events.Add(Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
+                    events.Add(Convert.ToString(reader["EventID"]) + ")" + Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));                    
                 }
             }
             catch (Exception e)

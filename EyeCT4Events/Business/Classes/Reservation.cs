@@ -8,6 +8,7 @@ namespace EyeCT4Events
 {
     public class Reservation
     {
+        public static int Map = 0;
         /// <summary>
         /// Taken from the database (Auto increment).
         /// </summary>

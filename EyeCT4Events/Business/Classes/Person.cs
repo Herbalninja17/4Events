@@ -19,6 +19,8 @@ namespace EyeCT4Events
         private string password;
         private string accountnumber;
 
+        static public int AcID = 0;
+
         //Persoonklasse
         public string Name
         {

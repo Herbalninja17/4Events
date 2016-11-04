@@ -48,6 +48,10 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsReservations_Click(object sender, EventArgs e)
         {
+            string x = lbReservationEvents.SelectedItem.ToString();
+            
+            Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
+
             MyReservationsForm reservationForm = new MyReservationsForm(makeReservationForm);
             reservationForm.Show();
             this.Close();
@@ -58,9 +62,13 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
+        
+
         private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
         {
-            Data.DataClasses.DataReservation.SetReservation(3, 1, dtpReservationBeginDate.Text, dtpReservationEndDate.Text);
+            
+
             //Alle info inladen en opsturen naar de Data klasse, hierin verwerken tot een format dat in de database past.
         }
 

@@ -31,6 +31,7 @@ namespace EyeCT4Events.Data.DataClasses
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    Person.AcID = Convert.ToInt32(reader["AccountID"]);
                     Email = Convert.ToString(reader["email"]);
                     Password = Convert.ToString(reader["wachtwoord"]);
                     int admin = Convert.ToInt32(reader["beheerder"]);

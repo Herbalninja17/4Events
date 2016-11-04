@@ -43,5 +43,10 @@ namespace EyeCT4Events
                 makeReservationForm.Show();
             }
         }
+
+        private void MyReservationsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

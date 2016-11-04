@@ -16,17 +16,38 @@ namespace EyeCT4Events.Data.DataClasses
 
         public static Reservation GetReservation()
         {
+            //try
+            //{
+            //    Datacom.OpenConnection();
+            //    SqlCommand cmd = new SqlCommand();
+            //    cmd.Connection = Datacom.connect;
+            //    cmd.CommandText = "Select Naam, StartDatum, EindDatum From ForEvent";
+            //    cmd.ExecuteNonQuery();                  //execute het query
+            //    SqlDataReader reader = cmd.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        events.Add(Convert.ToString(reader["EventID"]) + ")" + Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+            //finally
+            //{
+            //    Datacom.CloseConnection();
+            //}
             return null;
         }
 
-        public static void SetReservation(int rID, int pID, string sDatum, string eDatum)
+        public static void SetReservation(int pID, string bet, string sDatum, string eDatum, string x)
         {
             try
             {                
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "INSERT INTO Reservering(ReserveringID, PlaatsID, StartDatum, EindDatum) VALUES ('" + rID + "', '" + pID + "', '" + sDatum + "', '" + eDatum + "' );";
+                cmd.CommandText = "INSERT INTO Reservering(PlaatsID, BetaaldStatus, StartDatum, EindDatum, EventID) VALUES ('" + pID + "','" + bet + "', '" + sDatum + "', '" + eDatum + "', '" + Convert.ToUInt32(x) + "' );";
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
