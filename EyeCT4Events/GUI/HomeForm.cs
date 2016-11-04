@@ -74,7 +74,9 @@ namespace EyeCT4Events.GUI
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-
+            EditParticipantForm epf = new EditParticipantForm();
+            epf.Show();
+            this.Close();
         }
     }
 }
