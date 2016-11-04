@@ -163,3 +163,4 @@ C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.exe
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\EyeCT4Events.pdb
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\bin\Debug\Phidget21.NET.dll
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.CheckIn.resources
+C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.CheckIn.resources
