@@ -47,7 +47,7 @@ namespace RandomSql
                 conn.Close();
             }
         }
-
+        // get account voor log in.
         private void button2_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -82,7 +82,7 @@ namespace RandomSql
                 conn.Close();
             }
         }
-
+        // edit account.
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -107,39 +107,144 @@ namespace RandomSql
             }
         }
 
+        //beschikbare plaatsen ophalen.
         private void button4_Click(object sender, EventArgs e)
         {
+            try
+            {
+                conn.Open();
+                command = new SqlCommand("SELECT p.plaatsid,pt.naam,pt.beschrijving FROM ptype pt inner join plaats p ON pt.typeid = p.typeid WHERE p.status = 'beschikbaar'", conn);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    listBox1.Items.Add(Convert.ToString(reader["plaatsid"]));
+                    listBox1.Items.Add(Convert.ToString(reader["naam"]));
+                    listBox1.Items.Add(Convert.ToString(reader["beschrijving"]));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
 
         }
-
+        //verhuurde plaatsen ophalen.
         private void button5_Click(object sender, EventArgs e)
         {
+            try
+            {
+                conn.Open();
+                command = new SqlCommand("SELECT p.plaatsid,pt.naam,pt.beschrijving FROM ptype pt inner join plaats p ON pt.typeid = p.typeid WHERE p.status NOT LIKE 'beschikbaar'", conn);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    listBox1.Items.Add(Convert.ToString(reader["plaatsid"]));
+                    listBox1.Items.Add(Convert.ToString(reader["naam"]));
+                    listBox1.Items.Add(Convert.ToString(reader["beschrijving"]));
+                }
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-
+        //zet een plaats op verhuurd.
         private void button6_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                conn.Open();
+                command = new SqlCommand("UPDATE plaats SET status = 'verhuurd' WHERE plaatsid IN (SELECT plaatsid FROM reservering)", conn);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-
+        //zet een plaats op beschikbaar.
+        //fixen !!!!!!!!!!!!             string vandaag = 3-11-2016 maar in database 2016-11-3             fixen !!!!!!!!!
         private void button7_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DateTime today = DateTime.Today;
+                string vandaag = today.ToShortDateString();
+                conn.Open();
+                command = new SqlCommand("UPDATE plaats SET status = 'beschikbaar' WHERE status = 'verhuurd' AND plaatsid = (SELECT r.plaatsid FROM reservering r WHERE r.einddatum = '" + vandaag + "');", conn);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-
+        //nieuw event aanmaken.
         private void button8_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                conn.Open();
+                command = new SqlCommand("INSERT INTO forevent(Naam,startdatum,einddatum) values ()", conn);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)

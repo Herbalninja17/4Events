@@ -17,55 +17,48 @@ namespace EyeCT4Events.Data.DataClasses
         public static Material GetMaterial(int materialID)
         {
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag " +
+            SqlCommand cmd = new SqlCommand($"SELECT Naam, PrijsPerDag " +
                                             $"FROM Product " +
                                             $"WHERE ProductID = {materialID}",
                                             Datacom.connect);
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            int id = reader.GetInt32(0);
-            string name = reader.GetString(1);
-            decimal price = reader.GetDecimal(2);
+            string name = reader.GetString(0);
+            decimal price = reader.GetDecimal(1);
             reader.Close();
             Datacom.CloseConnection();
 
-            Material m = new Material(id, name, "Test", price, false);
+            Material m = new Material(name, MaterialType.USB, price, false);
             return m;
         }
 
-        public static List<Material> AvailableMaterialList()
+        public static List<String> AvailableMaterialList()
         {
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand("SELECT Omschrijving, ProductID, Naam, PrijsPerDag " +
-                                            "FROM Product " +
-                                            "WHERE PStatus = 'Beschikbaar' " +
-                                            "ORDER BY Naam, Omschrijving;",
-                                            Datacom.connect);
+            SqlCommand cmd = new SqlCommand("SELECT DISTINCT Omschrijving, Naam, PrijsPerDag" +
+                                            "FROM Product" +
+                                            "WHERE PStatus = Beschikbaar");
             SqlDataReader reader = cmd.ExecuteReader();
-            List<Material> products = new List<Material>();
+            List<string> producten = new List<string>();
             while (reader.Read())
             {
-                int id = reader.GetInt32(1);
-                string description = reader.GetString(0);
-                string name = reader.GetString(2);
-                decimal price = reader.GetDecimal(3);
+                string omschrijving = reader.GetString(0);
+                string naam = reader.GetString(1);
+                decimal prijs = reader.GetDecimal(2);
 
-                Material product = new Material(id, name, description, price, false);
+                string product = $"{naam} - {omschrijving} - {prijs}";
 
-                products.Add(product);
+                producten.Add(product);
             }
             reader.Close();
             Datacom.CloseConnection();
 
-            return products;
+            return producten;
         }
 
-        public static void SetMaterialHired(int materialID)
+        public static Material SetMaterialHired()
         {
-            Datacom.OpenConnection();
-            new SqlCommand("ALTER TABLE Product " +
-                           "SET PStatus = 'Verhuurd' " +
-                           $"WHERE ProductID = {materialID}");
+            return null;
         }
 
         public static void UpdateMaterial()
