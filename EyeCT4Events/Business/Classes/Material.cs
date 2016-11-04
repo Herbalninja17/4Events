@@ -14,8 +14,7 @@ namespace EyeCT4Events
         /// Taken from the database.
         /// </summary>
         public string Name { get; private set; }
-
-        public MaterialType MaterialType { get; set; }
+        
 
         public DateTime HuurdatumStart  { get; private set; }
 
@@ -38,10 +37,9 @@ namespace EyeCT4Events
         /// <param name="stock">Amount in stock</param>
         /// <param name="price">price per item.</param>
         /// <param name="isPayed">True: Item is payed for, False: Item is not payed for.</param>
-        public Material(string name, MaterialType materialType, decimal price, bool isPayed)
+        public Material(string name, decimal price, bool isPayed)
         {
             Name = name;
-            MaterialType = materialType;
             Price = price;
             IsPayed = isPayed;
         }
@@ -68,7 +66,6 @@ namespace EyeCT4Events
             }
 
             return Name
-                + " | " + MaterialType
                 + " | " + Price
                 + " | " + payedString
                 ;

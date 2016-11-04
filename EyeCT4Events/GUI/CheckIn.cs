@@ -20,7 +20,15 @@ namespace EyeCT4Events.GUI
 
         RfidForm RFID = new RfidForm();
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
+            {
+                MessageBox.Show("Welcome: " + RFID.tagstring.ToString());
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
             {

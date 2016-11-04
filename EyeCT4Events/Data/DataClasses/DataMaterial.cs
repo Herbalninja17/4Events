@@ -27,7 +27,7 @@ namespace EyeCT4Events.Data.DataClasses
             string name = reader.GetString(0);
             decimal price = reader.GetDecimal(1);
 
-            Material m = new Material(name, MaterialType.USB, price, false);
+            Material m = new Material(name, price, false);
             return m;
         }
 

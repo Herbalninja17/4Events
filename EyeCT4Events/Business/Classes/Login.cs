@@ -41,7 +41,7 @@ namespace EyeCT4Events
                     Datacom.OpenConnection();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = Datacom.connect;
-                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "');";
+                    cmd.CommandText = "INSERT INTO account(accountid,email,wachtwoord,naam,telefoon,adres,postcode,rekeningnummer,geboortedatum) VALUES (" + latestid + ", '" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.AccountNumber + "', '" + datetime + "');";
 
                     cmd.ExecuteNonQuery();
                     return true;
@@ -90,7 +90,6 @@ namespace EyeCT4Events
                     loggedinUser.Address = Convert.ToString(reader["adres"]);
                     loggedinUser.BirthDate = d;
                     loggedinUser.Phonenumber = Convert.ToString(reader["telefoon"]);
-                    loggedinUser.ZipCode = Convert.ToString(reader["postcode"]);
                     return true;
                 }
                
@@ -138,7 +137,6 @@ namespace EyeCT4Events
                 loggedinUser.Password = password;
                 loggedinUser.AccountNumber = accountnumber;
                 loggedinUser.Address = adress;
-                loggedinUser.ZipCode = zipcode;
                 loggedinUser.Phonenumber = phonenumber;
                 loggedinUser.BirthDate = dt;
             }

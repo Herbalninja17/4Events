@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
 {
