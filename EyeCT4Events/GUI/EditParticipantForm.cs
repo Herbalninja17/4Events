@@ -85,7 +85,7 @@ namespace EyeCT4Events
         private void btnDeleteParticipant_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Weet u zeker dat u uw account wilt verwijderen? U kunt dit niet meer ongedaan maken.", "Account verwijderen", MessageBoxButtons.YesNo);
-            if(dialog == DialogResult.Yes)
+            if(dialog == DialogResult.Yes && Login.loggedinUser.Admin == 0)
             {
                 if (Login.DeleteUser(Login.loggedinUser))
                 {
@@ -97,6 +97,16 @@ namespace EyeCT4Events
                 else
                 {
                     MessageBox.Show("Account verwijderen is mislukt!");
+                }
+            }
+            else if(dialog == DialogResult.Yes && Login.loggedinUser.Admin == 1)
+            {
+                string email = Convert.ToString(lbEditParticipantAdminScreen.SelectedItem);
+
+                if (Data.DataClasses.DataPerson.AdminGetPerson(email) != null)
+                {
+                    adminPerson = Data.DataClasses.DataPerson.AdminGetPerson(email);
+                    Login.DeleteUser(adminPerson);
                 }
             }
         }
