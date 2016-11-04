@@ -40,8 +40,8 @@ namespace EyeCT4Events.GUI
         {
             if (Login.loggedinUser.Admin == 1)
             {
-                CreateEventForm createEvent = new CreateEventForm(homeForm);
-                createEvent.Show();
+                EventBeheerForm eventForm = new EventBeheerForm(homeForm);
+                eventForm.Show();
                 this.Hide();
             }
             else

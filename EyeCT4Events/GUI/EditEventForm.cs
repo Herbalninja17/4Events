@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.Data.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace EyeCT4Events
 {
     public partial class EditEventForm : Form
     {
+        private EditEventForm editEvent;
+        private EventBeheerForm eventForm;
+        private List<Event> Events;
+
         public EditEventForm()
         {
             InitializeComponent();
+        }
+
+        public EditEventForm(EventBeheerForm eventForm)
+        {
+            InitializeComponent();
+            editEvent = this;
+            this.eventForm = eventForm;
+
+            Events = DataEvent.GetEventList();
+            foreach(Event found in Events)
+            {
+                lbEditEvent.Items.Add(found);
+            }
         }
 
         /// <summary>
@@ -24,6 +42,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEventEditEvent_Click(object sender, EventArgs e)
         {
+            Event eEvent = lbEditEvent.SelectedItem as Event;
+
+
 
         }
 
@@ -34,7 +55,22 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEventSearch_Click(object sender, EventArgs e)
         {
+            lbEditEvent.Items.Clear();
+            Events.Clear();
 
+            if(String.IsNullOrWhiteSpace(tbSearchEditEventName.Text))
+            {
+                Events = DataEvent.GetEventList();
+            }
+            else
+            {
+                Events = DataEvent.GetEventList();
+            }
+
+            foreach (Event found in Events)
+            {
+                lbEditEvent.Items.Add(found);
+            }
         }
 
         /// <summary>
@@ -81,6 +117,11 @@ namespace EyeCT4Events
         private void btnEditEventSelectEvent_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditEventForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            eventForm.Show();
         }
     }
 }

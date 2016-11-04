@@ -32,8 +32,6 @@
             this.lblEditSearchEventName = new System.Windows.Forms.Label();
             this.tbSearchEditEventName = new System.Windows.Forms.TextBox();
             this.lbEditEvent = new System.Windows.Forms.ListBox();
-            this.btnParticipants = new System.Windows.Forms.Button();
-            this.btnCreateEvent = new System.Windows.Forms.Button();
             this.btnEditEventEditEvent = new System.Windows.Forms.Button();
             this.tbEditEventCapacity = new System.Windows.Forms.TextBox();
             this.tbEditEventZipCode = new System.Windows.Forms.TextBox();
@@ -54,9 +52,10 @@
             // 
             // btnEditEventSearch
             // 
-            this.btnEditEventSearch.Location = new System.Drawing.Point(418, 35);
+            this.btnEditEventSearch.Location = new System.Drawing.Point(520, 73);
+            this.btnEditEventSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEditEventSearch.Name = "btnEditEventSearch";
-            this.btnEditEventSearch.Size = new System.Drawing.Size(75, 42);
+            this.btnEditEventSearch.Size = new System.Drawing.Size(150, 81);
             this.btnEditEventSearch.TabIndex = 35;
             this.btnEditEventSearch.Text = "Zoeken";
             this.btnEditEventSearch.UseVisualStyleBackColor = true;
@@ -65,52 +64,37 @@
             // lblEditSearchEventName
             // 
             this.lblEditSearchEventName.AutoSize = true;
-            this.lblEditSearchEventName.Location = new System.Drawing.Point(167, 12);
+            this.lblEditSearchEventName.Location = new System.Drawing.Point(18, 29);
+            this.lblEditSearchEventName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditSearchEventName.Name = "lblEditSearchEventName";
-            this.lblEditSearchEventName.Size = new System.Drawing.Size(95, 13);
+            this.lblEditSearchEventName.Size = new System.Drawing.Size(188, 25);
             this.lblEditSearchEventName.TabIndex = 34;
             this.lblEditSearchEventName.Text = "Evenement Naam:";
             // 
             // tbSearchEditEventName
             // 
-            this.tbSearchEditEventName.Location = new System.Drawing.Point(268, 9);
+            this.tbSearchEditEventName.Location = new System.Drawing.Point(220, 23);
+            this.tbSearchEditEventName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbSearchEditEventName.Name = "tbSearchEditEventName";
-            this.tbSearchEditEventName.Size = new System.Drawing.Size(225, 20);
+            this.tbSearchEditEventName.Size = new System.Drawing.Size(446, 31);
             this.tbSearchEditEventName.TabIndex = 33;
             // 
             // lbEditEvent
             // 
             this.lbEditEvent.FormattingEnabled = true;
-            this.lbEditEvent.Location = new System.Drawing.Point(170, 83);
+            this.lbEditEvent.ItemHeight = 25;
+            this.lbEditEvent.Location = new System.Drawing.Point(24, 165);
+            this.lbEditEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lbEditEvent.Name = "lbEditEvent";
-            this.lbEditEvent.Size = new System.Drawing.Size(323, 225);
+            this.lbEditEvent.Size = new System.Drawing.Size(642, 429);
             this.lbEditEvent.TabIndex = 32;
-            // 
-            // btnParticipants
-            // 
-            this.btnParticipants.Location = new System.Drawing.Point(12, 265);
-            this.btnParticipants.Name = "btnParticipants";
-            this.btnParticipants.Size = new System.Drawing.Size(75, 43);
-            this.btnParticipants.TabIndex = 31;
-            this.btnParticipants.Text = "Deelnemers";
-            this.btnParticipants.UseVisualStyleBackColor = true;
-            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
-            // 
-            // btnCreateEvent
-            // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(12, 211);
-            this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
-            this.btnCreateEvent.TabIndex = 29;
-            this.btnCreateEvent.Text = "Evenement Aanmaken";
-            this.btnCreateEvent.UseVisualStyleBackColor = true;
-            this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
             // 
             // btnEditEventEditEvent
             // 
-            this.btnEditEventEditEvent.Location = new System.Drawing.Point(757, 313);
+            this.btnEditEventEditEvent.Location = new System.Drawing.Point(1198, 608);
+            this.btnEditEventEditEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEditEventEditEvent.Name = "btnEditEventEditEvent";
-            this.btnEditEventEditEvent.Size = new System.Drawing.Size(75, 40);
+            this.btnEditEventEditEvent.Size = new System.Drawing.Size(150, 77);
             this.btnEditEventEditEvent.TabIndex = 52;
             this.btnEditEventEditEvent.Text = "Evenement Aanpassen";
             this.btnEditEventEditEvent.UseVisualStyleBackColor = true;
@@ -118,124 +102,139 @@
             // 
             // tbEditEventCapacity
             // 
-            this.tbEditEventCapacity.Location = new System.Drawing.Point(632, 287);
+            this.tbEditEventCapacity.Location = new System.Drawing.Point(948, 558);
+            this.tbEditEventCapacity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbEditEventCapacity.Name = "tbEditEventCapacity";
-            this.tbEditEventCapacity.Size = new System.Drawing.Size(200, 20);
+            this.tbEditEventCapacity.Size = new System.Drawing.Size(396, 31);
             this.tbEditEventCapacity.TabIndex = 51;
             // 
             // tbEditEventZipCode
             // 
-            this.tbEditEventZipCode.Location = new System.Drawing.Point(632, 133);
+            this.tbEditEventZipCode.Location = new System.Drawing.Point(948, 262);
+            this.tbEditEventZipCode.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbEditEventZipCode.Name = "tbEditEventZipCode";
             this.tbEditEventZipCode.ReadOnly = true;
-            this.tbEditEventZipCode.Size = new System.Drawing.Size(200, 20);
+            this.tbEditEventZipCode.Size = new System.Drawing.Size(396, 31);
             this.tbEditEventZipCode.TabIndex = 49;
             // 
             // tbEditEventCity
             // 
-            this.tbEditEventCity.Location = new System.Drawing.Point(632, 93);
+            this.tbEditEventCity.Location = new System.Drawing.Point(948, 185);
+            this.tbEditEventCity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbEditEventCity.Name = "tbEditEventCity";
             this.tbEditEventCity.ReadOnly = true;
-            this.tbEditEventCity.Size = new System.Drawing.Size(200, 20);
+            this.tbEditEventCity.Size = new System.Drawing.Size(396, 31);
             this.tbEditEventCity.TabIndex = 48;
             // 
             // tbEditEventStreet
             // 
-            this.tbEditEventStreet.Location = new System.Drawing.Point(632, 51);
+            this.tbEditEventStreet.Location = new System.Drawing.Point(948, 104);
+            this.tbEditEventStreet.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbEditEventStreet.Name = "tbEditEventStreet";
             this.tbEditEventStreet.ReadOnly = true;
-            this.tbEditEventStreet.Size = new System.Drawing.Size(200, 20);
+            this.tbEditEventStreet.Size = new System.Drawing.Size(396, 31);
             this.tbEditEventStreet.TabIndex = 47;
             // 
             // tbEditEventName
             // 
-            this.tbEditEventName.Location = new System.Drawing.Point(632, 9);
+            this.tbEditEventName.Location = new System.Drawing.Point(948, 23);
+            this.tbEditEventName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbEditEventName.Name = "tbEditEventName";
-            this.tbEditEventName.Size = new System.Drawing.Size(200, 20);
+            this.tbEditEventName.Size = new System.Drawing.Size(396, 31);
             this.tbEditEventName.TabIndex = 46;
             // 
             // dtpEditEndDate
             // 
-            this.dtpEditEndDate.Location = new System.Drawing.Point(632, 251);
+            this.dtpEditEndDate.Location = new System.Drawing.Point(948, 488);
+            this.dtpEditEndDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpEditEndDate.Name = "dtpEditEndDate";
-            this.dtpEditEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEditEndDate.Size = new System.Drawing.Size(396, 31);
             this.dtpEditEndDate.TabIndex = 45;
             // 
             // dtpEditBeginDate
             // 
-            this.dtpEditBeginDate.Location = new System.Drawing.Point(632, 211);
+            this.dtpEditBeginDate.Location = new System.Drawing.Point(948, 412);
+            this.dtpEditBeginDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpEditBeginDate.Name = "dtpEditBeginDate";
-            this.dtpEditBeginDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEditBeginDate.Size = new System.Drawing.Size(396, 31);
             this.dtpEditBeginDate.TabIndex = 44;
             // 
             // lblEditEventCapacity
             // 
             this.lblEditEventCapacity.AutoSize = true;
-            this.lblEditEventCapacity.Location = new System.Drawing.Point(515, 290);
+            this.lblEditEventCapacity.Location = new System.Drawing.Point(714, 563);
+            this.lblEditEventCapacity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventCapacity.Name = "lblEditEventCapacity";
-            this.lblEditEventCapacity.Size = new System.Drawing.Size(92, 13);
+            this.lblEditEventCapacity.Size = new System.Drawing.Size(186, 25);
             this.lblEditEventCapacity.TabIndex = 43;
             this.lblEditEventCapacity.Text = "Max. Deelnemers:";
             // 
             // lblEditEventEndDate
             // 
             this.lblEditEventEndDate.AutoSize = true;
-            this.lblEditEventEndDate.Location = new System.Drawing.Point(515, 257);
+            this.lblEditEventEndDate.Location = new System.Drawing.Point(714, 500);
+            this.lblEditEventEndDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventEndDate.Name = "lblEditEventEndDate";
-            this.lblEditEventEndDate.Size = new System.Drawing.Size(65, 13);
+            this.lblEditEventEndDate.Size = new System.Drawing.Size(129, 25);
             this.lblEditEventEndDate.TabIndex = 42;
             this.lblEditEventEndDate.Text = "Eind Datum:";
             // 
             // lblEditEventBeginDate
             // 
             this.lblEditEventBeginDate.AutoSize = true;
-            this.lblEditEventBeginDate.Location = new System.Drawing.Point(515, 217);
+            this.lblEditEventBeginDate.Location = new System.Drawing.Point(714, 423);
+            this.lblEditEventBeginDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventBeginDate.Name = "lblEditEventBeginDate";
-            this.lblEditEventBeginDate.Size = new System.Drawing.Size(71, 13);
+            this.lblEditEventBeginDate.Size = new System.Drawing.Size(141, 25);
             this.lblEditEventBeginDate.TabIndex = 41;
             this.lblEditEventBeginDate.Text = "Begin Datum:";
             // 
             // lblEditEventZipcode
             // 
             this.lblEditEventZipcode.AutoSize = true;
-            this.lblEditEventZipcode.Location = new System.Drawing.Point(515, 136);
+            this.lblEditEventZipcode.Location = new System.Drawing.Point(714, 267);
+            this.lblEditEventZipcode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventZipcode.Name = "lblEditEventZipcode";
-            this.lblEditEventZipcode.Size = new System.Drawing.Size(55, 13);
+            this.lblEditEventZipcode.Size = new System.Drawing.Size(108, 25);
             this.lblEditEventZipcode.TabIndex = 39;
             this.lblEditEventZipcode.Text = "Postcode:";
             // 
             // lblEditEventCity
             // 
             this.lblEditEventCity.AutoSize = true;
-            this.lblEditEventCity.Location = new System.Drawing.Point(515, 96);
+            this.lblEditEventCity.Location = new System.Drawing.Point(714, 190);
+            this.lblEditEventCity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventCity.Name = "lblEditEventCity";
-            this.lblEditEventCity.Size = new System.Drawing.Size(32, 13);
+            this.lblEditEventCity.Size = new System.Drawing.Size(62, 25);
             this.lblEditEventCity.TabIndex = 38;
             this.lblEditEventCity.Text = "Stad:";
             // 
             // lblEditEventStreet
             // 
             this.lblEditEventStreet.AutoSize = true;
-            this.lblEditEventStreet.Location = new System.Drawing.Point(515, 54);
+            this.lblEditEventStreet.Location = new System.Drawing.Point(714, 110);
+            this.lblEditEventStreet.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventStreet.Name = "lblEditEventStreet";
-            this.lblEditEventStreet.Size = new System.Drawing.Size(38, 13);
+            this.lblEditEventStreet.Size = new System.Drawing.Size(75, 25);
             this.lblEditEventStreet.TabIndex = 37;
             this.lblEditEventStreet.Text = "Straat:";
             // 
             // lblEditEventName
             // 
             this.lblEditEventName.AutoSize = true;
-            this.lblEditEventName.Location = new System.Drawing.Point(515, 12);
+            this.lblEditEventName.Location = new System.Drawing.Point(714, 29);
+            this.lblEditEventName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEditEventName.Name = "lblEditEventName";
-            this.lblEditEventName.Size = new System.Drawing.Size(95, 13);
+            this.lblEditEventName.Size = new System.Drawing.Size(188, 25);
             this.lblEditEventName.TabIndex = 36;
             this.lblEditEventName.Text = "Evenement Naam:";
             // 
             // btnEditEventSelectEvent
             // 
-            this.btnEditEventSelectEvent.Location = new System.Drawing.Point(418, 318);
+            this.btnEditEventSelectEvent.Location = new System.Drawing.Point(520, 617);
+            this.btnEditEventSelectEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEditEventSelectEvent.Name = "btnEditEventSelectEvent";
-            this.btnEditEventSelectEvent.Size = new System.Drawing.Size(75, 40);
+            this.btnEditEventSelectEvent.Size = new System.Drawing.Size(150, 77);
             this.btnEditEventSelectEvent.TabIndex = 53;
             this.btnEditEventSelectEvent.Text = "Evenement Selecteren";
             this.btnEditEventSelectEvent.UseVisualStyleBackColor = true;
@@ -243,9 +242,9 @@
             // 
             // EditEventForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 370);
+            this.ClientSize = new System.Drawing.Size(1372, 712);
             this.Controls.Add(this.btnEditEventSelectEvent);
             this.Controls.Add(this.btnEditEventEditEvent);
             this.Controls.Add(this.tbEditEventCapacity);
@@ -266,10 +265,10 @@
             this.Controls.Add(this.lblEditSearchEventName);
             this.Controls.Add(this.tbSearchEditEventName);
             this.Controls.Add(this.lbEditEvent);
-            this.Controls.Add(this.btnParticipants);
-            this.Controls.Add(this.btnCreateEvent);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "EditEventForm";
             this.Text = "Edit Event";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditEventForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,8 +280,6 @@
         private System.Windows.Forms.Label lblEditSearchEventName;
         private System.Windows.Forms.TextBox tbSearchEditEventName;
         private System.Windows.Forms.ListBox lbEditEvent;
-        private System.Windows.Forms.Button btnParticipants;
-        private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.Button btnEditEventEditEvent;
         private System.Windows.Forms.TextBox tbEditEventCapacity;
         private System.Windows.Forms.TextBox tbEditEventZipCode;

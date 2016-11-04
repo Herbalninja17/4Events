@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
 {
     public partial class EventBeheerForm : Form
     {
+        private EventBeheerForm eventForm;
+        private HomeForm homeForm;
+        
+
         public EventBeheerForm()
         {
             InitializeComponent();
+            eventForm = this;
+        }
+
+        public EventBeheerForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            eventForm = this;
+            this.homeForm = homeForm;
         }
 
         /// <summary>
@@ -24,8 +37,8 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateEvent_Click(object sender, EventArgs e)
         {
-            CreateEventForm cef = new CreateEventForm();
-            this.Close();
+            CreateEventForm cef = new CreateEventForm(eventForm);
+            this.Hide();
             cef.Show();
         }
 
@@ -36,33 +49,14 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditEvent_Click(object sender, EventArgs e)
         {
-            EditEventForm eef = new EditEventForm();
-            this.Close();
+            EditEventForm eef = new EditEventForm(eventForm);
+            this.Hide();
             eef.Show();
         }
 
-        /// <summary>
-        /// Om naar de form te gaan om een event te verwijderen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteEvent_Click(object sender, EventArgs e)
+        private void EventBeheerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //DeleteEventForm def = new DeleteEventForm();
-            //this.Close();
-            //def.Show();
-        }
-
-        /// <summary>
-        /// Om naar de algemene participants form te gaan.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnParticipants_Click(object sender, EventArgs e)
-        {
-            ParticipantsForm pf = new ParticipantsForm();
-            this.Close();
-            pf.Show();
+            homeForm.Show();
         }
     }
 }

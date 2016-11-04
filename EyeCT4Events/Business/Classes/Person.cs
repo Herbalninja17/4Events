@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EyeCT4Events
 {
@@ -29,7 +30,7 @@ namespace EyeCT4Events
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    if (value == null) { throw new ArgumentNullException("name");}
+                    if (value == null) {throw new ArgumentNullException("name");}
                     throw new ArgumentException("name");
                 }
                 name = value;
