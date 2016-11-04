@@ -31,8 +31,11 @@
             this.btnEvents = new System.Windows.Forms.Button();
             this.btnEditParticipant = new System.Windows.Forms.Button();
             this.btnCreateParticipant = new System.Windows.Forms.Button();
-            this.lbParticipantsParticipants = new System.Windows.Forms.ListBox();
+            this.lbParticipantsPresent = new System.Windows.Forms.ListBox();
             this.btnMaterial = new System.Windows.Forms.Button();
+            this.lbParticipantsNotPresent = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEvents
@@ -65,13 +68,13 @@
             this.btnCreateParticipant.UseVisualStyleBackColor = true;
             this.btnCreateParticipant.Click += new System.EventHandler(this.btnCreateParticipant_Click);
             // 
-            // lbParticipantsParticipants
+            // lbParticipantsPresent
             // 
-            this.lbParticipantsParticipants.FormattingEnabled = true;
-            this.lbParticipantsParticipants.Location = new System.Drawing.Point(152, 12);
-            this.lbParticipantsParticipants.Name = "lbParticipantsParticipants";
-            this.lbParticipantsParticipants.Size = new System.Drawing.Size(342, 355);
-            this.lbParticipantsParticipants.TabIndex = 29;
+            this.lbParticipantsPresent.FormattingEnabled = true;
+            this.lbParticipantsPresent.Location = new System.Drawing.Point(152, 51);
+            this.lbParticipantsPresent.Name = "lbParticipantsPresent";
+            this.lbParticipantsPresent.Size = new System.Drawing.Size(342, 316);
+            this.lbParticipantsPresent.TabIndex = 29;
             // 
             // btnMaterial
             // 
@@ -83,19 +86,49 @@
             this.btnMaterial.UseVisualStyleBackColor = true;
             this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
             // 
+            // lbParticipantsNotPresent
+            // 
+            this.lbParticipantsNotPresent.FormattingEnabled = true;
+            this.lbParticipantsNotPresent.Location = new System.Drawing.Point(541, 54);
+            this.lbParticipantsNotPresent.Name = "lbParticipantsNotPresent";
+            this.lbParticipantsNotPresent.Size = new System.Drawing.Size(342, 316);
+            this.lbParticipantsNotPresent.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(149, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Aanwezig:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(538, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Afwezig:";
+            // 
             // ParticipantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 382);
+            this.ClientSize = new System.Drawing.Size(908, 382);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbParticipantsNotPresent);
             this.Controls.Add(this.btnMaterial);
-            this.Controls.Add(this.lbParticipantsParticipants);
+            this.Controls.Add(this.lbParticipantsPresent);
             this.Controls.Add(this.btnEvents);
             this.Controls.Add(this.btnEditParticipant);
             this.Controls.Add(this.btnCreateParticipant);
             this.Name = "ParticipantsForm";
             this.Text = "Deelnemers";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,7 +137,10 @@
         private System.Windows.Forms.Button btnEvents;
         private System.Windows.Forms.Button btnEditParticipant;
         private System.Windows.Forms.Button btnCreateParticipant;
-        private System.Windows.Forms.ListBox lbParticipantsParticipants;
+        private System.Windows.Forms.ListBox lbParticipantsPresent;
         private System.Windows.Forms.Button btnMaterial;
+        private System.Windows.Forms.ListBox lbParticipantsNotPresent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

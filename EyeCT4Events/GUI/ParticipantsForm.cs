@@ -14,23 +14,32 @@ namespace EyeCT4Events
     {
         private ParticipantsForm participantsForm;
         private MakeReservationForm reservationForm;
-        private List<Person> personlist;
+        private List<Person> personpresentlist;
+        private List<Person> personnotpresentlist;
 
         public ParticipantsForm()
         {
             InitializeComponent();
             participantsForm = this;
-            if(Data.DataClasses.DataPerson.GetPersonList() != null)
+            if(Data.DataClasses.DataPerson.GetPersonListPresent() != null)
             {
-                personlist = Data.DataClasses.DataPerson.GetPersonList();
-                foreach(Person p in personlist)
+                personpresentlist = Data.DataClasses.DataPerson.GetPersonListPresent();
+                foreach(Person p in personpresentlist)
                 {
-                    lbParticipantsParticipants.Items.Add("Naam: " + p.Name+" Email: " + p.Email );
+                    lbParticipantsPresent.Items.Add("Naam: " + p.Name+" Email: " + p.Email );
                 }
             }
             else
             {
                 MessageBox.Show("iets mis gegaan met persoon ophalen.");
+            }
+            if(Data.DataClasses.DataPerson.GetPersonListNotPresent() != null)
+            {
+                personnotpresentlist = Data.DataClasses.DataPerson.GetPersonListNotPresent();
+                foreach (Person p in personnotpresentlist)
+                {
+                    lbParticipantsNotPresent.Items.Add("Naam: "+ p.Name + " Email : " + p.Email);
+                }
             }
         }
 

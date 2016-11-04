@@ -239,7 +239,35 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
-        public static List<Person> GetPersonList()
+        public static List<Person> GetPersonListNotPresent()
+        {
+            List<Person> personlist = new List<Person>();
+            try
+            {
+                Datacom.OpenConnection();
+                Datacom.command = new SqlCommand("SELECT a.* FROM account a INNER JOIN polsband p on a.accountid = p.accountaccountid where p.aanwezig = 0;", Datacom.connect);
+                SqlDataReader reader = Datacom.command.ExecuteReader();
+                Person p;
+                while (reader.Read())
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime dt = DateTime.Parse(date);
+                    p = new Person(Convert.ToString(reader["naam"]), dt, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    personlist.Add(p);
+                }
+                return personlist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
+        public static List<Person> GetPersonListPresent()
         {
             List<Person> personlist = new List<Person>();
             try
