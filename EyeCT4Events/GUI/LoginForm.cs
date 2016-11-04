@@ -60,6 +60,11 @@ namespace EyeCT4Events
             this.Hide();
             cpf.Show();
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            loginForm.Show();
+        }
     }
 }
 
