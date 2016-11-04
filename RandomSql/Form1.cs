@@ -177,7 +177,6 @@ namespace RandomSql
             }
         }
         //zet een plaats op beschikbaar.
-        //fixen !!!!!!!!!!!!             string vandaag = 3-11-2016 maar in database 2016-11-3             fixen !!!!!!!!!
         private void button7_Click(object sender, EventArgs e)
         {
             try

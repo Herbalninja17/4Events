@@ -13,9 +13,20 @@ namespace EyeCT4Events
 {
     public partial class CreateEventForm : Form
     {
+        private CreateEventForm createEvent;
+        private HomeForm homeForm;
+
         public CreateEventForm()
         {
             InitializeComponent();
+            createEvent = this;
+        }
+
+        public CreateEventForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            createEvent = this;
+            this.homeForm = homeForm;
         }
 
         /// <summary>
@@ -53,6 +64,18 @@ namespace EyeCT4Events
         }
 
         /// <summary>
+        /// Om naar de form te gaan om een event te verwijderen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeleteEvent_Click(object sender, EventArgs e)
+        {
+            //DeleteEventForm def = new DeleteEventForm();
+            //this.Close();
+            //def.Show();
+        }
+
+        /// <summary>
         /// Om naar de form te gaan om een event te wijzigen.
         /// </summary>
         /// <param name="sender"></param>
@@ -62,6 +85,11 @@ namespace EyeCT4Events
             EditEventForm eef = new EditEventForm();
             this.Close();
             eef.Show();
+        }
+
+        private void CreateEventForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
         }
     }
 }
