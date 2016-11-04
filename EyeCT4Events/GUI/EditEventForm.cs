@@ -56,9 +56,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnDeleteEvent_Click(object sender, EventArgs e)
         {
-            DeleteEventForm def = new DeleteEventForm();
-            this.Hide();
-            def.Show();
+            //DeleteEventForm def = new DeleteEventForm();
+            //this.Hide();
+            //def.Show();
         }
 
         /// <summary>
