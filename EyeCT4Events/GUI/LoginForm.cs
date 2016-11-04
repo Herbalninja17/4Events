@@ -30,7 +30,6 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
-
             if (login.LogInUser(tbLoginEmail.Text, tbLoginWachtwoord.Text) == true)
             {
                 //Rechard zijn super sexy werkend code!
@@ -48,7 +47,6 @@ namespace EyeCT4Events
             {
                 MessageBox.Show("Email or Password is incorrect.");
             }
-            
         }
 
         /// <summary>

@@ -48,11 +48,13 @@
             this.btnParticipants = new System.Windows.Forms.Button();
             this.btnDeleteParticipant = new System.Windows.Forms.Button();
             this.btnCreateParticipant = new System.Windows.Forms.Button();
+            this.lblEditParticipantAdress = new System.Windows.Forms.Label();
+            this.tbEditParticipantAdress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnEditParticipantEditParticipant
             // 
-            this.btnEditParticipantEditParticipant.Location = new System.Drawing.Point(463, 305);
+            this.btnEditParticipantEditParticipant.Location = new System.Drawing.Point(463, 318);
             this.btnEditParticipantEditParticipant.Name = "btnEditParticipantEditParticipant";
             this.btnEditParticipantEditParticipant.Size = new System.Drawing.Size(75, 43);
             this.btnEditParticipantEditParticipant.TabIndex = 61;
@@ -62,14 +64,14 @@
             // 
             // tbEditParticipantPassword
             // 
-            this.tbEditParticipantPassword.Location = new System.Drawing.Point(338, 279);
+            this.tbEditParticipantPassword.Location = new System.Drawing.Point(338, 295);
             this.tbEditParticipantPassword.Name = "tbEditParticipantPassword";
             this.tbEditParticipantPassword.Size = new System.Drawing.Size(200, 20);
             this.tbEditParticipantPassword.TabIndex = 60;
             // 
             // tbEditParticipantAccountNumber
             // 
-            this.tbEditParticipantAccountNumber.Location = new System.Drawing.Point(338, 243);
+            this.tbEditParticipantAccountNumber.Location = new System.Drawing.Point(338, 259);
             this.tbEditParticipantAccountNumber.Name = "tbEditParticipantAccountNumber";
             this.tbEditParticipantAccountNumber.Size = new System.Drawing.Size(200, 20);
             this.tbEditParticipantAccountNumber.TabIndex = 59;
@@ -119,7 +121,7 @@
             // lblEditParticipantPassword
             // 
             this.lblEditParticipantPassword.AutoSize = true;
-            this.lblEditParticipantPassword.Location = new System.Drawing.Point(238, 282);
+            this.lblEditParticipantPassword.Location = new System.Drawing.Point(238, 298);
             this.lblEditParticipantPassword.Name = "lblEditParticipantPassword";
             this.lblEditParticipantPassword.Size = new System.Drawing.Size(71, 13);
             this.lblEditParticipantPassword.TabIndex = 52;
@@ -128,7 +130,7 @@
             // lblEditParticipantAccountNumber
             // 
             this.lblEditParticipantAccountNumber.AutoSize = true;
-            this.lblEditParticipantAccountNumber.Location = new System.Drawing.Point(238, 246);
+            this.lblEditParticipantAccountNumber.Location = new System.Drawing.Point(238, 262);
             this.lblEditParticipantAccountNumber.Name = "lblEditParticipantAccountNumber";
             this.lblEditParticipantAccountNumber.Size = new System.Drawing.Size(93, 13);
             this.lblEditParticipantAccountNumber.TabIndex = 51;
@@ -218,11 +220,29 @@
             this.btnCreateParticipant.UseVisualStyleBackColor = true;
             this.btnCreateParticipant.Click += new System.EventHandler(this.btnCreateParticipant_Click);
             // 
+            // lblEditParticipantAdress
+            // 
+            this.lblEditParticipantAdress.AutoSize = true;
+            this.lblEditParticipantAdress.Location = new System.Drawing.Point(237, 236);
+            this.lblEditParticipantAdress.Name = "lblEditParticipantAdress";
+            this.lblEditParticipantAdress.Size = new System.Drawing.Size(37, 13);
+            this.lblEditParticipantAdress.TabIndex = 62;
+            this.lblEditParticipantAdress.Text = "Adres:";
+            // 
+            // tbEditParticipantAdress
+            // 
+            this.tbEditParticipantAdress.Location = new System.Drawing.Point(338, 233);
+            this.tbEditParticipantAdress.Name = "tbEditParticipantAdress";
+            this.tbEditParticipantAdress.Size = new System.Drawing.Size(200, 20);
+            this.tbEditParticipantAdress.TabIndex = 63;
+            // 
             // EditParticipantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 367);
+            this.Controls.Add(this.tbEditParticipantAdress);
+            this.Controls.Add(this.lblEditParticipantAdress);
             this.Controls.Add(this.btnEditParticipantEditParticipant);
             this.Controls.Add(this.tbEditParticipantPassword);
             this.Controls.Add(this.tbEditParticipantAccountNumber);
@@ -272,5 +292,7 @@
         private System.Windows.Forms.Button btnParticipants;
         private System.Windows.Forms.Button btnDeleteParticipant;
         private System.Windows.Forms.Button btnCreateParticipant;
+        private System.Windows.Forms.Label lblEditParticipantAdress;
+        private System.Windows.Forms.TextBox tbEditParticipantAdress;
     }
 }

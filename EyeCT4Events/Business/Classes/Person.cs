@@ -18,7 +18,6 @@ namespace EyeCT4Events
         private string email;
         private string password;
         private string accountnumber;
-        private int admin;
 
         //Persoonklasse
         public string Name
@@ -155,7 +154,7 @@ namespace EyeCT4Events
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public int Admin { get { return admin; } private set { } }
+        public int Admin { get; private set; }
 
         public List<Reservation> Reservations { get; set; }
 
@@ -184,7 +183,7 @@ namespace EyeCT4Events
             AccountNumber = accountnumber;
             Reservations = new List<Reservation>();            
 
-            admin = 0; //Only the database owner may make someone an admin.
+            Admin = 0; //Only the database owner may make someone an admin.
         }
 
         /// <summary>
@@ -198,18 +197,18 @@ namespace EyeCT4Events
         /// <param name="zipcode">The zipcode of the persons address</param>
         /// <param name="phonenumber">The phonenumber of the person</param>
         /// <param name="email">The username of the person</param>
-        /// <param name="accountnumber">The Accountnumber of the person</param>
-        /// <param name="admin">Tells if the person is an admin or not (SHOULD ONLY BE SET IN THE DATABASE)</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode, string city, string phonenumber, string email, string accountnumber, int admin)
+        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email,string password, int admin,string accountnumber)
         {
             Name = name;
-            BirthDate = BirthDate;
+            BirthDate = birthDate;
             Address = address;
             ZipCode = zipcode;
             City = city;
             Phonenumber = phonenumber;
             Email = email;
+            Password = password;
             Admin = admin;
+            AccountNumber = accountnumber;
         }
 
         public override string ToString()
