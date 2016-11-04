@@ -25,7 +25,7 @@ namespace EyeCT4Events
                 personlist = Data.DataClasses.DataPerson.GetPersonList();
                 foreach(Person p in personlist)
                 {
-                    lbParticipantsParticipants.Items.Add(p.Email);
+                    lbParticipantsParticipants.Items.Add("Naam: " + p.Name+" Email: " + p.Email );
                 }
             }
             else
