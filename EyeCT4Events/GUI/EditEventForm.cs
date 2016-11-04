@@ -125,7 +125,8 @@ namespace EyeCT4Events
                 tbEditEventZipCode.Text = selectedEvent.Camping.Zipcode;
                 dtpEditBeginDate.Value = selectedEvent.StartDate;
                 dtpEditEndDate.Value = selectedEvent.EndDate;
-                tbEditEventCapacity.Text = selectedEvent.Camping.Places.ToString();
+
+                //tbEditEventCapacity.Text = ;
             }
         }
 
