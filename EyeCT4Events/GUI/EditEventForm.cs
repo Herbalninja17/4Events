@@ -60,11 +60,13 @@ namespace EyeCT4Events
 
             if(String.IsNullOrWhiteSpace(tbSearchEditEventName.Text))
             {
+                //List with all events
                 Events = DataEvent.GetEventList();
             }
             else
             {
-                Events = DataEvent.GetEventList();
+                //Lists with events containing the search term or part of it.
+                Events = DataEvent.GetEventList(tbSearchEditEventName.Text);
             }
 
             foreach (Event found in Events)
