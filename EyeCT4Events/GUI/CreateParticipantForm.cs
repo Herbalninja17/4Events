@@ -49,23 +49,28 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value,tbCreateParticipantStreet.Text,  tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, tbCreateParticipantRekeningnummer.Text);
-            if (login.CreateUser(person))
+            try
             {
-                //btnDeleteParticipant.Enabled = true;
-                //btnEditParticipant.Enabled = true;
-                //btnParticipants.Enabled = true;
 
-                if(login.LogInUser(person.Email, person.Password))
+
+                person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantStreet.Text, tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, tbCreateParticipantRekeningnummer.Text);
+                if (login.CreateUser(person))
                 {
-                    homeform = new HomeForm();
-                    this.Close();
-                    homeform.Show();
+                    //btnDeleteParticipant.Enabled = true;
+                    //btnEditParticipant.Enabled = true;
+                    //btnParticipants.Enabled = true;
+
+                    if (login.LogInUser(person.Email, person.Password))
+                    {
+                        homeform = new HomeForm();
+                        this.Close();
+                        homeform.Show();
+                    }
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Er is wat fout gegaan met uw account aanmaken.");
+                MessageBox.Show("Een van de velden is niet ingevuld");
             }
         }
     }

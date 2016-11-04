@@ -19,18 +19,18 @@ namespace EyeCT4Events
             InitializeComponent();
         }
 
-        public EditEventForm(HomeForm homeForm)
-        {
-            InitializeComponent();
-            createEvent = this;
-            this.homeForm = homeForm;
-            Campings = DataCamping.GetCampingList();
+        //public EditEventForm(HomeForm homeForm)
+        //{
+        //    InitializeComponent();
+        //    createEvent = this;
+        //    this.homeForm = homeForm;
+        //    Campings = DataCamping.GetCampingList();
 
-            foreach (Camping found in Campings)
-            {
-                cbCreateEventCamping.Items.Add(found.Name);
-            }
-        }
+        //    foreach (Camping found in Campings)
+        //    {
+        //        cbCreateEventCamping.Items.Add(found.Name);
+        //    }
+        //}
 
         /// <summary>
         /// Om het event te wijzigen.
