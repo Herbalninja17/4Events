@@ -264,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Phidget21.NET.dll" />
+    <None Include="Resources\Camping_ReeënDal.png" />
     <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
