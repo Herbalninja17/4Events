@@ -8,8 +8,13 @@ namespace EyeCT4Events
 {
     public enum SpotType
     {
-        Standard,
-        Plus,
-        VIP
+        Eigen_Tent,
+        Huurtent,
+        Comfort,
+        Stacaravan,
+        Invalide,
+        Bungalow,
+        Blokhut,
+        Bungalino
     }
 }

@@ -16,12 +16,28 @@ namespace EyeCT4Events
         public Maintain maintain = new Maintain();
         public Login login = new Login();
 
+        private CreateParticipantForm createForm;
+        private ParticipantsForm participantsForm;
+
         public CreateParticipantForm()
         {
             InitializeComponent();
-            btnParticipants.Enabled = false;
-            btnEditParticipant.Enabled = false;
-            btnDeleteParticipant.Enabled = false;
+            SetTextboxes();
+            createForm = this;
+        }
+
+        public CreateParticipantForm(ParticipantsForm participantsForm)
+        {
+            InitializeComponent();
+            SetTextboxes();
+            createForm = this;
+            this.participantsForm = participantsForm;
+        }
+
+        private void SetTextboxes()
+        {
+            //btnEditParticipant.Enabled = false;
+            //btnDeleteParticipant.Enabled = false;
         }
 
         /// <summary>
@@ -31,9 +47,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
-            EditParticipantForm epf = new EditParticipantForm();
-            this.Close();
-            epf.Show();
+            //EditParticipantForm epf = new EditParticipantForm();
+            //this.Close();
+            //epf.Show();
         }
 
         /// <summary>
@@ -53,9 +69,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-            ParticipantsForm participantsform = new ParticipantsForm();
-            this.Close();
-            participantsform.Show();
+            //ParticipantsForm participantsform = new ParticipantsForm();
+            //this.Close();
+            //participantsform.Show();
         }
 
         /// <summary>
@@ -68,9 +84,9 @@ namespace EyeCT4Events
             person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value, tbCreateParticipantCity.Text , tbCreateParticipantZipCode.Text,tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text,tbCreateParticipantRekeningnummer.Text);
             if (login.CreateUser(person))
             {
-                btnDeleteParticipant.Enabled = true;
-                btnEditParticipant.Enabled = true;
-                btnParticipants.Enabled = true;
+                //btnDeleteParticipant.Enabled = true;
+                //btnEditParticipant.Enabled = true;
+                //btnParticipants.Enabled = true;
 
                 login.LogInUser(person.Email, person.Password);
             }

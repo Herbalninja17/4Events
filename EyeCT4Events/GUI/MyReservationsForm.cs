@@ -13,19 +13,35 @@ namespace EyeCT4Events
 {
     public partial class MyReservationsForm : Form
     {
-        private MyReservationsForm reservationsForm;
         private HomeForm homeForm;
+        private MakeReservationForm makeReservationForm;
 
         public MyReservationsForm()
         {
             InitializeComponent();
-            reservationsForm = this;
         }
         public MyReservationsForm(HomeForm homeForm)
         {
             InitializeComponent();
-            reservationsForm = this;
             this.homeForm = homeForm;
+        }
+
+        public MyReservationsForm(MakeReservationForm makeReservationForm)
+        {
+            InitializeComponent();
+            this.makeReservationForm = makeReservationForm;
+        }
+
+        private void MyReservationsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (homeForm != null && makeReservationForm == null)
+            {
+                homeForm.Show();
+            }
+            else if(homeForm == null && makeReservationForm != null)
+            {
+                makeReservationForm.Show();
+            }
         }
     }
 }

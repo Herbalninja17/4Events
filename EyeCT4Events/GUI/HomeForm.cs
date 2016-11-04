@@ -36,7 +36,7 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToEvent_Click(object sender, EventArgs e)
         {
-            MakeReservationForm makeReservation = new MakeReservationForm();
+            MakeReservationForm makeReservation = new MakeReservationForm(homeForm);
             makeReservation.Show();
             this.Hide();
         }

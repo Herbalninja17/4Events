@@ -32,26 +32,15 @@ namespace EyeCT4Events
             }
         }
 
-        public int MessageID
-        {
-            get { return messageID; }
-            set
-            {
-                if (value <= 0) { throw new ArgumentOutOfRangeException("messageID"); }
-                messageID = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int MessageID { get { return messageID; } private set { } }
 
-        public int PreviousMessageID
-        {
-            get { return previousMessageID; }
-            set
-            {
-                //Will equal 0 if there was no previous message.
-                if (value < 0) { throw new ArgumentOutOfRangeException("previousMessageID"); }
-                previousMessageID = value;
-            }
-        }
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public int PreviousMessageID { get { return previousMessageID; } private set { } }
 
         /// <summary>
         /// Person that wrote the message.
@@ -68,12 +57,27 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
+        /// For taking messages from the database.
         /// </summary>
         /// <param name="messageString">The actual message.</param>
         /// <param name="messageID">ID of the message.</param>
         /// <param name="previousMessageID">ID of the previous message.</param>
         /// <param name="poster">Person who posted the message.</param>
         public Message(string messageString, int messageID, int previousMessageID, Person poster)
+        {
+            MessageString = messageString;
+            MessageID = messageID;
+            PreviousMessageID = previousMessageID;
+            Poster = poster;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// For creating messages.
+        /// </summary>
+        /// <param name="messageString">The actual message.</param>
+        /// <param name="poster">Person who posted the message.</param>
+        public Message(string messageString, Person poster)
         {
             MessageString = messageString;
             MessageID = messageID;

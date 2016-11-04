@@ -8,8 +8,6 @@ namespace EyeCT4Events
 {
     public class Reservation
     {
-        private bool eventIsPlayed;
-
         /// <summary>
         /// Taken from the database (Auto increment).
         /// </summary>

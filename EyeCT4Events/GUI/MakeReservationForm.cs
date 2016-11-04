@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
 {
     public partial class MakeReservationForm : Form
     {
+        private HomeForm homeForm;
+        private MakeReservationForm makeReservationForm;
+
         public MakeReservationForm()
         {
             InitializeComponent();
+            makeReservationForm = this;
+        }
+
+        public MakeReservationForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            this.homeForm = homeForm;
+            makeReservationForm = this;
         }
 
         /// <summary>
@@ -24,8 +36,8 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsLocation_Click(object sender, EventArgs e)
         {
-            MapForm mf = new MapForm();
-            mf.Show();
+            MapForm mapForm = new MapForm();
+            mapForm.Show();
         }
 
         /// <summary>
@@ -35,8 +47,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsReservations_Click(object sender, EventArgs e)
         {
-            MyReservationsForm mrf = new MyReservationsForm();
-            mrf.Show();
+            MyReservationsForm reservationForm = new MyReservationsForm(makeReservationForm);
+            reservationForm.Show();
+            this.Close();
         }
 
         /// <summary>
@@ -46,7 +59,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
         {
-
+            //Alle info inladen en opsturen naar de Data klasse, hierin verwerken tot een format dat in de database past.
         }
 
         /// <summary>
@@ -56,7 +69,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationSearchParticipant_Click(object sender, EventArgs e)
         {
-
+            //Eventueel algemeen zoekForm aanmaken, dan met parameter ervoor zorgen dat het juiste attribuut gezocht wordt.
         }
 
         /// <summary>
@@ -66,7 +79,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationAddParticipant_Click(object sender, EventArgs e)
         {
-
+            //Geselecteerde deelnemer toevoegen.
         }
 
         /// <summary>
@@ -76,9 +89,11 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-            ParticipantsForm pf = new ParticipantsForm();
-            this.Close();
-            pf.Show();
+            ParticipantsForm participantsForm = new ParticipantsForm(makeReservationForm);
+            this.Hide();
+            participantsForm.Show();
         }
+
+        
     }
 }

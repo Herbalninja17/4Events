@@ -23,7 +23,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnMapChooseLocation_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            this.Close();
         }
     }
 }
