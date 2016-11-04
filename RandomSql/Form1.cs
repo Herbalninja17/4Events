@@ -47,7 +47,7 @@ namespace RandomSql
                 conn.Close();
             }
         }
-
+        // get account voor log in.
         private void button2_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -82,7 +82,7 @@ namespace RandomSql
                 conn.Close();
             }
         }
-
+        // edit account.
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -197,12 +197,13 @@ namespace RandomSql
                 conn.Close();
             }
         }
-
+        //nieuw event aanmaken.
         private void button8_Click(object sender, EventArgs e)
         {
             try
             {
-
+                conn.Open();
+                command = new SqlCommand("INSERT INTO forevent(Naam,startdatum,einddatum) values ()", conn);
             }
             catch (Exception ex)
             {
