@@ -32,15 +32,12 @@
             this.lbLeaseMaterial = new System.Windows.Forms.ListBox();
             this.lblLeaseSearchMaterial = new System.Windows.Forms.Label();
             this.tbLeaseSearchMaterial = new System.Windows.Forms.TextBox();
-            this.nudLeaseQuantity = new System.Windows.Forms.NumericUpDown();
             this.dtpLeaseEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpLeaseStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblLeaseStartDate = new System.Windows.Forms.Label();
             this.lblLeaseEndDate = new System.Windows.Forms.Label();
-            this.lblLeaseQuantity = new System.Windows.Forms.Label();
             this.btnLeaseSearch = new System.Windows.Forms.Button();
             this.btnLeaseLease = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHired
@@ -58,7 +55,7 @@
             // 
             this.lbLeaseMaterial.FormattingEnabled = true;
             this.lbLeaseMaterial.ItemHeight = 25;
-            this.lbLeaseMaterial.Location = new System.Drawing.Point(24, 238);
+            this.lbLeaseMaterial.Location = new System.Drawing.Point(24, 178);
             this.lbLeaseMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.lbLeaseMaterial.Name = "lbLeaseMaterial";
             this.lbLeaseMaterial.Size = new System.Drawing.Size(1492, 404);
@@ -67,7 +64,7 @@
             // lblLeaseSearchMaterial
             // 
             this.lblLeaseSearchMaterial.AutoSize = true;
-            this.lblLeaseSearchMaterial.Location = new System.Drawing.Point(982, 108);
+            this.lblLeaseSearchMaterial.Location = new System.Drawing.Point(982, 31);
             this.lblLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLeaseSearchMaterial.Name = "lblLeaseSearchMaterial";
             this.lblLeaseSearchMaterial.Size = new System.Drawing.Size(161, 25);
@@ -76,19 +73,11 @@
             // 
             // tbLeaseSearchMaterial
             // 
-            this.tbLeaseSearchMaterial.Location = new System.Drawing.Point(1162, 102);
+            this.tbLeaseSearchMaterial.Location = new System.Drawing.Point(1162, 25);
             this.tbLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.tbLeaseSearchMaterial.Name = "tbLeaseSearchMaterial";
             this.tbLeaseSearchMaterial.Size = new System.Drawing.Size(354, 31);
             this.tbLeaseSearchMaterial.TabIndex = 6;
-            // 
-            // nudLeaseQuantity
-            // 
-            this.nudLeaseQuantity.Location = new System.Drawing.Point(562, 154);
-            this.nudLeaseQuantity.Margin = new System.Windows.Forms.Padding(6);
-            this.nudLeaseQuantity.Name = "nudLeaseQuantity";
-            this.nudLeaseQuantity.Size = new System.Drawing.Size(240, 31);
-            this.nudLeaseQuantity.TabIndex = 7;
             // 
             // dtpLeaseEndDate
             // 
@@ -126,19 +115,9 @@
             this.lblLeaseEndDate.TabIndex = 11;
             this.lblLeaseEndDate.Text = "Eind Datum:";
             // 
-            // lblLeaseQuantity
-            // 
-            this.lblLeaseQuantity.AutoSize = true;
-            this.lblLeaseQuantity.Location = new System.Drawing.Point(368, 158);
-            this.lblLeaseQuantity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblLeaseQuantity.Name = "lblLeaseQuantity";
-            this.lblLeaseQuantity.Size = new System.Drawing.Size(79, 25);
-            this.lblLeaseQuantity.TabIndex = 12;
-            this.lblLeaseQuantity.Text = "Aantal:";
-            // 
             // btnLeaseSearch
             // 
-            this.btnLeaseSearch.Location = new System.Drawing.Point(1370, 158);
+            this.btnLeaseSearch.Location = new System.Drawing.Point(1370, 81);
             this.btnLeaseSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseSearch.Name = "btnLeaseSearch";
             this.btnLeaseSearch.Size = new System.Drawing.Size(150, 69);
@@ -149,7 +128,7 @@
             // 
             // btnLeaseLease
             // 
-            this.btnLeaseLease.Location = new System.Drawing.Point(1162, 158);
+            this.btnLeaseLease.Location = new System.Drawing.Point(1162, 81);
             this.btnLeaseLease.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseLease.Name = "btnLeaseLease";
             this.btnLeaseLease.Size = new System.Drawing.Size(150, 69);
@@ -162,14 +141,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1544, 675);
+            this.ClientSize = new System.Drawing.Size(1544, 600);
             this.Controls.Add(this.btnLeaseSearch);
-            this.Controls.Add(this.lblLeaseQuantity);
             this.Controls.Add(this.lblLeaseEndDate);
             this.Controls.Add(this.lblLeaseStartDate);
             this.Controls.Add(this.dtpLeaseStartDate);
             this.Controls.Add(this.dtpLeaseEndDate);
-            this.Controls.Add(this.nudLeaseQuantity);
             this.Controls.Add(this.tbLeaseSearchMaterial);
             this.Controls.Add(this.lblLeaseSearchMaterial);
             this.Controls.Add(this.lbLeaseMaterial);
@@ -179,7 +156,6 @@
             this.Name = "LeaseForm";
             this.Text = "Lease";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LeaseForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,12 +167,10 @@
         private System.Windows.Forms.ListBox lbLeaseMaterial;
         private System.Windows.Forms.Label lblLeaseSearchMaterial;
         private System.Windows.Forms.TextBox tbLeaseSearchMaterial;
-        private System.Windows.Forms.NumericUpDown nudLeaseQuantity;
         private System.Windows.Forms.DateTimePicker dtpLeaseEndDate;
         private System.Windows.Forms.DateTimePicker dtpLeaseStartDate;
         private System.Windows.Forms.Label lblLeaseStartDate;
         private System.Windows.Forms.Label lblLeaseEndDate;
-        private System.Windows.Forms.Label lblLeaseQuantity;
         private System.Windows.Forms.Button btnLeaseSearch;
         private System.Windows.Forms.Button btnLeaseLease;
     }
