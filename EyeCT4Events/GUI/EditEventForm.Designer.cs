@@ -32,8 +32,6 @@
             this.lblEditSearchEventName = new System.Windows.Forms.Label();
             this.tbSearchEditEventName = new System.Windows.Forms.TextBox();
             this.lbEditEvent = new System.Windows.Forms.ListBox();
-            this.btnParticipants = new System.Windows.Forms.Button();
-            this.btnCreateEvent = new System.Windows.Forms.Button();
             this.btnEditEventEditEvent = new System.Windows.Forms.Button();
             this.tbEditEventCapacity = new System.Windows.Forms.TextBox();
             this.tbEditEventZipCode = new System.Windows.Forms.TextBox();
@@ -54,7 +52,7 @@
             // 
             // btnEditEventSearch
             // 
-            this.btnEditEventSearch.Location = new System.Drawing.Point(418, 35);
+            this.btnEditEventSearch.Location = new System.Drawing.Point(260, 38);
             this.btnEditEventSearch.Name = "btnEditEventSearch";
             this.btnEditEventSearch.Size = new System.Drawing.Size(75, 42);
             this.btnEditEventSearch.TabIndex = 35;
@@ -65,7 +63,7 @@
             // lblEditSearchEventName
             // 
             this.lblEditSearchEventName.AutoSize = true;
-            this.lblEditSearchEventName.Location = new System.Drawing.Point(167, 12);
+            this.lblEditSearchEventName.Location = new System.Drawing.Point(9, 15);
             this.lblEditSearchEventName.Name = "lblEditSearchEventName";
             this.lblEditSearchEventName.Size = new System.Drawing.Size(95, 13);
             this.lblEditSearchEventName.TabIndex = 34;
@@ -73,7 +71,7 @@
             // 
             // tbSearchEditEventName
             // 
-            this.tbSearchEditEventName.Location = new System.Drawing.Point(268, 9);
+            this.tbSearchEditEventName.Location = new System.Drawing.Point(110, 12);
             this.tbSearchEditEventName.Name = "tbSearchEditEventName";
             this.tbSearchEditEventName.Size = new System.Drawing.Size(225, 20);
             this.tbSearchEditEventName.TabIndex = 33;
@@ -81,34 +79,14 @@
             // lbEditEvent
             // 
             this.lbEditEvent.FormattingEnabled = true;
-            this.lbEditEvent.Location = new System.Drawing.Point(170, 83);
+            this.lbEditEvent.Location = new System.Drawing.Point(12, 86);
             this.lbEditEvent.Name = "lbEditEvent";
             this.lbEditEvent.Size = new System.Drawing.Size(323, 225);
             this.lbEditEvent.TabIndex = 32;
             // 
-            // btnParticipants
-            // 
-            this.btnParticipants.Location = new System.Drawing.Point(12, 265);
-            this.btnParticipants.Name = "btnParticipants";
-            this.btnParticipants.Size = new System.Drawing.Size(75, 43);
-            this.btnParticipants.TabIndex = 31;
-            this.btnParticipants.Text = "Deelnemers";
-            this.btnParticipants.UseVisualStyleBackColor = true;
-            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
-            // 
-            // btnCreateEvent
-            // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(12, 211);
-            this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(75, 43);
-            this.btnCreateEvent.TabIndex = 29;
-            this.btnCreateEvent.Text = "Evenement Aanmaken";
-            this.btnCreateEvent.UseVisualStyleBackColor = true;
-            this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
-            // 
             // btnEditEventEditEvent
             // 
-            this.btnEditEventEditEvent.Location = new System.Drawing.Point(757, 313);
+            this.btnEditEventEditEvent.Location = new System.Drawing.Point(599, 316);
             this.btnEditEventEditEvent.Name = "btnEditEventEditEvent";
             this.btnEditEventEditEvent.Size = new System.Drawing.Size(75, 40);
             this.btnEditEventEditEvent.TabIndex = 52;
@@ -118,14 +96,14 @@
             // 
             // tbEditEventCapacity
             // 
-            this.tbEditEventCapacity.Location = new System.Drawing.Point(632, 287);
+            this.tbEditEventCapacity.Location = new System.Drawing.Point(474, 290);
             this.tbEditEventCapacity.Name = "tbEditEventCapacity";
             this.tbEditEventCapacity.Size = new System.Drawing.Size(200, 20);
             this.tbEditEventCapacity.TabIndex = 51;
             // 
             // tbEditEventZipCode
             // 
-            this.tbEditEventZipCode.Location = new System.Drawing.Point(632, 133);
+            this.tbEditEventZipCode.Location = new System.Drawing.Point(474, 136);
             this.tbEditEventZipCode.Name = "tbEditEventZipCode";
             this.tbEditEventZipCode.ReadOnly = true;
             this.tbEditEventZipCode.Size = new System.Drawing.Size(200, 20);
@@ -133,7 +111,7 @@
             // 
             // tbEditEventCity
             // 
-            this.tbEditEventCity.Location = new System.Drawing.Point(632, 93);
+            this.tbEditEventCity.Location = new System.Drawing.Point(474, 96);
             this.tbEditEventCity.Name = "tbEditEventCity";
             this.tbEditEventCity.ReadOnly = true;
             this.tbEditEventCity.Size = new System.Drawing.Size(200, 20);
@@ -141,7 +119,7 @@
             // 
             // tbEditEventStreet
             // 
-            this.tbEditEventStreet.Location = new System.Drawing.Point(632, 51);
+            this.tbEditEventStreet.Location = new System.Drawing.Point(474, 54);
             this.tbEditEventStreet.Name = "tbEditEventStreet";
             this.tbEditEventStreet.ReadOnly = true;
             this.tbEditEventStreet.Size = new System.Drawing.Size(200, 20);
@@ -149,21 +127,21 @@
             // 
             // tbEditEventName
             // 
-            this.tbEditEventName.Location = new System.Drawing.Point(632, 9);
+            this.tbEditEventName.Location = new System.Drawing.Point(474, 12);
             this.tbEditEventName.Name = "tbEditEventName";
             this.tbEditEventName.Size = new System.Drawing.Size(200, 20);
             this.tbEditEventName.TabIndex = 46;
             // 
             // dtpEditEndDate
             // 
-            this.dtpEditEndDate.Location = new System.Drawing.Point(632, 251);
+            this.dtpEditEndDate.Location = new System.Drawing.Point(474, 254);
             this.dtpEditEndDate.Name = "dtpEditEndDate";
             this.dtpEditEndDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEditEndDate.TabIndex = 45;
             // 
             // dtpEditBeginDate
             // 
-            this.dtpEditBeginDate.Location = new System.Drawing.Point(632, 211);
+            this.dtpEditBeginDate.Location = new System.Drawing.Point(474, 214);
             this.dtpEditBeginDate.Name = "dtpEditBeginDate";
             this.dtpEditBeginDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEditBeginDate.TabIndex = 44;
@@ -171,7 +149,7 @@
             // lblEditEventCapacity
             // 
             this.lblEditEventCapacity.AutoSize = true;
-            this.lblEditEventCapacity.Location = new System.Drawing.Point(515, 290);
+            this.lblEditEventCapacity.Location = new System.Drawing.Point(357, 293);
             this.lblEditEventCapacity.Name = "lblEditEventCapacity";
             this.lblEditEventCapacity.Size = new System.Drawing.Size(92, 13);
             this.lblEditEventCapacity.TabIndex = 43;
@@ -180,7 +158,7 @@
             // lblEditEventEndDate
             // 
             this.lblEditEventEndDate.AutoSize = true;
-            this.lblEditEventEndDate.Location = new System.Drawing.Point(515, 257);
+            this.lblEditEventEndDate.Location = new System.Drawing.Point(357, 260);
             this.lblEditEventEndDate.Name = "lblEditEventEndDate";
             this.lblEditEventEndDate.Size = new System.Drawing.Size(65, 13);
             this.lblEditEventEndDate.TabIndex = 42;
@@ -189,7 +167,7 @@
             // lblEditEventBeginDate
             // 
             this.lblEditEventBeginDate.AutoSize = true;
-            this.lblEditEventBeginDate.Location = new System.Drawing.Point(515, 217);
+            this.lblEditEventBeginDate.Location = new System.Drawing.Point(357, 220);
             this.lblEditEventBeginDate.Name = "lblEditEventBeginDate";
             this.lblEditEventBeginDate.Size = new System.Drawing.Size(71, 13);
             this.lblEditEventBeginDate.TabIndex = 41;
@@ -198,7 +176,7 @@
             // lblEditEventZipcode
             // 
             this.lblEditEventZipcode.AutoSize = true;
-            this.lblEditEventZipcode.Location = new System.Drawing.Point(515, 136);
+            this.lblEditEventZipcode.Location = new System.Drawing.Point(357, 139);
             this.lblEditEventZipcode.Name = "lblEditEventZipcode";
             this.lblEditEventZipcode.Size = new System.Drawing.Size(55, 13);
             this.lblEditEventZipcode.TabIndex = 39;
@@ -207,7 +185,7 @@
             // lblEditEventCity
             // 
             this.lblEditEventCity.AutoSize = true;
-            this.lblEditEventCity.Location = new System.Drawing.Point(515, 96);
+            this.lblEditEventCity.Location = new System.Drawing.Point(357, 99);
             this.lblEditEventCity.Name = "lblEditEventCity";
             this.lblEditEventCity.Size = new System.Drawing.Size(32, 13);
             this.lblEditEventCity.TabIndex = 38;
@@ -216,7 +194,7 @@
             // lblEditEventStreet
             // 
             this.lblEditEventStreet.AutoSize = true;
-            this.lblEditEventStreet.Location = new System.Drawing.Point(515, 54);
+            this.lblEditEventStreet.Location = new System.Drawing.Point(357, 57);
             this.lblEditEventStreet.Name = "lblEditEventStreet";
             this.lblEditEventStreet.Size = new System.Drawing.Size(38, 13);
             this.lblEditEventStreet.TabIndex = 37;
@@ -225,7 +203,7 @@
             // lblEditEventName
             // 
             this.lblEditEventName.AutoSize = true;
-            this.lblEditEventName.Location = new System.Drawing.Point(515, 12);
+            this.lblEditEventName.Location = new System.Drawing.Point(357, 15);
             this.lblEditEventName.Name = "lblEditEventName";
             this.lblEditEventName.Size = new System.Drawing.Size(95, 13);
             this.lblEditEventName.TabIndex = 36;
@@ -233,7 +211,7 @@
             // 
             // btnEditEventSelectEvent
             // 
-            this.btnEditEventSelectEvent.Location = new System.Drawing.Point(418, 318);
+            this.btnEditEventSelectEvent.Location = new System.Drawing.Point(260, 321);
             this.btnEditEventSelectEvent.Name = "btnEditEventSelectEvent";
             this.btnEditEventSelectEvent.Size = new System.Drawing.Size(75, 40);
             this.btnEditEventSelectEvent.TabIndex = 53;
@@ -245,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 370);
+            this.ClientSize = new System.Drawing.Size(686, 370);
             this.Controls.Add(this.btnEditEventSelectEvent);
             this.Controls.Add(this.btnEditEventEditEvent);
             this.Controls.Add(this.tbEditEventCapacity);
@@ -266,8 +244,6 @@
             this.Controls.Add(this.lblEditSearchEventName);
             this.Controls.Add(this.tbSearchEditEventName);
             this.Controls.Add(this.lbEditEvent);
-            this.Controls.Add(this.btnParticipants);
-            this.Controls.Add(this.btnCreateEvent);
             this.Name = "EditEventForm";
             this.Text = "Edit Event";
             this.ResumeLayout(false);
@@ -281,8 +257,6 @@
         private System.Windows.Forms.Label lblEditSearchEventName;
         private System.Windows.Forms.TextBox tbSearchEditEventName;
         private System.Windows.Forms.ListBox lbEditEvent;
-        private System.Windows.Forms.Button btnParticipants;
-        private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.Button btnEditEventEditEvent;
         private System.Windows.Forms.TextBox tbEditEventCapacity;
         private System.Windows.Forms.TextBox tbEditEventZipCode;

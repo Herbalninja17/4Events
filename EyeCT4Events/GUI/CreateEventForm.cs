@@ -15,7 +15,7 @@ namespace EyeCT4Events
     public partial class CreateEventForm : Form
     {
         private CreateEventForm createEvent;
-        private HomeForm homeForm;
+        private EventBeheerForm eventForm;
         private List<Camping> Campings;
 
         public CreateEventForm()
@@ -24,11 +24,11 @@ namespace EyeCT4Events
             createEvent = this;           
         }
 
-        public CreateEventForm(HomeForm homeForm)
+        public CreateEventForm(EventBeheerForm eventForm)
         {
             InitializeComponent();
             createEvent = this;
-            this.homeForm = homeForm;
+            this.eventForm = eventForm;
             Campings = DataCamping.GetCampingList();
 
             foreach (Camping found in Campings)
@@ -67,31 +67,6 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Om naar de algemene participants form te gaan.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnParticipants_Click(object sender, EventArgs e)
-        {
-            //DeleteEventForm def = new DeleteEventForm();
-            HomeForm home = new HomeForm();
-            this.Close();
-            home.Show();
-        }
-
-        /// <summary>
-        /// Om naar de form te gaan om een event te verwijderen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteEvent_Click(object sender, EventArgs e)
-        {
-            //DeleteEventForm def = new DeleteEventForm();
-            //this.Close();
-            //def.Show();
-        }
-
-        /// <summary>
         /// Om naar de form te gaan om een event te wijzigen.
         /// </summary>
         /// <param name="sender"></param>
@@ -105,7 +80,7 @@ namespace EyeCT4Events
 
         private void CreateEventForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            homeForm.Show();
+            eventForm.Show();
         }
     }
 }

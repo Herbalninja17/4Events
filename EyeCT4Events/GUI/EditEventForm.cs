@@ -12,9 +12,24 @@ namespace EyeCT4Events
 {
     public partial class EditEventForm : Form
     {
+        private List<Event> Events;
+
         public EditEventForm()
         {
             InitializeComponent();
+        }
+
+        public EditEventForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            createEvent = this;
+            this.homeForm = homeForm;
+            Campings = DataCamping.GetCampingList();
+
+            foreach (Camping found in Campings)
+            {
+                cbCreateEventCamping.Items.Add(found.Name);
+            }
         }
 
         /// <summary>
