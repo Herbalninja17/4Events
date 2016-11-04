@@ -43,7 +43,7 @@ namespace EyeCT4Events
             }
         }
 
-        private DateTime EndDate
+        public DateTime EndDate
         {
             get { return endDate; }
             set
