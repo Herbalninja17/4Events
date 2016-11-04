@@ -14,11 +14,20 @@ namespace EyeCT4Events
     {
         private ParticipantsForm participantsForm;
         private MakeReservationForm reservationForm;
+        private List<Person> personlist;
 
         public ParticipantsForm()
         {
             InitializeComponent();
             participantsForm = this;
+            if(Data.DataClasses.DataPerson.GetPersonList() != null)
+            {
+                personlist = Data.DataClasses.DataPerson.GetPersonList();
+                foreach(Person p in personlist)
+                {
+                    lbParticipantsParticipants.Items.Add(p.Email);
+                }
+            }
         }
 
         public ParticipantsForm(MakeReservationForm reservationForm)
