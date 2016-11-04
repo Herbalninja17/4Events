@@ -70,5 +70,11 @@ namespace EyeCT4Events
         {
             eventForm.Show();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            homeForm.Show();
+        }
     }
 }

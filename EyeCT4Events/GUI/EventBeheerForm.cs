@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EyeCT4Events.GUI;
+using EyeCT4Events.Data.DataClasses;
 
 namespace EyeCT4Events
 {
@@ -15,7 +16,7 @@ namespace EyeCT4Events
     {
         private EventBeheerForm eventForm;
         private HomeForm homeForm;
-        
+        private List<Event> Events;
 
         public EventBeheerForm()
         {
@@ -28,6 +29,8 @@ namespace EyeCT4Events
             InitializeComponent();
             eventForm = this;
             this.homeForm = homeForm;
+
+            Events = DataEvent.GetEventList();
         }
 
         /// <summary>
@@ -56,6 +59,12 @@ namespace EyeCT4Events
 
         private void EventBeheerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            homeForm.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
             homeForm.Show();
         }
     }
