@@ -168,7 +168,7 @@ namespace EyeCT4Events
         /// <param name="address">The address of the person</param>
         /// <param name="phonenumber">The Phonenumber of the person</param>
         /// <param name="email">The Email of the person</param>
-        /// <param name="password">The Password of the person</param>
+        /// <param name="password">The Password of the person</param> 
         /// <param name="accountnumber">The Accountnumber of the person</param>
         public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email, string password,string accountnumber)
         {
