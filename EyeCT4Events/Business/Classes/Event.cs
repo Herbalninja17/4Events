@@ -92,8 +92,8 @@ namespace EyeCT4Events
         public override string ToString()
         {
             return Name
-                + " | " + StartDate
-                + " | " + EndDate
+                + " | " + StartDate.ToString("d-M-yyyy")
+                + " | " + EndDate.ToString("d-M-yyyy")
                 + " | " + MaxVisitors
                 + " | " + CurrentVisitors
                 + " | " + Camping.Name
