@@ -23,6 +23,16 @@ namespace EyeCT4Events
         /// <summary>
         /// Taken from the database.
         /// </summary>
+        public string City { get; private set; }
+
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
+        public string Zipcode { get; private set; }
+
+        /// <summary>
+        /// Taken from the database.
+        /// </summary>
         public List<CampingSpot> CampingSpots { get; private set;}
 
         public int Places { get { return CampingSpots.Count; } }
@@ -32,10 +42,12 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="name">The name of the Camping</param>
         /// <param name="places">How many spots the camping has</param>
-        public Camping(string name, string address)
+        public Camping(string name, string address, string city, string zipcode)
         {
             Name = name;
             Address = address;
+            City = city;
+            Zipcode = zipcode;
             CampingSpots = DataCampingSpot.GetCampingSpotList();
         }
 

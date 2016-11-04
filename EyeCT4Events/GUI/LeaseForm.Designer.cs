@@ -46,7 +46,7 @@
             // btnHired
             // 
             this.btnHired.Location = new System.Drawing.Point(24, 23);
-            this.btnHired.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnHired.Margin = new System.Windows.Forms.Padding(6);
             this.btnHired.Name = "btnHired";
             this.btnHired.Size = new System.Drawing.Size(150, 69);
             this.btnHired.TabIndex = 3;
@@ -59,7 +59,7 @@
             this.lbLeaseMaterial.FormattingEnabled = true;
             this.lbLeaseMaterial.ItemHeight = 25;
             this.lbLeaseMaterial.Location = new System.Drawing.Point(24, 238);
-            this.lbLeaseMaterial.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbLeaseMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.lbLeaseMaterial.Name = "lbLeaseMaterial";
             this.lbLeaseMaterial.Size = new System.Drawing.Size(1492, 404);
             this.lbLeaseMaterial.TabIndex = 4;
@@ -77,7 +77,7 @@
             // tbLeaseSearchMaterial
             // 
             this.tbLeaseSearchMaterial.Location = new System.Drawing.Point(1162, 102);
-            this.tbLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbLeaseSearchMaterial.Margin = new System.Windows.Forms.Padding(6);
             this.tbLeaseSearchMaterial.Name = "tbLeaseSearchMaterial";
             this.tbLeaseSearchMaterial.Size = new System.Drawing.Size(354, 31);
             this.tbLeaseSearchMaterial.TabIndex = 6;
@@ -85,7 +85,7 @@
             // nudLeaseQuantity
             // 
             this.nudLeaseQuantity.Location = new System.Drawing.Point(562, 154);
-            this.nudLeaseQuantity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nudLeaseQuantity.Margin = new System.Windows.Forms.Padding(6);
             this.nudLeaseQuantity.Name = "nudLeaseQuantity";
             this.nudLeaseQuantity.Size = new System.Drawing.Size(240, 31);
             this.nudLeaseQuantity.TabIndex = 7;
@@ -93,7 +93,7 @@
             // dtpLeaseEndDate
             // 
             this.dtpLeaseEndDate.Location = new System.Drawing.Point(562, 90);
-            this.dtpLeaseEndDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpLeaseEndDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpLeaseEndDate.Name = "dtpLeaseEndDate";
             this.dtpLeaseEndDate.Size = new System.Drawing.Size(396, 31);
             this.dtpLeaseEndDate.TabIndex = 8;
@@ -101,7 +101,7 @@
             // dtpLeaseStartDate
             // 
             this.dtpLeaseStartDate.Location = new System.Drawing.Point(562, 23);
-            this.dtpLeaseStartDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpLeaseStartDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpLeaseStartDate.Name = "dtpLeaseStartDate";
             this.dtpLeaseStartDate.Size = new System.Drawing.Size(396, 31);
             this.dtpLeaseStartDate.TabIndex = 9;
@@ -139,7 +139,7 @@
             // btnLeaseSearch
             // 
             this.btnLeaseSearch.Location = new System.Drawing.Point(1370, 158);
-            this.btnLeaseSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLeaseSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseSearch.Name = "btnLeaseSearch";
             this.btnLeaseSearch.Size = new System.Drawing.Size(150, 69);
             this.btnLeaseSearch.TabIndex = 13;
@@ -150,7 +150,7 @@
             // btnLeaseLease
             // 
             this.btnLeaseLease.Location = new System.Drawing.Point(1162, 158);
-            this.btnLeaseLease.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLeaseLease.Margin = new System.Windows.Forms.Padding(6);
             this.btnLeaseLease.Name = "btnLeaseLease";
             this.btnLeaseLease.Size = new System.Drawing.Size(150, 69);
             this.btnLeaseLease.TabIndex = 2;
@@ -175,9 +175,10 @@
             this.Controls.Add(this.lbLeaseMaterial);
             this.Controls.Add(this.btnHired);
             this.Controls.Add(this.btnLeaseLease);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LeaseForm";
             this.Text = "Lease";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LeaseForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudLeaseQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

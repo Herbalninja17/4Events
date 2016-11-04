@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace EyeCT4Events
 
         private CreateParticipantForm createForm;
         private ParticipantsForm participantsForm;
+        private HomeForm homeform;
 
         public CreateParticipantForm()
         {
@@ -81,14 +83,19 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnCreateParticipantCreateParticipant_Click(object sender, EventArgs e)
         {
-            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value,tbCreateParticipantStreet.Text,  tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text,tbCreateParticipantRekeningnummer.Text);
+            person = new Person(tbCreateParticipantName.Text, dtpCreateParticipantDateOfBirth.Value,tbCreateParticipantStreet.Text,  tbCreateParticipantZipCode.Text, tbCreateParticipantCity.Text, tbCreateParticipantPhoneNumber.Text, tbCreateParticipantEmail.Text, tbCreateParticipantPassword.Text, Convert.ToInt32(tbCreateParticipantRekeningnummer.Text));
             if (login.CreateUser(person))
             {
                 //btnDeleteParticipant.Enabled = true;
                 //btnEditParticipant.Enabled = true;
                 //btnParticipants.Enabled = true;
 
-                login.LogInUser(person.Email, person.Password);
+                if(login.LogInUser(person.Email, person.Password))
+                {
+                    homeform = new HomeForm();
+                    this.Close();
+                    homeform.Show();
+                }
             }
             else
             {

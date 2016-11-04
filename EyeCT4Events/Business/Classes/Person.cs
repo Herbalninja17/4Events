@@ -161,16 +161,17 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
-        /// To create (or Edit) a person.
+        /// To create a person.
         /// </summary>
         /// <param name="name">Name of the person</param>
         /// <param name="birthDate">The date of birth of the person</param>
         /// <param name="address">The address of the person</param>
+        /// <param name="zipcode">The zipcode of the persons address</param>
         /// <param name="phonenumber">The Phonenumber of the person</param>
         /// <param name="email">The Email of the person</param>
         /// <param name="password">The Password of the person</param> 
         /// <param name="accountnumber">The Accountnumber of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email, string password,string accountnumber)
+        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email, string password, string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
@@ -188,26 +189,18 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
-        /// To log-in a person.
-        /// </summary>
-        /// <param name="email">Username of the person</param>
-        /// <param name="password">Password of the person</param>
-        public Person(string email, string password)
-        {
-            Email = email;
-            Password = password;
-        }
-
-        /// <summary>
-        /// Constructor
         /// For active lists used in this program. Loaded from database.
+        /// And editing.
         /// </summary>
         /// <param name="name">Name of the person</param>
         /// <param name="birthDate">The date of birth of the person</param>
         /// <param name="address">The address of the person</param>
+        /// <param name="zipcode">The zipcode of the persons address</param>
         /// <param name="phonenumber">The phonenumber of the person</param>
         /// <param name="email">The username of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email)
+        /// <param name="accountnumber">The Accountnumber of the person</param>
+        /// <param name="admin">Tells if the person is an admin or not (SHOULD ONLY BE SET IN THE DATABASE)</param>
+        public Person(string name, DateTime birthDate, string address,string zipcode, string city, string phonenumber, string email, string accountnumber, int admin)
         {
             Name = name;
             BirthDate = BirthDate;
@@ -216,6 +209,7 @@ namespace EyeCT4Events
             City = city;
             Phonenumber = phonenumber;
             Email = email;
+            Admin = admin;
         }
 
         public override string ToString()
