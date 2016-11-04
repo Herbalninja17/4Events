@@ -10,12 +10,12 @@ namespace EyeCT4Events.Data.DataClasses
 {
     public class DataMaterial
     {
-        public DataMaterial()
+        public DataMaterial() 
         {
             
         }
 
-        public static Material GetMaterial(int materialID)
+        public static Material GetMaterial(int materialID) 
         {
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag " +
@@ -34,7 +34,7 @@ namespace EyeCT4Events.Data.DataClasses
             return m;
         }
 
-        public static List<Material> AvailableMaterialList()
+        public static List<Material> AvailableMaterialList() 
         {
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT Omschrijving, ProductID, Naam, PrijsPerDag " +
@@ -61,7 +61,7 @@ namespace EyeCT4Events.Data.DataClasses
             return products;
         }
 
-        public static void SetMaterialHired(int materialID)
+        public static void SetMaterialHired(int materialID) 
         {
             Datacom.OpenConnection();
             new SqlCommand("ALTER TABLE Product " +
@@ -70,7 +70,7 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
-        public static List<int> SearchMaterials(string name)
+        public static List<int> SearchMaterials(string name) 
         {
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT ProductID " +
@@ -90,7 +90,7 @@ namespace EyeCT4Events.Data.DataClasses
             return products;
         }
 
-        public static void UpdateMaterial()
+        public static void UpdateMaterial() 
         {
             
         }

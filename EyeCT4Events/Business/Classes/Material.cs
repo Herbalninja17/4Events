@@ -10,26 +10,26 @@ namespace EyeCT4Events
     {
 
         //Properties
-        public int ID { get; private set; } 
+        public int ID { get; private set; }  
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; private set; } 
 
-        public string Description { get; set; } 
+        public string Description { get; set; }  
 
-        public DateTime HuurdatumStart  { get; private set; }
+        public DateTime HuurdatumStart  { get; private set; } 
 
-        public DateTime HuurdatumEind { get; set; }
+        public DateTime HuurdatumEind { get; set; } 
 
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public decimal Price { get; private set; }
+        public decimal Price { get; private set; } 
 
-        public bool Rented { get; set; }
+        public bool Rented { get; set; } 
 
-        public bool IsPayed { get; set; }
+        public bool IsPayed { get; set; } 
 
         /// <summary>
         /// Constructor
@@ -39,7 +39,7 @@ namespace EyeCT4Events
         /// <param name="stock">Amount in stock</param>
         /// <param name="price">price per item.</param>
         /// <param name="isPayed">True: Item is payed for, False: Item is not payed for.</param>
-        public Material(int id, string name, string description, decimal price, bool isPayed)
+        public Material(int id, string name, string description, decimal price, bool isPayed) 
         {
             ID = id;
             Name = name;
@@ -49,7 +49,7 @@ namespace EyeCT4Events
         }
 
         //Methods
-        public void StartHuur(DateTime eindDatum)
+        public void StartHuur(DateTime eindDatum) 
         {
             if(eindDatum < DateTime.Now) { throw new ArgumentOutOfRangeException("eindDatum"); }
 
@@ -57,7 +57,7 @@ namespace EyeCT4Events
             HuurdatumEind = eindDatum;
         }
 
-        public override string ToString()
+        public override string ToString() 
         {
             return $"{Name} - {Description} - {Price}";
         }
