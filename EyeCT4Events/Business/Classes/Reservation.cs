@@ -13,7 +13,7 @@ namespace EyeCT4Events
         /// </summary>
         public int ReservationID { get; private set; }
 
-        public bool EventIsPlayed { get; set; }
+        public bool EventIsRunning{ get; set; }
 
         public List<Person> Persons { get; set; }
 
@@ -27,11 +27,12 @@ namespace EyeCT4Events
         /// Constructor
         /// </summary>
         /// <param name="reservationID">The ID of the reservation</param>
-        /// <param name="eventIsPlayed">If the event is playing or not</param>
-        public Reservation(int reservationID, bool eventIsPlayed, CampingSpot campingSpot)
+        /// <param name="eventIsRunning">If the event is in progress or not</param>
+        /// <param name="campingSpot">Campingspot for the reservation.</param>
+        public Reservation(int reservationID, bool eventIsRunning, CampingSpot campingSpot)
         {
             ReservationID = reservationID;
-            EventIsPlayed = eventIsPlayed;
+            EventIsRunning = eventIsRunning;
             CampingSpot = campingSpot;
         }
 
@@ -125,7 +126,7 @@ namespace EyeCT4Events
         public override string ToString()
         {
             return ReservationID
-                   + " | " + EventIsPlayed
+                   + " | " + EventIsRunning
                    + " | " + Persons.Count
                    + " | " + Materials;
         }
