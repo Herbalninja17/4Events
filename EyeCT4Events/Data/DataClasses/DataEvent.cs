@@ -49,12 +49,15 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 //begin datum en eind datum naar string.
                 DateTime startdatum = eEvent.StartDate;
-                string startDatum = startdatum.ToShortDateString();
+                string startDatum = startdatum.ToString("d/M/yyyy");
                 DateTime einddatum = eEvent.EndDate;
-                string eindDatum = einddatum.ToShortDateString();
+                string eindDatum = einddatum.ToString("d/M/yyyy");
+                int ID = eEvent.Camping.ID;
 
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("INSERT INTO forevent(Naam,startdatum,einddatum) values ('" + eEvent.Name + "', '" + startDatum + "', '" + eindDatum + "';)");
+                SqlCommand cmd;
+                cmd = new SqlCommand("INSERT INTO forevent(CampingID,Naam,startdatum,einddatum) values ('" + ID + "','" + eEvent.Name + "', '" + startDatum + "', '" + eindDatum + "');", Datacom.connect);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

@@ -38,9 +38,18 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToEvent_Click(object sender, EventArgs e)
         {
-            MakeReservationForm makeReservation = new MakeReservationForm(homeForm);
-            makeReservation.Show();
-            this.Hide();
+            if (Login.loggedinUser.Admin == 1)
+            {
+                CreateEventForm createEvent = new CreateEventForm(homeForm);
+                createEvent.Show();
+                this.Hide();
+            }
+            else
+            {
+                MakeReservationForm makeReservation = new MakeReservationForm(homeForm);
+                makeReservation.Show();
+                this.Hide();
+            }
         }
 
         private void btnGoToSocialMedia_Click(object sender, EventArgs e)
@@ -61,6 +70,11 @@ namespace EyeCT4Events.GUI
         {
             _loginForm.Show();
             this.Close();
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

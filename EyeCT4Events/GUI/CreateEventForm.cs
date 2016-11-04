@@ -1,4 +1,5 @@
-﻿using EyeCT4Events.GUI;
+﻿using EyeCT4Events.Data.DataClasses;
+using EyeCT4Events.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,27 @@ namespace EyeCT4Events
 {
     public partial class CreateEventForm : Form
     {
+        private CreateEventForm createEvent;
+        private HomeForm homeForm;
+        private List<Camping> Campings;
+
         public CreateEventForm()
         {
             InitializeComponent();
+            createEvent = this;           
+        }
+
+        public CreateEventForm(HomeForm homeForm)
+        {
+            InitializeComponent();
+            createEvent = this;
+            this.homeForm = homeForm;
+            Campings = DataCamping.GetCampingList();
+
+            foreach (Camping found in Campings)
+            {
+                cbCreateEventCamping.Items.Add(found.Name);
+            }
         }
 
         /// <summary>
@@ -26,16 +45,25 @@ namespace EyeCT4Events
         private void btnCreateEventCreateEvent_Click(object sender, EventArgs e)
         {
             Camping camping = null;
+            if(cbCreateEventCamping.SelectedIndex != -1)
+            {
+                foreach(Camping found in Campings)
+                {
+                    if(found.Name == cbCreateEventCamping.SelectedItem.ToString())
+                    {
+                        camping = found;
+                    }
+                }
+            }
+            if (camping == null) { MessageBox.Show("Geen geldige camping gesellecteerd."); return; }
 
-            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Now || 
-                dtpEndDate.Value < dtpBeginDate.Value || cbCreateEventCamping.SelectedIndex == -1)
-            { MessageBox.Show("Vul alle velden correct in."); return; }
+            if (String.IsNullOrWhiteSpace(tbCreateEventName.Text) || dtpBeginDate.Value <= DateTime.Today || 
+                dtpEndDate.Value < dtpBeginDate.Value) { MessageBox.Show("Vul alle velden correct in."); return; }
 
-            //MOETEN EERST CAMPINGS KUNNEN WORDEN BINNEN GEHAALD UIT DE DATABASE IN IN DE COMBOBOX WORDEN GEPLAATS OM DEZE
-            //METHODE AF TE MAKEN!!!!
+            Event Event = new Event(tbCreateEventName.Text, dtpBeginDate.Value, dtpEndDate.Value, camping);
 
-            //Event newEvent = new Event(tbCreateEventName.Text, address, dtpBeginDate.Value, dtpEndDate.Value, maxVisitors,)
-            //Data.DataClasses.DataEvent.SetEvent(newEvent);
+            DataEvent.SetEvent(Event);
+            MessageBox.Show("Event was created.");
         }
 
         /// <summary>
@@ -58,9 +86,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnDeleteEvent_Click(object sender, EventArgs e)
         {
-            DeleteEventForm def = new DeleteEventForm();
-            this.Close();
-            def.Show();
+            //DeleteEventForm def = new DeleteEventForm();
+            //this.Close();
+            //def.Show();
         }
 
         /// <summary>
@@ -73,6 +101,11 @@ namespace EyeCT4Events
             EditEventForm eef = new EditEventForm();
             this.Close();
             eef.Show();
+        }
+
+        private void CreateEventForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
         }
     }
 }
