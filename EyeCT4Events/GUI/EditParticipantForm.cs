@@ -19,10 +19,13 @@ namespace EyeCT4Events
             //Laat de gegevens zien van de ingelogde gebruiker.
             tbEditParticipantName.Text = Login.loggedinUser.Name;
             tbEditParticipantEmail.Text = Login.loggedinUser.Email;
-            tbEditParticipantCity.Text = Login.loggedinUser.Address;
+            tbEditParticipantCity.Text = Login.loggedinUser.City;
             tbEditParticipantPassword.Text = Login.loggedinUser.Password;
             tbEditParticipantPhoneNumber.Text = Login.loggedinUser.Phonenumber;
             tbEditParticipantAccountNumber.Text = Login.loggedinUser.AccountNumber;
+            tbEditParticipantAdress.Text = Login.loggedinUser.Address;
+            tbEditParticipantZipCode.Text = Login.loggedinUser.ZipCode;
+            dtpEditParticipantDateOfBirth.Value = Login.loggedinUser.BirthDate;
         }
 
         /// <summary>
@@ -37,7 +40,7 @@ namespace EyeCT4Events
             {
                 DateTime dt = dtpEditParticipantDateOfBirth.Value;
                 string date = dt.ToShortDateString();
-                Login.EditUser(tbEditParticipantName.Text, tbEditParticipantEmail.Text, tbEditParticipantPassword.Text, tbEditParticipantAccountNumber.Text, tbEditParticipantCity.Text, tbEditParticipantZipCode.Text, tbEditParticipantPhoneNumber.Text,tbEditParticipantAdress.Text, date);
+                Login.EditUser(tbEditParticipantName.Text, tbEditParticipantEmail.Text, tbEditParticipantPassword.Text, tbEditParticipantAccountNumber.Text, tbEditParticipantCity.Text, tbEditParticipantZipCode.Text,tbEditParticipantAdress.Text, tbEditParticipantPhoneNumber.Text, date);
             }
         }
 
