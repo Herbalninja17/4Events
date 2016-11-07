@@ -68,20 +68,29 @@ namespace EyeCT4Events
         {
             reservation.BeginDate = dtpReservationBeginDate.Value;
             reservation.EndDate = dtpReservationEndDate.Value;
-            string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
-            string eventid = eventids.Split(')')[0];
-            if (Reservation.Map != 0 && eventid != null)
+            if (reservation.BeginDate > reservation.EndDate)
             {
-               if( Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid))
+                MessageBox.Show("De begin datum kan niet later zijn dan de eind datum!");
+            }
+            else
+            {
+
+
+                string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
+                string eventid = eventids.Split(')')[0];
+                if (Reservation.Map != 0 && eventid != null)
                 {
-                    MessageBox.Show("Reservering is aangemaakt!");
-                    ParticipantsForm pf = new ParticipantsForm();
-                    this.Close();
-                    pf.Show();
-                }
-               else
-                {
-                    MessageBox.Show("Reservering is niet aangemaakt!");
+                    if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid))
+                    {
+                        MessageBox.Show("Reservering is aangemaakt!");
+                        ParticipantsForm pf = new ParticipantsForm();
+                        this.Close();
+                        pf.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Reservering is niet aangemaakt!");
+                    }
                 }
             }
 
