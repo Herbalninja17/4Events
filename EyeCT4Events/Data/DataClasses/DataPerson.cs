@@ -417,5 +417,34 @@ namespace EyeCT4Events.Data.DataClasses
             }
             return personpaid;
         }
+        /// <summary>
+        /// Om een persoon te zoeken in de MakeReservationForm.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static List<int> GetSearchedPerson(string name)
+        {
+            List<int> personlist = new List<int>();
+            try
+            {
+                Datacom.OpenConnection();
+                Datacom.command = new SqlCommand("SELECT accountid FROM account WHERE naam like '%" + name + "%'", Datacom.connect);
+                SqlDataReader reader = Datacom.command.ExecuteReader();
+                while (reader.Read())
+                {
+                    personlist.Add(Convert.ToInt32(reader["accountid"]));
+                }
+                return personlist;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
     }
 }

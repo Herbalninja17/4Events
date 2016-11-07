@@ -61,9 +61,16 @@ namespace EyeCT4Events
             cpf.Show();
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            loginForm.Show();
+            if (cbShowPassword.Checked)
+            {
+                tbLoginWachtwoord.PasswordChar = '\0';
+            }
+            else
+            {
+                tbLoginWachtwoord.PasswordChar = '●'; 
+            }
         }
     }
 }
