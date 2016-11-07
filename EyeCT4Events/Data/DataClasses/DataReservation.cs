@@ -42,7 +42,7 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
+        public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
         {
             try
             {                
@@ -91,10 +91,12 @@ namespace EyeCT4Events.Data.DataClasses
                 cmd1.Connection = Datacom.connect;
                 cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID) VALUES ('" + Rid + "', '" + Person.AcID + "');";
                 cmd1.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return false;
             }
             finally
             {
