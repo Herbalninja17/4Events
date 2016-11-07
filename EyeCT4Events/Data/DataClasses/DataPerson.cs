@@ -75,7 +75,7 @@ namespace EyeCT4Events.Data.DataClasses
                     Email = Convert.ToString(reader["email"]);
                     Password = Convert.ToString(reader["wachtwoord"]);
                     int admin = Convert.ToInt32(reader["beheerder"]);
-                    if (email == Email && password == Password && admin != 1)
+                    if (email == Email && password == Password && admin != 1 && Convert.ToString(reader["bruikbaar"]) != "uitgeschakeld")
                     {
                         string date = Convert.ToString(reader["geboortedatum"]);
                         DateTime d;
@@ -84,7 +84,7 @@ namespace EyeCT4Events.Data.DataClasses
                         Login.loginbool = true;
                         return Login.loggedinUser;
                     }
-                    else if (email == Email && password == Password && admin == 1)
+                    else if (email == Email && password == Password && admin == 1 && Convert.ToString(reader["bruikbaar"]) != "uitgeschakeld")
                     {
                         string date = Convert.ToString(reader["geboortedatum"]);
                         DateTime d;
@@ -92,6 +92,10 @@ namespace EyeCT4Events.Data.DataClasses
                         Login.loggedinUser = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Email,Password, admin, Convert.ToString(reader["rekeningnummer"]));
                         Login.loginbool = true;
                         return Login.loggedinUser;
+                    }
+                    else if(email == Email && password == Password && Convert.ToString(reader["bruikbaar"]) == "uitgeschakeld")
+                    {
+                        Login.loginbool = false;
                     }
                 }
             }
