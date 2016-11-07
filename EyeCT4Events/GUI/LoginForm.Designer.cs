@@ -51,7 +51,7 @@
             this.tbLoginWachtwoord.Location = new System.Drawing.Point(202, 112);
             this.tbLoginWachtwoord.Margin = new System.Windows.Forms.Padding(6);
             this.tbLoginWachtwoord.Name = "tbLoginWachtwoord";
-            this.tbLoginWachtwoord.PasswordChar = '*';
+            this.tbLoginWachtwoord.PasswordChar = '●';
             this.tbLoginWachtwoord.Size = new System.Drawing.Size(286, 31);
             this.tbLoginWachtwoord.TabIndex = 1;
             // 
