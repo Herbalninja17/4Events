@@ -90,7 +90,6 @@ namespace EyeCT4Events
                 + " | " + StartDate.ToString("d-M-yyyy")
                 + " | " + EndDate.ToString("d-M-yyyy")
                 + " | " + MaxVisitors
-                + " | " + CurrentVisitors
                 + " | " + Camping.Name
                 ;
         }
