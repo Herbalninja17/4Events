@@ -53,7 +53,33 @@ namespace EyeCT4Events.Data.DataClasses
         {
             
         }
+        public static bool CheckCampingSpot(int campingspotid)
+        {
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select p.* from plaats p inner join reservering r on p.plaatsid = r.PlaatsID inner join forevent e on r.eventid = e.eventid where p.plaatsid = " + campingspotid +  ";", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader[0] != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return true;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
         public static List<CampingSpot> GetCampingSpotList(int campingID)
         {
             Datacom.OpenConnection();

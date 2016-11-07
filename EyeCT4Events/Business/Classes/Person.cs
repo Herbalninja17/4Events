@@ -222,10 +222,14 @@ namespace EyeCT4Events
             Email = email;
             Betaald = betaald;
         }
-
         public Person(string name, string email)
         {
             Name = name;
+            Email = email;
+        }
+
+        public Person(string email)
+        {
             Email = email;
         }
 

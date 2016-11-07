@@ -422,17 +422,18 @@ namespace EyeCT4Events.Data.DataClasses
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static List<int> GetSearchedPerson(string name)
+        public static List<Person> GetSearchedPerson(string name)
         {
-            List<int> personlist = new List<int>();
+            List<Person> personlist = new List<Person>();
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("SELECT accountid FROM account WHERE naam like '%" + name + "%'", Datacom.connect);
+                Datacom.command = new SqlCommand("SELECT email FROM account WHERE naam like '%" + name + "%'", Datacom.connect);
                 SqlDataReader reader = Datacom.command.ExecuteReader();
                 while (reader.Read())
                 {
-                    personlist.Add(Convert.ToInt32(reader["accountid"]));
+                    Person p = new Person(Convert.ToString(reader["email"]));
+                    personlist.Add(p);
                 }
                 return personlist;
             }

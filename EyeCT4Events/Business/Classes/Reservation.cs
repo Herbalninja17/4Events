@@ -13,6 +13,8 @@ namespace EyeCT4Events
         /// Taken from the database (Auto increment).
         /// </summary>
         public int ReservationID { get; private set; }
+        public DateTime BeginDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public bool EventIsRunning{ get; set; }
 
@@ -37,6 +39,12 @@ namespace EyeCT4Events
             CampingSpot = campingSpot;
         }
 
+        public Reservation(DateTime begindate,DateTime enddate)
+        {
+            BeginDate = begindate;
+            EndDate = enddate;
+            Persons = new List<Person>();
+        }
         /// <summary>
         /// Price for the reservation.
         /// </summary>
