@@ -10,12 +10,13 @@ namespace EyeCT4Events.Data.DataClasses
 {
     class DataEvent
     {
+
+        static public List<string> events = new List<string>();
+
         public DataEvent()
         {
             
-        }
-
-        static public List<string> events = new List<string>();
+        }        
 
         public static Event GetEvent()
         {
