@@ -449,7 +449,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         }
 
         [TestMethod]
-        public void Person_Constructor_AllSettingsMinimum()
+        public void Person_Constructor1_AllSettingsMinimum()
         {
             //Arrange
             string name = "Erik Molls";
