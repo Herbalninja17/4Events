@@ -14,9 +14,39 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
 
-        public static CampingSpot GetCampingSpot()
+        public static CampingSpot GetCampingSpot(int spotID)
         {
-            return null;
+            Datacom.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT t.Naam, p.PlaatsID, p.Plaatsnummer, t.Capaciteit, p.Status, t.Prijs " +
+                                            "FROM Plaats p, PType t " +
+                                            "WHERE p.TypeID = t.TypeID " +
+                                           $"AND PlaatsID = {spotID};",
+                                            Datacom.connect);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string name = reader.GetString(0);
+            int place = reader.GetInt32(1);
+            int placenr = reader.GetInt32(2);
+            int capacity = reader.GetInt32(3);
+            string statusString = reader.GetString(4);
+            decimal price = reader.GetDecimal(5);
+
+            SpotType type = (SpotType)Enum.Parse(typeof(SpotType), name);
+            bool status;
+            if (statusString == "Beschikbaar")
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
+
+            CampingSpot spot = new CampingSpot(type, place, placenr, capacity, status, price);
+
+            return spot;
         }
 
         public static void ReserveCampingSpot(int spotID)
@@ -43,7 +73,7 @@ namespace EyeCT4Events.Data.DataClasses
                 int place = reader.GetInt32(2);
                 int capacity = reader.GetInt32(3);
                 string statusString = reader.GetString(4);
-                decimal price = Convert.ToDecimal(reader.GetInt32(5));
+                decimal price = reader.GetDecimal(5);
 
                 //Convert some Values
                 SpotType type = (SpotType) Enum.Parse(typeof(SpotType), name);

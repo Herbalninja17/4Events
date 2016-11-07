@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace EyeCT4Events.Data.DataClasses
 {
@@ -100,19 +101,52 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-
-            
-
-        }
-
-        public static void UpdateReservation()
-        {
-            
         }
 
         public static List<Reservation> GetReservationList()
         {
-            return null;
+            List<Reservation> reservations = new List<Reservation>();
+            Datacom.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT r.PlaatsID, r.ReserveringID, e.StartDatum, e.Einddatum " +
+                                            "FROM Reservering r, ForEvent e " +
+                                            "WHERE r.EventID = e.EventID;");
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                CampingSpot spot = DataCampingSpot.GetCampingSpot(reader.GetInt32(0));
+
+                int reservationID = reader.GetInt32(1);
+
+                string sDate = reader.GetString(2);
+                string eDate = reader.GetString(3);
+                string format = "d-M-yyyy";
+                DateTime startDate = DateTime.ParseExact(sDate, format, CultureInfo.InvariantCulture);
+                DateTime endDate = DateTime.ParseExact(eDate, format, CultureInfo.InvariantCulture);
+
+                bool isRunning;
+                int result1 = DateTime.Compare(startDate, DateTime.Now);
+                int result2 = DateTime.Compare(endDate, DateTime.Now);
+
+                if (result1 > 0 && result2 < 0)
+                {
+                    isRunning = true;
+                }
+                else
+                {
+                    isRunning = false;
+                }
+
+                Reservation reservation = new Reservation(reservationID, isRunning, spot);
+
+                reservations.Add(reservation);
+            }
+
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return reservations;
         }
     }
 }
