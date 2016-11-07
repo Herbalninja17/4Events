@@ -202,7 +202,7 @@ namespace EyeCT4Events
         /// <param name="zipcode">The zipcode of the persons address</param>
         /// <param name="phonenumber">The phonenumber of the person</param>
         /// <param name="email">The username of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email,string password, int admin,string accountnumber)
+        public Person(string name, DateTime birthDate, string address,string zipcode, string city, string phonenumber, string email,string password, int admin,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
@@ -222,6 +222,7 @@ namespace EyeCT4Events
             Email = email;
             Betaald = betaald;
         }
+
         public Person(string name, string email)
         {
             Name = name;
