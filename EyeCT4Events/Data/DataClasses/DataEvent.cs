@@ -183,10 +183,5 @@ namespace EyeCT4Events.Data.DataClasses
 
             return events;
         }
-
-        public static int GetCurrentVisitors()
-        {
-            return 0;
-        }
     }
 }

@@ -45,15 +45,5 @@ namespace EyeCT4Events.Data.DataClasses
 
             return campings;
         }
-
-        public static void SetCamping(Camping camping)
-        {
-            
-        }
-
-        public static void UpdateCamping(Camping camping)
-        {
-            
-        }
     }
 }
