@@ -71,7 +71,6 @@
     <Compile Include="Data\DataClasses\DataPerson.cs" />
     <Compile Include="Data\DataClasses\DataReservation.cs" />
     <Compile Include="Data\DataClasses\RfidCheck.cs" />
-    <Compile Include="GUI\BetaalForm.cs" />
     <Compile Include="GUI\CheckIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,7 +168,6 @@
     <Compile Include="GUI\RfidForm.Designer.cs">
       <DependentUpon>RfidForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SocialMediaFrom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\SocialMediaForm.cs">
