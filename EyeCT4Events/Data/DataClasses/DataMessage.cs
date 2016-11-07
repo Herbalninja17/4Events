@@ -15,11 +15,6 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
 
-        public static Message GetMessage()
-        {
-            return null;
-        }
-
         public static void SetMessage(Message msg, Person poster, File file)
         {
             Datacom.OpenConnection();
