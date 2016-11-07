@@ -80,6 +80,8 @@ namespace EyeCT4Events
         private void btnReservationSearchParticipant_Click(object sender, EventArgs e)
         {
             //Eventueel algemeen zoekForm aanmaken, dan met parameter ervoor zorgen dat het juiste attribuut gezocht wordt.
+            List<int> accountid = Data.DataClasses.DataPerson.GetSearchedPerson(tbReservationSearchParticipant.Text);
+
         }
 
         /// <summary>
