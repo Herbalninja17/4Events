@@ -69,7 +69,7 @@ namespace EyeCT4Events
             }
             else
             {
-                tbLoginWachtwoord.PasswordChar = '●';
+                tbLoginWachtwoord.PasswordChar = '●'; 
             }
         }
     }
