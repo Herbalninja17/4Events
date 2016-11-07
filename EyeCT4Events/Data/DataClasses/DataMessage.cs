@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,9 +54,41 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
 
-        public static List<Message> GetMessageList()
+        public static List<Message> GetMessageList(int fileID)
         {
-            return null;
+            List<Message> messages = new List<Message>();
+
+            Datacom.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT a.Naam, a.Email, r.Bericht, r.ResponseID, r.Datum " +
+                                            "FROM Response r, Account a " +
+                                            "WHERE r.AccountAccountID = a.AccountID " +
+                                           $"AND r.MediaMediaID = {fileID};",
+                                            Datacom.connect);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //Start with creating the poster
+                string name = reader.GetString(0);
+                string email = reader.GetString(1);
+
+                Person p = new Person(name, email);
+
+                //Get the values for the message
+                string messageString = reader.GetString(2);
+                int id = reader.GetInt32(3);
+                string date = reader.GetString(4);
+                DateTime postTime = DateTime.ParseExact(date, "g", CultureInfo.InvariantCulture);
+
+                //Set the message
+                Message message = new Message(p, messageString, id, postTime);
+
+                messages.Add(message);
+            }
+
+            return messages;
         }
     }
 }

@@ -223,6 +223,12 @@ namespace EyeCT4Events
             Betaald = betaald;
         }
 
+        public Person(string name, string email)
+        {
+            Name = name;
+            Email = email;
+        }
+
         public override string ToString()
         {
            return Name

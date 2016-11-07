@@ -74,6 +74,14 @@ namespace EyeCT4Events
             PostTime = postTime;
         }
 
+        public Message(Person poster, string messageString, int messageID, DateTime postTime)
+        {
+            Poster = poster;
+            MessageString = messageString;
+            MessageID = messageID;
+            PostTime = postTime;
+        }
+
         /// <summary>
         /// Constructor
         /// For creating messages.
