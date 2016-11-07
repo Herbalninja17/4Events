@@ -16,6 +16,11 @@ namespace EyeCT4Events.Data.DataClasses
         {
             
         }
+        /// <summary>
+        /// Alleen een admin kan deze methode gebruiken om een account op te vragen.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static Person AdminGetPerson(string email)
         {
             Person p = null ;
@@ -46,6 +51,12 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        /// <summary>
+        /// De ingelogde gebruiker ophalen.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static Person GetPerson(string email, string password)
         {
             try
@@ -131,6 +142,11 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        /// <summary>
+        /// Een nieuw account toevoegen aan de database.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
         public static bool SetPerson(Person person)
         {
             //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
@@ -163,6 +179,11 @@ namespace EyeCT4Events.Data.DataClasses
                 return false;
             }
         }
+        /// <summary>
+        /// Om de admin een persoon te laten wijzigen.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
         public static bool AdminUpdatePerson(Person person)
         {
             try
@@ -187,6 +208,11 @@ namespace EyeCT4Events.Data.DataClasses
             }
 
         }
+        /// <summary>
+        /// De ingelogde gebruiker wijzigen.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
         public static bool UpdatePerson(Person person)
         {
             try
@@ -220,6 +246,11 @@ namespace EyeCT4Events.Data.DataClasses
                 Login.loggedinUser.BirthDate = person.BirthDate;
             }
         }
+        /// <summary>
+        /// Een account verwijderen.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public static bool DeletePerson(Person p)
         {
             try
@@ -239,6 +270,10 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        /// <summary>
+        /// Mensen die niet aanwezig zijn ophalen.
+        /// </summary>
+        /// <returns></returns>
         public static List<Person> GetPersonListNotPresent()
         {
             List<Person> personlist = new List<Person>();
@@ -267,6 +302,10 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        /// <summary>
+        /// Mensen die aanwezig zijn ophalen.
+        /// </summary>
+        /// <returns></returns>
         public static List<Person> GetPersonListPresent()
         {
             List<Person> personlist = new List<Person>();
@@ -296,6 +335,10 @@ namespace EyeCT4Events.Data.DataClasses
             }
             
         }
+        /// <summary>
+        /// Alle accounts die geen beheerder zijn ophalen.
+        /// </summary>
+        /// <returns></returns>
         public static List<Person> GetAllPerson()
         {
             List<Person> personlist = new List<Person>();
@@ -325,6 +368,50 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
+        }
+        /// <summary>
+        /// De betaalstatus ophalen van mensen die aanwezig zijn.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Person> GetPersonPresentPaid()
+        {
+            List<Person> personlist = GetPersonListPresent();
+            List<Person> personpaid = new List<Person>();
+            foreach (Person pe in personlist)
+            {
+                try
+                {
+                    Datacom.OpenConnection();
+                    Datacom.command = new SqlCommand("select distinct r.betaaldstatus from reservering r inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.Email = '" + pe.Email + "';", Datacom.connect);
+                    SqlDataReader reader = Datacom.command.ExecuteReader();
+                    Person p;
+                    if (reader.HasRows == true)
+                    {
+                        while (reader.Read() && reader.HasRows == true)
+                        {
+                            if (Convert.ToString(reader["betaaldstatus"]) != null)
+                            {
+                                p = new Person(pe.Name, pe.Email, Convert.ToString(reader["betaaldstatus"]));
+                                personpaid.Add(p);
+                            }
+                        }
+                    }
+                    else if (reader.HasRows == false)
+                    {
+                        p = new Person(pe.Name, pe.Email, "");
+                        personpaid.Add(p);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    Datacom.CloseConnection();
+                }
+            }
+            return personpaid;
         }
     }
 }

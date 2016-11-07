@@ -159,6 +159,8 @@ namespace EyeCT4Events
         /// </summary>
         public int Admin { get; private set; }
 
+        public string Betaald { get; private set; }
+
         public List<Reservation> Reservations { get; set; }
 
         /// <summary>
@@ -212,6 +214,13 @@ namespace EyeCT4Events
             Password = password;
             Admin = admin;
             AccountNumber = accountnumber;
+        }
+
+        public Person(string name,string email, string betaald)
+        {
+            Name = name;
+            Email = email;
+            Betaald = betaald;
         }
 
         public override string ToString()

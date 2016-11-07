@@ -16,6 +16,7 @@ namespace EyeCT4Events
         private MakeReservationForm reservationForm;
         private List<Person> personpresentlist;
         private List<Person> personnotpresentlist;
+        private List<Person> personpresentpaidlist;
 
         public ParticipantsForm()
         {
@@ -96,6 +97,30 @@ namespace EyeCT4Events
             HiredMaterialForm hiredMaterialForm = new HiredMaterialForm();
             hiredMaterialForm.Show();
             this.Close();
+        }
+        /// <summary>
+        /// Knop om de betaalstatus van de aanwezigen te laten zien.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnParticipantsPaid_Click(object sender, EventArgs e)
+        {
+            lbParticipantsPresent.Items.Clear();
+            if(Data.DataClasses.DataPerson.GetPersonPresentPaid() != null)
+            {
+                personpresentpaidlist = Data.DataClasses.DataPerson.GetPersonPresentPaid();
+                foreach(Person p in personpresentpaidlist)
+                {
+                    if (p.Betaald != null && p.Betaald != "")
+                    {
+                        lbParticipantsPresent.Items.Add("Naam: " + p.Name + " Email: " + p.Email + " Betaald: " + p.Betaald);
+                    }
+                    else if(p.Betaald == "")
+                    {
+                        lbParticipantsPresent.Items.Add("Naam: " + p.Name + " Email: " + p.Email + " Betaald: Niet betaald");
+                    }
+                }
+            }
         }
     }
 }
