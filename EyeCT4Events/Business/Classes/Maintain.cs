@@ -17,6 +17,7 @@ namespace EyeCT4Events
         {
             Events = new List<Event>();
             Persons = new List<Person>();
+            Campings = new List<Camping>();
         }
 
         public bool AddPerson(Person person)
