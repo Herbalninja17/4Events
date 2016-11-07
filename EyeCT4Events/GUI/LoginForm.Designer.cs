@@ -35,12 +35,13 @@
             this.btnLoginLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoginCreateAccount = new System.Windows.Forms.Button();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbLoginEmail
             // 
             this.tbLoginEmail.Location = new System.Drawing.Point(202, 23);
-            this.tbLoginEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbLoginEmail.Margin = new System.Windows.Forms.Padding(6);
             this.tbLoginEmail.Name = "tbLoginEmail";
             this.tbLoginEmail.Size = new System.Drawing.Size(288, 31);
             this.tbLoginEmail.TabIndex = 0;
@@ -48,8 +49,9 @@
             // tbLoginWachtwoord
             // 
             this.tbLoginWachtwoord.Location = new System.Drawing.Point(202, 112);
-            this.tbLoginWachtwoord.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbLoginWachtwoord.Margin = new System.Windows.Forms.Padding(6);
             this.tbLoginWachtwoord.Name = "tbLoginWachtwoord";
+            this.tbLoginWachtwoord.PasswordChar = '*';
             this.tbLoginWachtwoord.Size = new System.Drawing.Size(286, 31);
             this.tbLoginWachtwoord.TabIndex = 1;
             // 
@@ -75,8 +77,8 @@
             // 
             // btnLoginLogin
             // 
-            this.btnLoginLogin.Location = new System.Drawing.Point(280, 188);
-            this.btnLoginLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLoginLogin.Location = new System.Drawing.Point(315, 188);
+            this.btnLoginLogin.Margin = new System.Windows.Forms.Padding(6);
             this.btnLoginLogin.Name = "btnLoginLogin";
             this.btnLoginLogin.Size = new System.Drawing.Size(150, 44);
             this.btnLoginLogin.TabIndex = 4;
@@ -96,8 +98,8 @@
             // 
             // btnLoginCreateAccount
             // 
-            this.btnLoginCreateAccount.Location = new System.Drawing.Point(280, 269);
-            this.btnLoginCreateAccount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLoginCreateAccount.Location = new System.Drawing.Point(315, 269);
+            this.btnLoginCreateAccount.Margin = new System.Windows.Forms.Padding(6);
             this.btnLoginCreateAccount.Name = "btnLoginCreateAccount";
             this.btnLoginCreateAccount.Size = new System.Drawing.Size(150, 94);
             this.btnLoginCreateAccount.TabIndex = 6;
@@ -105,11 +107,23 @@
             this.btnLoginCreateAccount.UseVisualStyleBackColor = true;
             this.btnLoginCreateAccount.Click += new System.EventHandler(this.btnLoginCreatAccount_Click);
             // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.Location = new System.Drawing.Point(29, 197);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(252, 29);
+            this.cbShowPassword.TabIndex = 7;
+            this.cbShowPassword.Text = "Laat wachtwoord zien";
+            this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 392);
+            this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.btnLoginCreateAccount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoginLogin);
@@ -117,10 +131,9 @@
             this.Controls.Add(this.lblLoginEmail);
             this.Controls.Add(this.tbLoginWachtwoord);
             this.Controls.Add(this.tbLoginEmail);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LoginForm";
             this.Text = "Login";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +148,7 @@
         private System.Windows.Forms.Button btnLoginLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoginCreateAccount;
+        private System.Windows.Forms.CheckBox cbShowPassword;
     }
 }
 

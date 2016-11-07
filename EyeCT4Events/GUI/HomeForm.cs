@@ -68,15 +68,19 @@ namespace EyeCT4Events.GUI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            _loginForm.Show();
             this.Close();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             EditParticipantForm epf = new EditParticipantForm();
-            this.Close();
+            this.Hide();
             epf.Show();
+        }
+
+        private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _loginForm.Show();
         }
     }
 }
