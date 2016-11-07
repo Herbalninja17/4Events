@@ -164,3 +164,4 @@ C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\Ey
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources
+D:\Kevin\Documents\School\Events2\EyeCT4Events\bin\Debug\EyeCT4Events.exe.config
