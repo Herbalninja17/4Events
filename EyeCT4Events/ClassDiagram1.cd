@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EyeCT4Events.Camping" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAgAAIAAAAAAQAAAAAAAAGAEAAAQQAAQA=</HashCode>
+      <FileName>Business\Classes\Camping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.CampingSpot" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQgAAAAEAEAAAAACAAhAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Classes\CampingSpot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Event" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAQAAEAGIAAAQgAAAEAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Business\Classes\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.File" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQAIQAEAEAAAAAAAAAAAAEAAQAkAAAAJAAAA=</HashCode>
+      <FileName>Business\Classes\File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Login" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAQAAAAAEAAAAAAAAAAAAAQAAQAAAAAAAAgA=</HashCode>
+      <FileName>Business\Classes\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Maintain" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAAAQIAAFAYAAAAAEAAgCAABAgAAAAAIEAAEA=</HashCode>
+      <FileName>Business\Classes\Maintain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Material" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAAAAQAggAAEAAAAAAQACACAAAAAAAAAAACAAAE=</HashCode>
+      <FileName>Business\Classes\Material.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Message" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAEAAAQBAAAEAAEABAABAAAAAA=</HashCode>
+      <FileName>Business\Classes\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Person" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAAsFAAASQQAAEoEAAADBAAAAgAAAAE=</HashCode>
+      <FileName>Business\Classes\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Reservation" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAEAARAAAAAFAAAAAAAAAACAAgAAAAAAAAEAAUA=</HashCode>
+      <FileName>Business\Classes\Reservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.CreateEventForm" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAiAAACAAAAACAIDEAQACIAEAACAFAAAAACAAAIA=</HashCode>
+      <FileName>GUI\CreateEventForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.CreateParticipantForm" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQigAWQAICAAABHgAACAAAAGAAgCAQAAMAEBAACAkgA=</HashCode>
+      <FileName>GUI\CreateParticipantForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.EditEventForm" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kABANAAAICGEBEBBAIDAIBACAgAAAACAEkAQAAgAA4A=</HashCode>
+      <FileName>GUI\EditEventForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.EditParticipantForm" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAoAAAgGBDAEEAQAChAAACKIBEEgAAACAMAYAABhA=</HashCode>
+      <FileName>GUI\EditParticipantForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.EventBeheerForm" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAGAAAEABAADAACACIgAAAIAAAAAAAAACAIA=</HashCode>
+      <FileName>GUI\EventBeheerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.HiredMaterialForm" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACCAAAAAAAACAAAACIAAAAAAAwAAAAQAAAAA=</HashCode>
+      <FileName>GUI\HiredMaterialForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.LeaseForm" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAghAACAiAAAAAASAAAIKEAEAQEABAIAABAAEAIA=</HashCode>
+      <FileName>GUI\LeaseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.LoginForm" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAwAAiAAIJEAAACABAACAAAAAAAAAAQAAAAkEAA=</HashCode>
+      <FileName>GUI\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.MakeReservationForm" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIIAAADCAQAAAAAACEgAQCIBAAACAEBkIEAICAAIA=</HashCode>
+      <FileName>GUI\MakeReservationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.MapForm" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAACAAABAQAACAAAACAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GUI\MapForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.MyReservationsForm" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAICCACAQAACABAAAAAAAACAAACAAIA=</HashCode>
+      <FileName>GUI\MyReservationsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.ParticipantsForm" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQACgIICAAABAABACAAAACAACAAIAAFDgAAAAABAA=</HashCode>
+      <FileName>GUI\ParticipantsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.SocialMediaForm" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAEACCCAAAAAACAAAACIAAAAAgIAAAAAAAQAIA=</HashCode>
+      <FileName>GUI\SocialMediaForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.SocialMediaFrom" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GUI\SocialMediaFrom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.UploadForm" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAAAAAAACAAAASEAABAIAAUAAAAAAIAAA=</HashCode>
+      <FileName>GUI\UploadForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Program" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataCamping" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEAAAAAAAAAAgAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataClasses\DataCamping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataCampingSpot" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataClasses\DataCampingSpot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataEvent" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAEAAAAAAgAAACEAAAAAIAAAAAAAAACAA=</HashCode>
+      <FileName>Data\DataClasses\DataEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataFile" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAIAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAA=</HashCode>
+      <FileName>Data\DataClasses\DataFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataMaterial" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAIAAAAAAAAAAIAAAAAAAAAAAAAAAEAgAAQAA=</HashCode>
+      <FileName>Data\DataClasses\DataMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataMessage" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataClasses\DataMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataPerson" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAASAAACAAAAAAAAAAAAAAAAIAIAACAAQAQAgAACA=</HashCode>
+      <FileName>Data\DataClasses\DataPerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.DataClasses.DataReservation" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAEAAAABAAAQEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataClasses\DataReservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Business.Classes.RfidCheck" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAIBAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Data\DataClasses\RfidCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Data.Datacom" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAABAIAQQAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataGeneral\Datacom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.GUI.BetaalForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GUI\BetaalForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.GUI.CheckIn" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAQAACAAABEAAACAAAECAAAYIAAAEGAAAAEAEAA=</HashCode>
+      <FileName>GUI\CheckIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.GUI.HomeForm" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAICUhAgKAAABgAAACAAAECAAAAAAAAFAAAAACAAIQ=</HashCode>
+      <FileName>GUI\HomeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.GUI.MessageForm" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAABCAAAACACAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>GUI\MessageForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.GUI.RfidForm" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAARAgGAAABAIAACAAIACAAAQIgAAAgAiAAAgBAA=</HashCode>
+      <FileName>GUI\RfidForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EyeCT4Events.Properties.Settings" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="EyeCT4Events.SpotType" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAIQAAAAAIAAAAAAAAAACACAAIAAAAAAA=</HashCode>
+      <FileName>Business\Enums\SpotType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
