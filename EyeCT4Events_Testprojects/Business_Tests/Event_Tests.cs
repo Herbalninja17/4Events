@@ -156,7 +156,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string testString = Event.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Landora | " + date1 + " | " + date2 + " | 0 | 0 | Awesomeville");
+            Assert.IsTrue(testString == "Landora | " + date1 + " | " + date2 + " | 0 | Awesomeville");
         }
     }
 }
