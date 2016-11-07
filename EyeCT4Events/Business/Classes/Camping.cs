@@ -60,7 +60,7 @@ namespace EyeCT4Events
         /// <returns></returns>
         public List<CampingSpot> FreeCampingSpots(SpotType type)
         {
-            List<CampingSpot> campingSpots = null;
+            List<CampingSpot> campingSpots = new List<CampingSpot>();
 
             foreach (CampingSpot found in CampingSpots)
             {
@@ -78,7 +78,7 @@ namespace EyeCT4Events
         /// <returns>List of free camping spots.</returns>
         public List<CampingSpot> FreeCampingSpots()
         {
-            List<CampingSpot> campingSpots = null;
+            List<CampingSpot> campingSpots = new List<CampingSpot>();
 
             foreach(CampingSpot found in CampingSpots)
             {
@@ -96,7 +96,7 @@ namespace EyeCT4Events
         /// <returns>list of reserved camping spots.</returns>
         public List<CampingSpot> ReservedCampingSpots()
         {
-            List<CampingSpot> campingSpots = null;
+            List<CampingSpot> campingSpots = new List<CampingSpot>();
 
             foreach (CampingSpot found in CampingSpots)
             {

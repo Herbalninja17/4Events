@@ -42,6 +42,8 @@ namespace EyeCT4Events
         /// </summary>
         public int PreviousMessageID { get { return previousMessageID; } private set { } }
 
+        public DateTime PostTime { get; private set; }
+
         /// <summary>
         /// Person that wrote the message.
         /// </summary>
@@ -63,12 +65,21 @@ namespace EyeCT4Events
         /// <param name="messageID">ID of the message.</param>
         /// <param name="previousMessageID">ID of the previous message.</param>
         /// <param name="poster">Person who posted the message.</param>
-        public Message(string messageString, int messageID, int previousMessageID, Person poster)
+        public Message(string messageString, int messageID, int previousMessageID, Person poster, DateTime postTime)
         {
             MessageString = messageString;
             MessageID = messageID;
             PreviousMessageID = previousMessageID;
             Poster = poster;
+            PostTime = postTime;
+        }
+
+        public Message(Person poster, string messageString, int messageID, DateTime postTime)
+        {
+            Poster = poster;
+            MessageString = messageString;
+            MessageID = messageID;
+            PostTime = postTime;
         }
 
         /// <summary>
@@ -77,12 +88,13 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="messageString">The actual message.</param>
         /// <param name="poster">Person who posted the message.</param>
-        public Message(string messageString, Person poster)
+        public Message(string messageString, Person poster, DateTime postTime)
         {
             MessageString = messageString;
             MessageID = messageID;
             PreviousMessageID = previousMessageID;
             Poster = poster;
+            PostTime = postTime;
         }
 
         /// <summary>
@@ -92,11 +104,12 @@ namespace EyeCT4Events
         /// <param name="messageString">The actual message.</param>
         /// <param name="messageString">MessageID of the message that is reacted to.</param>
         /// <param name="poster">Person who posted the message.</param>
-        public Message(string messageString, int previousMessageID, Person poster)
+        public Message(string messageString, int previousMessageID, Person poster, DateTime postTime)
         {
             MessageString = messageString;
             PreviousMessageID = previousMessageID;
             Poster = poster;
+            PostTime = postTime;
         }
 
         //methods
