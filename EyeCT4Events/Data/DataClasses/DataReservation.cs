@@ -42,7 +42,7 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-        public static void SetReservation(int pID, string bet, string sDatum, string eDatum, string x)
+        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string x)
         {
             try
             {                
