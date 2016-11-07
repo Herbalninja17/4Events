@@ -113,10 +113,5 @@ namespace EyeCT4Events.Data.DataClasses
 
             return products;
         }
-
-        public static void UpdateMaterial() 
-        {
-            
-        }
     }
 }

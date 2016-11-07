@@ -51,11 +51,11 @@ namespace EyeCT4Events
         private void btnReservationsReservations_Click(object sender, EventArgs e)
         {
             //string x = lbReservationEvents.SelectedItem.ToString();
-            
+
             //Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
 
-            MyReservationsForm reservationForm = new MyReservationsForm(makeReservationForm);
-            reservationForm.Show();
+            HomeForm hf = new HomeForm();
+            hf.Show();
             this.Close();
         }
 

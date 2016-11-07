@@ -46,12 +46,23 @@ namespace EyeCT4Events.Data.DataClasses
 
             CampingSpot spot = new CampingSpot(type, place, placenr, capacity, status, price);
 
+            Datacom.CloseConnection();
+
             return spot;
         }
 
         public static void ReserveCampingSpot(int spotID)
         {
-            
+            Datacom.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand("UPDATE Plaats " +
+                                            "SET Status = 'Verhuurd' " +
+                                            $"WHERE PlaatsID = {spotID};",
+                                            Datacom.connect);
+
+            cmd.ExecuteNonQuery();
+
+            Datacom.CloseConnection();
         }
         public static bool CheckCampingSpot(int campingspotid)
         {

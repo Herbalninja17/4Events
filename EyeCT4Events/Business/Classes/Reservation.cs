@@ -112,16 +112,28 @@ namespace EyeCT4Events
 
         public bool AddPerson(Person person)
         {
-            foreach (Person p in Persons)
+            if (Persons.Count == 0)
             {
-                if (p == person)
+                Persons = new List<Person>();
+                Persons.Add(person);
+                return true;
+            }
+            else
+            {
+                foreach (Person p in Persons)
                 {
-                    return false;
+                    if (p.Email == person.Email)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        Persons.Add(person);
+                        return true;
+                    }
                 }
             }
-
-            Persons.Add(person);
-            return true;
+                return false;
         }
 
         public bool RemovePerson(Person person)
