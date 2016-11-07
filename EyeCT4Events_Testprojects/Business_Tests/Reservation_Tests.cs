@@ -43,11 +43,10 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            bool running = false;
             CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
             Material mat1 = new Material(11, "USB", "2 Meter", 5, true, true);
             Material mat2 = new Material(12, "Tent", "4 persoons", 15, true, true);
-            Reservation test = new Reservation(ID, running, spot);
+            Reservation test = new Reservation(ID, spot);
             test.Materials.Add(mat1);
             test.Materials.Add(mat2);
 

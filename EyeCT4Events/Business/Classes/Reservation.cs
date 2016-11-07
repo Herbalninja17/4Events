@@ -39,6 +39,18 @@ namespace EyeCT4Events
             ReservationID = reservationID;
             EventIsRunning = eventIsRunning;
             CampingSpot = campingSpot;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// For calculating the price for the reservation.
+        /// </summary>
+        /// <param name="reservationID">The ID of the reservation</param>
+        /// <param name="campingSpot">Campingspot for the reservation.</param>
+        public Reservation(int reservationID, CampingSpot campingSpot)
+        {
+            ReservationID = reservationID;
+            CampingSpot = campingSpot;
 
             Materials = new List<Material>();
         }
