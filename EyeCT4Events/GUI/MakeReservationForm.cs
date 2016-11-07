@@ -16,6 +16,8 @@ namespace EyeCT4Events
     {
         private HomeForm homeForm;
         private MakeReservationForm makeReservationForm;
+        private List<Person> searchedperson;
+        Reservation reservation;
 
         public MakeReservationForm()
         {
@@ -48,9 +50,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsReservations_Click(object sender, EventArgs e)
         {
-            string x = lbReservationEvents.SelectedItem.ToString();
+            //string x = lbReservationEvents.SelectedItem.ToString();
             
-            Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
+            //Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
 
             MyReservationsForm reservationForm = new MyReservationsForm(makeReservationForm);
             reservationForm.Show();
@@ -62,12 +64,26 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-        
-
         private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
         {
-            
+            reservation.BeginDate = dtpReservationBeginDate.Value;
+            reservation.EndDate = dtpReservationEndDate.Value;
+            string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
+            string eventid = eventids.Split(')')[0];
+            if (Reservation.Map != 0 && eventid != null)
+            {
+               if( Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid))
+                {
+                    MessageBox.Show("Reservering is aangemaakt!");
+                    ParticipantsForm pf = new ParticipantsForm();
+                    this.Close();
+                    pf.Show();
+                }
+               else
+                {
+                    MessageBox.Show("Reservering is niet aangemaakt!");
+                }
+            }
 
             //Alle info inladen en opsturen naar de Data klasse, hierin verwerken tot een format dat in de database past.
         }
@@ -80,8 +96,11 @@ namespace EyeCT4Events
         private void btnReservationSearchParticipant_Click(object sender, EventArgs e)
         {
             //Eventueel algemeen zoekForm aanmaken, dan met parameter ervoor zorgen dat het juiste attribuut gezocht wordt.
-            List<int> accountid = Data.DataClasses.DataPerson.GetSearchedPerson(tbReservationSearchParticipant.Text);
-
+            searchedperson = Data.DataClasses.DataPerson.GetSearchedPerson(tbReservationSearchParticipant.Text);
+            foreach(Person p in searchedperson)
+            {
+                lbReservationParticipants.Items.Add(p.Email);
+            }
         }
 
         /// <summary>
@@ -92,6 +111,15 @@ namespace EyeCT4Events
         private void btnReservationAddParticipant_Click(object sender, EventArgs e)
         {
             //Geselecteerde deelnemer toevoegen.
+            Person selectedperson = new Person(Convert.ToString(lbReservationParticipants.SelectedItem));
+            if (reservation.AddPerson(selectedperson))
+            {
+                MessageBox.Show("Persoon is toegevoegd.");
+            }
+            else
+            {
+                MessageBox.Show("Persoon is niet toegevoegd.");
+            }
         }
 
         /// <summary>
@@ -112,6 +140,15 @@ namespace EyeCT4Events
             foreach (string i in DataEvent.events)
             {
                 lbReservationEvents.Items.Add(i);
+            }
+            reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
+            if (reservation.AddPerson(Login.loggedinUser))
+            {
+                MessageBox.Show("U bent toegevoegd aan de reservering.");
+            }
+            else
+            {
+                MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
             }
         }
     }

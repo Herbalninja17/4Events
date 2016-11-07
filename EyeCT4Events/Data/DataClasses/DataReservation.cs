@@ -23,12 +23,12 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "Select F.Naam, F.StartDatum, F.EindDatum From ForEvent F, Reservering R, AccountReservering A Where F.EventID = R.EventID And R.ReserveringID = A.ReserveringReserveringID And A.AccountAccountID = '"+ Person.AcID +"' ";
+                cmd.CommandText = "Select F.Naam as Naam, F.StartDatum as StartDatum, F.EindDatum as EindDatum From ForEvent F, Reservering R, AccountReservering A Where F.EventID = R.EventID And R.ReserveringID = A.ReserveringReserveringID And A.AccountAccountID = '"+ Person.AcID +"' ";
                 cmd.ExecuteNonQuery();                  //execute het query
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    rlist.Add(Convert.ToString(reader["EventID"]) + ")" + Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
+                    rlist.Add(Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
                 }
             }
             catch (Exception e)
@@ -42,7 +42,7 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
+        public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
         {
             try
             {                
@@ -91,10 +91,12 @@ namespace EyeCT4Events.Data.DataClasses
                 cmd1.Connection = Datacom.connect;
                 cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID) VALUES ('" + Rid + "', '" + Person.AcID + "');";
                 cmd1.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return false;
             }
             finally
             {
