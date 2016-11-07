@@ -9,12 +9,12 @@ namespace EyeCT4Events.Data.DataClasses
 {
     class DataReservation
     {
+        static public List<string> rlist = new List<string>();
+
         public DataReservation()
         {
             
-        }
-
-        static public List<string> rlist = new List<string>();
+        }    
 
         public static Reservation GetReservation()
         {
