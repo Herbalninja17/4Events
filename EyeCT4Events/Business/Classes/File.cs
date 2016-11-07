@@ -11,7 +11,6 @@ namespace EyeCT4Events
         private string title;
         private int fileID;
         private string fileName;
-        private string fileType;
 
         private static string[] acceptedExtensions = {"jpg", "jpeg", "png", "gif"};
 
@@ -58,7 +57,7 @@ namespace EyeCT4Events
         /// Transmitting of the actual file happens on the FORM and DAL
         /// </summary>
         /// <param name="title">Title of the file</param>
-        /// <param name="title">Full path of the file</param>
+        /// <param name="fileName">Full path of the file</param>
         /// <param name="fileType">The document type of the file</param>
         /// <param name="fileID">The ID of the file</param>
         /// <param name="poster">The person who posted the file</param>
@@ -66,7 +65,7 @@ namespace EyeCT4Events
         {
             Title = title;
             FileName = fileName;
-            FileID = fileID; //LAATSTE OPHALEN UIT DATABASE?
+            this.fileID = fileID;
             Poster = poster;
             FileType = fileType;
         }
@@ -95,8 +94,8 @@ namespace EyeCT4Events
         public string CheckFileType(string fileName)
         {
             string extension = FileName.ToLower();
-            int checkType = extension.LastIndexOf("." + 1);
-            extension = extension.Substring(checkType);
+            int checkType = extension.LastIndexOf(".");
+            extension = extension.Substring(checkType + 1);
 
             foreach(string found in acceptedExtensions)
             {
