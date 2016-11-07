@@ -49,11 +49,6 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
-        public static void UpdateMessage()
-        {
-            
-        }
-
         public static List<Message> GetMessageList(int fileID)
         {
             List<Message> messages = new List<Message>();
