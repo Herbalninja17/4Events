@@ -30,7 +30,7 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand("select p.* from plaats p inner join reservering r on p.plaatsid = r.PlaatsID inner join forevent e on r.eventid = e.eventid where p.plaatsid = " + campingspotid +  ";", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (reader[0] != null)
+                if (reader.HasRows)
                 {
                     return true;
                 }
@@ -43,7 +43,7 @@ namespace EyeCT4Events.Data.DataClasses
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return true;
+                return false;
             }
             finally
             {
