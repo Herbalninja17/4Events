@@ -42,14 +42,15 @@ namespace EyeCT4Events.Data.DataClasses
             return null;
         }
 
-        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string x)
+        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
         {
             try
             {                
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "INSERT INTO Reservering(PlaatsID, BetaaldStatus, StartDatum, EindDatum, EventID) VALUES ('" + pID + "','" + bet + "', '" + sDatum + "', '" + eDatum + "', '" + Convert.ToUInt32(x) + "' );";
+                cmd.CommandText = "INSERT INTO Reservering(PlaatsID, BetaaldStatus, StartDatum, EindDatum, EventID) VALUES ('" + plaatsID 
+                    + "','" + betaaldStatus + "', '" + startDatum + "', '" + eindDatum + "', '" + Convert.ToUInt32(eventID) + "' );";
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
