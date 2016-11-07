@@ -56,11 +56,6 @@ namespace EyeCT4Events
         public int MaxVisitors { get { return camping.Places; } }
 
         /// <summary>
-        /// Taken from the database.
-        /// </summary>
-        public int CurrentVisitors { get { return DataEvent.GetCurrentVisitors(); } }
-
-        /// <summary>
         /// Take from dropdownbox
         /// </summary>
         public Camping Camping
