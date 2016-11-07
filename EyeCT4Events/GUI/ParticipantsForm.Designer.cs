@@ -36,6 +36,7 @@
             this.lbParticipantsNotPresent = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnParticipantsPaid = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEvents
@@ -112,11 +113,22 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Afwezig:";
             // 
+            // btnParticipantsPaid
+            // 
+            this.btnParticipantsPaid.Location = new System.Drawing.Point(385, 12);
+            this.btnParticipantsPaid.Name = "btnParticipantsPaid";
+            this.btnParticipantsPaid.Size = new System.Drawing.Size(109, 35);
+            this.btnParticipantsPaid.TabIndex = 34;
+            this.btnParticipantsPaid.Text = "Aanwezig met betaaldstatus";
+            this.btnParticipantsPaid.UseVisualStyleBackColor = true;
+            this.btnParticipantsPaid.Click += new System.EventHandler(this.btnParticipantsPaid_Click);
+            // 
             // ParticipantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 382);
+            this.Controls.Add(this.btnParticipantsPaid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbParticipantsNotPresent);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.ListBox lbParticipantsNotPresent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnParticipantsPaid;
     }
 }
