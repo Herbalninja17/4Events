@@ -10,12 +10,6 @@ namespace EyeCT4Events.Business.Classes
 {
     class RfidCheck
     {
-
-        public RfidCheck()
-        {
-
-        }
-
         public void CheckInFisrtTime(string rfidcode, string account)
         {
             int AcID = 0; ;
