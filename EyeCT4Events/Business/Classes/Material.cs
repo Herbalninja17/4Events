@@ -66,7 +66,7 @@ namespace EyeCT4Events
 
         public override string ToString() 
         {
-            return $"{Name} - {Description} - {Price}";
+            return $"{Name} | {Description} | {Price}";
         }
     }
 }

@@ -13,10 +13,12 @@ namespace EyeCT4Events
         /// Taken from the database (Auto increment).
         /// </summary>
         public int ReservationID { get; private set; }
+
         public DateTime BeginDate { get; set; }
+
         public DateTime EndDate { get; set; }
 
-        public bool EventIsRunning{ get; set; }
+        public bool EventIsRunning { get; set; }
 
         public List<Person> Persons { get; set; }
 
@@ -37,14 +39,35 @@ namespace EyeCT4Events
             ReservationID = reservationID;
             EventIsRunning = eventIsRunning;
             CampingSpot = campingSpot;
+
+            Persons = new List<Person>();
+            Materials = new List<Material>();
         }
 
-        public Reservation(DateTime begindate,DateTime enddate)
+        /// <summary>
+        /// Constructor
+        /// For calculating the price for the reservation.
+        /// </summary>
+        /// <param name="reservationID">The ID of the reservation</param>
+        /// <param name="campingSpot">Campingspot for the reservation.</param>
+        public Reservation(int reservationID, CampingSpot campingSpot)
+        {
+            ReservationID = reservationID;
+            CampingSpot = campingSpot;
+
+            Persons = new List<Person>();
+            Materials = new List<Material>();
+        }
+
+        public Reservation(DateTime begindate, DateTime enddate)
         {
             BeginDate = begindate;
             EndDate = enddate;
+
             Persons = new List<Person>();
+            Materials = new List<Material>();
         }
+
         /// <summary>
         /// Price for the reservation.
         /// </summary>
@@ -52,7 +75,7 @@ namespace EyeCT4Events
         private decimal CalculateTotalPrice()
         {
             decimal price = 0;
-            if(CampingSpot != null)
+            if (CampingSpot != null)
             {
                 price += CampingSpot.Price;
             }
@@ -113,7 +136,7 @@ namespace EyeCT4Events
                 Persons.Add(person);
                 return true;
             }
-            else
+            else if (Persons.Count < 8)
             {
                 foreach (Person p in Persons)
                 {
@@ -121,21 +144,18 @@ namespace EyeCT4Events
                     {
                         return false;
                     }
-                    else
-                    {
-                        Persons.Add(person);
-                        return true;
-                    }
                 }
+                Persons.Add(person);
+                return true;
             }
-                return false;
+            return false;
         }
 
         public bool RemovePerson(Person person)
         {
             foreach (Person p in Persons)
             {
-                if (p == person)
+                if (p.Email == person.Email)
                 {
                     Persons.Remove(p);
                     return true;
@@ -146,10 +166,52 @@ namespace EyeCT4Events
 
         public override string ToString()
         {
-            return ReservationID
-                   + " | " + EventIsRunning
-                   + " | " + Persons.Count
-                   + " | " + Materials;
+            string eventIsRunning = "";
+            if(EventIsRunning)
+            {
+                eventIsRunning = "Evenement loopt | ";
+            }
+            else if(DateTime.Today < BeginDate)
+            {
+                eventIsRunning = "Evenement start op " + BeginDate.ToString("d/M/yyyy") + " | ";
+            }
+            else if(BeginDate == default(DateTime) && !EventIsRunning)
+            {
+                eventIsRunning = "";
+            }
+            else
+            {
+                eventIsRunning = "Evenement is voorbij | ";
+            }
+
+            string materials = "";
+            if(Materials.Count > 0)
+            {
+                int lastIndex = Materials.Count();
+                materials = "Gehuurde materialen: ";
+
+                for(int i = 0; i < lastIndex; i++)
+                {
+                    if(i == lastIndex - 1)
+                    {
+                        materials += Materials[i].Name;
+                    }
+                    else
+                    {
+                        materials += Materials[i].Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                materials = "Geen materialen gehuurd";
+            }
+            
+
+            return "Reserverings ID: " + ReservationID
+                   + " | " + eventIsRunning
+                   + "Personen: " + Persons.Count // '|' is given with the eventIsRunning string.
+                   + " | " + materials;
         }
     }
 }

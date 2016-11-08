@@ -42,6 +42,8 @@
             this.dtpReservationEndDate = new System.Windows.Forms.DateTimePicker();
             this.tbReservationSearchParticipant = new System.Windows.Forms.TextBox();
             this.btnParticipants = new System.Windows.Forms.Button();
+            this.lbReservationPeopleInReservation = new System.Windows.Forms.ListBox();
+            this.lblReservationPeopleInReservation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbReservationEvents
@@ -87,7 +89,7 @@
             this.lbReservationParticipants.FormattingEnabled = true;
             this.lbReservationParticipants.Location = new System.Drawing.Point(232, 164);
             this.lbReservationParticipants.Name = "lbReservationParticipants";
-            this.lbReservationParticipants.Size = new System.Drawing.Size(462, 212);
+            this.lbReservationParticipants.Size = new System.Drawing.Size(214, 212);
             this.lbReservationParticipants.TabIndex = 4;
             // 
             // btnReservationSearchParticipant
@@ -159,11 +161,30 @@
             this.btnParticipants.UseVisualStyleBackColor = true;
             this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
             // 
+            // lbReservationPeopleInReservation
+            // 
+            this.lbReservationPeopleInReservation.FormattingEnabled = true;
+            this.lbReservationPeopleInReservation.Location = new System.Drawing.Point(494, 177);
+            this.lbReservationPeopleInReservation.Name = "lbReservationPeopleInReservation";
+            this.lbReservationPeopleInReservation.Size = new System.Drawing.Size(200, 199);
+            this.lbReservationPeopleInReservation.TabIndex = 13;
+            // 
+            // lblReservationPeopleInReservation
+            // 
+            this.lblReservationPeopleInReservation.AutoSize = true;
+            this.lblReservationPeopleInReservation.Location = new System.Drawing.Point(491, 161);
+            this.lblReservationPeopleInReservation.Name = "lblReservationPeopleInReservation";
+            this.lblReservationPeopleInReservation.Size = new System.Drawing.Size(118, 13);
+            this.lblReservationPeopleInReservation.TabIndex = 14;
+            this.lblReservationPeopleInReservation.Text = "Personen in reservering";
+            // 
             // MakeReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 390);
+            this.Controls.Add(this.lblReservationPeopleInReservation);
+            this.Controls.Add(this.lbReservationPeopleInReservation);
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.tbReservationSearchParticipant);
             this.Controls.Add(this.dtpReservationEndDate);
@@ -200,5 +221,7 @@
         private System.Windows.Forms.DateTimePicker dtpReservationEndDate;
         private System.Windows.Forms.TextBox tbReservationSearchParticipant;
         private System.Windows.Forms.Button btnParticipants;
+        private System.Windows.Forms.ListBox lbReservationPeopleInReservation;
+        private System.Windows.Forms.Label lblReservationPeopleInReservation;
     }
 }

@@ -32,6 +32,8 @@ namespace EyeCT4Events
             {
                 Reservation.Map = Convert.ToInt32(comboBox2.Text);
                 this.Close();
+                MakeReservationForm mrf = new MakeReservationForm();
+                mrf.Show();
             }
         }
     }
