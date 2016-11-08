@@ -35,7 +35,7 @@
             // lbPaid
             // 
             this.lbPaid.FormattingEnabled = true;
-            this.lbPaid.Location = new System.Drawing.Point(403, 23);
+            this.lbPaid.Location = new System.Drawing.Point(12, 23);
             this.lbPaid.Name = "lbPaid";
             this.lbPaid.Size = new System.Drawing.Size(214, 251);
             this.lbPaid.TabIndex = 0;
@@ -43,7 +43,7 @@
             // lblPaid
             // 
             this.lblPaid.AutoSize = true;
-            this.lblPaid.Location = new System.Drawing.Point(400, 7);
+            this.lblPaid.Location = new System.Drawing.Point(12, 7);
             this.lblPaid.Name = "lblPaid";
             this.lblPaid.Size = new System.Drawing.Size(90, 13);
             this.lblPaid.TabIndex = 1;
