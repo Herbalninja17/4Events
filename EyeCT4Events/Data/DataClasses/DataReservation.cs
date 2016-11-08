@@ -8,17 +8,16 @@ using System.Globalization;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataReservation
+    public static class DataReservation
     {
         static public List<string> rlist = new List<string>();
 
-        public DataReservation()
+        /// <summary>
+        /// Gets a list of all reservations in the database.
+        /// </summary>
+        public static void GetReservation()
         {
-            
-        }    
-
-        public static Reservation GetReservation()
-        {
+            rlist.Clear();
             try
             {
                 Datacom.OpenConnection();
@@ -29,7 +28,7 @@ namespace EyeCT4Events.Data.DataClasses
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    rlist.Add(Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
+                    rlist.Add(Convert.ToString(reader["Naam"]) + " Van: " + Convert.ToString(reader["StartDatum"]) + " Tot: " + Convert.ToString(reader["EindDatum"]));
                 }
             }
             catch (Exception e)
@@ -40,9 +39,17 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-            return null;
         }
 
+        /// <summary>
+        /// Inserts a reservation into the database
+        /// </summary>
+        /// <param name="plaatsID">Plaats ID</param>
+        /// <param name="betaaldStatus">Payment Status</param>
+        /// <param name="startDatum">Start Date</param>
+        /// <param name="eindDatum">End Date</param>
+        /// <param name="eventID">Event ID</param>
+        /// <returns>bool (true for succes)</returns>
         public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
         {
             try
@@ -105,6 +112,10 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        /// <summary>
+        /// Gets a list of reservations
+        /// </summary>
+        /// <returns>List of reservations</returns>
         public static List<Reservation> GetReservationList()
         {
             List<Reservation> reservations = new List<Reservation>();
@@ -150,6 +161,12 @@ namespace EyeCT4Events.Data.DataClasses
 
             return reservations;
         }
+
+        /// <summary>
+        /// Gets a list wich contains the reservations of the logged in person
+        /// </summary>
+        /// <param name="loggedinP">Person</param>
+        /// <returns>List of reservations</returns>
         public static List<string> GetReservationsLoggedInPerson(Person loggedinP)
         {
             List<string> list = new List<string>();

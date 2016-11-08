@@ -11,12 +11,8 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataFile
+    public static class DataFile
     {
-        public DataFile()
-        {
-            
-        }
 
         //Kom er niet uit! Zou best totaal anders moeten dan hoe ik het probeer.
         //public static Bitmap DownloadFile()

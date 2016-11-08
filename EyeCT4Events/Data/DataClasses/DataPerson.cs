@@ -7,20 +7,16 @@ using System.Data.SqlClient;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataPerson
+    public static class DataPerson
     {
         private static string Email;
         private static string Password;
 
-        public DataPerson()
-        {
-            
-        }
         /// <summary>
-        /// Alleen een admin kan deze methode gebruiken om een account op te vragen.
+        /// Only an admin can use this method to get a person by email.
         /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
+        /// <param name="email">Email</param>
+        /// <returns>Person</returns>
         public static Person AdminGetPerson(string email)
         {
             Person p = null ;
@@ -52,11 +48,11 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// De ingelogde gebruiker ophalen.
+        /// Gets the logged in user.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
+        /// <param name="email">Email</param>
+        /// <param name="password">Password</param>
+        /// <returns>Logged in User</returns>
         public static Person GetPerson(string email, string password)
         {
             try
@@ -112,7 +108,11 @@ namespace EyeCT4Events.Data.DataClasses
             return Login.loggedinUser;
         }
 
-        //check of email al in de database voor komt, moet niet true zijn
+        /// <summary>
+        /// Checks of an email already exists in the database.
+        /// </summary>
+        /// <param name="person">Person</param>
+        /// <returns>Bool (False to continue)</returns>
         public static bool CheckPerson(Person person)
         {
             string email = "";
@@ -147,13 +147,13 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Een nieuw account toevoegen aan de database.
+        /// Inserts a new account in the database.
         /// </summary>
-        /// <param name="person"></param>
-        /// <returns></returns>
+        /// <param name="person">Person</param>
+        /// <returns>bool (true for succes)</returns>
         public static bool SetPerson(Person person)
         {
-            //Zorgt ervoor dat er alleen een dag,maand en jaar wordt meegegeven.
+            //Makes sure that the date format is Day, Month, Year
             string datetime = person.BirthDate.ToShortDateString();
 
             if (CheckPerson(person) == false)
@@ -184,10 +184,10 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Om de admin een persoon te laten wijzigen.
+        /// An admin can update a person.
         /// </summary>
-        /// <param name="person"></param>
-        /// <returns></returns>
+        /// <param name="person">Person</param>
+        /// <returns>bool (true for succes)</returns>
         public static bool AdminUpdatePerson(Person person)
         {
             try
@@ -213,10 +213,10 @@ namespace EyeCT4Events.Data.DataClasses
 
         }
         /// <summary>
-        /// De ingelogde gebruiker wijzigen.
+        /// An user can update his profile.
         /// </summary>
-        /// <param name="person"></param>
-        /// <returns></returns>
+        /// <param name="person">Person</param>
+        /// <returns>bool (true for succes)</returns>
         public static bool UpdatePerson(Person person)
         {
             try
@@ -251,10 +251,10 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Een account verwijderen.
+        /// Disables an account.
         /// </summary>
-        /// <param name="p"></param>
-        /// <returns></returns>
+        /// <param name="p">Person</param>
+        /// <returns>bool (true for succes)</returns>
         public static bool DeletePerson(Person p)
         {
             try
@@ -275,9 +275,9 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Mensen die niet aanwezig zijn ophalen.
+        /// Gets all people who aren't Present (checked in).
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of People</returns>
         public static List<Person> GetPersonListNotPresent()
         {
             List<Person> personlist = new List<Person>();
@@ -307,9 +307,9 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Mensen die aanwezig zijn ophalen.
+        /// Gets all peaople who are Present (checked in).
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of People</returns>
         public static List<Person> GetPersonListPresent()
         {
             List<Person> personlist = new List<Person>();
@@ -340,9 +340,9 @@ namespace EyeCT4Events.Data.DataClasses
             
         }
         /// <summary>
-        /// Alle accounts die geen beheerder zijn ophalen.
+        /// Gets all accounts who aren't admin.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of Accounts</returns>
         public static List<Person> GetAllPerson()
         {
             List<Person> personlist = new List<Person>();
@@ -374,9 +374,9 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// De betaalstatus ophalen van mensen die aanwezig zijn.
+        /// Gets a list of people who are present and their payment status.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of People</returns>
         public static List<Person> GetPersonPresentPaid()
         {
             List<Person> personlist = GetPersonListPresent();
@@ -418,10 +418,10 @@ namespace EyeCT4Events.Data.DataClasses
             return personpaid;
         }
         /// <summary>
-        /// Om een persoon te zoeken in de MakeReservationForm.
+        /// Searches for a specific person to add in the MakeReservationForm.
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">Name</param>
+        /// <returns>List of People</returns>
         public static List<Person> GetSearchedPerson(string name)
         {
             List<Person> personlist = new List<Person>();

@@ -150,7 +150,6 @@ namespace EyeCT4Events
         private void MakeReservationForm_Load(object sender, EventArgs e)
         {
             lbReservationEvents.Items.Clear();
-            DataEvent.events.Clear();
 
             DataEvent.GetEvent();
             

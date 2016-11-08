@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataCampingSpot
+    public static class DataCampingSpot
     {
-        public DataCampingSpot()
-        {
-            
-        }
-
+        /// <summary>
+        /// Gets a campingspot from the database with a certain spotID.
+        /// </summary>
+        /// <param name="spotID">Spot ID</param>
+        /// <returns></returns>
         public static CampingSpot GetCampingSpot(int spotID)
         {
             Datacom.OpenConnection();
@@ -51,6 +51,10 @@ namespace EyeCT4Events.Data.DataClasses
             return spot;
         }
 
+        /// <summary>
+        /// Sets a camping spot to occupied (Verhuurd) with a certain spot ID
+        /// </summary>
+        /// <param name="spotID">Spot ID</param>
         public static void ReserveCampingSpot(int spotID)
         {
             Datacom.OpenConnection();
@@ -64,6 +68,12 @@ namespace EyeCT4Events.Data.DataClasses
 
             Datacom.CloseConnection();
         }
+
+        /// <summary>
+        /// Gets the max number of people from a camping spot.
+        /// </summary>
+        /// <param name="plaatsid">Plaats ID</param>
+        /// <returns>Capacity</returns>
         public static int GetCampingSpotCapacity(int plaatsid)
         {
             int capacity = 0;
@@ -89,6 +99,13 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        /// <summary>
+        /// Checks of a campingspot is occupied between a certain period of time.
+        /// </summary>
+        /// <param name="campingspotid">Campingspot ID</param>
+        /// <param name="begindate">Start Date</param>
+        /// <param name="enddate">End Date</param>
+        /// <returns>Occupied status (bool)</returns>
         public static bool CheckCampingSpot(int campingspotid,string begindate,string enddate)
         {
             try
@@ -116,6 +133,12 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+
+        /// <summary>
+        /// Gets a list of all campingspots from the database of a certain camping
+        /// </summary>
+        /// <param name="campingID">Camping ID</param>
+        /// <returns>List of campingspots</returns>
         public static List<CampingSpot> GetCampingSpotList(int campingID)
         {
             Datacom.OpenConnection();

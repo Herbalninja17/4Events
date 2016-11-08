@@ -8,19 +8,17 @@ using System.Globalization;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataEvent
+    public static class DataEvent
     {
 
         static public List<string> events = new List<string>();
 
-        public DataEvent()
+        /// <summary>
+        /// Sets the static string list and fills it with event data
+        /// </summary>
+        public static void GetEvent()
         {
-            
-        }        
-
-        public static Event GetEvent()
-        {
-            
+            events.Clear();         
             try
             {
                 Datacom.OpenConnection();
@@ -42,9 +40,12 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-            return null;
         }
 
+        /// <summary>
+        /// Inserts a new event into the database.
+        /// </summary>
+        /// <param name="eEvent">Event</param>
         public static void SetEvent(Event eEvent)
         {
             try
@@ -71,6 +72,11 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        /// <summary>
+        /// Searches for an event name wich contains a portion of the input value.
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <returns>List of events</returns>
         public static List<Event> SearchEvents(string name)
         {
             Datacom.OpenConnection();
@@ -117,6 +123,10 @@ namespace EyeCT4Events.Data.DataClasses
             return events;
         }
 
+        /// <summary>
+        /// Updates an existing event with new values
+        /// </summary>
+        /// <param name="eEvent">Event</param>
         public static void UpdateEvent(Event eEvent)
         {
             try
@@ -140,6 +150,10 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        /// <summary>
+        /// Gets a list of all events from the database
+        /// </summary>
+        /// <returns>List of Events</returns>
         public static List<Event> GetEventList()
         {
             Datacom.OpenConnection();
@@ -180,7 +194,6 @@ namespace EyeCT4Events.Data.DataClasses
                 //Add Event to list
                 events.Add(eEvent);
             }
-
             return events;
         }
     }
