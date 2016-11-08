@@ -111,11 +111,11 @@ namespace EyeCT4Events
                 personpresentpaidlist = Data.DataClasses.DataPerson.GetPersonPresentPaid();
                 foreach(Person p in personpresentpaidlist)
                 {
-                    if (p.Betaald != null && p.Betaald != "")
+                    if (p.Payed != null && p.Payed != "")
                     {
-                        lbParticipantsPresent.Items.Add("Naam: " + p.Name + " Email: " + p.Email + " Betaald: " + p.Betaald);
+                        lbParticipantsPresent.Items.Add("Naam: " + p.Name + " Email: " + p.Email + " Betaald: " + p.Payed);
                     }
-                    else if(p.Betaald == "")
+                    else if(p.Payed == "")
                     {
                         lbParticipantsPresent.Items.Add("Naam: " + p.Name + " Email: " + p.Email + " Betaald: Niet betaald");
                     }

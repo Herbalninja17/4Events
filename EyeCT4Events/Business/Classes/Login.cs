@@ -11,20 +11,28 @@ namespace EyeCT4Events
 {
     public class Login
     {
+        //Fields
         public static Person loggedinUser;
         public static bool loginbool;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public Login()
         {
-            
+
         }
+
+        //Methods
+
         /// <summary>
-        /// Maak een nieuw account aan.
+        /// To create a new account.
         /// </summary>
-        /// <param name="person"></param>
+        /// <param name="person">Person details for the new account.</param>
+        /// <returns>true: new account is created | false: person (email) already exists in the database</returns>
         public bool CreateUser(Person person)
         {
-            if(Data.DataClasses.DataPerson.SetPerson(person))
+            if (Data.DataClasses.DataPerson.SetPerson(person))
             {
                 return true;
             }
@@ -33,13 +41,13 @@ namespace EyeCT4Events
                 return false;
             }
         }
+
         /// <summary>
-        /// Check of de ingevulde gegevens overeenkomen met een account.
-        /// Log dat account in.
+        /// To log in as a specific person.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
+        /// <param name="email">Email (username) for the account.</param>
+        /// <param name="password">Password for the account.</param>
+        /// <returns>true: User is found in the database, User is logged in | false: User does not exist in the database.</returns>
         public bool LogInUser(string email, string password)
         {
             loggedinUser = Data.DataClasses.DataPerson.GetPerson(email, password);
@@ -53,19 +61,20 @@ namespace EyeCT4Events
                 return false;
             }
         }
+
         /// <summary>
-        /// Methode om gebruiker te wijzigen.
+        /// Method to change a users details.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <param name="accountnumber"></param>
-        /// <param name="adress"></param>
-        /// <param name="zipcode"></param>
-        /// <param name="phonenumber"></param>
-        /// <param name="birthdate"></param>
-        /// <returns></returns>
-        public static void EditUser(string name,string email,string password,string accountnumber, string city,string zipcode, string adress, string phonenumber,string birthdate)
+        /// <param name="name">Name of the user.</param>
+        /// <param name="email">Email of the user.</param>
+        /// <param name="password">Password of the user.</param>
+        /// <param name="accountnumber">Banking account number.</param>
+        /// <param name="city">City the user lives in.</param>
+        /// <param name="zipcode">Zipcode for the users address.</param>
+        /// <param name="adress">Street and number the user lives at.</param>
+        /// <param name="phonenumber">Phonenumber of the user.</param>
+        /// <param name="birthdate">Date the user was born.</param>
+        public static void EditUser(string name, string email, string password, string accountnumber, string city, string zipcode, string adress, string phonenumber, string birthdate)
         {
             DateTime dt = DateTime.Parse(birthdate);
             Person editperson = new Person(name, dt, adress, zipcode, city, phonenumber, email, password, accountnumber);
@@ -76,7 +85,7 @@ namespace EyeCT4Events
                     MessageBox.Show("Wijziging is gelukt.");
                 }
             }
-            else if(loggedinUser.Admin == 1)
+            else if (loggedinUser.Admin == 1)
             {
                 if (Data.DataClasses.DataPerson.AdminUpdatePerson(editperson))
                 {
@@ -84,6 +93,12 @@ namespace EyeCT4Events
                 }
             }
         }
+
+        /// <summary>
+        /// To 'delete' (set to inactive as is mandatory by law) a user from the database.
+        /// </summary>
+        /// <param name="p">Person to be deleted.</param>
+        /// <returns>true: person is no longer available from the database | false: person does not exist in the database.</returns>
         public static bool DeleteUser(Person p)
         {
             if (Data.DataClasses.DataPerson.DeletePerson(p))
