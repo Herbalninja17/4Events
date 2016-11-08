@@ -44,6 +44,7 @@
             this.btnParticipants = new System.Windows.Forms.Button();
             this.lbReservationPeopleInReservation = new System.Windows.Forms.ListBox();
             this.lblReservationPeopleInReservation = new System.Windows.Forms.Label();
+            this.lblReservations = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbReservationEvents
@@ -136,6 +137,7 @@
             this.dtpReservationBeginDate.Name = "dtpReservationBeginDate";
             this.dtpReservationBeginDate.Size = new System.Drawing.Size(200, 20);
             this.dtpReservationBeginDate.TabIndex = 9;
+            this.dtpReservationBeginDate.ValueChanged += new System.EventHandler(this.dtpReservationBeginDate_ValueChanged);
             // 
             // dtpReservationEndDate
             // 
@@ -143,6 +145,7 @@
             this.dtpReservationEndDate.Name = "dtpReservationEndDate";
             this.dtpReservationEndDate.Size = new System.Drawing.Size(200, 20);
             this.dtpReservationEndDate.TabIndex = 10;
+            this.dtpReservationEndDate.ValueChanged += new System.EventHandler(this.dtpReservationEndDate_ValueChanged);
             // 
             // tbReservationSearchParticipant
             // 
@@ -178,11 +181,21 @@
             this.lblReservationPeopleInReservation.TabIndex = 14;
             this.lblReservationPeopleInReservation.Text = "Personen in reservering";
             // 
+            // lblReservations
+            // 
+            this.lblReservations.AutoSize = true;
+            this.lblReservations.Location = new System.Drawing.Point(501, 50);
+            this.lblReservations.Name = "lblReservations";
+            this.lblReservations.Size = new System.Drawing.Size(122, 13);
+            this.lblReservations.TabIndex = 15;
+            this.lblReservations.Text = "Vul als eerst de datum in";
+            // 
             // MakeReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 390);
+            this.Controls.Add(this.lblReservations);
             this.Controls.Add(this.lblReservationPeopleInReservation);
             this.Controls.Add(this.lbReservationPeopleInReservation);
             this.Controls.Add(this.btnParticipants);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.Button btnParticipants;
         private System.Windows.Forms.ListBox lbReservationPeopleInReservation;
         private System.Windows.Forms.Label lblReservationPeopleInReservation;
+        private System.Windows.Forms.Label lblReservations;
     }
 }

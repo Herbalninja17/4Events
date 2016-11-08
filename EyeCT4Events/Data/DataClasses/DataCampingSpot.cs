@@ -64,12 +64,12 @@ namespace EyeCT4Events.Data.DataClasses
 
             Datacom.CloseConnection();
         }
-        public static bool CheckCampingSpot(int campingspotid)
+        public static bool CheckCampingSpot(int campingspotid,string begindate,string enddate)
         {
             try
             {
                 Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select p.* from plaats p inner join reservering r on p.plaatsid = r.PlaatsID inner join forevent e on r.eventid = e.eventid where p.plaatsid = " + campingspotid +  ";", Datacom.connect);
+                SqlCommand cmd = new SqlCommand("select p.* from plaats p inner join reservering r on p.plaatsid = r.PlaatsID inner join forevent e on r.eventid = e.eventid where p.plaatsid = " + campingspotid + " and (convert(date,'" + begindate + "',105) between convert(date,r.startdatum,105) and convert(date,r.einddatum,105) OR convert(date,'" + enddate + "',105) between convert(date,r.startdatum,105) and convert(date,r.einddatum,105));", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {

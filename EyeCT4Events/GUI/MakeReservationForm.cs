@@ -18,6 +18,8 @@ namespace EyeCT4Events
         private MakeReservationForm makeReservationForm;
         private List<Person> searchedperson;
         Reservation reservation;
+        private bool begindatechanged = false;
+        private bool enddatechanged = false;
 
         public MakeReservationForm()
         {
@@ -39,6 +41,8 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsLocation_Click(object sender, EventArgs e)
         {
+            MapForm.begindate = dtpReservationBeginDate.Value.ToShortDateString();
+            MapForm.enddate = dtpReservationEndDate.Value.ToShortDateString();
             this.Close();
             MapForm mapForm = new MapForm();
             mapForm.Show();
@@ -145,12 +149,15 @@ namespace EyeCT4Events
 
         private void MakeReservationForm_Load(object sender, EventArgs e)
         {
-            DataEvent.GetEvent();
             lbReservationEvents.Items.Clear();
+            DataEvent.GetEvent();
+            
             foreach (string i in DataEvent.events)
             {
                 lbReservationEvents.Items.Add(i);
             }
+            btnReservationsLocation.Visible = false;
+            btnReservationsLocation.Enabled = false;
             btnReservationAddParticipant.Visible = false;
             btnReservationAddParticipant.Enabled = false;
             btnReservationSearchParticipant.Visible = false;
@@ -163,6 +170,9 @@ namespace EyeCT4Events
             tbReservationSearchParticipant.Enabled = false;
             if (Reservation.Map > 0)
             {
+                dtpReservationBeginDate.Value = DateTime.Parse(MapForm.begindate);
+                dtpReservationEndDate.Value = DateTime.Parse(MapForm.enddate);
+
                 reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
                 if (reservation.AddPerson(Login.loggedinUser))
                 {
@@ -173,18 +183,41 @@ namespace EyeCT4Events
                 {
                     MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
                 }
-                
-                    btnReservationAddParticipant.Visible = true;
-                    btnReservationAddParticipant.Enabled = true;
-                    btnReservationSearchParticipant.Visible = true;
-                    btnReservationSearchParticipant.Enabled = true;
-                    btnReservationsMakeReservation.Visible = true;
-                    btnReservationsMakeReservation.Enabled = true;
-                    lbReservationParticipants.Enabled = true;
-                    lbReservationParticipants.Visible = true;
-                    tbReservationSearchParticipant.Visible = true;
-                    tbReservationSearchParticipant.Enabled = true;
-                
+
+                lblReservations.Visible = false;
+                btnReservationAddParticipant.Visible = true;
+                btnReservationAddParticipant.Enabled = true;
+                btnReservationSearchParticipant.Visible = true;
+                btnReservationSearchParticipant.Enabled = true;
+                btnReservationsMakeReservation.Visible = true;
+                btnReservationsMakeReservation.Enabled = true;
+                lbReservationParticipants.Enabled = true;
+                lbReservationParticipants.Visible = true;
+                tbReservationSearchParticipant.Visible = true;
+                tbReservationSearchParticipant.Enabled = true;
+            }
+        }
+
+        private void dtpReservationBeginDate_ValueChanged(object sender, EventArgs e)
+        {
+            begindatechanged = true;
+            if(begindatechanged && enddatechanged)
+            {
+                btnReservationsLocation.Visible = true;
+                btnReservationsLocation.Enabled = true;
+                lblReservations.Visible = false;
+            }
+
+        }
+
+        private void dtpReservationEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            enddatechanged = true;
+            if (begindatechanged && enddatechanged)
+            {
+                btnReservationsLocation.Visible = true;
+                btnReservationsLocation.Enabled = true;
+                lblReservations.Visible = false;
             }
         }
     }
