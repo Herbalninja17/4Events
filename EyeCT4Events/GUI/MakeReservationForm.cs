@@ -86,9 +86,9 @@ namespace EyeCT4Events
                     if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid))
                     {
                         MessageBox.Show("Reservering is aangemaakt!");
-                        ParticipantsForm pf = new ParticipantsForm();
+                        HomeForm hf = new HomeForm();
                         this.Close();
-                        pf.Show();
+                        hf.Show();
                     }
                     else
                     {
@@ -150,6 +150,8 @@ namespace EyeCT4Events
         private void MakeReservationForm_Load(object sender, EventArgs e)
         {
             lbReservationEvents.Items.Clear();
+            DataEvent.events.Clear();
+
             DataEvent.GetEvent();
             
             foreach (string i in DataEvent.events)
@@ -170,31 +172,35 @@ namespace EyeCT4Events
             tbReservationSearchParticipant.Enabled = false;
             if (Reservation.Map > 0)
             {
-                dtpReservationBeginDate.Value = DateTime.Parse(MapForm.begindate);
-                dtpReservationEndDate.Value = DateTime.Parse(MapForm.enddate);
-
-                reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
-                if (reservation.AddPerson(Login.loggedinUser))
+                Reservation.Capacity = DataCampingSpot.GetCampingSpotCapacity(Reservation.Map);
+                if (Reservation.Capacity > 0)
                 {
-                    MessageBox.Show("U bent toegevoegd aan de reservering.");
-                    lbReservationPeopleInReservation.Items.Add(Login.loggedinUser.Email);
-                }
-                else
-                {
-                    MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
-                }
+                    dtpReservationBeginDate.Value = DateTime.Parse(MapForm.begindate);
+                    dtpReservationEndDate.Value = DateTime.Parse(MapForm.enddate);
 
-                lblReservations.Visible = false;
-                btnReservationAddParticipant.Visible = true;
-                btnReservationAddParticipant.Enabled = true;
-                btnReservationSearchParticipant.Visible = true;
-                btnReservationSearchParticipant.Enabled = true;
-                btnReservationsMakeReservation.Visible = true;
-                btnReservationsMakeReservation.Enabled = true;
-                lbReservationParticipants.Enabled = true;
-                lbReservationParticipants.Visible = true;
-                tbReservationSearchParticipant.Visible = true;
-                tbReservationSearchParticipant.Enabled = true;
+                    reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
+                    if (reservation.AddPerson(Login.loggedinUser))
+                    {
+                        MessageBox.Show("U bent toegevoegd aan de reservering.");
+                        lbReservationPeopleInReservation.Items.Add(Login.loggedinUser.Email);
+                    }
+                    else
+                    {
+                        MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
+                    }
+
+                    lblReservations.Visible = false;
+                    btnReservationAddParticipant.Visible = true;
+                    btnReservationAddParticipant.Enabled = true;
+                    btnReservationSearchParticipant.Visible = true;
+                    btnReservationSearchParticipant.Enabled = true;
+                    btnReservationsMakeReservation.Visible = true;
+                    btnReservationsMakeReservation.Enabled = true;
+                    lbReservationParticipants.Enabled = true;
+                    lbReservationParticipants.Visible = true;
+                    tbReservationSearchParticipant.Visible = true;
+                    tbReservationSearchParticipant.Enabled = true;
+                }
             }
         }
 

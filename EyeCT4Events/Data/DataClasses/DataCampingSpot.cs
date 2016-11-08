@@ -64,6 +64,31 @@ namespace EyeCT4Events.Data.DataClasses
 
             Datacom.CloseConnection();
         }
+        public static int GetCampingSpotCapacity(int plaatsid)
+        {
+            int capacity = 0;
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT pt.capaciteit from ptype pt inner join plaats p on pt.typeid = p.typeid where p.plaatsid = " + plaatsid + ";", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    capacity = Convert.ToInt32(reader["capaciteit"]);
+                }
+                return capacity;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return capacity;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
+
         public static bool CheckCampingSpot(int campingspotid,string begindate,string enddate)
         {
             try
