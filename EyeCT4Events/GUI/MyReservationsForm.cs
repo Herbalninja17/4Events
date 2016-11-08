@@ -53,5 +53,12 @@ namespace EyeCT4Events
             }
             
         }
+
+        private void btnPayReservation_Click(object sender, EventArgs e)
+        {
+            BetaalForm bf = new BetaalForm();
+            bf.Show();
+            this.Close();
+        }
     }
 }
