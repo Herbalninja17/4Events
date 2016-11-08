@@ -174,7 +174,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
 
             Person p1 = new Person("Ben", DateTime.Today.AddDays(-2000), "Maryl street", "1122NN", "testVille", "064433224411", "banaantje@shakeit.hot", "ww1", "ABC 123456789");
@@ -213,7 +213,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
 
             Person p1 = new Person("Ben", DateTime.Today.AddDays(-2000), "Maryl street", "1122NN", "testVille", "064433224411", "banaantje@shakeit.hot", "ww1", "ABC 123456789");
@@ -260,7 +260,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
 
             Person p1 = new Person("Ben", DateTime.Today.AddDays(-2000), "Maryl street", "1122NN", "testVille", "064433224411", "banaantje@shakeit.hot", "ww1", "ABC 123456789");
@@ -291,6 +291,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             bool t9 = test.AddPerson(p9);
 
             startcount = test.Persons.Count;
+            Console.WriteLine(startcount.ToString());
 
             //Assert 2
             Assert.IsTrue(startcount == 8);
@@ -344,7 +345,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
 
             Person p1 = new Person("Ben", DateTime.Today.AddDays(-2000), "Maryl street", "1122NN", "testVille", "064433224411", "banaantje@shakeit.hot", "ww1", "ABC 123456789");
@@ -398,7 +399,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
             test.BeginDate = DateTime.Today.AddDays(10);
             test.EndDate = DateTime.Today.AddDays(10);
@@ -427,7 +428,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
             test.EventIsRunning = true;
 
@@ -455,7 +456,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
             test.BeginDate = DateTime.Today.AddDays(10);
             test.EndDate = DateTime.Today.AddDays(10);
@@ -484,7 +485,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
 
             Person p1 = new Person("Ben", DateTime.Today.AddDays(-2000), "Maryl street", "1122NN", "testVille", "064433224411", "banaantje@shakeit.hot", "ww1", "ABC 123456789");
@@ -511,7 +512,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
         {
             //Arrange
             int ID = 0;
-            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 4, false, 32);
+            CampingSpot spot = new CampingSpot(SpotType.Blokhut, 1, 1, 8, false, 32);
             Reservation test = new Reservation(ID, spot);
             test.BeginDate = DateTime.Today.AddDays(-1);
 

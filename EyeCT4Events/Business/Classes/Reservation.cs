@@ -41,6 +41,7 @@ namespace EyeCT4Events
             ReservationID = reservationID;
             EventIsRunning = eventIsRunning;
             CampingSpot = campingSpot;
+            Capacity = campingSpot.Capacity;
 
             Persons = new List<Person>();
             Materials = new List<Material>();
@@ -56,6 +57,7 @@ namespace EyeCT4Events
         {
             ReservationID = reservationID;
             CampingSpot = campingSpot;
+            Capacity = campingSpot.Capacity;
 
             Persons = new List<Person>();
             Materials = new List<Material>();
