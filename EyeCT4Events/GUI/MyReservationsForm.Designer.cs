@@ -32,6 +32,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbMyReservationsParticipants = new System.Windows.Forms.ListBox();
             this.lblMyReservationsDate = new System.Windows.Forms.Label();
+            this.btnPayReservation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbMyReservationsEvents
@@ -66,11 +67,22 @@
             this.lblMyReservationsDate.TabIndex = 4;
             this.lblMyReservationsDate.Text = "Datum:";
             // 
+            // btnPayReservation
+            // 
+            this.btnPayReservation.Location = new System.Drawing.Point(433, 367);
+            this.btnPayReservation.Name = "btnPayReservation";
+            this.btnPayReservation.Size = new System.Drawing.Size(112, 31);
+            this.btnPayReservation.TabIndex = 5;
+            this.btnPayReservation.Text = "Pay reservation";
+            this.btnPayReservation.UseVisualStyleBackColor = true;
+            this.btnPayReservation.Click += new System.EventHandler(this.btnPayReservation_Click);
+            // 
             // MyReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 410);
+            this.Controls.Add(this.btnPayReservation);
             this.Controls.Add(this.lblMyReservationsDate);
             this.Controls.Add(this.lbMyReservationsParticipants);
             this.Controls.Add(this.dateTimePicker1);
@@ -90,5 +102,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ListBox lbMyReservationsParticipants;
         private System.Windows.Forms.Label lblMyReservationsDate;
+        private System.Windows.Forms.Button btnPayReservation;
     }
 }
