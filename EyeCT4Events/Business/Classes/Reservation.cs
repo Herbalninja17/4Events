@@ -144,12 +144,9 @@ namespace EyeCT4Events
                     {
                         return false;
                     }
-                    else
-                    {
-                        Persons.Add(person);
-                        return true;
-                    }
-                }
+                }                                 
+                Persons.Add(person);
+                return true;                    
             }
                 return false;
         }
