@@ -39,6 +39,9 @@ namespace EyeCT4Events
             ReservationID = reservationID;
             EventIsRunning = eventIsRunning;
             CampingSpot = campingSpot;
+
+            Persons = new List<Person>();
+            Materials = new List<Material>();
         }
 
         /// <summary>
@@ -52,6 +55,7 @@ namespace EyeCT4Events
             ReservationID = reservationID;
             CampingSpot = campingSpot;
 
+            Persons = new List<Person>();
             Materials = new List<Material>();
         }
 
@@ -59,7 +63,9 @@ namespace EyeCT4Events
         {
             BeginDate = begindate;
             EndDate = enddate;
+
             Persons = new List<Person>();
+            Materials = new List<Material>();
         }
 
         /// <summary>
@@ -130,7 +136,7 @@ namespace EyeCT4Events
                 Persons.Add(person);
                 return true;
             }
-            else
+            else if(Persons.Count < 9)
             {
                 foreach (Person p in Persons)
                 {
