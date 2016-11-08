@@ -60,6 +60,7 @@
             this.btnPayReservation.TabIndex = 2;
             this.btnPayReservation.Text = "Pay selected reservation";
             this.btnPayReservation.UseVisualStyleBackColor = true;
+            this.btnPayReservation.Click += new System.EventHandler(this.btnPayReservation_Click);
             // 
             // lblSaldo
             // 
