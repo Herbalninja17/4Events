@@ -30,6 +30,9 @@
         {
             this.lbPaid = new System.Windows.Forms.ListBox();
             this.lblPaid = new System.Windows.Forms.Label();
+            this.btnPayReservation = new System.Windows.Forms.Button();
+            this.lblSaldo = new System.Windows.Forms.Label();
+            this.lblSaldoEuro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbPaid
@@ -49,11 +52,41 @@
             this.lblPaid.TabIndex = 1;
             this.lblPaid.Text = "Uw reserveringen";
             // 
+            // btnPayReservation
+            // 
+            this.btnPayReservation.Location = new System.Drawing.Point(257, 221);
+            this.btnPayReservation.Name = "btnPayReservation";
+            this.btnPayReservation.Size = new System.Drawing.Size(137, 53);
+            this.btnPayReservation.TabIndex = 2;
+            this.btnPayReservation.Text = "Pay selected reservation";
+            this.btnPayReservation.UseVisualStyleBackColor = true;
+            // 
+            // lblSaldo
+            // 
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Location = new System.Drawing.Point(241, 23);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(37, 13);
+            this.lblSaldo.TabIndex = 3;
+            this.lblSaldo.Text = "Saldo:";
+            // 
+            // lblSaldoEuro
+            // 
+            this.lblSaldoEuro.AutoSize = true;
+            this.lblSaldoEuro.Location = new System.Drawing.Point(302, 23);
+            this.lblSaldoEuro.Name = "lblSaldoEuro";
+            this.lblSaldoEuro.Size = new System.Drawing.Size(35, 13);
+            this.lblSaldoEuro.TabIndex = 4;
+            this.lblSaldoEuro.Text = "euro\'s";
+            // 
             // BetaalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 370);
+            this.ClientSize = new System.Drawing.Size(620, 286);
+            this.Controls.Add(this.lblSaldoEuro);
+            this.Controls.Add(this.lblSaldo);
+            this.Controls.Add(this.btnPayReservation);
             this.Controls.Add(this.lblPaid);
             this.Controls.Add(this.lbPaid);
             this.Name = "BetaalForm";
@@ -68,5 +101,8 @@
 
         private System.Windows.Forms.ListBox lbPaid;
         private System.Windows.Forms.Label lblPaid;
+        private System.Windows.Forms.Button btnPayReservation;
+        private System.Windows.Forms.Label lblSaldo;
+        private System.Windows.Forms.Label lblSaldoEuro;
     }
 }
