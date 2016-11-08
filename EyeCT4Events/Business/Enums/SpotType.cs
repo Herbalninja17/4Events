@@ -8,7 +8,7 @@ namespace EyeCT4Events
 {
     /// <summary>
     /// Enum holding all the spottypes for a campingspot.
-    /// CHANGES MADE IN THE DATABES TO SPOTTYPES HAVE TO BE CHANGED MANUALLY HERE TO.
+    /// CHANGES MADE IN THE DATABASE TO SPOTTYPES HAVE TO BE CHANGED MANUALLY HERE TO.
     /// </summary>
     public enum SpotType
     {
