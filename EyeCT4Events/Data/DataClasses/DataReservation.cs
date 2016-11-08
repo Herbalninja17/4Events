@@ -173,11 +173,11 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT r.betaaldstatus, pt.prijs from reservering r inner join plaats p on r.plaatsid = p.plaatsid inner join ptype pt on p.typeid = pt.TypeID inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.email = "+loggedinP.Email+"", Datacom.connect);
+                SqlCommand cmd = new SqlCommand("SELECT distinct r.reserveringid, r.betaaldstatus, pt.prijs from reservering r inner join plaats p on r.plaatsid = p.plaatsid inner join ptype pt on p.typeid = pt.TypeID inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.email = '" + loggedinP.Email + "';", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    list.Add("Betaaldstatus: "+Convert.ToString(reader["betaaldstatus"])+" Prijs: "+Convert.ToString(reader["prijs"]));
+                    list.Add("Reservering: " + Convert.ToString(reader["reserveringid"]) + " Betaaldstatus: " + Convert.ToString(reader["betaaldstatus"]) + " Prijs: " + Convert.ToString(reader["prijs"]));
                 }
                 return list;
             }

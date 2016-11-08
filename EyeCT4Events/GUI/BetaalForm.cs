@@ -28,5 +28,10 @@ namespace EyeCT4Events
                 lbPaid.Items.Add(s);
             }
         }
+
+        private void btnPayReservation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace EyeCT4Events
 {
     public class CampingSpot
-    {
-        
-
+    { 
         //Properties
         /// <summary>
         /// Taken from the database.
@@ -24,13 +22,17 @@ namespace EyeCT4Events
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public int PlaatsNr { get; private set; }
+        public int PlaceNr { get; private set; }
 
         /// <summary>
         /// Taken from the database.
         /// </summary>
         public int Capacity { get; private set; }
 
+        /// <summary>
+        /// Taken from the database.
+        /// Can be changed to reserve/unreserve a spot.
+        /// </summary>
         public bool Reserved { get; set; }
 
         /// <summary>
@@ -43,17 +45,21 @@ namespace EyeCT4Events
         /// </summary>
         /// <param name="spotType">The type of the spot</param>
         /// <param name="spotID">The ID of the spot</param>
+        /// <param name="placeNr">Number of the place this spot is located</param>
         /// <param name="capacity">The amount of people a spot can hold</param>
         /// <param name="reserved">Reservation status of the spot</param>
-        public CampingSpot(SpotType spotType, int spotID, int plaatsNr, int capacity, bool reserved, decimal price)
+        /// <param name="price">Price for the specific spot (set in the database)</param>
+        public CampingSpot(SpotType spotType, int spotID, int placeNr, int capacity, bool reserved, decimal price)
         {
             SpotType = spotType;
             SpotID = spotID;
-            PlaatsNr = plaatsNr;
+            PlaceNr = placeNr;
             Capacity = capacity;
             Reserved = reserved;
             Price = price;
         }
+
+        //Methods
 
         public override string ToString()
         {
