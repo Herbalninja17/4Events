@@ -39,10 +39,11 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsLocation_Click(object sender, EventArgs e)
         {
+            this.Close();
             MapForm mapForm = new MapForm();
             mapForm.Show();
         }
-
+        
         /// <summary>
         /// Om je reservaties te bekijken.
         /// </summary>
@@ -74,8 +75,6 @@ namespace EyeCT4Events
             }
             else
             {
-
-
                 string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
                 string eventid = eventids.Split(')')[0];
                 if (Reservation.Map != 0 && eventid != null)
@@ -123,6 +122,7 @@ namespace EyeCT4Events
             Person selectedperson = new Person(Convert.ToString(lbReservationParticipants.SelectedItem));
             if (reservation.AddPerson(selectedperson))
             {
+                lbReservationPeopleInReservation.Items.Add(selectedperson.Email);
                 MessageBox.Show("Persoon is toegevoegd.");
             }
             else
@@ -146,18 +146,45 @@ namespace EyeCT4Events
         private void MakeReservationForm_Load(object sender, EventArgs e)
         {
             DataEvent.GetEvent();
+            lbReservationEvents.Items.Clear();
             foreach (string i in DataEvent.events)
             {
                 lbReservationEvents.Items.Add(i);
             }
-            reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
-            if (reservation.AddPerson(Login.loggedinUser))
+            btnReservationAddParticipant.Visible = false;
+            btnReservationAddParticipant.Enabled = false;
+            btnReservationSearchParticipant.Visible = false;
+            btnReservationSearchParticipant.Enabled = false;
+            btnReservationsMakeReservation.Visible = false;
+            btnReservationsMakeReservation.Enabled = false;
+            lbReservationParticipants.Enabled = false;
+            lbReservationParticipants.Visible = false;
+            tbReservationSearchParticipant.Visible = false;
+            tbReservationSearchParticipant.Enabled = false;
+            if (Reservation.Map > 0)
             {
-                MessageBox.Show("U bent toegevoegd aan de reservering.");
-            }
-            else
-            {
-                MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
+                reservation = new Reservation(dtpReservationBeginDate.Value, dtpReservationEndDate.Value);
+                if (reservation.AddPerson(Login.loggedinUser))
+                {
+                    MessageBox.Show("U bent toegevoegd aan de reservering.");
+                    lbReservationPeopleInReservation.Items.Add(Login.loggedinUser.Email);
+                }
+                else
+                {
+                    MessageBox.Show("U bent niet toegevoegd aan uw reservering, zoek uzelf op en voeg uzelf toe aan de reservering.");
+                }
+                
+                    btnReservationAddParticipant.Visible = true;
+                    btnReservationAddParticipant.Enabled = true;
+                    btnReservationSearchParticipant.Visible = true;
+                    btnReservationSearchParticipant.Enabled = true;
+                    btnReservationsMakeReservation.Visible = true;
+                    btnReservationsMakeReservation.Enabled = true;
+                    lbReservationParticipants.Enabled = true;
+                    lbReservationParticipants.Visible = true;
+                    tbReservationSearchParticipant.Visible = true;
+                    tbReservationSearchParticipant.Enabled = true;
+                
             }
         }
     }
