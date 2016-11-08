@@ -190,4 +190,3 @@ D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.Properties
 D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.csproj.GenerateResource.Cache
 D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.exe
 D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.pdb
-C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csprojResolveAssemblyReference.cache

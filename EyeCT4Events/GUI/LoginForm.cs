@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.Data.DataClasses;
 using EyeCT4Events.GUI;
 
 namespace EyeCT4Events
