@@ -522,7 +522,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             //Assert is handled by the ExpectedException
             Assert.IsTrue(p1.Name == "Erik Molls");
             Assert.IsTrue(p1.Email == "banana@applepen.nl");
-            Assert.IsTrue(p1.Betaald == "betaald");
+            Assert.IsTrue(p1.Payed == "betaald");
         }
 
         [TestMethod]
