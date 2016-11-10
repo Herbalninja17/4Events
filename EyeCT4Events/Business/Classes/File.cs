@@ -8,12 +8,14 @@ namespace EyeCT4Events
 {
     public class File
     {
+        //Fields
         private string title;
         private int fileID;
         private string fileName;
 
         private static string[] acceptedExtensions = {"jpg", "jpeg", "png", "gif"};
 
+        //Properties
         public string Title
         {
             get { return title; }
@@ -42,6 +44,10 @@ namespace EyeCT4Events
             }
         }
 
+        /// <summary>
+        /// Set from in the this.Constructor with help of the this.CheckFileType method
+        /// and this.acceptedExtensions array.
+        /// </summary>
         public string FileType { get; private set; }
 
         /// <summary>
@@ -49,6 +55,9 @@ namespace EyeCT4Events
         /// </summary>
         public int FileID { get { return fileID; } private set { } }
 
+        /// <summary>
+        /// Person details of the person posting the file
+        /// </summary>
         public Person Poster { get; set; }
 
         /// <summary>
@@ -85,6 +94,8 @@ namespace EyeCT4Events
             Poster = poster;
             FileType = CheckFileType(fileName);
         }
+
+        //Methods
 
         /// <summary>
         /// checks for acceptable filetypes

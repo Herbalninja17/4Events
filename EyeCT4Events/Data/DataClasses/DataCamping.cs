@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataCamping
+    public static class DataCamping
     {
-        public DataCamping()
-        {
-            
-        }
-
+        /// <summary>
+        /// This method could be used for further expansion of the application.
+        /// </summary>
+        /// <returns></returns>
         public static Camping GetCamping()
         {
             return null;
         }
 
+        /// <summary>
+        /// Gets a list of all Campings from the database
+        /// </summary>
+        /// <returns></returns>
         public static List<Camping> GetCampingList()
         {
             Datacom.OpenConnection();
@@ -44,16 +47,6 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
 
             return campings;
-        }
-
-        public static void SetCamping(Camping camping)
-        {
-            
-        }
-
-        public static void UpdateCamping(Camping camping)
-        {
-            
         }
     }
 }

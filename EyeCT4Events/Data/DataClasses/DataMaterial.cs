@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    public class DataMaterial
+    public static class DataMaterial
     {
-        public DataMaterial() 
-        {
-            
-        }
-
+        /// <summary>
+        /// Gets a certain Product from the database.
+        /// </summary>
+        /// <param name="materialID">Material ID</param>
+        /// <returns>Material</returns>
         public static Material GetMaterial(int materialID) 
         {
             Datacom.OpenConnection();
@@ -45,6 +45,10 @@ namespace EyeCT4Events.Data.DataClasses
             return m;
         }
 
+        /// <summary>
+        /// Gets a list of all Products from the database that are availeble (Beschikbaar).
+        /// </summary>
+        /// <returns>List of Materials</returns>
         public static List<Material> AvailableMaterialList() 
         {
             Datacom.OpenConnection();
@@ -72,6 +76,10 @@ namespace EyeCT4Events.Data.DataClasses
             return products;
         }
 
+        /// <summary>
+        /// Sets a product to rented (Verhuurd) in the database.
+        /// </summary>
+        /// <param name="materialID">Material ID</param>
         public static void SetMaterialHired(int materialID) 
         {
             Datacom.OpenConnection();
@@ -83,6 +91,10 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
+        /// <summary>
+        /// Sets a product to availeble (Beschikbaar) in the database
+        /// </summary>
+        /// <param name="materialID">Material ID</param>
         public static void SetMaterialAvailable(int materialID)
         {
             Datacom.OpenConnection();
@@ -94,6 +106,11 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
+        /// <summary>
+        /// Gets a list of Product ID's containing the input value
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <returns>List of Product ID's</returns>
         public static List<int> SearchMaterials(string name) 
         {
             Datacom.OpenConnection();
@@ -112,11 +129,6 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
 
             return products;
-        }
-
-        public static void UpdateMaterial() 
-        {
-            
         }
     }
 }

@@ -53,12 +53,10 @@ namespace EyeCT4Events
             }
         }
 
-        public int MaxVisitors { get { return camping.Places; } }
-
         /// <summary>
-        /// Taken from the database.
+        /// Maximum available camping spots. (Not maximum number of visitors).
         /// </summary>
-        public int CurrentVisitors { get { return DataEvent.GetCurrentVisitors(); } }
+        public int MaxPlaces { get { return camping.Places; } }
 
         /// <summary>
         /// Take from dropdownbox
@@ -94,8 +92,7 @@ namespace EyeCT4Events
             return Name
                 + " | " + StartDate.ToString("d-M-yyyy")
                 + " | " + EndDate.ToString("d-M-yyyy")
-                + " | " + MaxVisitors
-                + " | " + CurrentVisitors
+                + " | " + MaxPlaces
                 + " | " + Camping.Name
                 ;
         }

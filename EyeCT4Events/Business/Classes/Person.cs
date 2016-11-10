@@ -20,9 +20,10 @@ namespace EyeCT4Events
         private string password;
         private string accountnumber;
 
+        //Account ID: used in DataPerson, RFID and DataReservation classes (foreign key in the database) not needed in this class specifically.
         static public int AcID = 0;
 
-        //Persoonklasse
+        //Properties
         public string Name
         {
             get { return name; }
@@ -155,11 +156,14 @@ namespace EyeCT4Events
         }
 
         /// <summary>
-        /// Taken from the database.
+        /// Taken from the database. People can be made admin from within the database, never from this program.
         /// </summary>
         public int Admin { get; private set; }
 
-        public string Betaald { get; private set; }
+        /// <summary>
+        /// To see the payment status for the (just the) event this person is at.
+        /// </summary>
+        public string Payed { get; private set; }
 
         public List<Reservation> Reservations { get; set; }
 
@@ -167,15 +171,16 @@ namespace EyeCT4Events
         /// Constructor
         /// To create a person.
         /// </summary>
-        /// <param name="name">Name of the person</param>
-        /// <param name="birthDate">The date of birth of the person</param>
-        /// <param name="address">The address of the person</param>
-        /// <param name="zipcode">The zipcode of the persons address</param>
-        /// <param name="phonenumber">The Phonenumber of the person</param>
-        /// <param name="email">The Email of the person</param>
-        /// <param name="password">The Password of the person</param> 
-        /// <param name="accountnumber">The Accountnumber of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email, string password, string accountnumber)
+        /// <param name="name">Name of the person.</param>
+        /// <param name="birthDate">The date of birth of the person.</param>
+        /// <param name="address">The address of the person.</param>
+        /// <param name="zipcode">The zipcode of the persons address.</param>
+        /// <param name="city">The city, village or area the event is held at.</param>
+        /// <param name="phonenumber">The Phonenumber of the person.</param>
+        /// <param name="email">The Email of the person.</param>
+        /// <param name="password">The Password of the person.</param> 
+        /// <param name="accountnumber">The Accountnumber of the person.</param>
+        public Person(string name, DateTime birthDate, string address, string zipcode, string city, string phonenumber, string email, string password, string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
@@ -196,13 +201,17 @@ namespace EyeCT4Events
         /// For active lists used in this program. Loaded from database.
         /// And editing.
         /// </summary>
-        /// <param name="name">Name of the person</param>
-        /// <param name="birthDate">The date of birth of the person</param>
-        /// <param name="address">The address of the person</param>
-        /// <param name="zipcode">The zipcode of the persons address</param>
-        /// <param name="phonenumber">The phonenumber of the person</param>
-        /// <param name="email">The username of the person</param>
-        public Person(string name, DateTime birthDate, string address,string zipcode,string city, string phonenumber, string email,string password, int admin,string accountnumber)
+        /// <param name="name">Name of the person.</param>
+        /// <param name="birthDate">The date of birth of the person.</param>
+        /// <param name="address">The address of the person.</param>
+        /// <param name="zipcode">The zipcode of the persons address.</param>
+        /// <param name="city">The city, village or area the event is held at.</param>
+        /// <param name="phonenumber">The phonenumber of the person.</param>
+        /// <param name="email">The username of the person.</param>
+        /// <param name="password">The Password of the person</param>
+        /// <param name="admin">status to see if the person is admin or not.</param>
+        /// <param name="accountnumber">The Accountnumber of the person.</param>
+        public Person(string name, DateTime birthDate, string address, string zipcode, string city, string phonenumber, string email, string password, int admin,string accountnumber)
         {
             Name = name;
             BirthDate = birthDate;
@@ -216,18 +225,44 @@ namespace EyeCT4Events
             AccountNumber = accountnumber;
         }
 
-        public Person(string name,string email, string betaald)
+        /// <summary>
+        /// Constructor
+        /// This information is taken from the database.
+        /// </summary>
+        /// <param name="name">Name of the person.</param>
+        /// <param name="email">The username of the person.</param>
+        /// <param name="betaald">payed status for the event this person is currently at.</param>
+        public Person(string name,string email, string payed)
         {
             Name = name;
             Email = email;
-            Betaald = betaald;
+            Payed = payed;
         }
 
+        /// <summary>
+        /// Constructor
+        /// Information taken from the database to login a person.
+        /// </summary>
+        /// <param name="name">Name of the person.</param>
+        /// <param name="email">The username of the person.</param>
         public Person(string name, string email)
         {
             Name = name;
             Email = email;
         }
+
+        /// <summary>
+        /// Constructor
+        /// To be able to add persons to a reservation.
+        /// The person is sought in the database by username (email).
+        /// </summary>
+        /// <param name="email">The username of the person.</param>
+        public Person(string email)
+        {
+            Email = email;
+        }
+
+        //Methods
 
         public override string ToString()
         {

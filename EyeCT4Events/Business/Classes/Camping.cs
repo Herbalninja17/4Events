@@ -41,8 +41,11 @@ namespace EyeCT4Events
         /// <summary>
         /// Constructor
         /// </summary>
+        /// <param name="id">Camping ID</param>
         /// <param name="name">The name of the Camping</param>
-        /// <param name="places">How many spots the camping has</param>
+        /// <param name="address">Street and number the camping is located</param>
+        /// <param name="city">The city, village or area the camping is located</param>
+        /// <param name="zipcode">zipcode for the camping</param>
         public Camping(int id, string name, string address, string city, string zipcode)
         {
             ID = id;
@@ -52,6 +55,8 @@ namespace EyeCT4Events
             Zipcode = zipcode;
             CampingSpots = DataCampingSpot.GetCampingSpotList(id);
         }
+
+        //Methods
 
         /// <summary>
         /// Find all free camping spots of a certain type.

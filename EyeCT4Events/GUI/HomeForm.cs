@@ -54,7 +54,7 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToSocialMedia_Click(object sender, EventArgs e)
         {
-            SocialMediaForm socialMedia = new SocialMediaForm();
+            SocialMediaForm socialMedia = new SocialMediaForm(this);
             socialMedia.Show();
             this.Hide();
         }

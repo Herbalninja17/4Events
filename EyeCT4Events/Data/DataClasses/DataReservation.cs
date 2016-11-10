@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    class DataReservation
+    public static class DataReservation
     {
         static public List<string> rlist = new List<string>();
 
-        public DataReservation()
+        /// <summary>
+        /// Gets a list of all reservations in the database.
+        /// </summary>
+        public static void GetReservation()
         {
-            
-        }    
-
-        public static Reservation GetReservation()
-        {
+            rlist.Clear();
             try
             {
                 Datacom.OpenConnection();
@@ -28,7 +28,7 @@ namespace EyeCT4Events.Data.DataClasses
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    rlist.Add(Convert.ToString(reader["Naam"]) + " From: " + Convert.ToString(reader["StartDatum"]) + " To: " + Convert.ToString(reader["EindDatum"]));
+                    rlist.Add(Convert.ToString(reader["Naam"]) + " Van: " + Convert.ToString(reader["StartDatum"]) + " Tot: " + Convert.ToString(reader["EindDatum"]));
                 }
             }
             catch (Exception e)
@@ -39,10 +39,18 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-            return null;
         }
 
-        public static void SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
+        /// <summary>
+        /// Inserts a reservation into the database
+        /// </summary>
+        /// <param name="plaatsID">Plaats ID</param>
+        /// <param name="betaaldStatus">Payment Status</param>
+        /// <param name="startDatum">Start Date</param>
+        /// <param name="eindDatum">End Date</param>
+        /// <param name="eventID">Event ID</param>
+        /// <returns>bool (true for succes)</returns>
+        public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
         {
             try
             {                
@@ -91,28 +99,97 @@ namespace EyeCT4Events.Data.DataClasses
                 cmd1.Connection = Datacom.connect;
                 cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID) VALUES ('" + Rid + "', '" + Person.AcID + "');";
                 cmd1.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return false;
             }
             finally
             {
                 Datacom.CloseConnection();
             }
-
-            
-
         }
 
-        public static void UpdateReservation()
-        {
-            
-        }
-
+        /// <summary>
+        /// Gets a list of reservations
+        /// </summary>
+        /// <returns>List of reservations</returns>
         public static List<Reservation> GetReservationList()
         {
-            return null;
+            List<Reservation> reservations = new List<Reservation>();
+            Datacom.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT r.PlaatsID, r.ReserveringID, e.StartDatum, e.Einddatum " +
+                                            "FROM Reservering r, ForEvent e " +
+                                            "WHERE r.EventID = e.EventID;");
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                CampingSpot spot = DataCampingSpot.GetCampingSpot(reader.GetInt32(0));
+
+                int reservationID = reader.GetInt32(1);
+
+                string sDate = reader.GetString(2);
+                string eDate = reader.GetString(3);
+                string format = "d-M-yyyy";
+                DateTime startDate = DateTime.ParseExact(sDate, format, CultureInfo.InvariantCulture);
+                DateTime endDate = DateTime.ParseExact(eDate, format, CultureInfo.InvariantCulture);
+
+                bool isRunning;
+                int result1 = DateTime.Compare(startDate, DateTime.Now);
+                int result2 = DateTime.Compare(endDate, DateTime.Now);
+
+                if (result1 > 0 && result2 < 0)
+                {
+                    isRunning = true;
+                }
+                else
+                {
+                    isRunning = false;
+                }
+
+                Reservation reservation = new Reservation(reservationID, isRunning, spot);
+
+                reservations.Add(reservation);
+            }
+
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return reservations;
+        }
+
+        /// <summary>
+        /// Gets a list wich contains the reservations of the logged in person
+        /// </summary>
+        /// <param name="loggedinP">Person</param>
+        /// <returns>List of reservations</returns>
+        public static List<string> GetReservationsLoggedInPerson(Person loggedinP)
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT distinct r.reserveringid, r.betaaldstatus, pt.prijs from reservering r inner join plaats p on r.plaatsid = p.plaatsid inner join ptype pt on p.typeid = pt.TypeID inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.email = '" + loggedinP.Email + "';", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add("Reservering: " + Convert.ToString(reader["reserveringid"]) + " Betaaldstatus: " + Convert.ToString(reader["betaaldstatus"]) + " Prijs: " + Convert.ToString(reader["prijs"]));
+                }
+                return list;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return list;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
         }
     }
 }

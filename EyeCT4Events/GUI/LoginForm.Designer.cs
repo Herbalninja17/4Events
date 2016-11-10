@@ -40,47 +40,42 @@
             // 
             // tbLoginEmail
             // 
-            this.tbLoginEmail.Location = new System.Drawing.Point(202, 23);
-            this.tbLoginEmail.Margin = new System.Windows.Forms.Padding(6);
+            this.tbLoginEmail.Location = new System.Drawing.Point(101, 12);
             this.tbLoginEmail.Name = "tbLoginEmail";
-            this.tbLoginEmail.Size = new System.Drawing.Size(288, 31);
+            this.tbLoginEmail.Size = new System.Drawing.Size(146, 20);
             this.tbLoginEmail.TabIndex = 0;
             // 
             // tbLoginWachtwoord
             // 
-            this.tbLoginWachtwoord.Location = new System.Drawing.Point(202, 112);
-            this.tbLoginWachtwoord.Margin = new System.Windows.Forms.Padding(6);
+            this.tbLoginWachtwoord.Location = new System.Drawing.Point(101, 58);
             this.tbLoginWachtwoord.Name = "tbLoginWachtwoord";
             this.tbLoginWachtwoord.PasswordChar = '●';
-            this.tbLoginWachtwoord.Size = new System.Drawing.Size(286, 31);
+            this.tbLoginWachtwoord.Size = new System.Drawing.Size(145, 20);
             this.tbLoginWachtwoord.TabIndex = 1;
             // 
             // lblLoginEmail
             // 
             this.lblLoginEmail.AutoSize = true;
-            this.lblLoginEmail.Location = new System.Drawing.Point(24, 29);
-            this.lblLoginEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblLoginEmail.Location = new System.Drawing.Point(12, 15);
             this.lblLoginEmail.Name = "lblLoginEmail";
-            this.lblLoginEmail.Size = new System.Drawing.Size(142, 25);
+            this.lblLoginEmail.Size = new System.Drawing.Size(69, 13);
             this.lblLoginEmail.TabIndex = 2;
             this.lblLoginEmail.Text = "Email adress:";
             // 
             // lblLoginWachtwoord
             // 
             this.lblLoginWachtwoord.AutoSize = true;
-            this.lblLoginWachtwoord.Location = new System.Drawing.Point(24, 117);
-            this.lblLoginWachtwoord.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblLoginWachtwoord.Location = new System.Drawing.Point(12, 61);
             this.lblLoginWachtwoord.Name = "lblLoginWachtwoord";
-            this.lblLoginWachtwoord.Size = new System.Drawing.Size(137, 25);
+            this.lblLoginWachtwoord.Size = new System.Drawing.Size(71, 13);
             this.lblLoginWachtwoord.TabIndex = 3;
             this.lblLoginWachtwoord.Text = "Wachtwoord:";
             // 
             // btnLoginLogin
             // 
-            this.btnLoginLogin.Location = new System.Drawing.Point(315, 188);
-            this.btnLoginLogin.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLoginLogin.Location = new System.Drawing.Point(158, 98);
             this.btnLoginLogin.Name = "btnLoginLogin";
-            this.btnLoginLogin.Size = new System.Drawing.Size(150, 44);
+            this.btnLoginLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLoginLogin.TabIndex = 4;
             this.btnLoginLogin.Text = "Login";
             this.btnLoginLogin.UseVisualStyleBackColor = true;
@@ -89,19 +84,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 304);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(12, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 25);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nog geen account?";
             // 
             // btnLoginCreateAccount
             // 
-            this.btnLoginCreateAccount.Location = new System.Drawing.Point(315, 269);
-            this.btnLoginCreateAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLoginCreateAccount.Location = new System.Drawing.Point(158, 140);
             this.btnLoginCreateAccount.Name = "btnLoginCreateAccount";
-            this.btnLoginCreateAccount.Size = new System.Drawing.Size(150, 94);
+            this.btnLoginCreateAccount.Size = new System.Drawing.Size(75, 49);
             this.btnLoginCreateAccount.TabIndex = 6;
             this.btnLoginCreateAccount.Text = "Maak nieuw account aan";
             this.btnLoginCreateAccount.UseVisualStyleBackColor = true;
@@ -110,9 +103,10 @@
             // cbShowPassword
             // 
             this.cbShowPassword.AutoSize = true;
-            this.cbShowPassword.Location = new System.Drawing.Point(29, 197);
+            this.cbShowPassword.Location = new System.Drawing.Point(14, 102);
+            this.cbShowPassword.Margin = new System.Windows.Forms.Padding(2);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(252, 29);
+            this.cbShowPassword.Size = new System.Drawing.Size(130, 17);
             this.cbShowPassword.TabIndex = 7;
             this.cbShowPassword.Text = "Laat wachtwoord zien";
             this.cbShowPassword.UseVisualStyleBackColor = true;
@@ -120,9 +114,9 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 392);
+            this.ClientSize = new System.Drawing.Size(259, 204);
             this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.btnLoginCreateAccount);
             this.Controls.Add(this.label1);
@@ -131,7 +125,6 @@
             this.Controls.Add(this.lblLoginEmail);
             this.Controls.Add(this.tbLoginWachtwoord);
             this.Controls.Add(this.tbLoginEmail);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);

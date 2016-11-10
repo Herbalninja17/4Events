@@ -56,7 +56,6 @@
     <Compile Include="Business_Tests\Camping_Tests.cs" />
     <Compile Include="Business_Tests\Event_Tests.cs" />
     <Compile Include="Business_Tests\File_Tests.cs" />
-    <Compile Include="Business_Tests\Login_Tests.cs" />
     <Compile Include="Business_Tests\Maintain_Tests.cs" />
     <Compile Include="Business_Tests\Material_Tests.cs" />
     <Compile Include="Business_Tests\Message_Tests.cs" />

@@ -16,15 +16,27 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+        public static string begindate;
+        public static string enddate;
         /// <summary>
         /// Kies de geselecteerde locatie.
+        /// Check of die al is gereserveerd.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnMapChooseLocation_Click(object sender, EventArgs e)
         {
-            Reservation.Map = Convert.ToInt32(comboBox2.Text);
-            this.Close();
+            if (Data.DataClasses.DataCampingSpot.CheckCampingSpot(Convert.ToInt32(comboBox2.Text),begindate,enddate))
+            {
+                MessageBox.Show("Plaats al bezet, kies een andere.");
+            }
+            else if(Data.DataClasses.DataCampingSpot.CheckCampingSpot(Convert.ToInt32(comboBox2.Text),begindate,enddate) == false)
+            {
+                Reservation.Map = Convert.ToInt32(comboBox2.Text);
+                this.Close();
+                MakeReservationForm mrf = new MakeReservationForm();
+                mrf.Show();
+            }
         }
     }
 }

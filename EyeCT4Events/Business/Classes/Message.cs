@@ -42,6 +42,9 @@ namespace EyeCT4Events
         /// </summary>
         public int PreviousMessageID { get { return previousMessageID; } private set { } }
 
+        /// <summary>
+        /// Taken from the database. Time the post was send (recorded in the database).
+        /// </summary>
         public DateTime PostTime { get; private set; }
 
         /// <summary>
@@ -59,12 +62,13 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
-        /// For taking messages from the database.
+        /// For taking reactions to previous messages from the database.
         /// </summary>
         /// <param name="messageString">The actual message.</param>
         /// <param name="messageID">ID of the message.</param>
         /// <param name="previousMessageID">ID of the previous message.</param>
         /// <param name="poster">Person who posted the message.</param>
+        /// <param name="postTime">Time the message was posted.</param>
         public Message(string messageString, int messageID, int previousMessageID, Person poster, DateTime postTime)
         {
             MessageString = messageString;
@@ -74,6 +78,14 @@ namespace EyeCT4Events
             PostTime = postTime;
         }
 
+        /// <summary>
+        /// Constructor
+        /// For taking original messages from the database (not reacting to other messages).
+        /// </summary>
+        /// <param name="poster">Person that posted the message.</param>
+        /// <param name="messageString">The actual message.</param>
+        /// <param name="messageID">ID of the message.</param>
+        /// <param name="postTime">Time the message was posted.</param>
         public Message(Person poster, string messageString, int messageID, DateTime postTime)
         {
             Poster = poster;

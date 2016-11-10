@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\BetaalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BetaalForm.Designer.cs">
+      <DependentUpon>BetaalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Business\Classes\Camping.cs" />
     <Compile Include="Business\Classes\CampingSpot.cs" />
     <Compile Include="Business\Classes\Event.cs" />
@@ -182,6 +188,9 @@
     <Compile Include="GUI\UploadForm.Designer.cs">
       <DependentUpon>UploadForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\BetaalForm.resx">
+      <DependentUpon>BetaalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CheckIn.resx">
       <DependentUpon>CheckIn.cs</DependentUpon>
     </EmbeddedResource>

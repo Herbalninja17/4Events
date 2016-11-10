@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events.Data.DataClasses
 {
-    public class DataMessage
+    public static class DataMessage
     {
-        public DataMessage()
-        {
-            
-        }
-
-        public static Message GetMessage()
-        {
-            return null;
-        }
-
+        /// <summary>
+        /// Inserts a message in the database on a certain file
+        /// </summary>
+        /// <param name="msg">Message</param>
+        /// <param name="poster">Uploader</param>
+        /// <param name="file">File</param>
         public static void SetMessage(Message msg, Person poster, File file)
         {
             Datacom.OpenConnection();
@@ -49,6 +45,11 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
+        /// <summary>
+        /// Gets a list of all messages from the database posted on a certain file
+        /// </summary>
+        /// <param name="fileID">File ID</param>
+        /// <returns>List of messages</returns>
         public static List<Message> GetMessageList(int fileID)
         {
             List<Message> messages = new List<Message>();
