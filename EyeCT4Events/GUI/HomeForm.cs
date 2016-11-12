@@ -80,7 +80,8 @@ namespace EyeCT4Events.GUI
 
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _loginForm.Show();
+            LoginForm loginform = new LoginForm();
+            loginform.Show();
         }
     }
 }
