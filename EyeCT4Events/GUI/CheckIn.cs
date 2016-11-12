@@ -100,13 +100,13 @@ namespace EyeCT4Events.GUI
                 if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
                 {
                     InUit.CheckInFisrtTime(RFID.tagstring, textBox1.Text);
-                    MessageBox.Show("Seccessfully Checked In ");
+                    MessageBox.Show("Seccessfully Registered, you can now check in ");
                 }                
                 groupBox2.Visible = false;
 
-                LoginForm login = new LoginForm();
-                this.Hide();
-                login.Show();
+                //LoginForm login = new LoginForm();
+                //this.Hide();
+                //login.Show();
             }
             else if (login.LogInUser(textBox1.Text, textBox2.Text) == false)
             {
