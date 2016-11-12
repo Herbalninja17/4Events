@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EyeCT4Events.Business.Classes;
+using EyeCT4Events.Data.DataClasses;
 using System.Data.Sql;
 
 namespace EyeCT4Events.GUI
@@ -30,11 +31,38 @@ namespace EyeCT4Events.GUI
                 checkBox2.Checked = false;
                 if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
                 {
-                    InUit.CheckIn(RFID.tagstring, 4);
-                    MessageBox.Show("Welcome: " + RFID.tagstring.ToString());
-                    LoginForm login = new LoginForm();
-                    this.Hide();
-                    login.Show();
+                    string tag = RFID.tagstring;
+                    if(InUit.CheckBlock(tag) == true)
+                    {
+                        if (InUit.CheckUp(tag) == true)
+                        {
+                            string eventids = Convert.ToString(comboBox1.SelectedItem);
+                            string eventid = eventids.Split(')')[0];
+                            if (InUit.CheckRsvp(eventid, "", tag) == true)
+                            {
+                                InUit.CheckIn(tag, 4);
+                                MessageBox.Show("Welcome: " + tag.ToString());
+                                LoginForm login = new LoginForm();
+                                this.Hide();
+                                login.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sorry, you have no reservation for this event");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please register: " + tag.ToString());
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, your account has been blocked");
+                    }
+
+                                       
                 }
             }
         }
@@ -46,6 +74,7 @@ namespace EyeCT4Events.GUI
                 checkBox1.Checked = false;
                 if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
                 {
+
                     InUit.CheckOut(RFID.tagstring.ToString(), 4);                    
                     MessageBox.Show("Goodbye: " + RFID.tagstring.ToString());
                 }
@@ -71,17 +100,27 @@ namespace EyeCT4Events.GUI
                 if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
                 {
                     InUit.CheckInFisrtTime(RFID.tagstring, textBox1.Text);
-                    MessageBox.Show("Seccessfully Checked In ");
+                    MessageBox.Show("Seccessfully Registered, you can now check in ");
                 }                
                 groupBox2.Visible = false;
 
-                LoginForm login = new LoginForm();
-                this.Hide();
-                login.Show();
+                //LoginForm login = new LoginForm();
+                //this.Hide();
+                //login.Show();
             }
             else if (login.LogInUser(textBox1.Text, textBox2.Text) == false)
             {
                 MessageBox.Show("Email or Password is incorrect.");
+            }
+        }
+
+        private void CheckIn_Load(object sender, EventArgs e)
+        {
+            DataEvent.GetEvent();
+
+            foreach (string i in DataEvent.events)
+            {
+                comboBox1.Items.Add(i);
             }
         }
     }
