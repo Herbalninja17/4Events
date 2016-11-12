@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.Data;
+using EyeCT4Events.Data.DataClasses;
 
 namespace EyeCT4Events
 {
     public partial class UploadForm : Form
     {
+        private SocialMediaForm socialMedia;
+        private OpenFileDialog chosenFile;
+
         public UploadForm()
         {
             InitializeComponent();
+        }
+
+        public UploadForm(SocialMediaForm socialMedia)
+        {
+            InitializeComponent();
+            this.socialMedia = socialMedia;
         }
 
         /// <summary>
@@ -24,7 +35,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnSocialMediaNewsFeed_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         /// <summary>
@@ -34,7 +45,13 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnUploadChooseFile_Click(object sender, EventArgs e)
         {
+            OpenFileDialog file = new OpenFileDialog();
 
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                chosenFile = file;
+                lblChosenFile.Text = chosenFile.FileName;
+            }
         }
 
         /// <summary>
@@ -44,7 +61,19 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnUploadUpload_Click(object sender, EventArgs e)
         {
+            if (chosenFile == null)
+            {
+                MessageBox.Show("U heeft geen bestand geselecteerd.");
+                return;
+            }
 
+            File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
+            uploadFile.Upload();
+        }
+
+        private void UploadForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            socialMedia.Show();
         }
     }
 }

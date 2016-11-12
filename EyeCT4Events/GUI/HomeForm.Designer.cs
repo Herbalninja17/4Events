@@ -43,7 +43,7 @@
             // btnGoToReservation
             // 
             this.btnGoToReservation.Location = new System.Drawing.Point(26, 25);
-            this.btnGoToReservation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGoToReservation.Margin = new System.Windows.Forms.Padding(6);
             this.btnGoToReservation.Name = "btnGoToReservation";
             this.btnGoToReservation.Size = new System.Drawing.Size(218, 98);
             this.btnGoToReservation.TabIndex = 0;
@@ -54,7 +54,7 @@
             // btnGoToEvent
             // 
             this.btnGoToEvent.Location = new System.Drawing.Point(26, 135);
-            this.btnGoToEvent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGoToEvent.Margin = new System.Windows.Forms.Padding(6);
             this.btnGoToEvent.Name = "btnGoToEvent";
             this.btnGoToEvent.Size = new System.Drawing.Size(218, 98);
             this.btnGoToEvent.TabIndex = 1;
@@ -65,7 +65,7 @@
             // btnGoToSocialMedia
             // 
             this.btnGoToSocialMedia.Location = new System.Drawing.Point(26, 244);
-            this.btnGoToSocialMedia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGoToSocialMedia.Margin = new System.Windows.Forms.Padding(6);
             this.btnGoToSocialMedia.Name = "btnGoToSocialMedia";
             this.btnGoToSocialMedia.Size = new System.Drawing.Size(218, 98);
             this.btnGoToSocialMedia.TabIndex = 2;
@@ -76,7 +76,7 @@
             // btnGoToLease
             // 
             this.btnGoToLease.Location = new System.Drawing.Point(26, 354);
-            this.btnGoToLease.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGoToLease.Margin = new System.Windows.Forms.Padding(6);
             this.btnGoToLease.Name = "btnGoToLease";
             this.btnGoToLease.Size = new System.Drawing.Size(218, 98);
             this.btnGoToLease.TabIndex = 3;
@@ -87,7 +87,7 @@
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(26, 463);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(6);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(218, 98);
             this.btnLogOut.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.pbLogo.Image = global::EyeCT4Events.Properties.Resources.Logo;
             this.pbLogo.Location = new System.Drawing.Point(256, 135);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(6);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(922, 427);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,7 +131,7 @@
             // btnAccount
             // 
             this.btnAccount.Location = new System.Drawing.Point(960, 25);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(6);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(218, 98);
             this.btnAccount.TabIndex = 8;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.btnGoToSocialMedia);
             this.Controls.Add(this.btnGoToEvent);
             this.Controls.Add(this.btnGoToReservation);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing);

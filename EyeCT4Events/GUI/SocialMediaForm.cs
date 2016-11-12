@@ -36,7 +36,9 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnSocialMediaUpload_Click(object sender, EventArgs e)
         {
-
+            UploadForm upload = new UploadForm(mediaForm);
+            upload.Show();
+            this.Hide();
         }
 
         private void btnMessage_Click(object sender, EventArgs e)

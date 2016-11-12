@@ -13,25 +13,21 @@ namespace EyeCT4Events.Data.DataClasses
 {
     public static class DataFile
     {
+        public static Image GetImageToDisplay(int id)
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT Content " +
+                                            "FROM Media " +
+                                            "WHERE Titel = 'Pino';",
+                                            Datacom.connect);
+            byte[] img = (byte[])cmd.ExecuteScalar();
+            MemoryStream str = new MemoryStream(img);
+            Image returnImage = Image.FromStream(str);
 
-        //Kom er niet uit! Zou best totaal anders moeten dan hoe ik het probeer.
-        //public static Bitmap DownloadFile()
-        //{
-        //    Datacom.OpenConnection();
-        //    SqlCommand cmd = new SqlCommand("SELECT Content " +
-        //                                    "FROM Media " +
-        //                                    "WHERE Titel = 'Pino';",
-        //                                    Datacom.connect);
-        //    byte[] img = (byte[]) cmd.ExecuteScalar();
-        //    MemoryStream str = new MemoryStream();
-        //    str.Write(img, 0, img.Length);
-        //    Bitmap bit = new Bitmap(str);
-        //    Datacom.CloseConnection();
+            return returnImage;
+        }
 
-        //    return bit;
-        //}
-
-        public static void UploadFile(Person poster, int mapID, string fileType, string filename, string text, string title)
+        public static void UploadImage(Person poster, int mapID, string fileType, string filename, string text, string title)
         {
             try
             {
@@ -39,15 +35,18 @@ namespace EyeCT4Events.Data.DataClasses
                 BinaryReader byteReader = new BinaryReader(fs);
                 int bytes = Convert.ToInt32(new FileInfo(filename).Length);
                 byte[] buff = byteReader.ReadBytes(bytes);
+                byteReader.Close();
 
                 Datacom.OpenConnection();
                 //Get the ID from the poster
                 SqlCommand cmdPoster = new SqlCommand("SELECT AccountID " +
                                                       "FROM Account " +
-                                                      $"WHERE Email = {poster.Email}");
+                                                      $"WHERE Email = '{poster.Email}'",
+                                                      Datacom.connect);
                 SqlDataReader reader = cmdPoster.ExecuteReader();
                 reader.Read();
                 int posterId = reader.GetInt32(0); 
+                reader.Close();
                 
                 using (
                     SqlCommand cmd = new SqlCommand($"INSERT INTO Media VALUES (" +

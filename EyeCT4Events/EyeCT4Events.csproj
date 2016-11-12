@@ -114,6 +114,12 @@
     <Compile Include="GUI\EventBeheerForm.Designer.cs">
       <DependentUpon>EventBeheerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EventBeheerForm.resx">
       <DependentUpon>EventBeheerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
