@@ -83,6 +83,7 @@
             this.Controls.Add(this.btnSocialMediaUpload);
             this.Name = "SocialMediaForm";
             this.Text = "Social Media";
+            this.Load += new System.EventHandler(this.SocialMediaForm_Load);
             this.ResumeLayout(false);
 
         }
