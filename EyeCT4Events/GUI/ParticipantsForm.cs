@@ -18,6 +18,9 @@ namespace EyeCT4Events
         private List<Person> personpresentlist;
         private List<Person> personnotpresentlist;
         private List<Person> personpresentpaidlist;
+        private bool goEditForm = false;
+        private bool goMaterialForm = false;
+        private bool goReservationForm = false;
 
         public ParticipantsForm()
         {
@@ -71,6 +74,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEditParticipant_Click(object sender, EventArgs e)
         {
+            goEditForm = true;
             EditParticipantForm editForm = new EditParticipantForm();
             editForm.Show();
             this.Close();
@@ -83,6 +87,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnEvents_Click(object sender, EventArgs e)
         {
+            goReservationForm = true;
             MakeReservationForm reservationForm = new MakeReservationForm();
             reservationForm.Show();
             this.Close();
@@ -95,6 +100,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnMaterial_Click(object sender, EventArgs e)
         {
+            goMaterialForm = true;
             HiredMaterialForm hiredMaterialForm = new HiredMaterialForm();
             hiredMaterialForm.Show();
             this.Close();
@@ -126,7 +132,11 @@ namespace EyeCT4Events
 
         private void ParticipantsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomeForm.homeForm.Show();
+            if(!goEditForm && !goMaterialForm && !goReservationForm)
+            {
+                HomeForm.homeForm.Show();
+            }
+            
         }
     }
 }

@@ -81,6 +81,7 @@
             this.Controls.Add(this.btnLease);
             this.Name = "HiredMaterialForm";
             this.Text = "Hired Material";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HiredMaterialForm_FormClosed);
             this.ResumeLayout(false);
 
         }
