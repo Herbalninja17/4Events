@@ -51,6 +51,7 @@
             this.lbMaterial.Name = "lbMaterial";
             this.lbMaterial.Size = new System.Drawing.Size(255, 459);
             this.lbMaterial.TabIndex = 2;
+            this.lbMaterial.SelectedIndexChanged += new System.EventHandler(this.lbMaterial_SelectedIndexChanged);
             // 
             // lbDate
             // 
