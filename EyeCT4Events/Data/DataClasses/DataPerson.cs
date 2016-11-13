@@ -19,12 +19,12 @@ namespace EyeCT4Events.Data.DataClasses
         /// <returns>Person</returns>
         public static Person AdminGetPerson(string email)
         {
-            Person p = null ;
+            Person p = null;
             try
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "'";
+                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "';";
                 cmd.Connection = Datacom.connect;
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -32,8 +32,8 @@ namespace EyeCT4Events.Data.DataClasses
                     string date = Convert.ToString(reader["geboortedatum"]);
                     DateTime d;
                     d = DateTime.Parse(date);
-                    p = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]),Convert.ToString(reader["email"]),Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
-                    
+                    p = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+
                 }
                 return p;
             }
@@ -56,7 +56,7 @@ namespace EyeCT4Events.Data.DataClasses
         public static Person GetPerson(string email, string password)
         {
             try
-            { 
+            {
                 //Query check of username + password overeenkomen met iemand uit de database
                 Datacom.OpenConnection();
                 //Haal email en wachtwoord op.
@@ -85,11 +85,11 @@ namespace EyeCT4Events.Data.DataClasses
                         string date = Convert.ToString(reader["geboortedatum"]);
                         DateTime d;
                         d = DateTime.Parse(date);
-                        Login.loggedinUser = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Email,Password, admin, Convert.ToString(reader["rekeningnummer"]));
+                        Login.loggedinUser = new Person(Convert.ToString(reader["naam"]), d, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Email, Password, admin, Convert.ToString(reader["rekeningnummer"]));
                         Login.loginbool = true;
                         return Login.loggedinUser;
                     }
-                    else if(email == Email && password == Password && Convert.ToString(reader["bruikbaar"]) == "uitgeschakeld")
+                    else if (email == Email && password == Password && Convert.ToString(reader["bruikbaar"]) == "uitgeschakeld")
                     {
                         Login.loginbool = false;
                     }
@@ -127,7 +127,7 @@ namespace EyeCT4Events.Data.DataClasses
                 {
                     email = Convert.ToString(reader["email"]);
                 }
-                if(email == "")
+                if (email == "")
                 {
                     return false;
                 }
@@ -157,27 +157,27 @@ namespace EyeCT4Events.Data.DataClasses
             string datetime = person.BirthDate.ToShortDateString();
 
             if (CheckPerson(person) == false)
+            {
+                try
                 {
-                    try
-                    {
-                        Datacom.OpenConnection();
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.Connection = Datacom.connect;
-                        cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum,beheerder) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "', " + person.Admin + ");";
+                    Datacom.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = Datacom.connect;
+                    cmd.CommandText = "INSERT INTO account(email,wachtwoord,naam,telefoon,adres,woonplaats,postcode,rekeningnummer,geboortedatum,beheerder) VALUES ('" + person.Email + "', '" + person.Password + "', '" + person.Name + "', '" + person.Phonenumber + "', '" + person.Address + "', '" + person.City + "', '" + person.ZipCode + "', '" + person.AccountNumber + "', '" + datetime + "', " + person.Admin + ");";
 
-                        cmd.ExecuteNonQuery();
-                        return true;
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                        return false;
-                    }
-                    finally
-                    {
-                        Datacom.CloseConnection();
-                    }
+                    cmd.ExecuteNonQuery();
+                    return true;
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return false;
+                }
+                finally
+                {
+                    Datacom.CloseConnection();
+                }
+            }
             else
             {
                 return false;
@@ -197,7 +197,10 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" + EditParticipantForm.adminPerson.Email + "' AND wachtwoord = '" + EditParticipantForm.adminPerson.Password + "';";
+                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password 
+                    + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode 
+                    + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" 
+                    + EditParticipantForm.adminPerson.Email + "' AND wachtwoord = '" + EditParticipantForm.adminPerson.Password + "';";
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -226,7 +229,10 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
+                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" 
+                    + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" 
+                    + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum 
+                    + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -237,7 +243,7 @@ namespace EyeCT4Events.Data.DataClasses
             }
             finally
             {
-                Datacom.CloseConnection();             
+                Datacom.CloseConnection();
 
                 Login.loggedinUser.Name = person.Name;
                 Login.loggedinUser.Email = person.Email;
@@ -260,11 +266,11 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "'", Datacom.connect);
+                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "';", Datacom.connect);
                 Datacom.command.ExecuteNonQuery();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
@@ -307,7 +313,7 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
         /// <summary>
-        /// Gets all peaople who are Present (checked in).
+        /// Gets all people who are Present (checked in).
         /// </summary>
         /// <returns>List of People</returns>
         public static List<Person> GetPersonListPresent()
@@ -328,7 +334,7 @@ namespace EyeCT4Events.Data.DataClasses
                 }
                 return personlist;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return null;
@@ -337,7 +343,7 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-            
+
         }
         /// <summary>
         /// Gets all accounts who aren't admin.
@@ -352,11 +358,11 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0";
-                SqlDataReader reader =  cmd.ExecuteReader();
+                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0  AND bruikbaar IS NULL;";
+                SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    p = new Person(Convert.ToString(reader["naam"]), Convert.ToDateTime(reader["Geboortedatum"]) , Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    p = new Person(Convert.ToString(reader["naam"]), Convert.ToDateTime(reader["Geboortedatum"]), Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
                     personlist.Add(p);
                 }
                 return personlist;
@@ -435,7 +441,7 @@ namespace EyeCT4Events.Data.DataClasses
                 }
                 return personlist;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return null;
@@ -461,7 +467,7 @@ namespace EyeCT4Events.Data.DataClasses
                     return p;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return p;
@@ -471,6 +477,30 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
             return p;
+        }
+        public static int SetPersonAccountIDByName(string name)
+        {
+            int accountid = 0;
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT accountid from account where naam = '" + name + "';", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    accountid = Convert.ToInt32(reader["accountid"]);
+                }
+                return accountid;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return accountid;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
         }
     }
 }
