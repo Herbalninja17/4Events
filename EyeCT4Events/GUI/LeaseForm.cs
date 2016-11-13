@@ -83,7 +83,7 @@ namespace EyeCT4Events
 
         private void LeaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            homeForm.Show();
+            HomeForm.homeForm.Show();
         }
 
         private void RefreshMaterialList()
