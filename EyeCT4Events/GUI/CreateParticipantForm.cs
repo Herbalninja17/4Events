@@ -19,12 +19,12 @@ namespace EyeCT4Events
 
         private CreateParticipantForm createForm;
         private ParticipantsForm participantsForm;
-        private EditParticipantForm editForm;
         private HomeForm homeform;
 
         public CreateParticipantForm()
         {
             InitializeComponent();
+
             SetTextboxes();
             createForm = this;
         }
@@ -35,12 +35,6 @@ namespace EyeCT4Events
             SetTextboxes();
             createForm = this;
             this.participantsForm = participantsForm;
-        }
-
-        public CreateParticipantForm(EditParticipantForm editform)
-            : base()
-        {
-            this.editForm = editform;
         }
 
         private void SetTextboxes()
@@ -98,10 +92,6 @@ namespace EyeCT4Events
             {
                 LoginForm.loginForm.Show();
             }
-            else
-            {
-                EditParticipantForm.editForm.Show();
-            }
-        }
+        } 
     }
 }

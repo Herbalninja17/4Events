@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events.GUI
 {
-    public partial class MessageForm : Form,IComparable<Message>
+    public partial class MessageForm : Form
     {
         private File File;
         private List<Message> messagelist = new List<Message>();
@@ -29,12 +28,6 @@ namespace EyeCT4Events.GUI
                 }
             }
         }
-
-        public int CompareTo(Message other)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Verstuur een bericht.
         /// </summary>
@@ -42,29 +35,8 @@ namespace EyeCT4Events.GUI
         /// <param name="e"></param>
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            if (lbMessages.SelectedItem != null)
-            {
-                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-                string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
-                string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
-                
-                int selectedMessage = Data.DataClasses.DataPerson.SetPersonAccountIDByName(selectedperson);
-
-                Data.DataClasses.DataMessage.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
-                FillListBox();
-                tbMessage.Clear();
-            }
-            else
-            {
-                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-                Data.DataClasses.DataMessage.SetMessage(message, message.Poster, File);
-                FillListBox();
-                tbMessage.Clear();
-            }
-        }
-
-        private void FillListBox()
-        {
+            Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
+            Data.DataClasses.DataMessage.SetMessage(message, message.Poster, File);
             lbMessages.Items.Clear();
             messagelist.Clear();
             messagelist = Data.DataClasses.DataMessage.GetMessageList(File.FileID);
@@ -75,6 +47,7 @@ namespace EyeCT4Events.GUI
                     lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
                 }
             }
+            tbMessage.Clear();
         }
 
         private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)

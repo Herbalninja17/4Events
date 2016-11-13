@@ -45,53 +45,6 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.CloseConnection();
         }
 
-        public static void SetMessageWithResponse(Message msg, Person poster, File file,int selectedperson)
-        {
-            try
-            {
-                Datacom.OpenConnection();
-                int selectedmessage = 0;
-
-                //Get the ID of the message.
-                SqlCommand cmdMessage = new SqlCommand("SELECT responseid FROM response WHERE accountaccountid = " + selectedperson + ";", Datacom.connect);
-                SqlDataReader mreader = cmdMessage.ExecuteReader();
-                mreader.Read();
-                selectedmessage = mreader.GetInt32(0);
-                mreader.Close();
-
-                //Get the ID of the poster.
-                SqlCommand cmdPoster = new SqlCommand("SELECT AccountID " +
-                                                      "FROM Account " +
-                                                      $"WHERE Email = '{poster.Email}';",
-                                                      Datacom.connect);
-                SqlDataReader reader = cmdPoster.ExecuteReader();
-                reader.Read();
-                int posterID = reader.GetInt32(0);
-                reader.Close();
-
-                //Arrange the values needed.
-                int fileId = file.FileID;
-                string message = msg.MessageString;
-                DateTime date = msg.PostTime;
-                string postTime = date.ToShortDateString();
-
-                //Set the values
-                SqlCommand cmd = new SqlCommand("INSERT INTO Response(AccountAccountID,ResponseResponseID, MediaMediaID, Bericht, Datum) " +
-                                                $"VALUES ({posterID},{selectedmessage}, {fileId}, '{message}', '{postTime}');",
-                                                Datacom.connect);
-                cmd.ExecuteNonQuery();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                Datacom.CloseConnection();
-            }
-        }
-
-
         /// <summary>
         /// Gets a list of all messages from the database posted on a certain file
         /// </summary>
@@ -103,10 +56,10 @@ namespace EyeCT4Events.Data.DataClasses
 
             Datacom.OpenConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT a.Naam, a.Email, r.Bericht, r.ResponseID, r.Datum,r.responseresponseid " +
+            SqlCommand cmd = new SqlCommand("SELECT a.Naam, a.Email, r.Bericht, r.ResponseID, r.Datum " +
                                             "FROM Response r, Account a " +
                                             "WHERE r.AccountAccountID = a.AccountID " +
-                                           $"AND r.MediaMediaID = {fileID} ORDER BY responseresponseid,responseid;",
+                                           $"AND r.MediaMediaID = {fileID};",
                                             Datacom.connect);
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -124,20 +77,9 @@ namespace EyeCT4Events.Data.DataClasses
                 int id = reader.GetInt32(3);
                 string date = reader.GetString(4);
                 DateTime postTime = DateTime.Parse(date);
-                int previousmessageid = 0;
-
-                if(reader.IsDBNull(5))
-                {
-                     previousmessageid = 0;
-                }
-                else if(!reader.IsDBNull(5))
-                {
-                    previousmessageid = reader.GetInt32(5);
-                }
-
 
                 //Set the message
-                Message message = new Message(messageString, id, previousmessageid, p, postTime);
+                Message message = new Message(p, messageString, id, postTime);
 
                 messages.Add(message);
             }

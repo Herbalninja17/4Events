@@ -23,7 +23,6 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             loginForm = this;
-            //Login.loggedinUser = null;
         }
         
         /// <summary>
@@ -35,13 +34,6 @@ namespace EyeCT4Events
         {
             if (login.LogInUser(tbLoginEmail.Text, tbLoginWachtwoord.Text) == true)
             {
-                //Rechard zijn super sexy werkend code!
-                //if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
-                //{
-                //    MessageBox.Show("Success Bitches, your tag is: " + RFID.tagstring.ToString());
-                //}
-                //^Rechard zijn super sexy werkend code!^
-
                 HomeForm home = new HomeForm(loginForm);
                 this.Hide();
                 home.Show();
