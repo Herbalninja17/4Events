@@ -51,11 +51,12 @@ namespace EyeCT4Events.Data.DataClasses
                 //Get the ID from the folder
                 SqlCommand cmdFolder = new SqlCommand("SELECT MapID " +
                                                       "FROM Map " +
-                                                      $"WHERE Naam = '{folderName}';");
+                                                      $"WHERE Naam = '{folderName}';",
+                                                      Datacom.connect);
                 SqlDataReader readerFolder = cmdFolder.ExecuteReader();
                 readerFolder.Read();
                 int mapID = readerFolder.GetInt32(0);
-                readerPoster.Close();
+                readerFolder.Close();
                 
                 using (
                     SqlCommand cmd = new SqlCommand($"INSERT INTO Media VALUES (" +
@@ -125,6 +126,7 @@ namespace EyeCT4Events.Data.DataClasses
                 string name = reader.GetString(0);
                 folders.Add(name);
             }
+            reader.Close();
 
             return folders;
         }

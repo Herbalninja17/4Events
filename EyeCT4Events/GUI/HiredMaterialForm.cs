@@ -59,5 +59,10 @@ namespace EyeCT4Events
                 HomeForm.homeForm.Show();
             }          
         }
+
+        private void lbMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

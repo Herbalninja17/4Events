@@ -15,11 +15,13 @@ namespace EyeCT4Events
     public partial class MakeReservationForm : Form
     {
         private HomeForm homeForm;
-        private MakeReservationForm makeReservationForm;
+        public static MakeReservationForm makeReservationForm;
         private List<Person> searchedperson;
         Reservation reservation;
         private bool begindatechanged = false;
         private bool enddatechanged = false;
+
+        private bool goMyReservationForm = false;
 
         public MakeReservationForm()
         {
@@ -58,10 +60,10 @@ namespace EyeCT4Events
             //string x = lbReservationEvents.SelectedItem.ToString();
 
             //Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
-
+            goMyReservationForm = true;
             MyReservationsForm mrf = new MyReservationsForm();
             mrf.Show();
-            this.Close();
+            this.Hide();
         }
 
         /// <summary>
@@ -228,7 +230,11 @@ namespace EyeCT4Events
 
         private void MakeReservationForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomeForm.homeForm.Show();
+            if(!goMyReservationForm)
+            {
+                HomeForm.homeForm.Show();
+            }
+            
         }
     }
 }
