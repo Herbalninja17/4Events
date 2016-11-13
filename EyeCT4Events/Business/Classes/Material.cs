@@ -87,6 +87,12 @@ namespace EyeCT4Events
             Leased = false;
         }
 
+        public static List<Material> GetMaterialList(Person p)
+        {
+            List<Material> mlist = Data.DataClasses.DataMaterial.GetMaterial(p);
+            return mlist;
+        }
+
         public override string ToString() 
         {
             return $"{Name} | {Description} | {Price}";

@@ -19,8 +19,13 @@ namespace EyeCT4Events
         public HiredMaterialForm()
         {
             InitializeComponent();
+            List<Material> materiallist = Material.GetMaterialList(Login.loggedinUser);
+            foreach(Material m in materiallist)
+            {
+                lbMaterial.Items.Add("Naam: "+m.Name +" Beschrijving: " + m.Description + " Prijs: " + m.Price + " Datum geleend: " + m.LeaseDateStart.ToShortDateString() + " Datum terug: " + m.LeaseDateEnd.ToShortDateString());
+            }
         }
-
+        
         /// <summary>
         /// Om naar de form te gaan om een materiaal te huren.
         /// </summary>

@@ -30,7 +30,6 @@
         {
             this.btnLease = new System.Windows.Forms.Button();
             this.lbMaterial = new System.Windows.Forms.ListBox();
-            this.lbDate = new System.Windows.Forms.ListBox();
             this.btnParticipants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,16 +48,8 @@
             this.lbMaterial.FormattingEnabled = true;
             this.lbMaterial.Location = new System.Drawing.Point(149, 3);
             this.lbMaterial.Name = "lbMaterial";
-            this.lbMaterial.Size = new System.Drawing.Size(255, 459);
+            this.lbMaterial.Size = new System.Drawing.Size(327, 459);
             this.lbMaterial.TabIndex = 2;
-            // 
-            // lbDate
-            // 
-            this.lbDate.FormattingEnabled = true;
-            this.lbDate.Location = new System.Drawing.Point(441, 3);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(255, 459);
-            this.lbDate.TabIndex = 3;
             // 
             // btnParticipants
             // 
@@ -74,9 +65,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 481);
+            this.ClientSize = new System.Drawing.Size(498, 481);
             this.Controls.Add(this.btnParticipants);
-            this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbMaterial);
             this.Controls.Add(this.btnLease);
             this.Name = "HiredMaterialForm";
@@ -90,7 +80,6 @@
 
         private System.Windows.Forms.Button btnLease;
         private System.Windows.Forms.ListBox lbMaterial;
-        private System.Windows.Forms.ListBox lbDate;
         private System.Windows.Forms.Button btnParticipants;
     }
 }
