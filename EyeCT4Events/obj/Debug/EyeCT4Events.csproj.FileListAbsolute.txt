@@ -132,7 +132,6 @@ C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.csprojR
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EditEventForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.CreateEventForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.CreateParticipantForm.resources
-C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.DeleteEventForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EditParticipantForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.EventBeheerForm.resources
 C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.LoginForm.resources
@@ -198,3 +197,6 @@ C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events
 D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
 D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.ImageForm.resources
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.ImageForm.resources
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.ImageForm.resources
+C:\Users\jethro\Source\Repos\4Events\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.MessageForm.resources

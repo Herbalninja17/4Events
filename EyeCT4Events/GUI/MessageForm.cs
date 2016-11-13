@@ -24,7 +24,7 @@ namespace EyeCT4Events.GUI
             {
                 foreach(Message m in messagelist)
                 {
-                    lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
+                    lbMessages.Items.Add(m.MessageID + " " + m.Poster.Name + ": " + m.MessageString);
                 }
             }
         }
@@ -35,8 +35,29 @@ namespace EyeCT4Events.GUI
         /// <param name="e"></param>
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-            Data.DataClasses.DataMessage.SetMessage(message, message.Poster, File);
+            if (lbMessages.SelectedItem != null)
+            {
+                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
+                string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
+                string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
+                
+                int selectedPerson = Data.DataClasses.DataPerson.SetPersonAccountIDByName(selectedperson);
+
+                Data.DataClasses.DataMessage.SetMessageWithResponse(message, message.Poster, File, selectedPerson);
+                FillListBox();
+                tbMessage.Clear();
+            }
+            else
+            {
+                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
+                Data.DataClasses.DataMessage.SetMessage(message, message.Poster, File);
+                FillListBox();
+                tbMessage.Clear();
+            }
+        }
+
+        private void FillListBox()
+        {
             lbMessages.Items.Clear();
             messagelist.Clear();
             messagelist = Data.DataClasses.DataMessage.GetMessageList(File.FileID);
@@ -44,10 +65,9 @@ namespace EyeCT4Events.GUI
             {
                 foreach (Message m in messagelist)
                 {
-                    lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
+                    lbMessages.Items.Add(m.MessageID + " " + m.Poster.Name + ": " + m.MessageString);
                 }
             }
-            tbMessage.Clear();
         }
 
         private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)
