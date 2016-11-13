@@ -21,28 +21,19 @@ namespace EyeCT4Events
         {
             InitializeComponent();
         }
+
         public MyReservationsForm(HomeForm homeForm)
+            : base()
         {
             InitializeComponent();
             this.homeForm = homeForm;
         }
 
         public MyReservationsForm(MakeReservationForm makeReservationForm)
+            : base()
         {
             InitializeComponent();
             this.makeReservationForm = makeReservationForm;
-        }
-
-        private void MyReservationsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (homeForm != null && makeReservationForm == null)
-            {
-                homeForm.Show();
-            }
-            else if(homeForm == null && makeReservationForm != null)
-            {
-                makeReservationForm.Show();
-            }
         }
 
         private void MyReservationsForm_Load(object sender, EventArgs e)
@@ -59,6 +50,18 @@ namespace EyeCT4Events
             BetaalForm bf = new BetaalForm(this);
             bf.Show();
             this.Hide();
+        }
+
+        private void MyReservationsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(makeReservationForm != null)
+            {
+                makeReservationForm.Show();
+            }
+            else
+            {
+                HomeForm.homeForm.Show();
+            }
         }
     }
 }
