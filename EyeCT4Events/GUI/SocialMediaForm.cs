@@ -48,7 +48,6 @@ namespace EyeCT4Events
             int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
 
             MessageForm mf = new MessageForm(fileID);
-            this.Close();
             mf.Show();
         }
 
