@@ -158,6 +158,53 @@ namespace EyeCT4Events.Business.Classes
             return check;
         }
 
+        public void rfidbetaal()
+        {
+            string betID = "";
+
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "select r.ReserveringID as reservering from reservering r, AccountReservering a  where r.ReserveringID = a.ReserveringReserveringID and a.AccountAccountID = '" + Person.AcID +"'";
+
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    betID = Convert.ToString(reader["reservering"]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "UPDATE Reservering SET BetaaldStatus = 'Betaald' WHERE ReserveringID = '"+ betID +"'";
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
+
         public void InOutSql(string rfidcode, int account, int aanwezig)
         {
             try

@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EyeCT4Events.GUI;
 using EyeCT4Events.Data.DataClasses;
+using EyeCT4Events.Business.Classes;
 
 namespace EyeCT4Events
 {
     public partial class BetaalForm : Form
     {
         private MyReservationsForm reservationsForm;
+        RfidForm RFID = new RfidForm();
+        RfidCheck InUit = new RfidCheck();
 
         public List<string> betaaldlist;
         public BetaalForm(MyReservationsForm reservationsForm)
@@ -32,9 +35,15 @@ namespace EyeCT4Events
             }
         }
 
+        
+
         private void btnPayReservation_Click(object sender, EventArgs e)
         {
-
+            if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
+            {
+                InUit.rfidbetaal();
+                MessageBox.Show("U heb betaald");
+            }
         }
 
         private void BetaalForm_FormClosing(object sender, FormClosingEventArgs e)

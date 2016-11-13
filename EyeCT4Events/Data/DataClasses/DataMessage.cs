@@ -76,7 +76,7 @@ namespace EyeCT4Events.Data.DataClasses
                 string messageString = reader.GetString(2);
                 int id = reader.GetInt32(3);
                 string date = reader.GetString(4);
-                DateTime postTime = DateTime.ParseExact(date, "g", CultureInfo.InvariantCulture);
+                DateTime postTime = DateTime.Parse(date);
 
                 //Set the message
                 Message message = new Message(p, messageString, id, postTime);
