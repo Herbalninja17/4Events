@@ -212,7 +212,7 @@ namespace EyeCT4Events
             }
             else if(DateTime.Today < BeginDate)
             {
-                eventIsRunning = "Evenement start op " + BeginDate.ToString("d/M/yyyy") + " | ";
+                eventIsRunning = "Evenement start op " + BeginDate.ToString("d-M-yyyy") + " | ";
             }
             else if(BeginDate == default(DateTime) && !EventIsRunning)
             {

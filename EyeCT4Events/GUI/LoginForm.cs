@@ -15,7 +15,7 @@ namespace EyeCT4Events
 {
     public partial class LoginForm : Form
     {
-        private LoginForm loginForm;
+        public static LoginForm loginForm;
         Login login = new Login();
         RfidForm RFID = new RfidForm();
 
@@ -23,6 +23,7 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             loginForm = this;
+            //Login.loggedinUser = null;
         }
         
         /// <summary>
@@ -74,6 +75,7 @@ namespace EyeCT4Events
                 tbLoginWachtwoord.PasswordChar = '●'; 
             }
         }
+
     }
 }
 

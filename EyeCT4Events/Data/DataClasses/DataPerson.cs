@@ -356,9 +356,7 @@ namespace EyeCT4Events.Data.DataClasses
                 SqlDataReader reader =  cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    string date = Convert.ToString(reader["geboortedatum"]);
-                    DateTime dt = DateTime.Parse(date);
-                    p = new Person(Convert.ToString(reader["naam"]), dt, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    p = new Person(Convert.ToString(reader["naam"]), Convert.ToDateTime(reader["Geboortedatum"]) , Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
                     personlist.Add(p);
                 }
                 return personlist;

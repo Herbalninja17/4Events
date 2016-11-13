@@ -213,6 +213,7 @@
             this.Controls.Add(this.lbReservationEvents);
             this.Name = "MakeReservationForm";
             this.Text = "Reservering";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MakeReservationForm_FormClosed);
             this.Load += new System.EventHandler(this.MakeReservationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
