@@ -35,12 +35,12 @@ namespace EyeCT4Events
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public int MessageID { get { return messageID; } private set { messageID = value; } }
+        public int MessageID { get { return messageID; } private set { } }
 
         /// <summary>
         /// Taken from the database.
         /// </summary>
-        public int PreviousMessageID { get { return previousMessageID; } private set { previousMessageID = value; } }
+        public int PreviousMessageID { get { return previousMessageID; } private set { } }
 
         /// <summary>
         /// Taken from the database. Time the post was send (recorded in the database).

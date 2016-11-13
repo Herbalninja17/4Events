@@ -1,5 +1,4 @@
-﻿using EyeCT4Events.GUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +12,12 @@ namespace EyeCT4Events
 {
     public partial class EditParticipantForm : Form
     {
-        public static EditParticipantForm editForm;
-        private HomeForm homeForm;
         public static Person adminPerson { get; private set; }
         
         public EditParticipantForm()
         {
             InitializeComponent();
-            editForm = this;
-
+            
             if (Login.loggedinUser.Admin == 0)
             {
                 //Laat de gegevens zien van de ingelogde gebruiker.
@@ -36,8 +32,6 @@ namespace EyeCT4Events
                 dtpEditParticipantDateOfBirth.Value = Login.loggedinUser.BirthDate;
                 btnCreateParticipant.Enabled = false;
                 btnCreateParticipant.Visible = false;
-                btnLoadParticipant.Enabled = false;
-                btnLoadParticipant.Visible = false;
                 lbEditParticipantAdminScreen.Enabled = false;
                 lbEditParticipantAdminScreen.Visible = false;
             }
@@ -47,20 +41,12 @@ namespace EyeCT4Events
                 lbEditParticipantAdminScreen.Visible = true;
                 btnCreateParticipant.Enabled = true;
                 btnCreateParticipant.Visible = true;
-                btnLoadParticipant.Enabled = true;
-                btnLoadParticipant.Visible = true;
                 List<Person> personlist = Data.DataClasses.DataPerson.GetAllPerson();
                 foreach(Person p in personlist)
                 {
                     lbEditParticipantAdminScreen.Items.Add(p.Email);
                 }
             }
-        }
-
-        public EditParticipantForm(HomeForm homeform)
-            : base()
-        {
-            this.homeForm = homeform;
         }
 
         /// <summary>
@@ -87,7 +73,7 @@ namespace EyeCT4Events
         private void btnCreateParticipant_Click(object sender, EventArgs e)
         {
             CreateParticipantForm cpf = new CreateParticipantForm();
-            this.Hide();
+            this.Close();
             cpf.Show();
         }
 
@@ -154,11 +140,6 @@ namespace EyeCT4Events
                 tbEditParticipantZipCode.Text = adminPerson.ZipCode;
                 dtpEditParticipantDateOfBirth.Value = adminPerson.BirthDate;
             }
-        }
-
-        private void EditParticipantForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            HomeForm.homeForm.Show();
         }
     }
 }
