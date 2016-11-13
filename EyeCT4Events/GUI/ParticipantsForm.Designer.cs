@@ -139,6 +139,7 @@
             this.Controls.Add(this.btnCreateParticipant);
             this.Name = "ParticipantsForm";
             this.Text = "Deelnemers";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParticipantsForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

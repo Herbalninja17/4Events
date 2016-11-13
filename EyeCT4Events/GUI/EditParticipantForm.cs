@@ -15,6 +15,7 @@ namespace EyeCT4Events
     {
         public static EditParticipantForm editForm;
         private HomeForm homeForm;
+        private bool goParticipantForm = false;
         public static Person adminPerson { get; private set; }
         
         public EditParticipantForm()
@@ -132,6 +133,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
+            goParticipantForm = true;
             ParticipantsForm pf = new ParticipantsForm();
             this.Close();
             pf.Show();
@@ -158,7 +160,11 @@ namespace EyeCT4Events
 
         private void EditParticipantForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomeForm.homeForm.Show();
+            if(!goParticipantForm)
+            {
+                HomeForm.homeForm.Show();
+            }
+            
         }
     }
 }
