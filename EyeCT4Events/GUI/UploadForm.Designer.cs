@@ -35,6 +35,8 @@
             this.lblUploadCaption = new System.Windows.Forms.Label();
             this.lblChosenFile = new System.Windows.Forms.Label();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.cbFolders = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSocialMediaNewsFeed
@@ -106,11 +108,30 @@
             this.lblSummary.TabIndex = 9;
             this.lblSummary.Text = "Gekozen Bestand:";
             // 
+            // cbFolders
+            // 
+            this.cbFolders.FormattingEnabled = true;
+            this.cbFolders.Location = new System.Drawing.Point(136, 219);
+            this.cbFolders.Name = "cbFolders";
+            this.cbFolders.Size = new System.Drawing.Size(301, 33);
+            this.cbFolders.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 222);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Categorie:";
+            // 
             // UploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 315);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbFolders);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblChosenFile);
             this.Controls.Add(this.lblUploadCaption);
@@ -122,6 +143,7 @@
             this.Name = "UploadForm";
             this.Text = "s";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UploadForm_FormClosing);
+            this.Load += new System.EventHandler(this.UploadForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +157,7 @@
         private System.Windows.Forms.Label lblUploadCaption;
         private System.Windows.Forms.Label lblChosenFile;
         private System.Windows.Forms.Label lblSummary;
+        private System.Windows.Forms.ComboBox cbFolders;
+        private System.Windows.Forms.Label label1;
     }
 }
