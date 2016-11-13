@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events.GUI
 {
-    public partial class MessageForm : Form
+    public partial class MessageForm : Form,IComparable<Message>
     {
         private File File;
         private List<Message> messagelist = new List<Message>();
@@ -28,6 +29,12 @@ namespace EyeCT4Events.GUI
                 }
             }
         }
+
+        public int CompareTo(Message other)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Verstuur een bericht.
         /// </summary>
