@@ -24,7 +24,7 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "'";
+                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "';";
                 cmd.Connection = Datacom.connect;
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -260,7 +260,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "'", Datacom.connect);
+                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "';", Datacom.connect);
                 Datacom.command.ExecuteNonQuery();
                 return true;
             }
@@ -352,7 +352,7 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0";
+                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0 AND bruikbaar IS NULL;";
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -426,7 +426,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("SELECT email FROM account WHERE naam like '%" + name + "%'", Datacom.connect);
+                Datacom.command = new SqlCommand("SELECT email FROM account WHERE naam like '%" + name + "%';", Datacom.connect);
                 SqlDataReader reader = Datacom.command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -451,7 +451,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * from account where accountid = " + id + "", Datacom.connect);
+                SqlCommand cmd = new SqlCommand("SELECT * from account where accountid = " + id + ";", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
