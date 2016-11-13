@@ -19,8 +19,8 @@ namespace EyeCT4Events.Data.DataClasses
         {
             List<Material> materiallist = new List<Material>();
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT p.ProductID, p.Naam, p.PrijsPerDag, p.Omschrijving,v.betaalstatus ,p.PStatus " +
-                                            $"FROM Product p " +
+            SqlCommand cmd = new SqlCommand("SELECT p.ProductID, p.Naam, p.PrijsPerDag, p.Omschrijving,v.betaalstatus ,p.PStatus " +
+                                            "FROM Product p " +
                                             "inner join verhuur v on p.productid = v.ProductProductID " +
                                             "inner join Polsband pb on v.PolsbandBandID = pb.BandID " +
                                             "inner join account a on a.accountid = pb.AccountAccountID " +
@@ -54,11 +54,9 @@ namespace EyeCT4Events.Data.DataClasses
                     betaalstatus = true;
                 }
 
-                Datacom.CloseConnection();
-
                 Material m = new Material(id, name, description, price, betaalstatus, status);
             }
-
+            Datacom.CloseConnection();
             return materiallist;
         }
 
