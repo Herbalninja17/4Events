@@ -88,7 +88,14 @@ namespace EyeCT4Events
 
         private void CreateParticipantForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (Login.loggedinUser.Admin == 1)
+            {
 
+            }
+            else if (Login.loggedinUser == null)
+            {
+                LoginForm.loginForm.Show();
+            }
         }
     }
 }

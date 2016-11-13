@@ -74,7 +74,7 @@ namespace EyeCT4Events
 
         private void SocialMediaForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            homeForm.Show();
+            HomeForm.homeForm.Show();
         }
     }
 }

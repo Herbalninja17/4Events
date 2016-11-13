@@ -13,7 +13,7 @@ namespace EyeCT4Events.GUI
     public partial class HomeForm : Form
     {
         private readonly LoginForm _loginForm;
-        private HomeForm homeForm;
+        public static HomeForm homeForm;
 
         public HomeForm()
         {
@@ -80,8 +80,7 @@ namespace EyeCT4Events.GUI
 
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            LoginForm loginform = new LoginForm();
-            loginform.Show();
+            LoginForm.loginForm.Show();  
         }
     }
 }

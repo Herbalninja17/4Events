@@ -59,8 +59,8 @@ namespace EyeCT4Events
 
             //Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", dtpReservationBeginDate.Text, dtpReservationEndDate.Text, x[0].ToString());
 
-            HomeForm hf = new HomeForm();
-            hf.Show();
+            MyReservationsForm mrf = new MyReservationsForm();
+            mrf.Show();
             this.Close();
         }
 
@@ -224,6 +224,11 @@ namespace EyeCT4Events
                 btnReservationsLocation.Enabled = true;
                 lblReservations.Visible = false;
             }
+        }
+
+        private void MakeReservationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm.homeForm.Show();
         }
     }
 }
