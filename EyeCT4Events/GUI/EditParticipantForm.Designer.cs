@@ -287,6 +287,7 @@
             this.Controls.Add(this.btnCreateParticipant);
             this.Name = "EditParticipantForm";
             this.Text = "EditParticipantForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditParticipantForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

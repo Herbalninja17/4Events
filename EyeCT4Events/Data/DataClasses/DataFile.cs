@@ -41,7 +41,7 @@ namespace EyeCT4Events.Data.DataClasses
                 //Get the ID from the poster
                 SqlCommand cmdPoster = new SqlCommand("SELECT AccountID " +
                                                       "FROM Account " +
-                                                      $"WHERE Email = '{poster.Email}';",
+                                                      $"WHERE Email = '{poster.Email}'",
                                                       Datacom.connect);
                 SqlDataReader reader = cmdPoster.ExecuteReader();
                 reader.Read();
@@ -56,7 +56,7 @@ namespace EyeCT4Events.Data.DataClasses
                                                     $"'{DateTime.Now.ToString("d-M-yyyy")}', " +
                                                     $"@binaryValue, " +
                                                     $"'{text}', " +
-                                                    $"'{title}');", 
+                                                    $"'{title}')", 
                                                     Datacom.connect)
                     )
                 {
@@ -79,7 +79,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM media WHERE accountaccountid is not null and titel is not null and Content is not null;", Datacom.connect);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM media WHERE accountaccountid is not null and titel is not null and Content is not null", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
                 File f;
                 while (reader.Read())

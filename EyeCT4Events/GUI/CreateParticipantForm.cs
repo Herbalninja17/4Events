@@ -100,7 +100,7 @@ namespace EyeCT4Events
             }
             else
             {
-                EditParticipantForm.editForm.Show(); 
+                EditParticipantForm.editForm.Show();
             }
         }
     }

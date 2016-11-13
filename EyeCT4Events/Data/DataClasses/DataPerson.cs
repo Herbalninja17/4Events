@@ -24,7 +24,7 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "';";
+                cmd.CommandText = "SELECT * FROM account WHERE email = '" + email + "'";
                 cmd.Connection = Datacom.connect;
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -197,10 +197,7 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password 
-                    + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode 
-                    + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" 
-                    + EditParticipantForm.adminPerson.Email + "' AND wachtwoord = '" + EditParticipantForm.adminPerson.Password + "';";
+                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" + EditParticipantForm.adminPerson.Email + "' AND wachtwoord = '" + EditParticipantForm.adminPerson.Password + "';";
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -229,10 +226,7 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" 
-                    + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" 
-                    + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum 
-                    + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
+                cmd.CommandText = "UPDATE account SET naam = '" + person.Name + "', email = '" + person.Email + "', wachtwoord = '" + person.Password + "',rekeningnummer = '" + person.AccountNumber + "', telefoon = '" + person.Phonenumber + "', postcode = '" + person.ZipCode + "', woonplaats = '" + person.City + "', adres = '" + person.Address + "', geboortedatum = '" + geboortedatum + "' WHERE email = '" + Login.loggedinUser.Email + "' AND wachtwoord = '" + Login.loggedinUser.Password + "';";
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -266,7 +260,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "';", Datacom.connect);
+                Datacom.command = new SqlCommand("UPDATE account SET bruikbaar = 'uitgeschakeld' WHERE email = '" + p.Email + "' and wachtwoord = '" + p.Password + "'", Datacom.connect);
                 Datacom.command.ExecuteNonQuery();
                 return true;
             }
@@ -358,7 +352,7 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0  AND bruikbaar IS NULL;";
+                cmd.CommandText = "SELECT * FROM account WHERE beheerder = 0";
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
