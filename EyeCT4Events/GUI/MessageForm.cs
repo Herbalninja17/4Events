@@ -12,14 +12,32 @@ namespace EyeCT4Events.GUI
 {
     public partial class MessageForm : Form
     {
-        public MessageForm()
+        private int fileID;
+        private List<Message> messagelist = new List<Message>();
+
+        public MessageForm(int fileid)
         {
             InitializeComponent();
+            fileID = fileid;
+            messagelist = Data.DataClasses.DataMessage.GetMessageList(fileID);
+            if(messagelist.Count != 0)
+            {
+                foreach(Message m in messagelist)
+                {
+                    lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
+                }
+            }
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SocialMediaForm smf = new SocialMediaForm();
+            smf.Show();
         }
     }
 }

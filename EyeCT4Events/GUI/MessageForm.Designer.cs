@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnSendMessage);
             this.Name = "MessageForm";
             this.Text = "MessageForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MessageForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

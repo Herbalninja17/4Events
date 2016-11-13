@@ -15,6 +15,7 @@ namespace EyeCT4Events
     {
         private SocialMediaForm mediaForm;
         private HomeForm homeForm;
+        private List<File> fileList;
 
         public SocialMediaForm()
         {
@@ -43,29 +44,40 @@ namespace EyeCT4Events
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-            MessageForm mf = new MessageForm();
-            this.Close();
-            mf.Show();
-        }
+            string fn = Convert.ToString(lbSocialMedia.SelectedItem);
+            int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
 
-        private void SocialMediaForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            homeForm.Show();
+            MessageForm mf = new MessageForm(fileID);
+            mf.Show();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            homeForm = new HomeForm();
             this.Close();
-            homeForm.Show();
         }
 
         private void SocialMediaForm_Load(object sender, EventArgs e)
         {
-            List<File> FileList = Data.DataClasses.DataFile.GetFileList();
-            foreach(File f in FileList)
+            fileList = Data.DataClasses.DataFile.GetFileList();
+            foreach(File f in fileList)
             {
-                lbSocialMedia.Items.Add("Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
+                lbSocialMedia.Items.Add(f.FileID + " Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
             }
+        }
+
+        private void btnShowImage_Click(object sender, EventArgs e)
+        {
+            int index = lbSocialMedia.SelectedIndex;
+            int fileId = fileList[index].FileID;
+
+            ImageForm imgForm = new ImageForm(fileId);
+            imgForm.Show();
+        }
+
+        private void SocialMediaForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            homeForm.Show();
         }
     }
 }
