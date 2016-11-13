@@ -70,7 +70,8 @@ namespace EyeCT4Events
             }
 
             File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
-            uploadFile.Upload(cbFolders.SelectedText);
+            string selectedFolder = cbFolders.SelectedItem.ToString();
+            uploadFile.Upload(selectedFolder);
             this.Close();
         }
 
