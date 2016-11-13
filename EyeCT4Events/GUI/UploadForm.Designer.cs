@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnSocialMediaNewsFeed);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UploadForm";
-            this.Text = "Upload";
+            this.Text = "s";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UploadForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

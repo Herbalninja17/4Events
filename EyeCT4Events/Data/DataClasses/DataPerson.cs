@@ -447,5 +447,32 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        public static Person GetPersonByID(int id)
+        {
+            Person p = null;
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * from account where accountid = " + id + "", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string date = Convert.ToString(reader["geboortedatum"]);
+                    DateTime dt = DateTime.Parse(date);
+                    p = new Person(Convert.ToString(reader["naam"]), dt, Convert.ToString(reader["adres"]), Convert.ToString(reader["postcode"]), Convert.ToString(reader["woonplaats"]), Convert.ToString(reader["telefoon"]), Convert.ToString(reader["email"]), Convert.ToString(reader["wachtwoord"]), Convert.ToString(reader["rekeningnummer"]));
+                    return p;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return p;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+            return p;
+        }
     }
 }

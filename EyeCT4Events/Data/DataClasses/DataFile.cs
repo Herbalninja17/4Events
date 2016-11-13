@@ -18,7 +18,7 @@ namespace EyeCT4Events.Data.DataClasses
             Datacom.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT Content " +
                                             "FROM Media " +
-                                            "WHERE Titel = 'Pino';",
+                                            $"WHERE MediaID = {id};",
                                             Datacom.connect);
             byte[] img = (byte[])cmd.ExecuteScalar();
             MemoryStream str = new MemoryStream(img);
@@ -75,7 +75,31 @@ namespace EyeCT4Events.Data.DataClasses
 
         public static List<File> GetFileList()
         {
-            return null;
+            List<File> filelist = new List<File>();
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM media WHERE accountaccountid is not null and titel is not null and Content is not null", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                File f;
+                while (reader.Read())
+                {
+                    Person p = Data.DataClasses.DataPerson.GetPersonByID(Convert.ToInt32(reader["accountaccountid"]));
+                    
+                    f = new File(Convert.ToString(reader["titel"]), Convert.ToString(reader["titel"]), Convert.ToString(reader["mediatype"]), Convert.ToInt32(reader["mediaid"]), p);
+                    filelist.Add(f);
+                }
+                return filelist;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return filelist;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
         }
     }
 }
