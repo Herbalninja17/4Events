@@ -72,11 +72,5 @@ namespace EyeCT4Events.GUI
                 }
             }
         }
-
-        private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SocialMediaForm smf = new SocialMediaForm();
-            smf.Show();
-        }
     }
 }
