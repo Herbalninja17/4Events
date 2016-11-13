@@ -194,3 +194,5 @@ C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\Ey
 C:\Users\Timothy\Fontys\Software\Proftaak\EyeCT4Events\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
 C:\Users\Bono IJpelaar\Source\Repos\4Events2\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
 C:\Users\Gebruiker\Desktop\4Event\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
+D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.BetaalForm.resources
+D:\Kevin\Documents\School\Events2\EyeCT4Events\obj\Debug\EyeCT4Events.GUI.ImageForm.resources

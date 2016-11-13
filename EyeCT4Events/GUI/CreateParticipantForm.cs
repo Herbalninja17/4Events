@@ -85,5 +85,10 @@ namespace EyeCT4Events
                 MessageBox.Show("U bent een van de velden vergeten in te vullen.");
             }
         }
+
+        private void CreateParticipantForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

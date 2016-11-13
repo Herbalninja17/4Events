@@ -267,7 +267,7 @@ namespace EyeCT4Events
         public override string ToString()
         {
            return Name
-                + " | " + birthDate
+                + " | " + birthDate.ToString("d-M-yyyy")
                 + " | " + Address
                 + " | " + ZipCode
                 + " | " + City
