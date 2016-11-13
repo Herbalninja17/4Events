@@ -116,7 +116,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string testString = message.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Catwomanlover69@wayneenterprices.GC | 0 | 0 | This is a unit-test testmessage.");
+            Assert.IsTrue(testString == "Catwomanlover69@wayneenterprices.GC | 0 | 0 | This is a unit-test testmessage. | " + timeStamp);
         }
     }
 }

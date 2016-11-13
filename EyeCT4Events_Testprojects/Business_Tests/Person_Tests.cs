@@ -571,7 +571,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             Person p1 = new Person(name, date, address, zipcode, city, phone, email, pasw, accountNumber);
 
             //Assert is handled by the ExpectedException
-            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date + " | Jongstraat 12 | 1111ZX | Bangkok | 0644543312 | banana@applepen.nl");
+            Assert.IsTrue(p1.ToString() == "Erik Molls | " + date.ToString("d-M-yyyy") + " | Jongstraat 12 | 1111ZX | Bangkok | 0644543312 | banana@applepen.nl");
         }
     }
 }
