@@ -73,7 +73,7 @@
             this.btnPayReservation.Name = "btnPayReservation";
             this.btnPayReservation.Size = new System.Drawing.Size(112, 31);
             this.btnPayReservation.TabIndex = 5;
-            this.btnPayReservation.Text = "Pay reservation";
+            this.btnPayReservation.Text = "Betaal Reservering";
             this.btnPayReservation.UseVisualStyleBackColor = true;
             this.btnPayReservation.Click += new System.EventHandler(this.btnPayReservation_Click);
             // 

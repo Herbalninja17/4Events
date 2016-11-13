@@ -58,7 +58,7 @@
             this.btnPayReservation.Name = "btnPayReservation";
             this.btnPayReservation.Size = new System.Drawing.Size(137, 53);
             this.btnPayReservation.TabIndex = 2;
-            this.btnPayReservation.Text = "Pay selected reservation";
+            this.btnPayReservation.Text = "Betaal Reservering";
             this.btnPayReservation.UseVisualStyleBackColor = true;
             this.btnPayReservation.Click += new System.EventHandler(this.btnPayReservation_Click);
             // 
@@ -92,6 +92,7 @@
             this.Controls.Add(this.lbPaid);
             this.Name = "BetaalForm";
             this.Text = "BetaalForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BetaalForm_FormClosing);
             this.Load += new System.EventHandler(this.BetaalForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

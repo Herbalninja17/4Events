@@ -14,10 +14,13 @@ namespace EyeCT4Events
 {
     public partial class BetaalForm : Form
     {
+        private MyReservationsForm reservationsForm;
+
         public List<string> betaaldlist;
-        public BetaalForm()
+        public BetaalForm(MyReservationsForm reservationsForm)
         {
             InitializeComponent();
+            this.reservationsForm = reservationsForm;
         }
 
         private void BetaalForm_Load(object sender, EventArgs e)
@@ -32,6 +35,11 @@ namespace EyeCT4Events
         private void btnPayReservation_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BetaalForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            reservationsForm.Show();
         }
     }
 }

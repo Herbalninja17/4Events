@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EyeCT4Events.Data.DataClasses;
 
 namespace EyeCT4Events
 {
@@ -116,6 +117,11 @@ namespace EyeCT4Events
                 }
             }
             return "";
+        }
+
+        public void Upload()
+        {
+            DataFile.UploadImage(this.Poster, 1, this.FileType, this.FileName, "", this.Title);
         }
 
         public override string ToString()

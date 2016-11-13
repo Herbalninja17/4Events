@@ -36,12 +36,16 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnSocialMediaUpload_Click(object sender, EventArgs e)
         {
-
+            UploadForm upload = new UploadForm(mediaForm);
+            upload.Show();
+            this.Hide();
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-
+            MessageForm mf = new MessageForm();
+            this.Close();
+            mf.Show();
         }
 
         private void SocialMediaForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,6 +57,11 @@ namespace EyeCT4Events
         {
             this.Close();
             homeForm.Show();
+        }
+
+        private void SocialMediaForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

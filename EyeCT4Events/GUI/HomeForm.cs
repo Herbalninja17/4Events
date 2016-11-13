@@ -54,7 +54,7 @@ namespace EyeCT4Events.GUI
 
         private void btnGoToSocialMedia_Click(object sender, EventArgs e)
         {
-            SocialMediaForm socialMedia = new SocialMediaForm();
+            SocialMediaForm socialMedia = new SocialMediaForm(this);
             socialMedia.Show();
             this.Hide();
         }
@@ -80,7 +80,8 @@ namespace EyeCT4Events.GUI
 
         private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _loginForm.Show();
+            LoginForm loginform = new LoginForm();
+            loginform.Show();
         }
     }
 }

@@ -33,12 +33,14 @@
             this.btnUploadUpload = new System.Windows.Forms.Button();
             this.tbUploadCaption = new System.Windows.Forms.TextBox();
             this.lblUploadCaption = new System.Windows.Forms.Label();
+            this.lblChosenFile = new System.Windows.Forms.Label();
+            this.lblSummary = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSocialMediaNewsFeed
             // 
             this.btnSocialMediaNewsFeed.Location = new System.Drawing.Point(24, 23);
-            this.btnSocialMediaNewsFeed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSocialMediaNewsFeed.Margin = new System.Windows.Forms.Padding(6);
             this.btnSocialMediaNewsFeed.Name = "btnSocialMediaNewsFeed";
             this.btnSocialMediaNewsFeed.Size = new System.Drawing.Size(150, 75);
             this.btnSocialMediaNewsFeed.TabIndex = 2;
@@ -49,7 +51,7 @@
             // btnUploadChooseFile
             // 
             this.btnUploadChooseFile.Location = new System.Drawing.Point(606, 96);
-            this.btnUploadChooseFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUploadChooseFile.Margin = new System.Windows.Forms.Padding(6);
             this.btnUploadChooseFile.Name = "btnUploadChooseFile";
             this.btnUploadChooseFile.Size = new System.Drawing.Size(200, 73);
             this.btnUploadChooseFile.TabIndex = 4;
@@ -60,7 +62,7 @@
             // btnUploadUpload
             // 
             this.btnUploadUpload.Location = new System.Drawing.Point(606, 198);
-            this.btnUploadUpload.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUploadUpload.Margin = new System.Windows.Forms.Padding(6);
             this.btnUploadUpload.Name = "btnUploadUpload";
             this.btnUploadUpload.Size = new System.Drawing.Size(200, 73);
             this.btnUploadUpload.TabIndex = 5;
@@ -71,7 +73,7 @@
             // tbUploadCaption
             // 
             this.tbUploadCaption.Location = new System.Drawing.Point(486, 23);
-            this.tbUploadCaption.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbUploadCaption.Margin = new System.Windows.Forms.Padding(6);
             this.tbUploadCaption.Name = "tbUploadCaption";
             this.tbUploadCaption.Size = new System.Drawing.Size(316, 31);
             this.tbUploadCaption.TabIndex = 6;
@@ -86,19 +88,40 @@
             this.lblUploadCaption.TabIndex = 7;
             this.lblUploadCaption.Text = "Beschrijving:";
             // 
+            // lblChosenFile
+            // 
+            this.lblChosenFile.AutoSize = true;
+            this.lblChosenFile.Location = new System.Drawing.Point(19, 145);
+            this.lblChosenFile.Name = "lblChosenFile";
+            this.lblChosenFile.Size = new System.Drawing.Size(74, 25);
+            this.lblChosenFile.TabIndex = 8;
+            this.lblChosenFile.Text = "(geen)";
+            // 
+            // lblSummary
+            // 
+            this.lblSummary.AutoSize = true;
+            this.lblSummary.Location = new System.Drawing.Point(19, 120);
+            this.lblSummary.Name = "lblSummary";
+            this.lblSummary.Size = new System.Drawing.Size(189, 25);
+            this.lblSummary.TabIndex = 9;
+            this.lblSummary.Text = "Gekozen Bestand:";
+            // 
             // UploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 315);
+            this.Controls.Add(this.lblSummary);
+            this.Controls.Add(this.lblChosenFile);
             this.Controls.Add(this.lblUploadCaption);
             this.Controls.Add(this.tbUploadCaption);
             this.Controls.Add(this.btnUploadUpload);
             this.Controls.Add(this.btnUploadChooseFile);
             this.Controls.Add(this.btnSocialMediaNewsFeed);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UploadForm";
             this.Text = "Upload";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UploadForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +133,7 @@
         private System.Windows.Forms.Button btnUploadUpload;
         private System.Windows.Forms.TextBox tbUploadCaption;
         private System.Windows.Forms.Label lblUploadCaption;
+        private System.Windows.Forms.Label lblChosenFile;
+        private System.Windows.Forms.Label lblSummary;
     }
 }
