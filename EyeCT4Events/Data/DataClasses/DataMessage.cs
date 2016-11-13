@@ -23,7 +23,7 @@ namespace EyeCT4Events.Data.DataClasses
             //Get the ID of the poster
             SqlCommand cmdPoster = new SqlCommand("SELECT AccountID " +
                                                   "FROM Account " +
-                                                  $"WHERE Email = {poster.Email};",
+                                                  $"WHERE Email = '{poster.Email}';",
                                                   Datacom.connect);
             SqlDataReader reader = cmdPoster.ExecuteReader();
             reader.Read();
@@ -34,7 +34,7 @@ namespace EyeCT4Events.Data.DataClasses
             int fileId = file.FileID;
             string message = msg.MessageString;
             DateTime date = msg.PostTime;
-            string postTime = date.ToString("g");
+            string postTime = date.ToShortDateString();
 
             //Set the values
             SqlCommand cmd = new SqlCommand("INSERT INTO Response(AccountAccountID, MediaMediaID, Bericht, Datum) " +

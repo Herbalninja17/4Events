@@ -44,11 +44,23 @@ namespace EyeCT4Events
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-            string fn = Convert.ToString(lbSocialMedia.SelectedItem);
-            int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
-
-            MessageForm mf = new MessageForm(fileID);
-            mf.Show();
+            if (lbSocialMedia.SelectedItem == null)
+            {
+                MessageBox.Show("Selecteer een post om een bericht erover te sturen.");
+            }
+            else
+            {
+                string fn = Convert.ToString(lbSocialMedia.SelectedItem);
+                int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
+                foreach (File f in fileList)
+                {
+                    if (fileID == f.FileID)
+                    {
+                        MessageForm mf = new MessageForm(f);
+                        mf.Show();
+                    }
+                }
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
