@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -121,6 +122,11 @@ namespace EyeCT4Events
                     }
                 }
             }
+        }
+
+        private void ParticipantsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm.homeForm.Show();
         }
     }
 }

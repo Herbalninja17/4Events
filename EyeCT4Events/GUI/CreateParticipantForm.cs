@@ -98,6 +98,11 @@ namespace EyeCT4Events
             {
                 LoginForm.loginForm.Show();
             }
+            else if(participantsForm != null)
+            {
+                MessageBox.Show("Test");
+                participantsForm.Show();
+            }
             else
             {
                 EditParticipantForm.editForm.Show();
