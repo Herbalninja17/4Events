@@ -230,6 +230,7 @@
             this.Controls.Add(this.lblCreateParticipantName);
             this.Name = "CreateParticipantForm";
             this.Text = "Create Participant";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateParticipantForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

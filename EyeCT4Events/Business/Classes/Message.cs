@@ -131,6 +131,7 @@ namespace EyeCT4Events
                 + " | " + MessageID
                 + " | " + previousMessageID
                 + " | " + MessageString
+                + " | " + PostTime
                 ;
         }
     }
