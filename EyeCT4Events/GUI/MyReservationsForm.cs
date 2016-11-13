@@ -16,23 +16,25 @@ namespace EyeCT4Events
     {
         private HomeForm homeForm;
         private MakeReservationForm makeReservationForm;
+        private MyReservationsForm myForm;
 
         public MyReservationsForm()
         {
             InitializeComponent();
+            myForm = this;
         }
 
         public MyReservationsForm(HomeForm homeForm)
-            : base()
         {
             InitializeComponent();
+            myForm = this;
             this.homeForm = homeForm;
         }
 
         public MyReservationsForm(MakeReservationForm makeReservationForm)
-            : base()
         {
             InitializeComponent();
+            myForm = this;
             this.makeReservationForm = makeReservationForm;
         }
 
