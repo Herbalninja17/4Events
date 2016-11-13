@@ -50,7 +50,14 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
+                int selectedmessage = 0;
 
+                //Get the ID of the message.
+                SqlCommand cmdMessage = new SqlCommand("SELECT responseid FROM response WHERE accountaccountid = " + selectedperson + ";", Datacom.connect);
+                SqlDataReader mreader = cmdMessage.ExecuteReader();
+                mreader.Read();
+                selectedmessage = mreader.GetInt32(0);
+                mreader.Close();
 
                 //Get the ID of the poster.
                 SqlCommand cmdPoster = new SqlCommand("SELECT AccountID " +
@@ -70,7 +77,7 @@ namespace EyeCT4Events.Data.DataClasses
 
                 //Set the values
                 SqlCommand cmd = new SqlCommand("INSERT INTO Response(AccountAccountID,ResponseResponseID, MediaMediaID, Bericht, Datum) " +
-                                                $"VALUES ({posterID},{selectedperson}, {fileId}, '{message}', '{postTime}');",
+                                                $"VALUES ({posterID},{selectedmessage}, {fileId}, '{message}', '{postTime}');",
                                                 Datacom.connect);
                 cmd.ExecuteNonQuery();
             }
@@ -99,7 +106,7 @@ namespace EyeCT4Events.Data.DataClasses
             SqlCommand cmd = new SqlCommand("SELECT a.Naam, a.Email, r.Bericht, r.ResponseID, r.Datum,r.responseresponseid " +
                                             "FROM Response r, Account a " +
                                             "WHERE r.AccountAccountID = a.AccountID " +
-                                           $"AND r.MediaMediaID = {fileID};",
+                                           $"AND r.MediaMediaID = {fileID} ORDER BY responseresponseid,responseid;",
                                             Datacom.connect);
 
             SqlDataReader reader = cmd.ExecuteReader();

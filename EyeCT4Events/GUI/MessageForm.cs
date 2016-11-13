@@ -24,7 +24,7 @@ namespace EyeCT4Events.GUI
             {
                 foreach(Message m in messagelist)
                 {
-                    lbMessages.Items.Add(m.MessageID + " " + m.Poster.Name + ": " + m.MessageString);
+                    lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
                 }
             }
         }
@@ -41,9 +41,9 @@ namespace EyeCT4Events.GUI
                 string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
                 string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
                 
-                int selectedPerson = Data.DataClasses.DataPerson.SetPersonAccountIDByName(selectedperson);
+                int selectedMessage = Data.DataClasses.DataPerson.SetPersonAccountIDByName(selectedperson);
 
-                Data.DataClasses.DataMessage.SetMessageWithResponse(message, message.Poster, File, selectedPerson);
+                Data.DataClasses.DataMessage.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
                 FillListBox();
                 tbMessage.Clear();
             }
@@ -65,7 +65,7 @@ namespace EyeCT4Events.GUI
             {
                 foreach (Message m in messagelist)
                 {
-                    lbMessages.Items.Add(m.MessageID + " " + m.Poster.Name + ": " + m.MessageString);
+                    lbMessages.Items.Add(m.Poster.Name + ": " + m.MessageString);
                 }
             }
         }
