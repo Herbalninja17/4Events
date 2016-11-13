@@ -17,6 +17,8 @@ namespace EyeCT4Events
         private SocialMediaForm socialMedia;
         private OpenFileDialog chosenFile;
 
+        private List<string> folders;
+
         public UploadForm()
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace EyeCT4Events
             }
 
             File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
-            uploadFile.Upload();
+            uploadFile.Upload(cbFolders.SelectedText);
             this.Close();
         }
 
@@ -76,6 +78,15 @@ namespace EyeCT4Events
         {
             socialMedia.Refresh();
             socialMedia.Show();
+        }
+
+        private void UploadForm_Load(object sender, EventArgs e)
+        {
+            folders = DataFile.GetFolders();
+            foreach (string folder in folders)
+            {
+                cbFolders.Items.Add(folder);
+            }
         }
     }
 }

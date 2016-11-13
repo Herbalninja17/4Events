@@ -27,7 +27,7 @@ namespace EyeCT4Events.Data.DataClasses
             return returnImage;
         }
 
-        public static void UploadImage(Person poster, int mapID, string fileType, string filename, string text, string title)
+        public static void UploadImage(Person poster, string folderName, string fileType, string filename, string text, string title)
         {
             try
             {
@@ -43,10 +43,19 @@ namespace EyeCT4Events.Data.DataClasses
                                                       "FROM Account " +
                                                       $"WHERE Email = '{poster.Email}';",
                                                       Datacom.connect);
-                SqlDataReader reader = cmdPoster.ExecuteReader();
-                reader.Read();
-                int posterId = reader.GetInt32(0); 
-                reader.Close();
+                SqlDataReader readerPoster = cmdPoster.ExecuteReader();
+                readerPoster.Read();
+                int posterId = readerPoster.GetInt32(0); 
+                readerPoster.Close();
+
+                //Get the ID from the folder
+                SqlCommand cmdFolder = new SqlCommand("SELECT MapID " +
+                                                      "FROM Map " +
+                                                      $"WHERE Naam = '{folderName}';");
+                SqlDataReader readerFolder = cmdFolder.ExecuteReader();
+                readerFolder.Read();
+                int mapID = readerFolder.GetInt32(0);
+                readerPoster.Close();
                 
                 using (
                     SqlCommand cmd = new SqlCommand($"INSERT INTO Media VALUES (" +
@@ -100,6 +109,24 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
+        }
+
+        public static List<string> GetFolders()
+        {
+            List<string> folders = new List<string>();
+
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT Naam " +
+                                            "FROM Map;",
+                                            Datacom.connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string name = reader.GetString(0);
+                folders.Add(name);
+            }
+
+            return folders;
         }
     }
 }

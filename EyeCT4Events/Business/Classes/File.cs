@@ -119,9 +119,9 @@ namespace EyeCT4Events
             return "";
         }
 
-        public void Upload()
+        public void Upload(string folderName)
         {
-            DataFile.UploadImage(this.Poster, 1, this.FileType, this.FileName, "", this.Title);
+            DataFile.UploadImage(this.Poster, folderName, this.FileType, this.FileName, "", this.Title);
         }
 
         public override string ToString()
