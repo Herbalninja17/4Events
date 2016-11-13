@@ -69,10 +69,12 @@ namespace EyeCT4Events
 
             File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
             uploadFile.Upload();
+            this.Close();
         }
 
         private void UploadForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            socialMedia.Refresh();
             socialMedia.Show();
         }
     }
