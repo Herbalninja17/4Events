@@ -100,7 +100,6 @@ namespace EyeCT4Events
             }
             else if(participantsForm != null)
             {
-                MessageBox.Show("Test");
                 participantsForm.Show();
             }
             else

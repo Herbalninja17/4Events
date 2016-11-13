@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EyeCT4Events.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace EyeCT4Events
 {
     public partial class HiredMaterialForm : Form
     {
+        private bool goParticipantForm = false;
+        private bool goLeaseForm = false;
+
         public HiredMaterialForm()
         {
             InitializeComponent();
@@ -24,6 +28,7 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnLease_Click(object sender, EventArgs e)
         {
+            goLeaseForm = true;
             LeaseForm lf = new LeaseForm();
             this.Close();
             lf.Show();
@@ -36,9 +41,18 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnParticipants_Click(object sender, EventArgs e)
         {
+            goParticipantForm = true;
             ParticipantsForm pf = new ParticipantsForm();
             this.Close();
             pf.Show();
+        }
+
+        private void HiredMaterialForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(!goParticipantForm && !goLeaseForm)
+            {
+                HomeForm.homeForm.Show();
+            }          
         }
     }
 }
