@@ -43,7 +43,10 @@ namespace EyeCT4Events
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-            MessageForm mf = new MessageForm();
+            string fn = Convert.ToString(lbSocialMedia.SelectedItem);
+            int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
+
+            MessageForm mf = new MessageForm(fileID);
             this.Close();
             mf.Show();
         }
@@ -55,6 +58,7 @@ namespace EyeCT4Events
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            homeForm = new HomeForm();
             this.Close();
             homeForm.Show();
         }
@@ -64,7 +68,7 @@ namespace EyeCT4Events
             List<File> FileList = Data.DataClasses.DataFile.GetFileList();
             foreach(File f in FileList)
             {
-                lbSocialMedia.Items.Add("Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
+                lbSocialMedia.Items.Add(f.FileID + " Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
             }
         }
     }
