@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace EyeCT4Events.GUI
 {
-    public partial class MessageForm : Form,IComparable<Message>
+    public partial class MessageForm : Form
     {
         private File File;
         private List<Message> messagelist = new List<Message>();
@@ -20,7 +20,7 @@ namespace EyeCT4Events.GUI
         {
             InitializeComponent();
             File = file; 
-            messagelist = Data.DataClasses.DataMessage.GetMessageList(File.FileID);
+            messagelist = Message.GetMessageList(File.FileID);
             if(messagelist.Count != 0)
             {
                 foreach(Message m in messagelist)
@@ -29,12 +29,6 @@ namespace EyeCT4Events.GUI
                 }
             }
         }
-
-        public int CompareTo(Message other)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Verstuur een bericht.
         /// </summary>
@@ -48,16 +42,16 @@ namespace EyeCT4Events.GUI
                 string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
                 string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
                 
-                int selectedMessage = Data.DataClasses.DataPerson.SetPersonAccountIDByName(selectedperson);
+                int selectedMessage = Message.SetPersonAccountIDByName(selectedperson);
 
-                Data.DataClasses.DataMessage.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
+                Message.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
                 FillListBox();
                 tbMessage.Clear();
             }
             else
             {
                 Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-                Data.DataClasses.DataMessage.SetMessage(message, message.Poster, File);
+                Message.SetMessage(message, message.Poster, File);
                 FillListBox();
                 tbMessage.Clear();
             }
@@ -67,7 +61,9 @@ namespace EyeCT4Events.GUI
         {
             lbMessages.Items.Clear();
             messagelist.Clear();
-            messagelist = Data.DataClasses.DataMessage.GetMessageList(File.FileID);
+
+            messagelist = Message.GetMessageList(File.FileID);
+
             if (messagelist.Count != 0)
             {
                 foreach (Message m in messagelist)

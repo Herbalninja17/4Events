@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events
 {
-    public class Message
+    public class Message : IComparable<Message>
     {
         //Fields
         private string messageString;
@@ -124,6 +124,27 @@ namespace EyeCT4Events
             PostTime = postTime;
         }
 
+        public static List<Message> GetMessageList(int id)
+        {
+            List<Message> messagelist = Data.DataClasses.DataMessage.GetMessageList(id);
+            return messagelist;
+        }
+        public static int SetPersonAccountIDByName(string personid)
+        {
+            int id = Data.DataClasses.DataPerson.SetPersonAccountIDByName(personid);
+            return id;
+        }
+
+        public static void SetMessageWithResponse(Message message, Person poster, File file, int selectedMessage)
+        {
+            Data.DataClasses.DataMessage.SetMessageWithResponse(message,poster,file,selectedMessage);
+        }
+
+        public static void SetMessage(Message message, Person poster, File file)
+        {
+            Data.DataClasses.DataMessage.SetMessage(message, poster, file);
+        }
+
         //methods
         public override string ToString()
         {
@@ -133,6 +154,11 @@ namespace EyeCT4Events
                 + " | " + MessageString
                 + " | " + PostTime
                 ;
+        }
+
+        public int CompareTo(Message other)
+        {
+            throw new NotImplementedException();
         }
     }
 }
