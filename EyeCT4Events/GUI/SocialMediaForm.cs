@@ -61,7 +61,11 @@ namespace EyeCT4Events
 
         private void SocialMediaForm_Load(object sender, EventArgs e)
         {
-
+            List<File> FileList = Data.DataClasses.DataFile.GetFileList();
+            foreach(File f in FileList)
+            {
+                lbSocialMedia.Items.Add("Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
+            }
         }
     }
 }
