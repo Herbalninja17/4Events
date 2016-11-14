@@ -39,6 +39,8 @@ namespace EyeCT4Events
                 btnCreateParticipant.Visible = false;
                 btnLoadParticipant.Enabled = false;
                 btnLoadParticipant.Visible = false;
+                btnParticipants.Enabled = false;
+                btnParticipants.Visible = false;
                 lbEditParticipantAdminScreen.Enabled = false;
                 lbEditParticipantAdminScreen.Visible = false;
             }
@@ -50,6 +52,8 @@ namespace EyeCT4Events
                 btnCreateParticipant.Visible = true;
                 btnLoadParticipant.Enabled = true;
                 btnLoadParticipant.Visible = true;
+                btnParticipants.Enabled = true;
+                btnParticipants.Visible = true;
                 List<Person> personlist = Data.DataClasses.DataPerson.GetAllPerson();
                 foreach(Person p in personlist)
                 {

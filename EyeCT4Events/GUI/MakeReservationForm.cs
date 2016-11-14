@@ -27,6 +27,17 @@ namespace EyeCT4Events
         {
             InitializeComponent();
             makeReservationForm = this;
+
+            if (Login.loggedinUser.Admin == 0)
+            {
+                btnParticipants.Enabled = false;
+                btnParticipants.Visible = false;
+            }
+            else
+            {
+                btnParticipants.Enabled = true;
+                btnParticipants.Visible = true;
+            }
         }
 
         public MakeReservationForm(HomeForm homeForm)
@@ -34,6 +45,17 @@ namespace EyeCT4Events
             InitializeComponent();
             this.homeForm = homeForm;
             makeReservationForm = this;
+
+            if (Login.loggedinUser.Admin == 0)
+            {
+                btnParticipants.Enabled = false;
+                btnParticipants.Visible = false;
+            }
+            else
+            {
+                btnParticipants.Enabled = true;
+                btnParticipants.Visible = true;
+            }
         }
 
         /// <summary>
