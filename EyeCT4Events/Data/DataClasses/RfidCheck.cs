@@ -205,6 +205,27 @@ namespace EyeCT4Events.Business.Classes
             }
         }
 
+        public void rfidbetaald(string saldo)
+        {
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "UPDATE Polsband SET Saldo = '"+saldo+"' WHERE AccountAccountID = '"+ Person.AcID +"'";
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
+
         public void InOutSql(string rfidcode, int account, int aanwezig)
         {
             try

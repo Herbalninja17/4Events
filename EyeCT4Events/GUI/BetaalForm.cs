@@ -45,13 +45,15 @@ namespace EyeCT4Events
             
         }
 
-        
+        public int saldo3 = 0;
 
         private void btnPayReservation_Click(object sender, EventArgs e)
         {
             if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
             {
                 InUit.rfidbetaal();
+                saldo3 = Convert.ToInt32(saldo) - Convert.ToInt32(saldo1);
+                InUit.rfidbetaald(saldo3.ToString());
                 MessageBox.Show("U heb betaald");
             }
         }
