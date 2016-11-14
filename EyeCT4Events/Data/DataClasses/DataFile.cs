@@ -112,6 +112,23 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        public static string GetFolderName(int id)
+        {
+            Datacom.OpenConnection();
+            SqlCommand cmd = new SqlCommand("SELECT ma.Naam " +
+                                            "FROM Map ma " +
+                                            "LEFT JOIN Media me ON me.MapMediaID = ma.MapID " +
+                                            $"WHERE MediaID = {id};",
+                                            Datacom.connect);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string folderName = reader.GetString(0);
+            reader.Close();
+            Datacom.CloseConnection();
+
+            return folderName;
+        }
+
         public static List<string> GetFolders()
         {
             List<string> folders = new List<string>();
