@@ -31,6 +31,10 @@ namespace EyeCT4Events
             this.homeForm = homeForm;
 
             Events = DataEvent.GetEventList();
+            foreach(Event e in Events)
+            {
+                lbEventBeheer.Items.Add(e.ToString());
+            }
         }
 
         /// <summary>
