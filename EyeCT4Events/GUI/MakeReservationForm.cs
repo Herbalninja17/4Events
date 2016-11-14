@@ -107,7 +107,7 @@ namespace EyeCT4Events
                 string eventid = eventids.Split(')')[0];
                 if (Reservation.Map != 0 && eventid != null)
                 {
-                    if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid))
+                    if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid,reservation.Persons))
                     {
                         MessageBox.Show("Reservering is aangemaakt!");
                         HomeForm hf = new HomeForm();

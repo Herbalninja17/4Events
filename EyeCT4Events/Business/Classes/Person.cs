@@ -253,7 +253,6 @@ namespace EyeCT4Events
 
         /// <summary>
         /// Constructor
-        /// To be able to add persons to a reservation.
         /// The person is sought in the database by username (email).
         /// </summary>
         /// <param name="email">The username of the person.</param>

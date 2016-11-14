@@ -138,5 +138,12 @@ namespace EyeCT4Events
             }
             
         }
+
+        private void btnIncheck_Click(object sender, EventArgs e)
+        {
+            CheckIn check = new CheckIn();
+            check.Show();
+            this.Hide();
+        }
     }
 }

@@ -106,7 +106,7 @@ namespace EyeCT4Events.Data.DataClasses
         /// <param name="eindDatum">End Date</param>
         /// <param name="eventID">Event ID</param>
         /// <returns>bool (true for succes)</returns>
-        public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID)
+        public static bool SetReservation(int plaatsID, string betaaldStatus, string startDatum, string eindDatum, string eventID,List<Person> plist)
         {
             try
             {                
@@ -153,8 +153,111 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd1 = new SqlCommand();
                 cmd1.Connection = Datacom.connect;
-                cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID) VALUES ('" + Rid + "', '" + Person.AcID + "');";
-                cmd1.ExecuteNonQuery();
+                if(plist.Count == 1)
+                {
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID) VALUES ('" + Rid + "', '" + Person.AcID + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if(plist.Count == 2)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 3)
+                {
+
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 4)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    string p3email = plist[3].Email;
+                    int p3id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p3email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3,accountaccountid_4) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "','" + p3id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 5)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    string p3email = plist[3].Email;
+                    int p3id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p3email);
+                    string p4email = plist[4].Email;
+                    int p4id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p4email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3,accountaccountid_4,accountaccountid_5) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "','" + p3id + "','" + p4id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 6)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    string p3email = plist[3].Email;
+                    int p3id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p3email);
+                    string p4email = plist[4].Email;
+                    int p4id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p4email);
+                    string p5email = plist[5].Email;
+                    int p5id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p5email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3,accountaccountid_4,accountaccountid_5,accountaccountid_6) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "','" + p3id + "','" + p4id + "','" + p5id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 7)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    string p3email = plist[3].Email;
+                    int p3id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p3email);
+                    string p4email = plist[4].Email;
+                    int p4id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p4email);
+                    string p5email = plist[5].Email;
+                    int p5id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p5email);
+                    string p6email = plist[6].Email;
+                    int p6id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p6email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3,accountaccountid_4,accountaccountid_5,accountaccountid_6,accountaccountid_7) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "','" + p3id + "','" + p4id + "','" + p5id + "','" + p6id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+                else if (plist.Count == 8)
+                {
+                    string p1email = plist[1].Email;
+                    int p1id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p1email);
+                    string p2email = plist[2].Email;
+                    int p2id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p2email);
+                    string p3email = plist[3].Email;
+                    int p3id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p3email);
+                    string p4email = plist[4].Email;
+                    int p4id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p4email);
+                    string p5email = plist[5].Email;
+                    int p5id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p5email);
+                    string p6email = plist[6].Email;
+                    int p6id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p6email);
+                    string p7email = plist[7].Email;
+                    int p7id = Data.DataClasses.DataPerson.GetAccountIDByEmail(p7email);
+                    cmd1.CommandText = "INSERT INTO AccountReservering(ReserveringReserveringID, AccountAccountID,accountaccountid_2,accountaccountid_3,accountaccountid_4,accountaccountid_5,accountaccountid_6,accountaccountid_7,accountaccountid_8) VALUES ('" + Rid + "', '" + Person.AcID + "','" + p1id + "','" + p2id + "','" + p3id + "','" + p4id + "','" + p5id + "','" + p6id + "','" + p7id + "');";
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
                 return true;
             }
             catch (Exception e)
