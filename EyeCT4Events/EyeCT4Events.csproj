@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DataClasses\DataRfid.cs" />
+    <Compile Include="Data\DataClasses\RfidCheck.cs" />
     <Compile Include="GUI\BetaalForm.cs">
       <SubType>Form</SubType>
     </Compile>
