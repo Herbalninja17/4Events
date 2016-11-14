@@ -95,28 +95,35 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnReservationsMakeReservation_Click(object sender, EventArgs e)
         {
-            reservation.BeginDate = dtpReservationBeginDate.Value;
-            reservation.EndDate = dtpReservationEndDate.Value;
-            if (reservation.BeginDate > reservation.EndDate)
+            if (lbReservationEvents.SelectedItem == null)
             {
-                MessageBox.Show("De begin datum kan niet later zijn dan de eind datum!");
+                MessageBox.Show("U heeft geen event geselecteerd");
             }
             else
             {
-                string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
-                string eventid = eventids.Split(')')[0];
-                if (Reservation.Map != 0 && eventid != null)
+                reservation.BeginDate = dtpReservationBeginDate.Value;
+                reservation.EndDate = dtpReservationEndDate.Value;
+                if (reservation.BeginDate > reservation.EndDate)
                 {
-                    if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid,reservation.Persons))
+                    MessageBox.Show("De begin datum kan niet later zijn dan de eind datum!");
+                }
+                else
+                {
+                    string eventids = Convert.ToString(lbReservationEvents.SelectedItem);
+                    string eventid = eventids.Split(')')[0];
+                    if (Reservation.Map != 0 && eventid != null)
                     {
-                        MessageBox.Show("Reservering is aangemaakt!");
-                        HomeForm hf = new HomeForm();
-                        this.Close();
-                        hf.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Reservering is niet aangemaakt!");
+                        if (Data.DataClasses.DataReservation.SetReservation(Reservation.Map, "Niet betaald", reservation.BeginDate.ToShortDateString(), reservation.EndDate.ToShortDateString(), eventid, reservation.Persons))
+                        {
+                            MessageBox.Show("Reservering is aangemaakt!");
+                            HomeForm hf = new HomeForm();
+                            this.Close();
+                            hf.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Reservering is niet aangemaakt!");
+                        }
                     }
                 }
             }
