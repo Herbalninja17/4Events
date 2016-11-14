@@ -63,16 +63,24 @@ namespace EyeCT4Events
         /// <param name="e"></param>
         private void btnUploadUpload_Click(object sender, EventArgs e)
         {
-            if (chosenFile == null)
+            try
             {
-                MessageBox.Show("U heeft geen bestand geselecteerd.");
-                return;
-            }
+                if (chosenFile == null)
+                {
+                    MessageBox.Show("U heeft geen bestand geselecteerd.");
+                    return;
+                }
 
-            File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
-            string selectedFolder = cbFolders.SelectedItem.ToString();
-            uploadFile.Upload(selectedFolder);
-            this.Close();
+                File uploadFile = new File(tbUploadCaption.Text, chosenFile.FileName, Login.loggedinUser);
+                string selectedFolder = cbFolders.SelectedItem.ToString();
+                uploadFile.Upload(selectedFolder);
+                this.Close();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Er is geen Categorie gekozen"); 
+            }
+            
         }
 
         private void UploadForm_FormClosing(object sender, FormClosingEventArgs e)
