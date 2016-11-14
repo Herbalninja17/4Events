@@ -55,7 +55,7 @@ namespace EyeCT4Events
                 btnParticipants.Enabled = true;
                 btnParticipants.Visible = true;
                 List<Person> personlist = Data.DataClasses.DataPerson.GetAllPerson();
-                foreach(Person p in personlist)
+                foreach(Person p in personlist) 
                 {
                     lbEditParticipantAdminScreen.Items.Add(p.Email);
                 }
