@@ -33,14 +33,12 @@
             this.tbSearchEditEventName = new System.Windows.Forms.TextBox();
             this.lbEditEvent = new System.Windows.Forms.ListBox();
             this.btnEditEventEditEvent = new System.Windows.Forms.Button();
-            this.tbEditEventCapacity = new System.Windows.Forms.TextBox();
             this.tbEditEventZipCode = new System.Windows.Forms.TextBox();
             this.tbEditEventCity = new System.Windows.Forms.TextBox();
             this.tbEditEventStreet = new System.Windows.Forms.TextBox();
             this.tbEditEventName = new System.Windows.Forms.TextBox();
             this.dtpEditEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEditBeginDate = new System.Windows.Forms.DateTimePicker();
-            this.lblEditEventCapacity = new System.Windows.Forms.Label();
             this.lblEditEventEndDate = new System.Windows.Forms.Label();
             this.lblEditEventBeginDate = new System.Windows.Forms.Label();
             this.lblEditEventZipcode = new System.Windows.Forms.Label();
@@ -94,14 +92,6 @@
             this.btnEditEventEditEvent.UseVisualStyleBackColor = true;
             this.btnEditEventEditEvent.Click += new System.EventHandler(this.btnEditEventEditEvent_Click);
             // 
-            // tbEditEventCapacity
-            // 
-            this.tbEditEventCapacity.Location = new System.Drawing.Point(474, 290);
-            this.tbEditEventCapacity.Name = "tbEditEventCapacity";
-            this.tbEditEventCapacity.ReadOnly = true;
-            this.tbEditEventCapacity.Size = new System.Drawing.Size(200, 20);
-            this.tbEditEventCapacity.TabIndex = 51;
-            // 
             // tbEditEventZipCode
             // 
             this.tbEditEventZipCode.Location = new System.Drawing.Point(474, 136);
@@ -146,15 +136,6 @@
             this.dtpEditBeginDate.Name = "dtpEditBeginDate";
             this.dtpEditBeginDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEditBeginDate.TabIndex = 44;
-            // 
-            // lblEditEventCapacity
-            // 
-            this.lblEditEventCapacity.AutoSize = true;
-            this.lblEditEventCapacity.Location = new System.Drawing.Point(357, 293);
-            this.lblEditEventCapacity.Name = "lblEditEventCapacity";
-            this.lblEditEventCapacity.Size = new System.Drawing.Size(92, 13);
-            this.lblEditEventCapacity.TabIndex = 43;
-            this.lblEditEventCapacity.Text = "Max. Deelnemers:";
             // 
             // lblEditEventEndDate
             // 
@@ -227,14 +208,12 @@
             this.ClientSize = new System.Drawing.Size(686, 370);
             this.Controls.Add(this.btnEditEventSelectEvent);
             this.Controls.Add(this.btnEditEventEditEvent);
-            this.Controls.Add(this.tbEditEventCapacity);
             this.Controls.Add(this.tbEditEventZipCode);
             this.Controls.Add(this.tbEditEventCity);
             this.Controls.Add(this.tbEditEventStreet);
             this.Controls.Add(this.tbEditEventName);
             this.Controls.Add(this.dtpEditEndDate);
             this.Controls.Add(this.dtpEditBeginDate);
-            this.Controls.Add(this.lblEditEventCapacity);
             this.Controls.Add(this.lblEditEventEndDate);
             this.Controls.Add(this.lblEditEventBeginDate);
             this.Controls.Add(this.lblEditEventZipcode);
@@ -260,14 +239,12 @@
         private System.Windows.Forms.TextBox tbSearchEditEventName;
         private System.Windows.Forms.ListBox lbEditEvent;
         private System.Windows.Forms.Button btnEditEventEditEvent;
-        private System.Windows.Forms.TextBox tbEditEventCapacity;
         private System.Windows.Forms.TextBox tbEditEventZipCode;
         private System.Windows.Forms.TextBox tbEditEventCity;
         private System.Windows.Forms.TextBox tbEditEventStreet;
         private System.Windows.Forms.TextBox tbEditEventName;
         private System.Windows.Forms.DateTimePicker dtpEditEndDate;
         private System.Windows.Forms.DateTimePicker dtpEditBeginDate;
-        private System.Windows.Forms.Label lblEditEventCapacity;
         private System.Windows.Forms.Label lblEditEventEndDate;
         private System.Windows.Forms.Label lblEditEventBeginDate;
         private System.Windows.Forms.Label lblEditEventZipcode;

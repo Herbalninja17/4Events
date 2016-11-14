@@ -67,7 +67,7 @@ namespace EyeCT4Events
         {
             MapForm.begindate = dtpReservationBeginDate.Value.ToShortDateString();
             MapForm.enddate = dtpReservationEndDate.Value.ToShortDateString();
-            this.Close();
+            this.Hide();
             MapForm mapForm = new MapForm();
             mapForm.Show();
         }
@@ -132,7 +132,8 @@ namespace EyeCT4Events
         private void btnReservationSearchParticipant_Click(object sender, EventArgs e)
         {
             //Eventueel algemeen zoekForm aanmaken, dan met parameter ervoor zorgen dat het juiste attribuut gezocht wordt.
-            searchedperson = Data.DataClasses.DataPerson.GetSearchedPerson(tbReservationSearchParticipant.Text);
+            lbReservationParticipants.Items.Clear();
+            searchedperson = DataPerson.GetSearchedPerson(tbReservationSearchParticipant.Text);
             foreach(Person p in searchedperson)
             {
                 lbReservationParticipants.Items.Add(p.Email);

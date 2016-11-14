@@ -12,9 +12,16 @@ namespace EyeCT4Events
 {
     public partial class MapForm : Form
     {
+        private List<string> typelist = new List<string>();
+        private List<string> numberlist = new List<string>();
         public MapForm()
         {
             InitializeComponent();
+            typelist = Data.DataClasses.DataCampingSpot.GetCampingSpotType();
+            foreach(string s in typelist)
+            {
+                comboBox1.Items.Add(s);
+            }
         }
         public static string begindate;
         public static string enddate;
@@ -43,6 +50,16 @@ namespace EyeCT4Events
             catch (Exception m)
             {
                 MessageBox.Show("Niet alle combo boxen geselecteerd");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            numberlist = Data.DataClasses.DataCampingSpot.GetCampingSpotNumber(Convert.ToString(comboBox1.SelectedItem));
+            foreach(string s in numberlist)
+            {
+                comboBox2.Items.Add(s);
             }
         }
     }

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EyeCT4Events.Data.DataClasses;
 
 namespace EyeCT4Events
 {
@@ -50,16 +52,10 @@ namespace EyeCT4Events
             }
             else
             {
-                string fn = Convert.ToString(lbSocialMedia.SelectedItem);
-                int fileID = Convert.ToInt32(fn.Substring(0, fn.IndexOf(" ")));
-                foreach (File f in fileList)
-                {
-                    if (fileID == f.FileID)
-                    {
-                        MessageForm mf = new MessageForm(f);
-                        mf.ShowDialog();
-                    }
-                }
+                int index = lbSocialMedia.SelectedIndex;
+                File file = fileList[index];
+                MessageForm msgForm = new MessageForm(file);
+                msgForm.Show();
             }
         }
 
@@ -71,11 +67,7 @@ namespace EyeCT4Events
 
         private void SocialMediaForm_Load(object sender, EventArgs e)
         {
-            fileList = Data.DataClasses.DataFile.GetFileList();
-            foreach(File f in fileList)
-            {
-                lbSocialMedia.Items.Add(f.FileID + " Gepost door: " + f.Poster.Name + " Bestandsnaam: " + f.FileName + " Bestandstype: " + f.FileType);
-            }
+            MediaListRefresh();
         }
 
         private void btnShowImage_Click(object sender, EventArgs e)
@@ -90,6 +82,23 @@ namespace EyeCT4Events
         private void SocialMediaForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             HomeForm.homeForm.Show();
+        }
+
+        private void MediaListRefresh()
+        {
+            fileList = DataFile.GetFileList();
+            foreach (File f in fileList)
+            {
+                string catName = DataFile.GetFolderName(f.FileID);
+
+                lbSocialMedia.Items.Add($"Poster: {f.Poster.Name}    Titel: {f.FileName}    Cat.: {catName}    Type: {f.FileType}");
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lbSocialMedia.Items.Clear();
+            MediaListRefresh();
         }
     }
 }

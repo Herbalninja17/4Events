@@ -22,7 +22,7 @@ namespace EyeCT4Events
             List<Material> materiallist = Material.GetMaterialList(Login.loggedinUser);
             foreach(Material m in materiallist)
             {
-                lbMaterial.Items.Add("Naam: "+m.Name +" Beschrijving: " + m.Description + " Prijs: " + m.Price + " Datum geleend: " + m.LeaseDateStart.ToShortDateString() + " Datum terug: " + m.LeaseDateEnd.ToShortDateString());
+                lbMaterial.Items.Add("Naam: "+m.Name +"\t Beschrijving: " + m.Description + "\t Prijs: " + m.Price + "\t Datum geleend: " + m.LeaseDateStart.ToShortDateString() + "\t Datum terug: " + m.LeaseDateEnd.ToShortDateString());
             }
         }
         
