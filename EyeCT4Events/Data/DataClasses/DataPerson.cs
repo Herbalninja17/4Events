@@ -47,6 +47,30 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.CloseConnection();
             }
         }
+        public static int GetAccountIDByEmail(string email)
+        {
+            int accountid = 0;
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT accountid from account where email = '" + email + "'", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    accountid = Convert.ToInt32(reader["accountid"]);
+                }
+                return accountid;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return accountid;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
         /// <summary>
         /// Gets the logged in user.
         /// </summary>
