@@ -205,14 +205,14 @@ namespace EyeCT4Events.Business.Classes
             }
         }
 
-        public void rfidbetaald(string saldo)
+        public void rfidbetaald(decimal saldo)
         {
             try
             {
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "UPDATE Polsband SET Saldo = '"+saldo+"' WHERE AccountAccountID = '"+ Person.AcID +"'";
+                cmd.CommandText = "UPDATE Polsband SET Saldo ="+saldo+" WHERE AccountAccountID = "+ Person.AcID +";";
 
                 cmd.ExecuteNonQuery();
             }

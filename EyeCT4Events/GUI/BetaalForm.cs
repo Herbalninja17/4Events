@@ -31,29 +31,29 @@ namespace EyeCT4Events
         private void BetaalForm_Load(object sender, EventArgs e)
         {
             saldo = DataReservation.GetSaldo();
-            lblSaldoEuro.Text = saldo + "Euro's";
+            lblSaldoEuro.Text = "" + saldo + "Euro's";
             saldo1 = DataReservation.GetSaldoBand();
             label1.Text = saldo1; 
-            if (saldo != "")
-            {
+            //if (String.IsNullOrWhiteSpace(saldo))
+            //{
                 betaaldlist = DataReservation.GetReservationsLoggedInPerson(Login.loggedinUser);
                 foreach (string s in betaaldlist)
                 {
                     lbPaid.Items.Add(s);
                 }
-            }
+            //}
             
         }
 
-        public int saldo3 = 0;
+        public decimal saldo3 = 0;
 
         private void btnPayReservation_Click(object sender, EventArgs e)
         {
             if (RFID.ShowDialog() == DialogResult.OK) //wait for OK 
             {
                 InUit.rfidbetaal();
-                saldo3 = Convert.ToInt32(saldo) - Convert.ToInt32(saldo1);
-                InUit.rfidbetaald(saldo3.ToString());
+                saldo3 = Convert.ToDecimal(saldo1) - Convert.ToDecimal(saldo);
+                InUit.rfidbetaald(Convert.ToDecimal(saldo3));
                 MessageBox.Show("U heb betaald");
             }
         }

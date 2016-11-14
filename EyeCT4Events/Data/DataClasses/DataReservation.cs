@@ -78,23 +78,25 @@ namespace EyeCT4Events.Data.DataClasses
                 Datacom.OpenConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Datacom.connect;
-                cmd.CommandText = "select SUM(p.Prijs) as prijs from PType p, AccountReservering a, Reservering r where p.TypeID = r.PlaatsID and r.ReserveringID = a.ReserveringReserveringID and a.AccountAccountID = '"+ Person.AcID +"' and r.BetaaldStatus = 'Niet betaald'";
+                cmd.CommandText = "select SUM(p.Prijs) as prijs from PType p, Plaats p1, AccountReservering a, Reservering r where p.TypeID = p1.TypeID and r.ReserveringID = a.ReserveringReserveringID and p1.PlaatsID = r.PlaatsID and a.AccountAccountID = '"+ Person.AcID +"' and r.BetaaldStatus = 'Niet betaald'";
                 cmd.ExecuteNonQuery();                  //execute het query
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    saldo = Convert.ToString(reader["prijs"]);
+                    saldo = Convert.ToString(reader[0]);
                 }
+                return saldo;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return null;
             }
             finally
             {
-                Datacom.CloseConnection();
+                Datacom.CloseConnection(); 
             }
-            return saldo;
+            
         }
 
         /// <summary>
