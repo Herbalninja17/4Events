@@ -25,6 +25,7 @@ namespace EyeCT4Events
             leaseForm = this;
             RefreshMaterialList();
         }
+
         public LeaseForm(HomeForm homeForm)
         {
             InitializeComponent();
@@ -65,9 +66,10 @@ namespace EyeCT4Events
         private void btnHired_Click(object sender, EventArgs e)
         {
             HiredMaterialForm hmf = new HiredMaterialForm();
-            this.Close();
+            this.Hide();
             hmf.Show();
         }
+
         /// <summary>
         /// Om een materiaal te lenen.
         /// </summary>

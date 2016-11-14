@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EyeCT4Events
 {
-    public class Message : IComparable<Message>
+    public class Message 
     {
         //Fields
         private string messageString;
@@ -156,9 +156,5 @@ namespace EyeCT4Events
                 ;
         }
 
-        public int CompareTo(Message other)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

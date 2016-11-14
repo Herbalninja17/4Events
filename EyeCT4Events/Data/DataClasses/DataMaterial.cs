@@ -18,45 +18,62 @@ namespace EyeCT4Events.Data.DataClasses
         public static List<Material> GetMaterial(Person p) 
         {
             List<Material> materiallist = new List<Material>();
-            Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand("SELECT p.ProductID, p.Naam, p.PrijsPerDag, p.Omschrijving,v.betaalstatus ,p.PStatus " +
-                                            "FROM Product p " +
-                                            "inner join verhuur v on p.productid = v.ProductProductID " +
-                                            "inner join Polsband pb on v.PolsbandBandID = pb.BandID " +
-                                            "inner join account a on a.accountid = pb.AccountAccountID " +
-                                            $"WHERE a.email  = '{p.Email}'",
-                                            Datacom.connect);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                int id = reader.GetInt32(0);
-                string name = reader.GetString(1);
-                decimal price = reader.GetDecimal(2);
-                string description = reader.GetString(3);
-                string PStatus = reader.GetString(5);
-                string Bstatus = reader.GetString(4);
-                bool betaalstatus;
-                bool status;
-                if (PStatus == "Beschikbaar")
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT p.ProductID, p.Naam, p.PrijsPerDag, p.Omschrijving,v.betaalstatus ,p.PStatus,v.StartDatum,v.EindDatum " +
+                                                "FROM Product p " +
+                                                "inner join verhuur v on p.productid = v.ProductProductID " +
+                                                "inner join Polsband pb on v.PolsbandBandID = pb.BandID " +
+                                                "inner join account a on a.accountid = pb.AccountAccountID " +
+                                                $"WHERE a.email  = '{p.Email}'",
+                                                Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    status = false;
-                }
-                else
-                {
-                    status = true;
-                }
-                if(Bstatus == "")
-                {
-                    betaalstatus = false;
-                }
-                else
-                {
-                    betaalstatus = true;
-                }
+                    int id = reader.GetInt32(0);
+                    string name = reader.GetString(1);
+                    decimal price = reader.GetDecimal(2);
+                    string description = reader.GetString(3);
+                    string PStatus = reader.GetString(5);
+                    string Bstatus = reader.GetString(4);
+                    string startdate = reader.GetString(6);
+                    string enddate = reader.GetString(7);
+                    DateTime startDate = DateTime.Parse(startdate);
+                    DateTime endDate = DateTime.Parse(enddate);
+                    bool betaalstatus;
+                    bool status;
+                    if (PStatus == "Beschikbaar")
+                    {
+                        status = false;
+                    }
+                    else
+                    {
+                        status = true;
+                    }
+                    if (Bstatus == "")
+                    {
+                        betaalstatus = false;
+                    }
+                    else
+                    {
+                        betaalstatus = true;
+                    }
 
-                Material m = new Material(id, name, description, price, betaalstatus, status);
+                    Material m = new Material(id, name, description, price, betaalstatus, status, startDate, endDate);
+                    materiallist.Add(m);
+                }
+                return materiallist;
             }
-            Datacom.CloseConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return materiallist;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
             return materiallist;
         }
 
