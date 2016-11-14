@@ -15,34 +15,49 @@ namespace EyeCT4Events.Data.DataClasses
         /// </summary>
         /// <param name="materialID">Material ID</param>
         /// <returns>Material</returns>
-        public static Material GetMaterial(int materialID) 
+        public static List<Material> GetMaterial(Person p) 
         {
+            List<Material> materiallist = new List<Material>();
             Datacom.OpenConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT ProductID, Naam, PrijsPerDag, Omschrijving, PStatus " +
-                                            $"FROM Product " +
-                                            $"WHERE ProductID = {materialID}",
+            SqlCommand cmd = new SqlCommand("SELECT p.ProductID, p.Naam, p.PrijsPerDag, p.Omschrijving,v.betaalstatus ,p.PStatus " +
+                                            "FROM Product p " +
+                                            "inner join verhuur v on p.productid = v.ProductProductID " +
+                                            "inner join Polsband pb on v.PolsbandBandID = pb.BandID " +
+                                            "inner join account a on a.accountid = pb.AccountAccountID " +
+                                            $"WHERE a.email  = '{p.Email}'",
                                             Datacom.connect);
             SqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            int id = reader.GetInt32(0);
-            string name = reader.GetString(1);
-            decimal price = reader.GetDecimal(2);
-            string description = reader.GetString(3);
-            string PStatus = reader.GetString(4);
-            bool status;
-            if (PStatus == "Beschikbaar")
+            while (reader.Read())
             {
-                status = false;
-            }
-            else
-            {
-                status = true;
-            }
-            reader.Close();
-            Datacom.CloseConnection();
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                decimal price = reader.GetDecimal(2);
+                string description = reader.GetString(3);
+                string PStatus = reader.GetString(5);
+                string Bstatus = reader.GetString(4);
+                bool betaalstatus;
+                bool status;
+                if (PStatus == "Beschikbaar")
+                {
+                    status = false;
+                }
+                else
+                {
+                    status = true;
+                }
+                if(Bstatus == "")
+                {
+                    betaalstatus = false;
+                }
+                else
+                {
+                    betaalstatus = true;
+                }
 
-            Material m = new Material(id, name, description, price, false, status);
-            return m;
+                Material m = new Material(id, name, description, price, betaalstatus, status);
+            }
+            Datacom.CloseConnection();
+            return materiallist;
         }
 
         /// <summary>

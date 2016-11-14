@@ -57,7 +57,7 @@ namespace EyeCT4Events
                     if (fileID == f.FileID)
                     {
                         MessageForm mf = new MessageForm(f);
-                        mf.Show();
+                        mf.ShowDialog();
                     }
                 }
             }

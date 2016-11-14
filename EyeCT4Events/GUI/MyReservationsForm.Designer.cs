@@ -89,7 +89,7 @@
             this.Controls.Add(this.lbMyReservationsEvents);
             this.Name = "MyReservationsForm";
             this.Text = "Mijn Reserveringen";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MyReservationsForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyReservationsForm_FormClosed);
             this.Load += new System.EventHandler(this.MyReservationsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

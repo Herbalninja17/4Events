@@ -95,7 +95,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
 
             //Assert
             Assert.IsTrue(message.MessageString == "This is a unit-test testmessage.");
-            Assert.IsTrue(message.MessageID == 0); //Taken from the database.
+            Assert.IsTrue(message.MessageID == 1); //Taken from the database.
             Assert.IsTrue(message.PreviousMessageID == 0); //Taken from the database.
             Assert.IsTrue(message.Poster.Name == "Batman");
         }
@@ -116,7 +116,7 @@ namespace EyeCT4Events_Testprojects.Business_Tests
             string testString = message.ToString();
 
             //Assert
-            Assert.IsTrue(testString == "Catwomanlover69@wayneenterprices.GC | 0 | 0 | This is a unit-test testmessage. | " + timeStamp);
+            Assert.IsTrue(testString == "Catwomanlover69@wayneenterprices.GC | 1 | 0 | This is a unit-test testmessage. | " + timeStamp);
         }
     }
 }
