@@ -42,9 +42,7 @@ namespace EyeCT4Events.GUI
                             {
                                 InUit.CheckIn(tag, 4);
                                 MessageBox.Show("Welcome: " + tag.ToString());
-                                LoginForm login = new LoginForm();
-                                this.Hide();
-                                login.Show();
+                                
                             }
                             else
                             {
@@ -122,6 +120,12 @@ namespace EyeCT4Events.GUI
             {
                 comboBox1.Items.Add(i);
             }
+        }
+
+        private void CheckIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm.homeForm.Show();
+            
         }
     }
 }

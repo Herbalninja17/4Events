@@ -157,6 +157,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CheckIn";
             this.Text = "CheckIn";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CheckIn_FormClosed);
             this.Load += new System.EventHandler(this.CheckIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
