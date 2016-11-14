@@ -67,7 +67,7 @@ namespace EyeCT4Events
         {
             MapForm.begindate = dtpReservationBeginDate.Value.ToShortDateString();
             MapForm.enddate = dtpReservationEndDate.Value.ToShortDateString();
-            this.Close();
+            this.Hide();
             MapForm mapForm = new MapForm();
             mapForm.Show();
         }

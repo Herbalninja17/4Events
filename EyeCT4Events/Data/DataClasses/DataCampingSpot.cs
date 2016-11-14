@@ -183,5 +183,53 @@ namespace EyeCT4Events.Data.DataClasses
 
             return spots;
         }
+        public static List<string> GetCampingSpotType()
+        {
+            List<string> campingtypelist = new List<string>();
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select naam from ptype;", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    campingtypelist.Add(Convert.ToString(reader["naam"]));
+                }
+                return campingtypelist;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return campingtypelist;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
+        public static List<string> GetCampingSpotNumber(string typenaam)
+        {
+            List<string> campingspotnumber = new List<string>();
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT p.plaatsid FROM plaats p INNER JOIN ptype pt on p.typeid = pt.typeid WHERE pt.naam = '" + typenaam + "';", Datacom.connect);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    campingspotnumber.Add(Convert.ToString(reader["plaatsid"]));
+                }
+                return campingspotnumber;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return campingspotnumber;
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+        }
     }
 }

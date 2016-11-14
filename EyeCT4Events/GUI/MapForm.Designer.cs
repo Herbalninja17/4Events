@@ -60,53 +60,18 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Actie",
-            "Drama",
-            "Avontuur",
-            "Komedie",
-            "Horror",
-            "Fantasy",
-            "Prank",
-            "Klimmen",
-            "Kunst",
-            "Muziek",
-            "Verhaal",
-            "Gezeik",
-            "Pop",
-            "Rock",
-            "Jazz",
-            "Beeldhouwen",
-            "Schilderij"});
             this.comboBox1.Location = new System.Drawing.Point(66, 24);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17"});
             this.comboBox2.Location = new System.Drawing.Point(310, 24);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(78, 21);
             this.comboBox2.TabIndex = 3;
