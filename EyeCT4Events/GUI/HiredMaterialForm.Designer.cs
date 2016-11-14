@@ -48,7 +48,7 @@
             this.lbMaterial.FormattingEnabled = true;
             this.lbMaterial.Location = new System.Drawing.Point(149, 3);
             this.lbMaterial.Name = "lbMaterial";
-            this.lbMaterial.Size = new System.Drawing.Size(327, 459);
+            this.lbMaterial.Size = new System.Drawing.Size(721, 459);
             this.lbMaterial.TabIndex = 2;
             this.lbMaterial.SelectedIndexChanged += new System.EventHandler(this.lbMaterial_SelectedIndexChanged);
             // 
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 481);
+            this.ClientSize = new System.Drawing.Size(882, 481);
             this.Controls.Add(this.btnParticipants);
             this.Controls.Add(this.lbMaterial);
             this.Controls.Add(this.btnLease);

@@ -36,24 +36,31 @@ namespace EyeCT4Events.GUI
         /// <param name="e"></param>
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            if (lbMessages.SelectedItem != null)
+            try
             {
-                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-                string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
-                string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
-                
-                int selectedMessage = Message.SetPersonAccountIDByName(selectedperson);
+                if (lbMessages.SelectedItem != null)
+                {
+                    Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
+                    string selectedmessage = Convert.ToString(lbMessages.SelectedItem);
+                    string selectedperson = selectedmessage.Substring(0, selectedmessage.IndexOf(":"));
 
-                Message.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
-                FillListBox();
-                tbMessage.Clear();
+                    int selectedMessage = Message.SetPersonAccountIDByName(selectedperson);
+
+                    Message.SetMessageWithResponse(message, message.Poster, File, selectedMessage);
+                    FillListBox();
+                    tbMessage.Clear();
+                }
+                else
+                {
+                    Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
+                    Message.SetMessage(message, message.Poster, File);
+                    FillListBox();
+                    tbMessage.Clear();
+                }
             }
-            else
+            catch (Exception m)
             {
-                Message message = new Message(tbMessage.Text, Login.loggedinUser, DateTime.Now);
-                Message.SetMessage(message, message.Poster, File);
-                FillListBox();
-                tbMessage.Clear();
+                MessageBox.Show("Geen geldig bericht");
             }
         }
 

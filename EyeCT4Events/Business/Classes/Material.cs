@@ -62,6 +62,17 @@ namespace EyeCT4Events
             IsPayed = isPayed;
             Leased = leased;
         }
+        public Material(int id, string name, string description, decimal price, bool isPayed, bool leased,DateTime startdate,DateTime enddate)
+        {
+            ID = id;
+            Name = name;
+            Description = description;
+            Price = price;
+            IsPayed = isPayed;
+            Leased = leased;
+            LeaseDateStart = startdate;
+            LeaseDateEnd = enddate;
+        }
 
         //Methods
 
