@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnParticipantsPaid = new System.Windows.Forms.Button();
+            this.btnIncheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEvents
@@ -123,11 +124,22 @@
             this.btnParticipantsPaid.UseVisualStyleBackColor = true;
             this.btnParticipantsPaid.Click += new System.EventHandler(this.btnParticipantsPaid_Click);
             // 
+            // btnIncheck
+            // 
+            this.btnIncheck.Location = new System.Drawing.Point(274, 12);
+            this.btnIncheck.Name = "btnIncheck";
+            this.btnIncheck.Size = new System.Drawing.Size(105, 35);
+            this.btnIncheck.TabIndex = 35;
+            this.btnIncheck.Text = " Inchecken";
+            this.btnIncheck.UseVisualStyleBackColor = true;
+            this.btnIncheck.Click += new System.EventHandler(this.btnIncheck_Click);
+            // 
             // ParticipantsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 382);
+            this.Controls.Add(this.btnIncheck);
             this.Controls.Add(this.btnParticipantsPaid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnParticipantsPaid;
+        private System.Windows.Forms.Button btnIncheck;
     }
 }

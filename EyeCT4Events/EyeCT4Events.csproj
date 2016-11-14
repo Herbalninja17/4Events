@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataClasses\DataRfid.cs" />
     <Compile Include="GUI\BetaalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +77,6 @@
     <Compile Include="Data\DataClasses\DataMessage.cs" />
     <Compile Include="Data\DataClasses\DataPerson.cs" />
     <Compile Include="Data\DataClasses\DataReservation.cs" />
-    <Compile Include="Data\DataClasses\RfidCheck.cs" />
     <Compile Include="GUI\CheckIn.cs">
       <SubType>Form</SubType>
     </Compile>
