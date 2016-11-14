@@ -18,6 +18,7 @@ namespace EyeCT4Events
         private MyReservationsForm reservationsForm;
         RfidForm RFID = new RfidForm();
         RfidCheck InUit = new RfidCheck();
+        string saldo = "";
 
         public List<string> betaaldlist;
         public BetaalForm(MyReservationsForm reservationsForm)
@@ -28,11 +29,17 @@ namespace EyeCT4Events
 
         private void BetaalForm_Load(object sender, EventArgs e)
         {
-            betaaldlist = DataReservation.GetReservationsLoggedInPerson(Login.loggedinUser);
-            foreach(string s in betaaldlist)
+            saldo = DataReservation.GetSaldo();
+            lblSaldoEuro.Text = saldo + "Euro's";
+            if (saldo != "")
             {
-                lbPaid.Items.Add(s);
+                betaaldlist = DataReservation.GetReservationsLoggedInPerson(Login.loggedinUser);
+                foreach (string s in betaaldlist)
+                {
+                    lbPaid.Items.Add(s);
+                }
             }
+            
         }
 
         

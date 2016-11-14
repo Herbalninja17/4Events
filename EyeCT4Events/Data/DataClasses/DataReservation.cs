@@ -41,6 +41,34 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        public static string GetSaldo()
+        {
+            string saldo = "";
+           
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "select SUM(p.Prijs) as prijs from PType p, AccountReservering a, Reservering r where p.TypeID = r.PlaatsID and r.ReserveringID = a.ReserveringReserveringID and a.AccountAccountID = '"+ Person.AcID +"' and r.BetaaldStatus = 'Niet betaald'";
+                cmd.ExecuteNonQuery();                  //execute het query
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    saldo = Convert.ToString(reader["prijs"]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+            return saldo;
+        }
+
         /// <summary>
         /// Inserts a reservation into the database
         /// </summary>
@@ -173,7 +201,7 @@ namespace EyeCT4Events.Data.DataClasses
             try
             {
                 Datacom.OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT distinct r.reserveringid, r.betaaldstatus, pt.prijs from reservering r inner join plaats p on r.plaatsid = p.plaatsid inner join ptype pt on p.typeid = pt.TypeID inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.email = '" + loggedinP.Email + "';", Datacom.connect);
+                SqlCommand cmd = new SqlCommand("SELECT distinct r.reserveringid, r.betaaldstatus, pt.prijs from reservering r inner join plaats p on r.plaatsid = p.plaatsid inner join ptype pt on p.typeid = pt.TypeID inner join AccountReservering ar on r.ReserveringID = ar.ReserveringReserveringID inner join account a on ar.AccountAccountID = a.AccountID where a.email = '" + loggedinP.Email + "' and r.BetaaldStatus = 'Niet betaald' ;", Datacom.connect);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
