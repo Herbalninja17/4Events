@@ -74,7 +74,6 @@ namespace EyeCT4Events.Data.DataClasses
             {
                 Datacom.CloseConnection();
             }
-            return materiallist;
         }
 
         /// <summary>
