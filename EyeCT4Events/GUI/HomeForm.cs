@@ -82,5 +82,12 @@ namespace EyeCT4Events.GUI
         {
             LoginForm.loginForm.Show();  
         }
+
+        private void btnIncheck_Click(object sender, EventArgs e)
+        {
+            CheckIn check = new CheckIn();
+            check.Show();
+            this.Hide();
+        }
     }
 }

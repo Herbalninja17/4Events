@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
+            this.btnIncheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +131,22 @@
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
+            // btnIncheck
+            // 
+            this.btnIncheck.Location = new System.Drawing.Point(369, 13);
+            this.btnIncheck.Name = "btnIncheck";
+            this.btnIncheck.Size = new System.Drawing.Size(105, 51);
+            this.btnIncheck.TabIndex = 36;
+            this.btnIncheck.Text = " Inchecken";
+            this.btnIncheck.UseVisualStyleBackColor = true;
+            this.btnIncheck.Click += new System.EventHandler(this.btnIncheck_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 303);
+            this.Controls.Add(this.btnIncheck);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label1);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnIncheck;
     }
 }
