@@ -41,6 +41,34 @@ namespace EyeCT4Events.Data.DataClasses
             }
         }
 
+        public static string GetSaldoBand()
+        {
+            string saldo = "";
+
+            try
+            {
+                Datacom.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Datacom.connect;
+                cmd.CommandText = "select Saldo from Polsband where AccountAccountID = '"+ Person.AcID +"'";
+                cmd.ExecuteNonQuery();                  //execute het query
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    saldo = Convert.ToString(reader["Saldo"]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                Datacom.CloseConnection();
+            }
+            return saldo;
+        }
+
         public static string GetSaldo()
         {
             string saldo = "";
